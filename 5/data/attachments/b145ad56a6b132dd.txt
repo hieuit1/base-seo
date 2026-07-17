@@ -1,0 +1,52 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     50/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          19
+   ❌ Không đạt:    19
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [A1.2 — Độ dài Title: 14 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 14 ký tự, cần 40–65
+   2. [A1.3 — Title chứa keyword "san pham"]
+      → Title không chứa keyword "san pham"
+   3. [A1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "san pham" không có trong Title
+   4. [A2.1 — Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   5. [A2.2 — Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   6. [A2.3 — Meta description chứa keyword "san pham"]
+      → Không thể kiểm tra — Meta description không tồn tại
+   7. [A3.2 — H1 chứa keyword "san pham"]
+      → H1 "Example Domain" không chứa keyword "san pham"
+   8. [A3.4 — Trang có thẻ H2/H3 hỗ trợ (0 thẻ)]
+      → Trang nên có ít nhất 1 thẻ H2 hoặc H3
+   9. [A5.1 — Số lượng từ: 17 (tối thiểu: 300)]
+      → Trang chỉ có 17 từ, cần ≥ 300
+   10. [A5.2 — Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   11. [A5.3 — Keyword "san pham" xuất hiện trong 100 từ đầu]
+      → Keyword "san pham" không xuất hiện trong 100 từ đầu
+   12. [A7.1 — Internal links: 0 link]
+      → Trang nên có ít nhất 1 internal link
+   13. [A8.1 — Canonical URL hợp lệ (Không có)]
+      → Thiếu thẻ <link rel="canonical">. Nguy cơ trùng lặp!
+   14. [A8.3 — robots.txt trả về status 404]
+      → robots.txt trả về status 404, cần 200
+   15. [A8.4 — sitemap.xml trả về status 404]
+      → sitemap.xml trả về status 404, cần 200
+   16. [A8.5 — Schema Markup (JSON-LD/Microdata): Thiếu]
+      → Thiếu Schema Markup (JSON-LD / Microdata / RDFa)
+   17. [A8.6 — Open Graph: og:title=✘, og:description=✘]
+      → Thiếu og:title và og:description
+   18. [A8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   19. [A8.9 — Charset: Thiếu | Favicon: ✔]
+      → Thiếu khai báo charset
