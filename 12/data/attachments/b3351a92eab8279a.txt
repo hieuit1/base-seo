@@ -1,0 +1,26 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     84/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          32
+   ❌ Không đạt:    6
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [2.2 — Độ dài Meta: 161 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 161 ký tự, cần 120–160
+   2. [4.2 — URL chứa keyword slug "ao-so-mi" ]
+      → URL "/collections/ao-somi" không chứa keyword "ao-so-mi"
+   3. [5.3 — Keyword "áo sơ mi" xuất hiện trong 100 từ đầu]
+      → Keyword "áo sơ mi" không xuất hiện trong 100 từ đầu
+   4. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 9/257)]
+      → Có 9 hình ảnh thiếu thuộc tính 'alt'
+   5. [7.3 — Anchor text chất lượng (lỗi: 36)]
+      → 36 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-midnight-garden, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-wildbloom, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-blanko, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-riviera-knit, "" → /products/ao-so-mi-nam-tay-ngan-linen-cuban-icondenim-littoral, "" → /products/ao-so-mi-nam-tay-dai-icondenim-warp-knit, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-cuban-fluid-mark, "" → /products/ao-so-mi-nam-tay-dai-icondenim-sandveil, "" → /products/ao-so-mi-nam-tay-ngan-linen-cuban-icondenim-sandrift, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-cosmic-draft, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-soft-mark, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-summer-tribal, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-campus-league, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-sandstorm, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-am-daylight, "" → /products/ao-so-mi-nam-tay-dai-icondenim-urban-stripe, "" → /products/ao-so-mi-nam-icondenim-workday-ease, "" → /products/ao-so-mi-nam-icondenim-steel-line, "" → /products/ao-so-mi-nam-cuban-icondenim-sandstone-dye, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-gridline, "" → /products/ao-so-mi-nam-cuban-icondenim-santino, "" → /products/ao-so-mi-nam-cuban-icondenim-stone-mist-tie-dye, "" → /products/ao-so-mi-nam-cuban-icondenim-simplify-1, "" → /products/ao-so-mi-nam-icondenim-iron-indigo, "" → /products/set-do-nam-icondenim-orgnls-2, "" → /products/set-do-nam-icondenim-lunary, "" → /products/ao-so-mi-nam-cuban-icondenim-blue-code, "" → /collections/ao-somi?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   6. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

@@ -1,0 +1,287 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5565","Kiểm tra SEO Onpage: BALO - TÚI XÁCH","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","4363","Kiểm tra SEO Onpage: PHỤ KIỆN","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","8295","Kiểm tra SEO Onpage: SMART JEANS™","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","9195","Kiểm tra SEO Onpage: Áo Tanktop Nam ICONDENIM Coastal Knit","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6203","Kiểm tra SEO Onpage: Quần Tây Nam ICONDENIM Zenith","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5526","Kiểm tra SEO Onpage: VỚ","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 87/100 | Đạt: 33/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","10390","Kiểm tra SEO Onpage: QUẦN KAKI","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6809","Kiểm tra SEO Onpage: Quần Jeans Nam ICONDENIM Stonefade","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6698","Kiểm tra SEO Onpage: Áo Khoác Gió Active Nam ICONDENIM Airflex Gọn Nhẹ Linh Hoạt","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6475","Kiểm tra SEO Onpage: Quần Boxer Nam ICONDENIM Sanctum","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7797","Kiểm tra SEO Onpage: Áo Thun Nam ICONDENIM Regal","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","6739","Kiểm tra SEO Onpage: THẮT LƯNG","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 66/100 | Đạt: 25/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7329","Kiểm tra SEO Onpage: ProCOOL | Siêu Mát","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6517","Kiểm tra SEO Onpage: Áo Khoác Dù Nam DISNEY Racing Division","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7019","Kiểm tra SEO Onpage: Set Đồ Nam RUNPOW Airflow Mesh Jersey","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 68/100 | Đạt: 26/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","4654","Kiểm tra SEO Onpage: Hàng bán chạy Best Seller","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","10044","Kiểm tra SEO Onpage: Áo Sơ Mi Nam Tay Ngắn ICONDENIM Blanko","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8664","Kiểm tra SEO Onpage: Quần Jeans Nam ICONDENIM Fadeline","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7200","Kiểm tra SEO Onpage: Áo Polo Nam ICONDENIM Imperial","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8389","Kiểm tra SEO Onpage: Áo Khoác Dù Nam ICONDENIM Strikeline","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","6010","Kiểm tra SEO Onpage: QUẦN","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6603","Kiểm tra SEO Onpage: TẤT CẢ SẢN PHẨM","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7005","Kiểm tra SEO Onpage: Áo Thun Nam ICONDENIM Ice Field","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","12001","Kiểm tra SEO Onpage: Áo Khoác Bomber Nam ICONDENIM Allstar","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 66/100 | Đạt: 25/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7332","Kiểm tra SEO Onpage: Collection Summer","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","8905","Kiểm tra SEO Onpage: GIÀY DÉP","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5611","Kiểm tra SEO Onpage: MẮT KÍNH","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","12697","Kiểm tra SEO Onpage: Set Áo Quần Nam ICONDENIM Lazy Fish","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 71/100 | Đạt: 27/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","4257","Kiểm tra SEO Onpage: ÁO NỈ - SWEATER","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 71/100 | Đạt: 27/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8094","Kiểm tra SEO Onpage: Set Đồ Nam ICONDENIM Lunary","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5068","Kiểm tra SEO Onpage: Set Áo Quần Nam ICONDENIM Edgestitch","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6892","Kiểm tra SEO Onpage: Quần Jeans Nam ICONDENIM Dark Mode","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 58/100 | Đạt: 22/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","8229","Kiểm tra SEO Onpage: Runpow Collection 2026","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","7075","Kiểm tra SEO Onpage: ÁO KHOÁC","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7345","Kiểm tra SEO Onpage: Áo Polo Nam ProCOOL ICONDENIM Seam Sealing","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6171","Kiểm tra SEO Onpage: Quần Short Linen Nam ICONDENIM Azura","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 63/100 | Đạt: 24/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","6514","Kiểm tra SEO Onpage: Áo Tank Top RUNPOW Aero Jacquard","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 84/100 | Đạt: 32/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5748","Kiểm tra SEO Onpage: QUẦN TÂY","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6559","Kiểm tra SEO Onpage: Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Whirling Petals","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5678","Kiểm tra SEO Onpage: Áo Thun Nam Disney Stitch Ohana Vibes Form Oversize","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6055","Kiểm tra SEO Onpage: Quần Short Nam RUNPOW In Camo","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","8435","Kiểm tra SEO Onpage: Sản Phẩm Mới","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 71/100 | Đạt: 27/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8509","Kiểm tra SEO Onpage: Quần Short Nam RUNPOW Aero Twin","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 20/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","4604","Kiểm tra SEO Onpage: Chính Sách Gov","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 68/100 | Đạt: 26/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6216","Kiểm tra SEO Onpage: SET QUẦN ÁO","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","4723","Kiểm tra SEO Onpage: AIRFLEX™","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 68/100 | Đạt: 26/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","3929","Kiểm tra SEO Onpage: ĐỒ LÓT - BOXER","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 68/100 | Đạt: 26/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5429","Kiểm tra SEO Onpage: Retro Sport | Fall Collection 2025","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 58/100 | Đạt: 22/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","6257","Kiểm tra SEO Onpage: Banner World Cup","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8105","Kiểm tra SEO Onpage: Áo Thun Nam ICONDENIM Prime Seven","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 71/100 | Đạt: 27/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","4562","Kiểm tra SEO Onpage: Outlet","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"","885","Kịch bản Test @smoke @regression","","2026-07-17","passed","2026-07-17","","example.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5592","Kiểm tra SEO Onpage: ÁO","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5905","Kiểm tra SEO Onpage: VÍ","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","4632","Kiểm tra SEO Onpage: ÁO LEN","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 58/100 | Đạt: 22/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","9609","Kiểm tra SEO Onpage: Disney | Mickey & Friend","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5273","Kiểm tra SEO Onpage: ICON105 Lightweight™","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8175","Kiểm tra SEO Onpage: Quần Short Nam ICONDENIM Striped","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","12850","Kiểm tra SEO Onpage: Quần Short Kaki Nam ICONDENIM Scisp","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","11286","Kiểm tra SEO Onpage: Quần Tây Nam ICONDENIM Airflex Gọn Nhẹ Linh Hoạt Performance","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 58/100 | Đạt: 22/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","5184","Kiểm tra SEO Onpage: The Originals Legacy Collection","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","13265","Kiểm tra SEO Onpage: Quần Jeans Nam ICONDENIM Vintage Brown","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 84/100 | Đạt: 32/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5841","Kiểm tra SEO Onpage: ÁO SƠ MI","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7130","Kiểm tra SEO Onpage: Áo Thun Nam ICONDENIM Green Pitch","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6774","Kiểm tra SEO Onpage: Quần Tây Nam ICONDENIM Axis Wide","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","9166","Kiểm tra SEO Onpage: Áo Thun Nam ICONDENIM Bear Team","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7478","Kiểm tra SEO Onpage: Quần Tây Nam ICONDENIM City Straight","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5199","Kiểm tra SEO Onpage: ÁO THUN","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7654","Kiểm tra SEO Onpage: Áo Polo Nam ICONDENIM Textured Knit","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","4872","Kiểm tra SEO Onpage: ProCOOL™","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 58/100 | Đạt: 22/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","6492","Kiểm tra SEO Onpage: Áo Tanktop Nam RUNPOW In NatureStride","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8794","Kiểm tra SEO Onpage: Áo Polo Nam ICONDENIM Puro","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 87/100 | Đạt: 33/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","7181","Kiểm tra SEO Onpage: ÁO POLO","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","5604","Kiểm tra SEO Onpage: ÁO HOODIE","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5132","Kiểm tra SEO Onpage: Hướng dẫn đặt hàng","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 58/100 | Đạt: 22/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","5728","Kiểm tra SEO Onpage: BST RUNPOW","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6555","Kiểm tra SEO Onpage: Tất Cả Sản Phẩm","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 68/100 | Đạt: 26/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5768","Kiểm tra SEO Onpage: San Pham Moi","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 66/100 | Đạt: 25/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","4573","Kiểm tra SEO Onpage: QUẦN JOGGER - QUẦN DÀI","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 71/100 | Đạt: 27/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5055","Kiểm tra SEO Onpage: ÁO BA LỖ","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6400","Kiểm tra SEO Onpage: Áo Khoác Jeans Nam ICONDENIM Skyfold","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8789","Kiểm tra SEO Onpage: Áo Polo Nam ICONDENIM Mono","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 61/100 | Đạt: 23/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","7311","Kiểm tra SEO Onpage: Set Đồ Nam ICONDENIM ICDN PanelPlay","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 79/100 | Đạt: 30/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","8388","Kiểm tra SEO Onpage: QUẦN SHORT","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","6044","Kiểm tra SEO Onpage: Áo Thun Nam ICONDENIM Retro Cooler","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5298","Kiểm tra SEO Onpage: Quần Short Nam ICONDENIM Tropical Mono","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8105","Kiểm tra SEO Onpage: Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Wildbloom","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5492","Kiểm tra SEO Onpage: Áo Thun Nam ICONDENIM Lusitano Legend","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 87/100 | Đạt: 33/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","7538","Kiểm tra SEO Onpage: QUẦN JEAN","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 84/100 | Đạt: 32/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","3805","Kiểm tra SEO Onpage: NÓN","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","9057","Kiểm tra SEO Onpage: Áo Thun Nam ICONDENIM Golden Squad","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5456","Kiểm tra SEO Onpage: Trang chủ (Home Page)","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 31/38 tiêu chí | Ngưỡng: 70%
+
+TỐT","12237","Kiểm tra SEO Onpage: The Poolside Club Collection","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 29/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","5924","Kiểm tra SEO Onpage: Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Midnight Garden","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7262","Kiểm tra SEO Onpage: Set Đồ Nam Ngắn ICONDENIM Orgnls","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 74/100 | Đạt: 28/38 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8036","Kiểm tra SEO Onpage: Áo Tank Top Nam Daily Tank Form Regular","","2026-07-17","passed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
