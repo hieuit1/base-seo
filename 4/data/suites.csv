@@ -1,0 +1,29 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3188","Kịch bản Test @smoke @regression","","2026-07-17","passed","2026-07-17","","example.spec.ts","",""
+"[FAIL] Điểm SEO: 47/100 | Đạt: 18/38 tiêu chí | Ngưỡng: 70%
+
+KÉM","1543","Kiểm tra SEO Onpage: Áo khoác","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 50/100 | Đạt: 19/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","1504","Kiểm tra SEO Onpage: Tất cả sản phẩm","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 47/100 | Đạt: 18/38 tiêu chí | Ngưỡng: 70%
+
+KÉM","1517","Kiểm tra SEO Onpage: Áo ni - sweater","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 47/100 | Đạt: 18/38 tiêu chí | Ngưỡng: 70%
+
+KÉM","1642","Kiểm tra SEO Onpage: Áo thun","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 47/100 | Đạt: 18/38 tiêu chí | Ngưỡng: 70%
+
+KÉM","1535","Kiểm tra SEO Onpage: Áo sơ mi","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 47/100 | Đạt: 18/38 tiêu chí | Ngưỡng: 70%
+
+KÉM","1487","Kiểm tra SEO Onpage: Áo len","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 50/100 | Đạt: 19/38 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","1473","Kiểm tra SEO Onpage: Trang chủ (Home Page)","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 47/100 | Đạt: 18/38 tiêu chí | Ngưỡng: 70%
+
+KÉM","1483","Kiểm tra SEO Onpage: Áo polo","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 47/100 | Đạt: 18/38 tiêu chí | Ngưỡng: 70%
+
+KÉM","1514","Kiểm tra SEO Onpage: Ba lô","","2026-07-17","failed","2026-07-17","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
