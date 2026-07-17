@@ -76,7 +76,7 @@ jobs:
 
       - name: Execute Parallel Shard Testing
         env:
-          ENV: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'staging' }}
+          ENV: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}
           BASE_URL: ${{ vars.BASE_URL }}
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
@@ -108,7 +108,7 @@ jobs:
     if: ${{ !cancelled() }}
     needs: [execute-tests]
     runs-on: ubuntu-latest
-    environment: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'staging' }}
+    environment: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}
     permissions:
       contents: write
       pages: write
@@ -151,7 +151,7 @@ jobs:
           mkdir -p target/allure-results
           cat <<EOF > target/allure-results/environment.properties
           BaseURL=${{ vars.BASE_URL }}
-          Environment=${{ github.event.client_payload.environment || github.event.inputs.environment || 'staging' }}
+          Environment=${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}
           Browser=Chromium
           Project=${{ github.event.repository.name }}
           EOF
@@ -178,7 +178,7 @@ jobs:
           echo "## 📊 KẾT QUẢ KIỂM THỬ TỰ ĐỘNG" >> $GITHUB_STEP_SUMMARY
           echo "| Hạng mục | Thông tin chi tiết |" >> $GITHUB_STEP_SUMMARY
           echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
-          echo "| **Môi trường** | \`${{ github.event.client_payload.environment || github.event.inputs.environment || 'staging' }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Môi trường** | \`${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| **Báo cáo Allure** | 👉 **[XEM BÁO CÁO MỚI NHẤT TẠI ĐÂY](<https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.run_number }}/index.html>)** |" >> $GITHUB_STEP_SUMMARY
           echo "| **Báo cáo Dự phòng** | 👉 **[XEM BÁO CÁO BUILD TRƯỚC ĐÓ (Link dự phòng)](<https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/>)** |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -194,14 +194,14 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Kết quả Test Tự động - Môi trường ${{ github.event.client_payload.environment || github.event.inputs.environment || 'staging' }}"
+          subject: "Kết quả Test Tự động - Môi trường ${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}"
           body: |
             Xin chào team,
             
             Hệ thống kiểm thử tự động Playwright vừa chạy xong.
             
             THÔNG TIN CHI TIẾT:
-            - Môi trường test: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'staging' }}
+            - Môi trường test: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}
             - Trạng thái: Hoàn tất
             
             XEM BÁO CÁO TẠI ĐÂY (Allure Dashboard):
