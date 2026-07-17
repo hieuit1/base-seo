@@ -6,13 +6,12 @@ import * as allure from "allure-js-commons";
 export async function customStep(
     page: Page,
     stepName: string,
-    action: () => Promise<void>
+    action: () => Promise<void>,
+    options?: { screenshot?: boolean }
 ): Promise<void> {
     await allure.step(stepName, async () => {
-        try {
-            await action();
-        } finally {
-            // Đảm bảo luôn đính kèm bằng chứng hình ảnh kể cả khi bước test thành công hay thất bại
+        await action();
+        if (options?.screenshot) {
             const screenshot = await page.screenshot({ fullPage: false });
             await allure.attachment(`Ảnh chụp: ${stepName}`, screenshot, "image/png");
         }
@@ -164,7 +163,8 @@ export class SeoScorecard {
                         `Có ${failed}/${total} tiêu chí không đạt.`
                     );
                 }
-            }
+            },
+            { screenshot: true }
         );
     }
 }

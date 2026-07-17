@@ -8,7 +8,7 @@ import { DEFAULT_SEO_CONFIG } from "../src/constants/seoDefaults";
 test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
   test.beforeEach(async () => {
     await allure.epic("SEO Optimization");
-    await allure.feature("PHẦN A — Tiêu chuẩn cơ bản (parse HTML tĩnh)");
+    await allure.feature("Tiêu chuẩn cơ bản (parse HTML tĩnh)");
   });
 
   // Duyệt qua mảng dữ liệu để tạo ra các test cases tự động (Data-driven)
