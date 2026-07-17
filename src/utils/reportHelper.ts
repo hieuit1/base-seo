@@ -26,14 +26,6 @@ interface ScorecardFailure {
     message: string;
 }
 
-/**
- * Hệ thống chấm điểm SEO — thay thế hoàn toàn expect.soft().
- *
- * Cơ chế:
- *   • check()         → Ghi nhận PASS/FAIL từng tiêu chí, hiển thị ✅/❌ trên Allure
- *                        nhưng KHÔNG làm sập Test Case.
- *   • finalizeScore() → Tổng kết điểm. Nếu dưới ngưỡng mới quăng Error duy nhất → FAIL test.
- */
 export class SeoScorecard {
     private totalChecks = 0;
     private passedChecks = 0;
@@ -42,7 +34,7 @@ export class SeoScorecard {
     /**
      * Wrap 1 tiêu chí SEO con vào allure.step().
      *
-     * @param stepName    — Tên hiển thị trên Allure (VD: "A1.1 — Title phải có nội dung")
+     * @param stepName    — Tên hiển thị trên Allure (VD: "1.1 — Title phải có nội dung")
      * @param condition   — true = PASS, false = FAIL
      * @param errorMessage — Mô tả lỗi khi condition = false
      */
@@ -94,14 +86,6 @@ export class SeoScorecard {
         };
     }
 
-    /**
-     * 🏆 CHỐT SỔ — Gọi ở cuối test để quyết định PASS/FAIL.
-     *
-     * • score >= threshold → Test PASS (xanh), hiện bảng điểm đẹp.
-     * • score <  threshold → Quăng Error duy nhất → Test FAIL (đỏ).
-     *
-     * Đây là nơi DUY NHẤT trong toàn bộ hệ thống quăng lỗi thật.
-     */
     async finalizeScore(page: Page, threshold = 70): Promise<void> {
         const { total, passed, failed, score, failures } = this.stats;
 
