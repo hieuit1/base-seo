@@ -5,6 +5,8 @@ import * as path from "path";
 // Đọc cấu hình môi trường từ biến hệ thống, mặc định là 'qa'
 const environment = process.env.ENV || "qa";
 dotenv.config({ path: path.resolve(__dirname, `src/config/.env.${environment}`) });
+// Fallback: đọc thêm file .env ở root (không override biến đã có từ file trên)
+dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 export default defineConfig({
     testDir: "./tests",
@@ -23,7 +25,7 @@ export default defineConfig({
         baseURL: process.env.BASE_URL || "https://example.com",
         headless: process.env.CI ? true : false,
         screenshot: "on",
-        video: "on",
+        // video: "on",
         trace: "on-first-retry",
     },
     reporter: [

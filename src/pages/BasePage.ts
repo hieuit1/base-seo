@@ -28,4 +28,36 @@ export class BasePage {
         await element.waitFor({ state: "visible" });
         return (await element.textContent())?.trim() || "";
     }
+
+    // ===== CÁC HELPER DÙNG CHUNG CHO SEO =====
+
+    // Lấy nội dung thuộc tính meta tag theo name hoặc property
+    async getMetaContent(nameOrProperty: string): Promise<string | null> {
+        return await this.page.evaluate((attr) => {
+            const meta = document.querySelector(
+                `meta[name="${attr}"], meta[property="${attr}"]`
+            );
+            return meta ? meta.getAttribute("content") : null;
+        }, nameOrProperty);
+    }
+
+    // Lấy text content của tất cả elements matching selector
+    async getAllElementsText(selector: string): Promise<string[]> {
+        return await this.page.locator(selector).allTextContents();
+    }
+
+    // Lấy URL hiện tại của trang
+    getCurrentUrl(): string {
+        return this.page.url();
+    }
+
+    // Kiểm tra HTTP status code của một URL (dùng cho robots.txt, sitemap, broken links)
+    async checkUrlStatus(url: string): Promise<number> {
+        try {
+            const response = await this.page.request.get(url);
+            return response.status();
+        } catch {
+            return 0;
+        }
+    }
 }

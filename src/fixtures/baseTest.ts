@@ -1,10 +1,17 @@
 import { test as baseTest } from "@playwright/test";
+import { SeoPage } from "../pages/SeoPage";
 
 type CoreFixtures = {
-    // Nơi khai báo thêm các Page Object chung cho tương lai
+    // Page Object cho kiểm tra SEO Onpage
+    seoPage: SeoPage;
 };
 
 export const test = baseTest.extend<CoreFixtures>({
+    // Inject SeoPage tự động qua fixture — kế thừa BasePage
+    seoPage: async ({ page }, use) => {
+        await use(new SeoPage(page));
+    },
+
     page: async ({ page }, use) => {
         // LỚP KHIÊN 1: Chặn tải các tài nguyên không mong muốn tại tầng Network
         await page.route("**/*", (route) => {
