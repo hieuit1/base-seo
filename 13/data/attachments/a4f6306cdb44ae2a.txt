@@ -1,0 +1,1 @@
+Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

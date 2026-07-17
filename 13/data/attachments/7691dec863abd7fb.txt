@@ -1,0 +1,34 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          28
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 34 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 34 ký tự, cần 40–65
+   2. [2.2 — Độ dài Meta: 183 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 183 ký tự, cần 120–160
+   3. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [5.2 — Mật độ keyword: 0.17% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.17%, cần ≥ 0.5%
+   6. [5.3 — Keyword "áo thun nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "áo thun nam icondenim" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 29/72)]
+      → Có 29 hình ảnh thiếu thuộc tính 'alt'
+   8. [7.3 — Anchor text chất lượng (lỗi: 21)]
+      → 21 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__14__fceb6582756b44c590e562670ac42864_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__3__2f13fe66e133475495c4948bf848c6b2_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__4__929f4fe3b27f484aa2fb320f31efbf0a_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__1__a3315328c06e4814bd8a10d22177cf99_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-attn-regular-c_bc3d85e8e7fa4aed843b246b50d7849d_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__6__7e08ecc223a54f68b3e2fd84003b5856_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__8__3a22aa14ed924ff88e1a47d989c1f38f_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__11__310c2502f85748a7aa11db35e55052f0_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__2__33aeee2d3ad14559af524b50d763b67e_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__5__5812e18ff7184b62b9a37735de305bea_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__7__6e9e169b1583416c8b28687408410aad_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__12__c106b0cf3f094b3cb43f5ed7cc7dfca2_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__9__223a5343b94945c3ae0268966828a2ae_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-retro-cooler__10__fa3e001d119b4032bbd97df41b77d894_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   10. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

@@ -1,0 +1,908 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: seo.spec.ts >> SEO TIÊU CHUẨN CƠ BẢN CHO WEB >> Kiểm tra SEO Onpage: QUẦN JOGGER - QUẦN DÀI
+- Location: tests/seo.spec.ts:18:9
+
+# Error details
+
+```
+Error: ❌ FAIL — Điểm SEO 66/100 dưới ngưỡng 70%. Có 13/38 tiêu chí không đạt.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "⚡️Flash Sale giảm 15% toàn bộ sản phẩm BST World Cup" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e7]:
+          - strong [ref=e8]: ⚡️Flash Sale giảm 15% toàn bộ sản phẩm BST World Cup
+      - link "☀️Đón hè cùng Bộ Sưu Tập The Poolside Club 2026" [ref=e10] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e11]:
+          - strong [ref=e12]: ☀️Đón hè cùng Bộ Sưu Tập The Poolside Club 2026
+      - link "Voucher 50K cho đơn từ 699K" [ref=e14] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e15]:
+          - strong [ref=e16]: Voucher 50K cho đơn từ 699K
+      - link "Voucher 80K cho đơn từ 999K" [ref=e18] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e19]:
+          - strong [ref=e20]: Voucher 80K cho đơn từ 999K
+    - generic [ref=e23]:
+      - link "160STORE" [ref=e25] [cursor=pointer]:
+        - /url: /
+        - img "160STORE" [ref=e26]
+      - navigation [ref=e27]:
+        - generic [ref=e29]:
+          - textbox "Search" [ref=e31]:
+            - /placeholder: Bạn đang tìm gì...
+          - button "Tìm kiếm" [ref=e32] [cursor=pointer]:
+            - img "Tìm kiếm" [ref=e33]
+      - list [ref=e36]:
+        - listitem [ref=e37]:
+          - generic [ref=e38]:
+            - link "Hệ thống cửa hàng Cửa hàng" [ref=e39] [cursor=pointer]:
+              - /url: https://www.160store.com/pages/lien-he
+              - img "Hệ thống cửa hàng" [ref=e41]
+              - generic [ref=e43]: Cửa hàng
+            - option "Chọn tỉnh/thành phố" [selected]
+            - option "Hà Nội"
+            - option "Bà Rịa - Vũng Tàu"
+            - option "An Giang"
+            - option "Đà Nẵng"
+            - option "Đắk Lắk"
+            - option "Hồ Chí Minh"
+            - option "Cần Thơ"
+            - option "Đồng Nai"
+            - option "Đà Nẵng"
+            - option "Hồ Chí Minh"
+            - option "TPHCM - Bình Dương"
+            - option "Hà Nội"
+            - option "Hồ Chí Minh"
+            - option "Đồng Tháp - Tiền Giang"
+            - option "Cần Thơ"
+            - option "Hồ Chí Minh"
+            - option "Chọn Quận/huyện" [selected]
+        - listitem [ref=e44]:
+          - generic [ref=e45]:
+            - link "Tài khoản Đăng nhập" [ref=e46] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - img "Tài khoản" [ref=e48]
+              - generic [ref=e49]: Đăng nhập
+            - generic:
+              - generic:
+                - generic: Đăng nhập tài khoản
+                - paragraph: "Nhập email và mật khẩu của bạn:"
+              - generic:
+                - generic:
+                  - generic:
+                    - textbox "Nhập email hoặc số điện thoại"
+                  - generic:
+                    - textbox "Mật khẩu"
+                  - generic:
+                    - button "Đăng nhập"
+                - generic:
+                  - paragraph:
+                    - text: Khách hàng mới?
+                    - link "Tạo tài khoản":
+                      - /url: /account/register
+                  - paragraph:
+                    - text: Quên mật khẩu?
+                    - button "Khôi phục mật khẩu"
+        - listitem [ref=e50]:
+          - link "Hệ thống cửa hàng 0 Giỏ hàng" [ref=e52] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=e53]:
+              - img "Hệ thống cửa hàng" [ref=e54]
+              - generic [ref=e55]: "0"
+            - generic [ref=e56]: Giỏ hàng
+    - navigation [ref=e60]:
+      - list [ref=e61]:
+        - listitem [ref=e62]:
+          - link "🔎 HÀNG MỚI" [ref=e63] [cursor=pointer]:
+            - /url: /collections/san-pham-moi
+            - generic [ref=e64]: 🔎 HÀNG MỚI
+          - generic [ref=e65]: New
+        - listitem [ref=e66]:
+          - link "SẢN PHẨM" [ref=e67] [cursor=pointer]:
+            - /url: /collections/tat-ca-san-pham
+            - generic [ref=e68]: SẢN PHẨM
+        - listitem [ref=e70]:
+          - link "ÁO NAM" [ref=e71] [cursor=pointer]:
+            - /url: /collections/ao
+            - generic [ref=e72]: ÁO NAM
+        - listitem [ref=e74]:
+          - link "QUẦN NAM" [ref=e75] [cursor=pointer]:
+            - /url: /collections/quan
+            - generic [ref=e76]: QUẦN NAM
+        - listitem [ref=e78]:
+          - link "PHỤ KIỆN" [ref=e79] [cursor=pointer]:
+            - /url: /collections/nhom-phu-kien-khac
+            - generic [ref=e80]: PHỤ KIỆN
+        - listitem [ref=e82]:
+          - link "BST Hè 2026" [ref=e83] [cursor=pointer]:
+            - /url: /collections/the-poolside-club-collection
+            - generic [ref=e84]:
+              - img [ref=e85]
+              - text: BST Hè 2026
+        - listitem [ref=e86]:
+          - link "OUTLET" [ref=e87] [cursor=pointer]:
+            - /url: /collections/outlet
+            - generic [ref=e88]: OUTLET
+          - generic [ref=e89]: "-50%"
+        - listitem [ref=e90]:
+          - link "COLLECTION" [ref=e91] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e92]: COLLECTION
+        - listitem [ref=e94]:
+          - link "JEANS" [ref=e95] [cursor=pointer]:
+            - /url: /collections/quan-jeans
+            - generic [ref=e96]: JEANS
+        - listitem [ref=e98]:
+          - link "TIN THỜI TRANG" [ref=e99] [cursor=pointer]:
+            - /url: https://www.160store.com/blogs/all
+            - generic [ref=e100]: TIN THỜI TRANG
+  - text: + + + + + + + + +
+  - main [ref=e101]:
+    - list [ref=e104]:
+      - listitem [ref=e105]:
+        - link "Trang chủ" [ref=e106] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=e107]:
+        - text: /
+        - generic [ref=e108]: QUẦN JOGGER - QUẦN DÀI
+    - generic [ref=e111]:
+      - img "QUẦN JOGGER - QUẦN DÀI" [ref=e114]
+      - generic [ref=e116]:
+        - generic [ref=e119]:
+          - text: "Sắp xếp:"
+          - combobox [ref=e120] [cursor=pointer]:
+            - option "Sản phẩm nổi bật" [selected]
+            - 'option "Giá: Tăng dần"'
+            - 'option "Giá: Giảm dần"'
+            - 'option "Tên: A-Z"'
+            - 'option "Tên: Z-A"'
+            - option "Cũ nhất"
+            - option "Mới nhất"
+            - option "Bán chạy nhất"
+            - 'option "Tồn kho: Giảm dần"'
+        - text: 
+        - generic [ref=e121]:
+          - generic [ref=e123]:
+            - link "Quần Jogger Nam RUNPOW Urban Stride" [ref=e125] [cursor=pointer]:
+              - /url: /products/quan-jogger-nam-runpow-urban-stride
+              - img "Quần Jogger Nam RUNPOW Urban Stride" [ref=e126]
+            - generic [ref=e128]: 20%
+            - generic [ref=e129]:
+              - heading "Quần Jogger Nam RUNPOW Urban Stride" [level=3] [ref=e130]:
+                - link "Quần Jogger Nam RUNPOW Urban Stride" [ref=e131] [cursor=pointer]:
+                  - /url: /products/quan-jogger-nam-runpow-urban-stride
+              - img [ref=e134]:
+                - generic [ref=e136]: Giá trải nghiệm
+              - generic [ref=e137]:
+                - generic [ref=e138]:
+                  - paragraph [ref=e139]:
+                    - text: 429,000₫
+                    - deletion [ref=e140]: 539,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e142] [cursor=pointer]:
+                    - generic [ref=e143]:
+                      - img "Thêm vào giỏ" [ref=e144]
+                      - img "Thêm vào giỏ" [ref=e145]
+                - list
+          - generic [ref=e147]:
+            - link "Quần Jogger Nam ICONDENIM Calm" [ref=e149] [cursor=pointer]:
+              - /url: /products/quan-jogger-nam-icondenim-calm
+              - img "Quần Jogger Nam ICONDENIM Calm" [ref=e150]
+            - generic [ref=e151]:
+              - heading "Quần Jogger Nam ICONDENIM Calm" [level=3] [ref=e152]:
+                - link "Quần Jogger Nam ICONDENIM Calm" [ref=e153] [cursor=pointer]:
+                  - /url: /products/quan-jogger-nam-icondenim-calm
+              - img [ref=e156]:
+                - generic [ref=e157]: Hàng Mới
+              - generic [ref=e158]:
+                - generic [ref=e159]:
+                  - paragraph [ref=e160]: 479,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e162] [cursor=pointer]:
+                    - generic [ref=e163]:
+                      - img "Thêm vào giỏ" [ref=e164]
+                      - img "Thêm vào giỏ" [ref=e165]
+                - list
+          - generic [ref=e167]:
+            - link "Quần Jogger Nam ICONDENIM Roadman" [ref=e169] [cursor=pointer]:
+              - /url: /products/quan-jogger-nam-icondenim-roadman
+              - img "Quần Jogger Nam ICONDENIM Roadman" [ref=e170]
+            - generic [ref=e171]:
+              - heading "Quần Jogger Nam ICONDENIM Roadman" [level=3] [ref=e172]:
+                - link "Quần Jogger Nam ICONDENIM Roadman" [ref=e173] [cursor=pointer]:
+                  - /url: /products/quan-jogger-nam-icondenim-roadman
+              - img [ref=e176]:
+                - generic [ref=e177]: Hàng Mới
+              - generic [ref=e178]:
+                - generic [ref=e179]:
+                  - paragraph [ref=e180]: 499,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e182] [cursor=pointer]:
+                    - generic [ref=e183]:
+                      - img "Thêm vào giỏ" [ref=e184]
+                      - img "Thêm vào giỏ" [ref=e185]
+                - list
+          - generic [ref=e187]:
+            - link "Quần Jogger Nam Cargo ICONDENIM Military" [ref=e189] [cursor=pointer]:
+              - /url: /products/quan-jogger-nam-cargo-icondenim-military
+              - img "Quần Jogger Nam Cargo ICONDENIM Military" [ref=e190]
+            - generic [ref=e191]:
+              - heading "Quần Jogger Nam Cargo ICONDENIM Military" [level=3] [ref=e192]:
+                - link "Quần Jogger Nam Cargo ICONDENIM Military" [ref=e193] [cursor=pointer]:
+                  - /url: /products/quan-jogger-nam-cargo-icondenim-military
+              - img [ref=e196]:
+                - generic [ref=e197]: Hàng Mới
+              - generic [ref=e198]:
+                - generic [ref=e199]:
+                  - paragraph [ref=e200]: 579,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e202] [cursor=pointer]:
+                    - generic [ref=e203]:
+                      - img "Thêm vào giỏ" [ref=e204]
+                      - img "Thêm vào giỏ" [ref=e205]
+                - list
+          - generic [ref=e207]:
+            - link "Set Đồ Nam ICONDENIM Distance" [ref=e209] [cursor=pointer]:
+              - /url: /products/set-do-nam-icondenim-distance
+              - img "Set Đồ Nam ICONDENIM Distance" [ref=e210]
+            - generic [ref=e212]: 20%
+            - generic [ref=e213]:
+              - heading "Set Đồ Nam ICONDENIM Distance" [level=3] [ref=e214]:
+                - link "Set Đồ Nam ICONDENIM Distance" [ref=e215] [cursor=pointer]:
+                  - /url: /products/set-do-nam-icondenim-distance
+              - img [ref=e218]:
+                - generic [ref=e220]: Sale
+              - generic [ref=e221]:
+                - generic [ref=e222]:
+                  - paragraph [ref=e223]: 319,200₫ ~ 662,400₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e225] [cursor=pointer]:
+                    - generic [ref=e226]:
+                      - img "Thêm vào giỏ" [ref=e227]
+                      - img "Thêm vào giỏ" [ref=e228]
+                - list
+          - generic [ref=e230]:
+            - link "Quần Jogger Nam ICONDENIM Milesway" [ref=e232] [cursor=pointer]:
+              - /url: /products/quan-jogger-nam-icondenim-milesway
+              - img "Quần Jogger Nam ICONDENIM Milesway" [ref=e233]
+            - generic [ref=e235]: 30%
+            - generic [ref=e236]:
+              - heading "Quần Jogger Nam ICONDENIM Milesway" [level=3] [ref=e237]:
+                - link "Quần Jogger Nam ICONDENIM Milesway" [ref=e238] [cursor=pointer]:
+                  - /url: /products/quan-jogger-nam-icondenim-milesway
+              - img [ref=e241]:
+                - generic [ref=e243]: Sale
+              - generic [ref=e244]:
+                - generic [ref=e245]:
+                  - paragraph [ref=e246]:
+                    - text: 279,000₫
+                    - deletion [ref=e247]: 399,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e249] [cursor=pointer]:
+                    - generic [ref=e250]:
+                      - img "Thêm vào giỏ" [ref=e251]
+                      - img "Thêm vào giỏ" [ref=e252]
+                - list
+          - generic [ref=e254]:
+            - link "Quần Jogger Nam ICONDENIM Dashfield" [ref=e256] [cursor=pointer]:
+              - /url: /products/quan-jogger-nam-icondenim-dashfield
+              - img "Quần Jogger Nam ICONDENIM Dashfield" [ref=e257]
+            - generic [ref=e259]: 54%
+            - generic [ref=e260]:
+              - heading "Quần Jogger Nam ICONDENIM Dashfield" [level=3] [ref=e261]:
+                - link "Quần Jogger Nam ICONDENIM Dashfield" [ref=e262] [cursor=pointer]:
+                  - /url: /products/quan-jogger-nam-icondenim-dashfield
+              - img [ref=e265]:
+                - generic [ref=e267]: Hot Deal
+              - generic [ref=e268]:
+                - generic [ref=e269]:
+                  - paragraph [ref=e270]:
+                    - text: 199,000₫
+                    - deletion [ref=e271]: 429,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e273] [cursor=pointer]:
+                    - generic [ref=e274]:
+                      - img "Thêm vào giỏ" [ref=e275]
+                      - img "Thêm vào giỏ" [ref=e276]
+                - list
+          - generic [ref=e278]:
+            - link "Quần Dài Nam ICONDENIM Linen Ease Trourses" [ref=e280] [cursor=pointer]:
+              - /url: /products/quan-dai-nam-icondenim-linen-ease-trourses
+              - img "Quần Dài Nam ICONDENIM Linen Ease Trourses" [ref=e281]
+            - generic [ref=e283]: 30%
+            - generic [ref=e284]:
+              - heading "Quần Dài Nam ICONDENIM Linen Ease Trourses" [level=3] [ref=e285]:
+                - link "Quần Dài Nam ICONDENIM Linen Ease Trourses" [ref=e286] [cursor=pointer]:
+                  - /url: /products/quan-dai-nam-icondenim-linen-ease-trourses
+              - img [ref=e289]:
+                - generic [ref=e291]: Sale
+              - generic [ref=e292]:
+                - generic [ref=e293]:
+                  - paragraph [ref=e294]:
+                    - text: 299,000₫
+                    - deletion [ref=e295]: 429,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e297] [cursor=pointer]:
+                    - generic [ref=e298]:
+                      - img "Thêm vào giỏ" [ref=e299]
+                      - img "Thêm vào giỏ" [ref=e300]
+                - list
+          - generic [ref=e302]:
+            - link "quan-dai-nam-icondenim-tatical-geared" [ref=e304] [cursor=pointer]:
+              - /url: /products/quan-dai-nam-icondenim-tatical-geared
+              - img "quan-dai-nam-icondenim-tatical-geared" [ref=e305]
+            - generic [ref=e306]:
+              - heading "Quần Dài Nam ICONDENIM Tatical Geared" [level=3] [ref=e307]:
+                - link "Quần Dài Nam ICONDENIM Tatical Geared" [ref=e308] [cursor=pointer]:
+                  - /url: /products/quan-dai-nam-icondenim-tatical-geared
+              - img [ref=e311]:
+                - generic [ref=e312]: Hàng Mới
+              - generic [ref=e313]:
+                - generic [ref=e314]:
+                  - paragraph [ref=e315]: 449,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e317] [cursor=pointer]:
+                    - generic [ref=e318]:
+                      - img "Thêm vào giỏ" [ref=e319]
+                      - img "Thêm vào giỏ" [ref=e320]
+                - list
+          - generic [ref=e322]:
+            - link "Set Đồ Nam ICONDENIM Embroidered Essence" [ref=e324] [cursor=pointer]:
+              - /url: /products/set-do-icondenim-embroidered-essence
+              - img "Set Đồ Nam ICONDENIM Embroidered Essence" [ref=e325]
+            - generic [ref=e327]: 63%
+            - generic [ref=e328]:
+              - heading "Set Đồ Nam ICONDENIM Embroidered Essence" [level=3] [ref=e329]:
+                - link "Set Đồ Nam ICONDENIM Embroidered Essence" [ref=e330] [cursor=pointer]:
+                  - /url: /products/set-do-icondenim-embroidered-essence
+              - img [ref=e333]:
+                - generic [ref=e335]: Hot Deal
+              - generic [ref=e336]:
+                - generic [ref=e337]:
+                  - paragraph [ref=e338]: 149,000₫ ~ 298,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e340] [cursor=pointer]:
+                    - generic [ref=e341]:
+                      - img "Thêm vào giỏ" [ref=e342]
+                      - img "Thêm vào giỏ" [ref=e343]
+                - list
+          - generic [ref=e345]:
+            - link "Quần Dài Nam Linen ICONDENIM Sundaze Rush" [ref=e347] [cursor=pointer]:
+              - /url: /products/quan-dai-nam-linen-icondenim-sundaze-rush
+              - img "Quần Dài Nam Linen ICONDENIM Sundaze Rush" [ref=e348]
+            - generic [ref=e350]: 30%
+            - generic [ref=e351]:
+              - heading "Quần Dài Nam Linen ICONDENIM Sundaze Rush" [level=3] [ref=e352]:
+                - link "Quần Dài Nam Linen ICONDENIM Sundaze Rush" [ref=e353] [cursor=pointer]:
+                  - /url: /products/quan-dai-nam-linen-icondenim-sundaze-rush
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e354]:
+                - generic [ref=e355]:
+                  - paragraph [ref=e356]:
+                    - text: 279,000₫
+                    - deletion [ref=e357]: 399,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e359] [cursor=pointer]:
+                    - generic [ref=e360]:
+                      - img "Thêm vào giỏ" [ref=e361]
+                      - img "Thêm vào giỏ" [ref=e362]
+                - list
+          - generic [ref=e364]:
+            - link "Quần Dài Nam ICONDENIM Basic" [ref=e366] [cursor=pointer]:
+              - /url: /products/quan-dai-nam-icondenim-basic
+              - img "Quần Dài Nam ICONDENIM Basic" [ref=e367]
+            - generic [ref=e368]:
+              - heading "Quần Dài Nam ICONDENIM Basic" [level=3] [ref=e369]:
+                - link "Quần Dài Nam ICONDENIM Basic" [ref=e370] [cursor=pointer]:
+                  - /url: /products/quan-dai-nam-icondenim-basic
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e371]:
+                - generic [ref=e372]:
+                  - paragraph [ref=e373]: 389,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e375] [cursor=pointer]:
+                    - generic [ref=e376]:
+                      - img "Thêm vào giỏ" [ref=e377]
+                      - img "Thêm vào giỏ" [ref=e378]
+                - list
+        - generic:
+          - paragraph
+        - generic [ref=e379]:
+          - 'heading "FAQ – Quần Jogger Nam 160STORE: Thoải mái, linh hoạt, chuẩn phong cách" [level=2] [ref=e380]'
+          - paragraph [ref=e381]: Quần jogger là lựa chọn hoàn hảo cho phong cách năng động, tiện lợi và dễ phối. Tại 160STORE, jogger được tối ưu form dáng cho nam giới Việt, chất liệu đa dạng và ứng dụng linh hoạt từ tập luyện đến dạo phố.
+          - button "Làm sao chọn đúng size quần jogger? ▾" [ref=e383] [cursor=pointer]
+          - button "Jogger và quần thể thao khác nhau thế nào? ▾" [ref=e385] [cursor=pointer]
+          - button "Nếu mua online chọn sai size, có được đổi không? ▾" [ref=e387] [cursor=pointer]
+          - button "Quần jogger tại 160STORE có gì khác biệt? ▾" [ref=e389] [cursor=pointer]
+          - button "Jogger mùa lạnh nên chọn loại nào? ▾" [ref=e391] [cursor=pointer]
+          - button "Quần jogger nên phối với gì để trông chỉn chu hơn? ▾" [ref=e393] [cursor=pointer]
+        - generic [ref=e394]:
+          - generic [ref=e395]:
+            - paragraph [ref=e396]:
+              - text: Đã là đàn ông, ai cũng muốn có một món đồ vừa mặc sướng như đồ ngủ mà ra đường vẫn trông lịch sự. Đó là lý do
+              - strong [ref=e397]: quần jogger nam đẹp
+              - text: với phần ống bo gọn gàng trở thành lựa chọn quốc dân, giúp anh em che đi bắp chân quá to hoặc quá nhỏ, tạo nên một vẻ ngoài gọn gàng và đầy nam tính.
+            - paragraph [ref=e398]:
+              - text: Chỉ với một chiếc quần thiết kế
+              - strong [ref=e399]: phù hợp mặc hằng ngày
+              - text: ", anh em có thể thoải mái biến hóa từ"
+              - strong [ref=e400]: phong cách năng động
+              - text: khi đi cà phê đến vẻ ngoài bụi bặm khi chạy xe dạo phố, giúp tiết kiệm thời gian mà vẫn đảm bảo được cái gu riêng của mình.
+            - paragraph [ref=e401]:
+              - img "Quần jogger nổi bật thiết kế thể thao, năng động" [ref=e402]
+            - paragraph [ref=e403]:
+              - emphasis [ref=e404]: Quần jogger nổi bật thiết kế thể thao, năng động
+            - heading "Các dòng quần jogger nam tại 160STORE" [level=2] [ref=e405]:
+              - strong [ref=e406]: Các dòng quần jogger nam tại 160STORE
+            - paragraph [ref=e407]:
+              - text: Tại
+              - link "160STORE" [ref=e408] [cursor=pointer]:
+                - /url: http://160store.com
+              - text: ", chúng mình đã dồn hết kinh nghiệm nhiều năm trong giới thời trang để chọn ra những dòng quần đáng đồng tiền bát gạo nhất dành cho anh em."
+            - heading "1. Quần jogger nỉ nam" [level=3] [ref=e409]:
+              - strong [ref=e410]: 1. Quần jogger nỉ nam
+            - paragraph [ref=e411]:
+              - text: Lý do dòng quần này luôn cháy hàng là bởi chất nỉ mặc cực êm, co giãn thoải mái cho mọi hoạt động. Khi diện mẫu quần này, anh em sẽ có ngay một
+              - link "outfit streetwear nam" [ref=e412] [cursor=pointer]:
+                - /url: https://160store.com/blogs/fashion-tutorial/phong-cach-streetwear
+                - strong [ref=e413]: outfit streetwear nam
+              - text: đầy phóng khoáng, mang lại cảm giác dễ chịu tuyệt đối dù là lúc đi tập hay khi thư giãn cùng bạn bè.
+            - paragraph [ref=e414]:
+              - img "Quần jogger nỉ nam" [ref=e415]
+            - paragraph [ref=e416]:
+              - emphasis [ref=e417]: Quần jogger nỉ chất vải mềm, co giãn thoải mái
+            - heading "2. Quần jogger kaki nam" [level=3] [ref=e418]:
+              - strong [ref=e419]: 2. Quần jogger kaki nam
+            - paragraph [ref=e420]:
+              - text: Nếu anh em cần một diện mạo trông người lớn và chỉn chu hơn thì chất liệu kaki đứng form là sự lựa chọn số một. Sự kết hợp giữa kiểu dáng thể thao và chất vải bền bỉ tạo ra một bộ
+              - strong [ref=e421]: trang phục casual nam
+              - text: hoàn hảo, giúp anh em tự tin xuất hiện tại văn phòng hay trong những buổi hẹn hò quan trọng mà không sợ quá xuề xòa.
+            - paragraph [ref=e422]:
+              - img "Quần jogger kaki thoải mái nhưng vẫn chỉn chu" [ref=e423]
+            - paragraph [ref=e424]:
+              - emphasis [ref=e425]: Quần jogger kaki thoải mái nhưng vẫn chỉn chu
+            - heading "3. Quần jogger dù / thể thao" [level=3] [ref=e426]:
+              - strong [ref=e427]: 3. Quần jogger dù / thể thao
+            - generic [ref=e428]:
+              - paragraph [ref=e429]:
+                - img "Jogger thể thao năng động" [ref=e430]
+              - emphasis [ref=e431]: Jogger thể thao năng động
+            - paragraph [ref=e432]: Dành cho những anh em yêu thích sự thoải mái, quần jogger dù với đặc tính siêu nhẹ và thoáng khí là giải pháp không thể bỏ qua. Kết quả là anh em sẽ cảm thấy cực kỳ nhẹ nhàng khi di chuyển, đồng thời chất vải này rất ít bám bẩn, giúp anh em luôn giữ được vẻ ngoài sạch sẽ suốt cả ngày dài.
+            - paragraph [ref=e433]:
+              - img "Quần jogger thể thao thoải mái, nhẹ nhàng khi di chuyển" [ref=e434]
+            - paragraph [ref=e435]:
+              - emphasis [ref=e436]: Quần jogger thể thao thoải mái, nhẹ nhàng khi di chuyển
+            - heading "4. Quần jogger form slim / gọn" [level=3] [ref=e437]:
+              - strong [ref=e438]: 4. Quần jogger form slim / gọn
+            - paragraph [ref=e439]:
+              - text: Lý do mẫu quần này được anh em săn đón là nhờ thiết kế ôm nhẹ theo chân, giúp đôi chân trông dài và gọn hơn hẳn. Đây là dòng
+              - strong [ref=e440]: quần jogger nam cao cấp
+              - text: giải quyết triệt để nỗi lo mặc quần rộng bị lùn, mang lại diện mạo cân đối và cực kỳ hiện đại cho nam giới.
+            - paragraph [ref=e441]:
+              - img "Quần jogger form slim thiết kế ôm, hiện đại" [ref=e442]
+            - paragraph [ref=e443]:
+              - emphasis [ref=e444]: Quần jogger form slim thiết kế ôm, hiện đại
+            - heading "Gợi ý phối đồ với quần jogger nam" [level=2] [ref=e445]:
+              - strong [ref=e446]: Gợi ý phối đồ với quần jogger nam
+            - paragraph [ref=e447]: "Quần Jogger từ lâu đã trở thành món đồ không thể thiếu trong tủ đồ của mọi chàng trai. Tuy nhiên, bạn cần nắm vững bí kíp phối đồ phù hợp để dễ dàng biến hóa mọi phong cách với quần Jogger. Sau đây là một vài gợi ý:"
+            - paragraph [ref=e448]:
+              - img "Phối đồ quần jogger" [ref=e449]
+            - list [ref=e450]:
+              - listitem [ref=e451]:
+                - strong [ref=e452]: "Năng động với áo thun:"
+                - text: Kết hợp Jogger cùng áo thun trơn hoặc in họa tiết là cách phối đồ đơn giản nhưng không bao giờ lỗi mốt. Lựa chọn áo thun basic với gam màu trung tính như đen, trắng, xám để dễ dàng mix & match với nhiều màu Jogger khác nhau.
+              - listitem [ref=e453]:
+                - strong [ref=e454]: "Cá tính với áo hoodie:"
+                - text: Bộ đôi Jogger và hoodie mang đến sự trẻ trung, cá tính và cực kỳ "cool ngầu". Hãy chọn hoodie có kiểu dáng ôm vừa vặn, màu sắc tương đồng hoặc tạo điểm nhấn với họa tiết bắt mắt.
+              - listitem [ref=e455]:
+                - strong [ref=e456]: "Lịch lãm với áo sơ mi:"
+                - text: Bạn hoàn toàn có thể "nâng cấp" chiếc Jogger của mình bằng cách phối cùng áo sơ mi. Hãy chọn sơ mi trơn hoặc họa tiết kẻ sọc, kết hợp cùng blazer hoặc khoác ngoài để tạo vẻ ngoài thanh lịch, cuốn hút.
+              - listitem [ref=e457]:
+                - strong [ref=e458]: "Chất chơi với áo bomber:"
+                - text: Sự kết hợp giữa Jogger và bomber mang đến phong cách bụi bặm, nam tính.
+              - listitem [ref=e459]:
+                - strong [ref=e460]: "Phá cách với áo tanktop:"
+                - text: Thể hiện sự khỏe khoắn và phóng khoáng với áo tanktop và quần Jogger. Hãy lựa chọn chất liệu cotton mềm mại để tăng sự thoải mái khi vận động.
+            - paragraph [ref=e461]:
+              - img "Kết hợp áo sweater với quần Jogger thể hiện sự năng động" [ref=e462]
+            - paragraph [ref=e463]:
+              - emphasis [ref=e464]: Kết hợp áo sweater với quần Jogger thể hiện sự năng động
+            - heading "Cách chọn size quần jogger nam phù hợp" [level=2] [ref=e465]:
+              - strong [ref=e466]: Cách chọn size quần jogger nam phù hợp
+            - paragraph [ref=e467]: "Việc lựa chọn size quần Jogger nam theo cân nặng giúp tôn dáng và tạo cảm giác thoải mái khi vận động. Dưới đây là một số mẹo để bạn dễ dàng lựa chọn size quần phù hợp:"
+            - list [ref=e468]:
+              - listitem [ref=e469]:
+                - strong [ref=e470]: Chọn theo cân nặng và chiều cao
+                - text: ": Luôn dựa trên số đo thực tế để đối chiếu với bảng size, tránh việc đoán mò dẫn đến mặc quá chật hoặc quá rộng."
+              - listitem [ref=e471]:
+                - strong [ref=e472]: Lưu ý form dáng
+                - text: ": Nếu anh em thích mặc gọn hãy chọn size chuẩn theo form slim, còn thích thoải mái kiểu hip-hop thì cứ mạnh dạn tăng thêm một size."
+              - listitem [ref=e473]:
+                - strong [ref=e474]: Tham khảo bảng size chi tiết
+                - text: ": Bạn cũng có thể tham khảo bảng size chuẩn và đối chiếu với số đo của mình để lựa chọn. Sau đây là bảng size quần Jogger tại 160STORE, cùng tham khảo nhé!"
+            - generic [ref=e475]:
+              - paragraph [ref=e476]:
+                - img "Chọn size quần jogger" [ref=e477]
+              - paragraph [ref=e478]:
+                - emphasis [ref=e479]: Chọn size quần jogger đúng chuẩn theo cân nặng và chiều cao
+              - paragraph [ref=e480]:
+                - strong [ref=e481]: Tham khảo thêm
+                - text: ":"
+                - link "Cách chọn size quần jogger" [ref=e482] [cursor=pointer]:
+                  - /url: https://160store.com/blogs/huong-dan-chon-size/huong-dan-chon-size-quan-jogger-chuan-theo-can-nang-va-chieu-cao
+            - heading "Mua quần jogger nam tại 160STORE có gì khác?" [level=2] [ref=e483]:
+              - strong [ref=e484]: Mua quần jogger nam tại 160STORE có gì khác?
+            - paragraph [ref=e485]: Với tinh thần lấy khách hàng làm trung tâm, 160STORE luôn nỗ lực mang lại những giá trị thực tế nhất trên mỗi sản phẩm cung cấp.
+            - list [ref=e486]:
+              - listitem [ref=e487]:
+                - strong [ref=e488]: Form quần chuẩn nam Việt
+                - text: ": Mọi mẫu quần tại đây đều được tinh chỉnh dựa trên kiến thức và kinh nghiệm lâu năm để vừa vặn nhất với vóc dáng của anh em mình, đảm bảo mặc lên là chuẩn bài."
+              - listitem [ref=e489]:
+                - strong [ref=e490]: Chất liệu tuyển chọn
+                - text: ": 160STORE là nhà phân phối chính hãng các thương hiệu như ICON DENIM, RUNPOW, NOMOUS ESSENTIALS, MASCUS, BOUTON. Điều này đảm bảo mỗi sản phẩm"
+                - strong [ref=e491]: quần jogger nam chính hãng
+                - text: khi đến tay khách hàng đều cực kỳ bền bỉ và xứng đáng với chất lượng.
+              - listitem [ref=e492]:
+                - strong [ref=e493]: Hệ thống cửa hàng và online tiện lợi
+                - text: ": Anh em có thể ghé qua"
+                - link "cửa hàng gần nhất" [ref=e494] [cursor=pointer]:
+                  - /url: https://160store.com/pages/lien-he
+                - text: để thử trực tiếp
+                - strong [ref=e495]: quần jogger nam đẹp tphcm
+                - text: hoặc đặt online nhanh gọn. Đội ngũ nhân viên của chúng mình luôn sẵn sàng tư vấn nhiệt tình để bạn chọn được món đồ ưng ý nhất.
+          - button "Xem thêm" [ref=e497] [cursor=pointer]
+  - generic [ref=e501]:
+    - generic [ref=e502]:
+      - paragraph [ref=e503]: Đăng kí nhận tin
+      - generic [ref=e505]:
+        - generic [ref=e506]:
+          - text: 
+          - textbox "Email" [ref=e507]
+        - button "Đăng ký" [ref=e508] [cursor=pointer]:
+          - generic [ref=e509]: 
+          - text: Đăng ký
+    - list [ref=e511]:
+      - listitem [ref=e512]:
+        - link "Liên hệ với chúng tôi qua Zalo" [ref=e513] [cursor=pointer]:
+          - /url: //zalo.me/3664144181122308942
+          - img "Liên hệ với chúng tôi qua Zalo" [ref=e514]
+      - listitem [ref=e515]:
+        - link [ref=e516] [cursor=pointer]:
+          - /url: https://www.youtube.com/@storehanghieu1608
+          - generic [ref=e517]: 
+      - listitem [ref=e518]:
+        - link [ref=e519] [cursor=pointer]:
+          - /url: https://www.instagram.com/160store
+          - generic [ref=e520]: 
+      - listitem [ref=e521]:
+        - link [ref=e522] [cursor=pointer]:
+          - /url: https://www.facebook.com/160store
+          - generic [ref=e523]: 
+  - contentinfo [ref=e524]:
+    - generic [ref=e526]:
+      - generic [ref=e527]:
+        - generic [ref=e528]:
+          - generic [ref=e530]: Giới thiệu
+          - generic [ref=e531]:
+            - paragraph [ref=e532]: 160STORE - Chuỗi Phân Phối Thời Trang Nam Chuẩn Hiệu
+            - list [ref=e533]:
+              - listitem [ref=e534]:
+                - generic [ref=e535]: 
+                - link "02871006789" [ref=e536] [cursor=pointer]:
+                  - /url: tel:02871006789
+              - listitem [ref=e537]:
+                - generic [ref=e538]: 
+                - link "cs@160store.com" [ref=e539] [cursor=pointer]:
+                  - /url: mailto:cs@160store.com
+              - listitem [ref=e540]:
+                - generic [ref=e541]: 
+                - generic [ref=e542]: "Giờ mở cửa : 08:30 - 22:00"
+              - listitem [ref=e543]:
+                - generic [ref=e544]: 
+                - generic [ref=e545]: Nhân viên tư vấn phản hồi tin nhắn đến 24:00 (Mỗi ngày)
+              - listitem [ref=e546]:
+                - link [ref=e547] [cursor=pointer]:
+                  - /url: http://online.gov.vn/nen-tang/1a643809-3f92-4419-944d-c2d4fdffb78b
+                  - img [ref=e548]
+              - listitem [ref=e549]:
+                - link "DMCA.com Protection Status" [ref=e550] [cursor=pointer]:
+                  - /url: https://www.dmca.com/Protection/Status.aspx?ID=9049de26-d97b-48dc-ab97-1e5fcb221fba&refurl=https://160store.com/collections/quan-joggers
+                  - img "DMCA.com Protection Status" [ref=e551]
+        - generic [ref=e552]:
+          - generic [ref=e554]: CHÍNH SÁCH
+          - list [ref=e556]:
+            - listitem [ref=e557]:
+              - link "Hướng dẫn đặt hàng" [ref=e558] [cursor=pointer]:
+                - /url: /pages/huong-dan-dat-hang
+            - listitem [ref=e559]:
+              - paragraph [ref=e562] [cursor=pointer]: Chính sách
+        - generic [ref=e564]:
+          - link "ĐỊA CHỈ CỬA HÀNG (20 CH)" [ref=e567] [cursor=pointer]:
+            - /url: https://www.160store.com/pages/lien-he
+          - generic [ref=e569]:
+            - generic [ref=e570]:
+              - generic [ref=e571]:
+                - img [ref=e572]
+                - paragraph [ref=e573]: HỒ CHÍ MINH (10 CH)
+              - paragraph [ref=e574]: 274 Ba Cu, Phường Vũng Tàu, TP.HCM
+            - generic [ref=e575]:
+              - generic [ref=e576]:
+                - img [ref=e577]
+                - paragraph [ref=e578]:
+                  - text: HÀ NỘI (2 CH)
+                  - generic [ref=e579]: New
+              - paragraph [ref=e580]: 27 Tôn Đức Thắng - P. Văn Miếu - Quốc Tử Giám; TP. Hà Nội
+            - generic [ref=e581]:
+              - generic [ref=e582]:
+                - img [ref=e583]
+                - paragraph [ref=e584]: CẦN THƠ (2 CH)
+              - paragraph [ref=e585]: Số 35 Trần Phú, Phường Ninh Kiều, TP.Cần Thơ
+            - generic [ref=e586]:
+              - generic [ref=e587]:
+                - img [ref=e588]
+                - paragraph [ref=e589]: ĐÀ NẴNG (2 CH)
+              - paragraph [ref=e590]: 332 Đ. Lê Duẩn, Phường Thanh Khê, TP.Đà Nẵng
+            - link "XEM TẤT CẢ CỬA HÀNG" [ref=e592] [cursor=pointer]:
+              - /url: https://www.160store.com/pages/lien-he
+        - generic [ref=e595]:
+          - generic [ref=e596]: PHƯƠNG THỨC THANH TOÁN
+          - generic [ref=e597]:
+            - img "Image Spay" [ref=e598]
+            - img "Image VNPay" [ref=e599]
+            - img "Image Cod" [ref=e600]
+      - generic [ref=e605]: BẢN QUYỀN THUỘC VỀ 160STORE
+  - list [ref=e607]
+  - button "back to top" [ref=e609] [cursor=pointer]:
+    - img [ref=e610]
+    - text: back to top
+  - paragraph [ref=e616]: Bạn chưa chọn size sản phẩm!
+  - generic:
+    - generic:
+      - generic: 🎯 BÁO CÁO SEO AUDIT CHUYÊN SÂU
+      - generic: "Phần A: On-page cơ bản"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: "66"
+              - generic: SEO
+          - generic: KHÁ
+        - generic:
+          - generic:
+            - generic: "Trang phân tích:"
+            - strong: QUẦN JOGGER - QUẦN DÀI
+          - generic:
+            - generic: "Từ khóa chính:"
+            - strong: quần jogger quần dài
+          - generic:
+            - generic: "Tiêu chí đạt:"
+            - strong: 25/38
+      - generic [ref=e617]:
+        - generic [ref=e618]: "❌ Chi tiết lỗi cần khắc phục (13):"
+        - generic [ref=e619]:
+          - generic [ref=e620]:
+            - generic [ref=e621]:
+              - strong [ref=e622]: 1.3 — Title chứa keyword "quần jogger quần dài"
+              - generic [ref=e623]: "1.3"
+            - generic [ref=e624]: "⚠️ Lỗi: Title không chứa keyword \"quần jogger quần dài\""
+          - generic [ref=e625]:
+            - generic [ref=e626]:
+              - strong [ref=e627]: "1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)"
+              - generic [ref=e628]: "1.4"
+            - generic [ref=e629]: "⚠️ Lỗi: Bỏ qua — keyword \"quần jogger quần dài\" không có trong Title"
+          - generic [ref=e630]:
+            - generic [ref=e631]:
+              - strong [ref=e632]: "2.2 — Độ dài Meta: 179 ký tự (chuẩn: 120–160)"
+              - generic [ref=e633]: "2.2"
+            - generic [ref=e634]: "⚠️ Lỗi: Meta description quá ngắn hoặc quá dài (179 ký tự), cần 120–160"
+          - generic [ref=e635]:
+            - generic [ref=e636]:
+              - strong [ref=e637]: 2.3 — Meta description chứa keyword "quần jogger quần dài"
+              - generic [ref=e638]: "2.3"
+            - generic [ref=e639]: "⚠️ Lỗi: Meta description không chứa keyword \"quần jogger quần dài\""
+          - generic [ref=e640]:
+            - generic [ref=e641]:
+              - strong [ref=e642]: "3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)"
+              - generic [ref=e643]: "3.1"
+            - generic [ref=e644]: "⚠️ Lỗi: Trang không có thẻ H1 nào!"
+          - generic [ref=e645]:
+            - generic [ref=e646]:
+              - strong [ref=e647]: 3.2 — H1 chứa keyword "quần jogger quần dài"
+              - generic [ref=e648]: "3.2"
+            - generic [ref=e649]: "⚠️ Lỗi: Không có H1 để kiểm tra"
+          - generic [ref=e650]:
+            - generic [ref=e651]:
+              - strong [ref=e652]: 4.2 — URL chứa keyword slug "quan-jogger-quan-dai"
+              - generic [ref=e653]: "4.2"
+            - generic [ref=e654]: "⚠️ Lỗi: URL \"/collections/quan-joggers\" không chứa keyword \"quan-jogger-quan-dai\""
+          - generic [ref=e655]:
+            - generic [ref=e656]:
+              - strong [ref=e657]: "5.2 — Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)"
+              - generic [ref=e658]: "5.2"
+            - generic [ref=e659]: "⚠️ Lỗi: Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%"
+          - generic [ref=e660]:
+            - generic [ref=e661]:
+              - strong [ref=e662]: 5.3 — Keyword "quần jogger quần dài" xuất hiện trong 100 từ đầu
+              - generic [ref=e663]: "5.3"
+            - generic [ref=e664]: "⚠️ Lỗi: Keyword \"quần jogger quần dài\" không xuất hiện trong 100 từ đầu"
+          - generic [ref=e665]:
+            - generic [ref=e666]:
+              - strong [ref=e667]: "6.1 — 100% ảnh có thuộc tính alt (thiếu: 9/117)"
+              - generic [ref=e668]: "6.1"
+            - generic [ref=e669]: "⚠️ Lỗi: Có 9 hình ảnh thiếu thuộc tính 'alt'"
+          - generic [ref=e670]:
+            - generic [ref=e671]:
+              - strong [ref=e672]: 6.2 — Có ảnh chứa keyword "quần jogger quần dài" trong alt
+              - generic [ref=e673]: "6.2"
+            - generic [ref=e674]: "⚠️ Lỗi: Không có ảnh nào có alt chứa keyword \"quần jogger quần dài\""
+          - generic [ref=e675]:
+            - generic [ref=e676]:
+              - strong [ref=e677]: "7.3 — Anchor text chất lượng (lỗi: 12)"
+              - generic [ref=e678]: "7.3"
+            - generic [ref=e679]: "⚠️ Lỗi: 12 link có anchor text không tốt: \"\" → /, \"\" → /, \"\" → /, \"\" → /, \"\" → /products/quan-jogger-nam-icondenim-calm, \"\" → /products/quan-jogger-nam-icondenim-roadman, \"\" → /products/quan-jogger-nam-cargo-icondenim-military, \"\" → /products/quan-dai-nam-icondenim-tatical-geared, \"\" → /products/quan-dai-nam-icondenim-basic, \"\" → //zalo.me/3664144181122308942, \"\" → //m.me/1042686802417049, \"\" → //zalo.me/3664144181122308942"
+          - generic [ref=e680]:
+            - generic [ref=e681]:
+              - strong [ref=e682]: "8.7 — Twitter Card tags: 0 thẻ"
+              - generic [ref=e683]: "8.7"
+            - generic [ref=e684]: "⚠️ Lỗi: Trang thiếu Twitter Card tags"
+```
+
+# Test source
+
+```ts
+  60  |                         "text/plain"
+  61  |                     );
+  62  |                     throw new Error(errorMessage); // Ép Allure đánh ❌ cho step này
+  63  |                 });
+  64  |             } catch {
+  65  |                 // Nuốt lỗi — test tiếp tục chạy bình thường
+  66  |             }
+  67  |         }
+  68  |     }
+  69  | 
+  70  |     /** Lấy điểm hiện tại (0–100) */
+  71  |     get score(): number {
+  72  |         if (this.totalChecks === 0) return 100;
+  73  |         return Math.round((this.passedChecks / this.totalChecks) * 100);
+  74  |     }
+  75  | 
+  76  |     /** Lấy thống kê chi tiết */
+  77  |     get stats() {
+  78  |         return {
+  79  |             total: this.totalChecks,
+  80  |             passed: this.passedChecks,
+  81  |             failed: this.totalChecks - this.passedChecks,
+  82  |             score: this.score,
+  83  |             failures: [...this.failures],
+  84  |         };
+  85  |     }
+  86  | 
+  87  |     async finalizeScore(page: Page, threshold = 70): Promise<void> {
+  88  |         const { total, passed, failed, score, failures } = this.stats;
+  89  | 
+  90  |         // Xác định trạng thái
+  91  |         const isPass = score >= threshold;
+  92  |         const statusText = isPass ? "PASS" : "FAIL";
+  93  | 
+  94  |         // Thang điểm SEO mới
+  95  |         let scoreLabel: string;
+  96  |         let statusIcon: string;
+  97  |         if (score >= 93) {
+  98  |             scoreLabel = "XUẤT SẮC";
+  99  |             statusIcon = "💎";
+  100 |         } else if (score >= 77) {
+  101 |             scoreLabel = "TỐT";
+  102 |             statusIcon = "🟢";
+  103 |         } else if (score >= 65) {
+  104 |             scoreLabel = "KHÁ";
+  105 |             statusIcon = "🟡";
+  106 |         } else if (score >= 50) {
+  107 |             scoreLabel = "TRUNG BÌNH";
+  108 |             statusIcon = "🟠";
+  109 |         } else {
+  110 |             scoreLabel = "KÉM";
+  111 |             statusIcon = "🔴";
+  112 |         }
+  113 | 
+  114 |         // Tạo báo cáo tổng kết dạng text
+  115 |         const summaryLines = [
+  116 |             `══════════════════════════════════════`,
+  117 |             `   ${statusIcon} KẾT QUẢ CHẤM ĐIỂM SEO`,
+  118 |             `══════════════════════════════════════`,
+  119 |             `   Điểm số:     ${score}/100`,
+  120 |             `   Đánh giá:    ${scoreLabel}`,
+  121 |             `   Ngưỡng đạt:  ${threshold}%`,
+  122 |             `   Kết quả:     ${statusText}`,
+  123 |             `──────────────────────────────────────`,
+  124 |             `   Tổng tiêu chí:  ${total}`,
+  125 |             `   ✅ Đạt:          ${passed}`,
+  126 |             `   ❌ Không đạt:    ${failed}`,
+  127 |             `══════════════════════════════════════`,
+  128 |         ];
+  129 | 
+  130 |         if (failures.length > 0) {
+  131 |             summaryLines.push(``, `📋 CHI TIẾT LỖI:`);
+  132 |             failures.forEach((f, i) => {
+  133 |                 summaryLines.push(`   ${i + 1}. [${f.step}]`);
+  134 |                 summaryLines.push(`      → ${f.message}`);
+  135 |             });
+  136 |         }
+  137 | 
+  138 |         const summaryText = summaryLines.join("\n");
+  139 | 
+  140 |         // Step cuối cùng — hiển thị bảng điểm + quyết định PASS/FAIL
+  141 |         await customStep(
+  142 |             page,
+  143 |             `13. 🏆 Kết quả chấm điểm SEO: ${score}/100 — ${statusText} (${scoreLabel})`,
+  144 |             async () => {
+  145 |                 // Đính kèm bảng điểm text
+  146 |                 await allure.attachment(
+  147 |                     "Bảng điểm SEO",
+  148 |                     Buffer.from(summaryText, "utf-8"),
+  149 |                     "text/plain"
+  150 |                 );
+  151 | 
+  152 |                 // Gắn description vào Test Case trên Allure
+  153 |                 await allure.description(
+  154 |                     `[${statusText}] Điểm SEO: ${score}/100 | Đạt: ${passed}/${total} tiêu chí | Ngưỡng: ${threshold}%\n\n` +
+  155 |                     `${scoreLabel}`
+  156 |                 );
+  157 | 
+  158 |                 // 🚀 ĐÂY LÀ DÒNG DUY NHẤT quyết định Test PASS hay FAIL
+  159 |                 if (!isPass) {
+> 160 |                     throw new Error(
+      |                           ^ Error: ❌ FAIL — Điểm SEO 66/100 dưới ngưỡng 70%. Có 13/38 tiêu chí không đạt.
+  161 |                         `❌ FAIL — Điểm SEO ${score}/100 dưới ngưỡng ${threshold}%. ` +
+  162 |                         `Có ${failed}/${total} tiêu chí không đạt.`
+  163 |                     );
+  164 |                 }
+  165 |             },
+  166 |             { screenshot: true }
+  167 |         );
+  168 |     }
+  169 | }
+```

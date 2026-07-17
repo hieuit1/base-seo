@@ -1,0 +1,46 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     58/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          22
+   ❌ Không đạt:    16
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 38 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 38 ký tự, cần 40–65
+   2. [1.3 — Title chứa keyword "áo tanktop nam runpow"]
+      → Title không chứa keyword "áo tanktop nam runpow"
+   3. [1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "áo tanktop nam runpow" không có trong Title
+   4. [2.2 — Độ dài Meta: 178 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 178 ký tự, cần 120–160
+   5. [2.3 — Meta description chứa keyword "áo tanktop nam runpow"]
+      → Meta description không chứa keyword "áo tanktop nam runpow"
+   6. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   7. [3.2 — H1 chứa keyword "áo tanktop nam runpow"]
+      → H1 "Áo Tanktop Nam RUNPOW In NatureStride" không chứa keyword "áo tanktop nam runpow"
+   8. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   9. [4.2 — URL chứa keyword slug "ao-tanktop-nam-runpow" ]
+      → URL "/products/a-o-tanktop-nam-runpow-in-naturestride" không chứa keyword "ao-tanktop-nam-runpow"
+   10. [5.2 — Mật độ keyword: 0.04% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.04%, cần ≥ 0.5%
+   11. [5.3 — Keyword "áo tanktop nam runpow" xuất hiện trong 100 từ đầu]
+      → Keyword "áo tanktop nam runpow" không xuất hiện trong 100 từ đầu
+   12. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 29/74)]
+      → Có 29 hình ảnh thiếu thuộc tính 'alt'
+   13. [6.2 — Có ảnh chứa keyword "áo tanktop nam runpow" trong alt]
+      → Không có ảnh nào có alt chứa keyword "áo tanktop nam runpow"
+   14. [7.3 — Anchor text chất lượng (lỗi: 22)]
+      → 22 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //product.hstatic.net/1000253775/product/thi_t_k__ch_a_c__t_n_8f60ec1b6c154b8e98a5c02b9367f895_1024x1024.png, "" → //product.hstatic.net/1000253775/product/160_ao_007-14_348d9e7d0e3a452aa27fcea46f4b4c0d_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-12_0f5af48225a74d4d90d2970e0f92ca97_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-tank-top-vai-nho-form-regular_3a98e369ad44478fb48d9e132cddb75a_1024x1024.png, "" → //product.hstatic.net/1000253775/product/160_ao_007-1_2f976fe08a5e4033a93f38c5c67674a0_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-5_e51c4733b62c4426914d1ee18e736ba2_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-8_085c72bcc88f40f08bad2f5494eace95_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-4_70a65eecd3c5439eada6e17879378a9c_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-3_7d4ad8065f6e49a384067fd80c78e4f0_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-7_c46013650bdb4e77908ff3f02532648a_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-6_c4db89850cb2437a98bc9de567396e25_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-2_ad37984f7ff3454e80aeeecf249d16fb_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-10_9d93efcfbbc049a3ad29050b6c25667e_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-11_a8544a151971492ab4541020ea69c153_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_007-13_27aa79e8a71f430aae19c9b9a1384f3f_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   15. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   16. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock
