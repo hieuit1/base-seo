@@ -1,0 +1,30 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          30
+   ❌ Không đạt:    8
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [2.2 — Độ dài Meta: 194 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 194 ký tự, cần 120–160
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 2 thẻ)]
+      → Trang có 2 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   3. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("Quần short ống suông"); Nhảy cấp từ H1 → H3 ("Chọn short cho nam gầy")
+   4. [5.2 — Mật độ keyword: 2.72% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 2.72%, cần ≤ 2.5%
+   5. [5.3 — Keyword "quần short" xuất hiện trong 100 từ đầu]
+      → Keyword "quần short" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/256)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   7. [7.3 — Anchor text chất lượng (lỗi: 35)]
+      → 35 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/quan-short-nam-pique-icondenim-heatwave, "" → /products/quan-short-nam-icondenim-tropical-mono, "" → /products/quan-short-nam-icondenim-striped, "" → /products/quan-short-nam-icondenim-soft-mark, "" → /products/quan-short-kaki-nam-icondenim-scisp, "" → /products/quan-short-linen-nam-icondenim-azura, "" → /products/quan-short-nam-icondenim-seraphin, "" → /products/quan-short-nam-icondenim-zephyr, "" → /products/quan-short-nam-icondenim-insignia-id, "" → /products/quan-short-nam-icondenim-gridline, "" → /products/quan-short-nam-icondenim-minimal-luxe, "" → /products/quan-short-nam-icondenim-speckled, "" → /products/quan-short-icondenim-ultility-cargo, "" → /products/quan-short-nam-icondenim-orgnls-raw-edge-shorts, "" → /products/quan-short-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-multi-task, "" → /products/quan-short-jeans-nam-icondenim-monogram, "" → /products/quan-short-nam-icondenim-strecth-cargo, "" → /products/quan-short-nam-icondenim-base-unit, "" → /products/quan-short-jeans-nam-icon105-lightweight-dark-grey, "" → /products/set-do-nam-icondenim-orgnls-1, "" → /products/set-do-nam-icondenim-orgnls-2, "" → /products/set-do-nam-icondenim-lunary, "" → /products/quan-short-nam-icondenim-movement, "" → /products/quan-short-nam-icondenim-earthbound-pallete, "" → /products/quan-short-nam-icondenim-essential-stretch-pants, "" → /products/quan-short-nam-denim-icondenim-star, "" → /products/quan-short-nam-icondenim-id-monogram-pattern, "" → /collections/quan-short?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

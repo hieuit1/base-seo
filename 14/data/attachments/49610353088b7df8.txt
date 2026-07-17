@@ -1,0 +1,38 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     68/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          26
+   ❌ Không đạt:    12
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 27 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 27 ký tự, cần 40–65
+   2. [1.3 — Title chứa keyword "hàng bán chạy best seller"]
+      → Title không chứa keyword "hàng bán chạy best seller"
+   3. [1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "hàng bán chạy best seller" không có trong Title
+   4. [2.3 — Meta description chứa keyword "hàng bán chạy best seller"]
+      → Meta description không chứa keyword "hàng bán chạy best seller"
+   5. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   6. [3.2 — H1 chứa keyword "hàng bán chạy best seller"]
+      → Không có H1 để kiểm tra
+   7. [5.2 — Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   8. [5.3 — Keyword "hàng bán chạy best seller" xuất hiện trong 100 từ đầu]
+      → Keyword "hàng bán chạy best seller" không xuất hiện trong 100 từ đầu
+   9. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/240)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   10. [6.2 — Có ảnh chứa keyword "hàng bán chạy best seller" trong alt]
+      → Không có ảnh nào có alt chứa keyword "hàng bán chạy best seller"
+   11. [7.3 — Anchor text chất lượng (lỗi: 37)]
+      → 37 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/quan-short-linen-nam-icondenim-azura, "" → /products/quan-short-kaki-nam-icondenim-scisp, "" → /products/quan-short-nam-icondenim-striped, "" → /products/ao-polo-procool-icondenim-slim-fit-seam-sealing, "" → /products/ao-polo-nam-icondenim-textured-knit, "" → /products/ao-polo-nam-icondenim-quarter-zip, "" → /products/ao-thun-nam-icondenim-blue-paradise, "" → /products/ao-so-mi-nam-tay-dai-icondenim-sandveil, "" → /products/ao-polo-nam-icondenim-essence, "" → /products/ao-thun-nam-icondenim-archive, "" → /products/quan-short-nam-jean-icondenim-classic, "" → /products/ao-so-mi-nam-tay-ngan-linen-cuban-icondenim-sandrift, "" → /products/quan-short-nam-icondenim-tropical-mono, "" → /products/ao-thun-nam-icondenim-homefield, "" → /products/set-ao-quan-nam-icondenim-lazy-fish, "" → /products/quan-kaki-nam-icondenim-simple, "" → /products/ao-thun-nam-icondenim-riviera-stripe, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-riviera-knit, "" → /products/ao-so-mi-nam-tay-ngan-linen-cuban-icondenim-littoral, "" → /products/ao-thun-nam-icondenim-arch, "" → /products/ao-thun-nam-icondenim-atelier-1, "" → /products/ao-thun-nam-icondenim-flux, "" → /products/ao-so-mi-nam-icondenim-workday-ease, "" → /products/quan-tay-nam-icondenim-zenith, "" → /products/set-do-nam-icondenim-jacquard-jean, "" → /products/quan-tay-nam-icondenim-city-straight, "" → /products/quan-jeans-nam-icon105-lightweight-straight-fit-light-blue, "" → /products/quan-kaki-nam-icondenim-sandfold, "" → /products/ao-polo-nam-icondenim-mono, "" → /collections/hang-ban-chay-best-seller?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   12. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

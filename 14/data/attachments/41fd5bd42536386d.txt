@@ -1,0 +1,32 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     76/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          29
+   ❌ Không đạt:    9
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [2.2 — Độ dài Meta: 183 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 183 ký tự, cần 120–160
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   3. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   4. [5.2 — Mật độ keyword: 0.19% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.19%, cần ≥ 0.5%
+   5. [5.3 — Keyword "áo sơ mi nam tay ngắn" xuất hiện trong 100 từ đầu]
+      → Keyword "áo sơ mi nam tay ngắn" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 27/70)]
+      → Có 27 hình ảnh thiếu thuộc tính 'alt'
+   7. [7.3 — Anchor text chất lượng (lỗi: 21)]
+      → 21 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__11__718cf18b05e44b398ce849dd86613b66_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__9__c91435d3ee3a458986736b48a5654a15_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__1__f0f4f7087ae24112923d8a150d9a7abc_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__2__9529102353254068846c68a5cd2335bf_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-smtn-relax-new_351dac0dd7d44983b84de41f432e5b54_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__13__375f579b05a9433b90ce5e85d83544a1_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__10__496e853081de4970a1ad333a0c1f5e22_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__3__799b1a5bb73741f2bad588ceeb1fe25b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__4__9b40b3356a9248b194346bcd65673db8_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__5__5c0d2d0f055a462f996b7ada2d8bc906_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__6__c9ce05f7804344f38d6f7651913755c7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__7__6fa5805c67eb49ea9ecae0207cc6e15b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__8__e493b369f2e14f6dadb55831997387f7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals__12__6185a97bdc444929ac40e946e0a4e1e1_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   9. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

@@ -1,0 +1,46 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     58/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          22
+   ❌ Không đạt:    16
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 36 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 36 ký tự, cần 40–65
+   2. [1.3 — Title chứa keyword "banner world cup"]
+      → Title không chứa keyword "banner world cup"
+   3. [1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "banner world cup" không có trong Title
+   4. [2.1 — Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   5. [2.2 — Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   6. [2.3 — Meta description chứa keyword "banner world cup"]
+      → Không thể kiểm tra — Meta description không tồn tại
+   7. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   8. [3.2 — H1 chứa keyword "banner world cup"]
+      → Không có H1 để kiểm tra
+   9. [4.2 — URL chứa keyword slug "banner-world-cup" ]
+      → URL "/collections/the-originals-legacy-2026" không chứa keyword "banner-world-cup"
+   10. [5.2 — Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   11. [5.3 — Keyword "banner world cup" xuất hiện trong 100 từ đầu]
+      → Keyword "banner world cup" không xuất hiện trong 100 từ đầu
+   12. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 14/63)]
+      → Có 14 hình ảnh thiếu thuộc tính 'alt'
+   13. [6.2 — Có ảnh chứa keyword "banner world cup" trong alt]
+      → Không có ảnh nào có alt chứa keyword "banner world cup"
+   14. [7.3 — Anchor text chất lượng (lỗi: 7)]
+      → 7 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   15. [8.6 — Open Graph: og:title=✔, og:description=✘]
+      → Thiếu og:description
+   16. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

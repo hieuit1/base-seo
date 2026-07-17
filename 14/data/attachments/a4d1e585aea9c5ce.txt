@@ -1,0 +1,28 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     82/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          31
+   ❌ Không đạt:    7
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 28 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 28 ký tự, cần 40–65
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   3. [3.2 — H1 chứa keyword "the poolside club"]
+      → Không có H1 để kiểm tra
+   4. [5.2 — Mật độ keyword: 0.37% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.37%, cần ≥ 0.5%
+   5. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/121)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   6. [7.3 — Anchor text chất lượng (lỗi: 20)]
+      → 20 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/ao-polo-nam-icondenim-textured-knit, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-riviera-knit, "" → /products/ao-so-mi-nam-tay-ngan-linen-cuban-icondenim-littoral, "" → /products/ao-tanktop-nam-icondenim-coastal-knit, "" → /products/ao-thun-nam-icondenim-blue-paradise, "" → /products/ao-thun-nam-icondenim-riviera-stripe, "" → /products/ao-thun-nam-icondenim-summer-never-ends, "" → /products/non-bucket-nam-icondenim-urban-relic, "" → /products/non-luoi-trai-nam-icondenim-blue-stripe, "" → /products/quan-short-nam-icondenim-tropical-mono, "" → /products/set-ao-quan-nam-icondenim-lazy-fish, "" → /products/tui-tote-nam-icondenim-sea-stripe, "" → /products/vo-crew-nam-icondenim-sunstep, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   7. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
