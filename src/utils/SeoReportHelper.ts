@@ -16,6 +16,18 @@ export async function injectVisualSEOReport(
       const oldCard = document.getElementById("seo-report-card");
       if (oldCard) oldCard.remove();
 
+      const toSlug = (text: string) => {
+        return text
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/đ/g, "d")
+          .replace(/Đ/g, "d")
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, "")
+          .trim()
+          .replace(/\s+/g, "-");
+      };
+
       // --- ĐỊNH NGHĨA CHÍNH XÁC CÁC TIÊU CHÍ (38 tiêu chí con của SeoScorecard) ---
       const minTitle = config.titleMinLength;
       const maxTitle = config.titleMaxLength;
@@ -115,7 +127,7 @@ export async function injectVisualSEOReport(
         err: `URL path quá dài: ${data.urlPath.length} ký tự, tối đa ${urlMaxLength}`
       });
       const isHomepage = data.urlPath === "/" || data.urlPath === "";
-      const keywordSlug = config.keyword.toLowerCase().replace(/\s+/g, "-");
+      const keywordSlug = toSlug(config.keyword);
       itemsList.push({
         id: "4.2",
         name: `4.2 — URL chứa keyword slug "${keywordSlug}" ${isHomepage ? "(bỏ qua — trang chủ)" : ""}`,
@@ -380,7 +392,7 @@ export async function injectVisualSEOReport(
           </div>
 
           <!-- CỘT BÊN PHẢI: LỖI CẦN KHẮC PHỤC -->
-          <div style="max-height: 72vh; overflow-y: auto; padding-right: 4px;">
+          <div style="max-height: 72vh; overflow-y: auto; padding-right: 4px; pointer-events: auto;">
       `;
 
       let bodyHtml = "";

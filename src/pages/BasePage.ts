@@ -54,10 +54,17 @@ export class BasePage {
     // Kiểm tra HTTP status code của một URL (dùng cho robots.txt, sitemap, broken links)
     async checkUrlStatus(url: string): Promise<number> {
         try {
-            const response = await this.page.request.get(url);
+            // Thử bằng HEAD request trước để tiết kiệm băng thông và tăng tốc độ
+            const response = await this.page.request.head(url, { timeout: 10000 });
             return response.status();
         } catch {
-            return 0;
+            try {
+                // Fallback sang GET request nếu HEAD không được server đích hỗ trợ
+                const response = await this.page.request.get(url, { timeout: 10000 });
+                return response.status();
+            } catch {
+                return 0;
+            }
         }
     }
 }

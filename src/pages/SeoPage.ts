@@ -5,6 +5,19 @@ import { injectVisualSEOReport } from "../utils/SeoReportHelper";
 import { SeoScorecard } from "../utils/reportHelper";
 import { DEFAULT_SEO_CONFIG } from "../constants/seoDefaults";
 
+// ==================== UTILS ====================
+export function toSlug(text: string): string {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "d")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
 // ==================== INTERFACES ====================
 
 export interface SeoScanResult {
@@ -283,7 +296,7 @@ export class SeoPage extends BasePage {
 
     // 4.2 — URL chứa keyword slug (bỏ qua trang chủ)
     const isHomepage = urlPath === "/" || urlPath === "";
-    const keywordSlug = data.keyword.toLowerCase().replace(/\s+/g, "-");
+    const keywordSlug = toSlug(data.keyword);
     await sc.check(
       `4.2 — URL chứa keyword slug "${keywordSlug}" ${isHomepage ? "(bỏ qua — trang chủ)" : ""}`,
       isHomepage || urlPath.toLowerCase().includes(keywordSlug),
@@ -565,47 +578,12 @@ export class SeoPage extends BasePage {
     });
   }
 
-  async checkHeadingHierarchy(): Promise<{ valid: boolean; issues: string[] }> {
-    const headings = await this.getAllHeadings();
-    const issues: string[] = [];
-    let lastLevel = 0;
-    for (const heading of headings) {
-      const level = parseInt(heading.tag.replace("h", ""));
-      if (lastLevel > 0 && level > lastLevel + 1) {
-        issues.push(`Nhảy cấp từ H${lastLevel} → H${level} ("${heading.text}")`);
-      }
-      lastLevel = level;
-    }
-    return { valid: issues.length === 0, issues };
-  }
-
   async getBodyText(): Promise<string> {
     return await this.page.evaluate(() => {
       const clone = document.body.cloneNode(true) as HTMLElement;
       clone.querySelectorAll("script, style, noscript, iframe").forEach((el) => el.remove());
       return (clone.textContent || "").replace(/\s+/g, " ").trim();
     });
-  }
-
-  async getWordCount(): Promise<number> {
-    const text = await this.getBodyText();
-    return text.split(/\s+/).filter((w) => w.length > 0).length;
-  }
-
-  async getFirst100Words(): Promise<string> {
-    const text = await this.getBodyText();
-    return text.split(/\s+/).slice(0, 100).join(" ");
-  }
-
-  async calculateKeywordDensity(keyword: string): Promise<number> {
-    const text = await this.getBodyText();
-    const words = text.split(/\s+/).filter((w) => w.length > 0);
-    const totalWords = words.length;
-    if (totalWords === 0) return 0;
-    const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const regex = new RegExp(escapedKeyword, "gi");
-    const matches = text.match(regex);
-    return ((matches ? matches.length : 0) / totalWords) * 100;
   }
 
   async getImages(): Promise<{ src: string; alt: string | null; width: string | null; height: string | null }[]> {
