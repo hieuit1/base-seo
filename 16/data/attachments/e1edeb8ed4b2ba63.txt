@@ -1,0 +1,32 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     76/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          29
+   ❌ Không đạt:    9
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 39 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 39 ký tự, cần 40–65
+   2. [2.2 — Độ dài Meta: 173 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 173 ký tự, cần 120–160
+   3. [2.3 — Meta description chứa keyword "icon105 lightweight"]
+      → Meta description không chứa keyword "icon105 lightweight"
+   4. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   5. [3.2 — H1 chứa keyword "icon105 lightweight"]
+      → Không có H1 để kiểm tra
+   6. [5.3 — Keyword "icon105 lightweight" xuất hiện trong 100 từ đầu]
+      → Keyword "icon105 lightweight" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 20/139)]
+      → Có 20 hình ảnh thiếu thuộc tính 'alt'
+   8. [7.3 — Anchor text chất lượng (lỗi: 19)]
+      → 19 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/quan-jeans-nam-icon105-lightweight-straight-fit-light-grey, "" → /products/quan-jeans-nam-icon105-lightweight-straight-fit-raw-indigo, "" → /products/quan-jeans-nam-icon105-lightweight-straight-fit-blue, "" → /products/quan-jeans-nam-icon105-lightweight-straight-fit-black, "" → /products/quan-jeans-nam-icon105-lightweight-straight-fit-light-blue, "" → /products/quan-jeans-nam-icon105-lightweight-straight-fit-dark-grey, "" → /products/quan-jeans-nam-icon105-lightweight-straight-fit-green, "" → /products/ao-khoac-jeans-nam-icon105-lightweight-icondenim-black, "" → /products/ao-khoac-jeans-nam-icon105-lightweight-icondenim-indigo, "" → /products/ao-khoac-jeans-nam-icon105-lightweight-icondenim-mid-blue, "" → /products/quan-short-jean-nam-icondenim-icon105-light-blue, "" → /products/quan-short-jeans-nam-icon105-lightweight-dark-grey, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

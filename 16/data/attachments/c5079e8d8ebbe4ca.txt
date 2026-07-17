@@ -1,0 +1,32 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     76/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          29
+   ❌ Không đạt:    9
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [2.2 — Độ dài Meta: 175 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 175 ký tự, cần 120–160
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   3. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   4. [5.2 — Mật độ keyword: 0.17% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.17%, cần ≥ 0.5%
+   5. [5.3 — Keyword "quần tây nam icondenim airflex" xuất hiện trong 100 từ đầu]
+      → Keyword "quần tây nam icondenim airflex" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 32/85)]
+      → Có 32 hình ảnh thiếu thuộc tính 'alt'
+   7. [7.3 — Anchor text chất lượng (lỗi: 26)]
+      → 26 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/26_d9b4feb41b4849d2a9ee1cf6355250d2_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/qtid0073_-_akid0232__2__907ca05b3d8945babd1416a032f1761e_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/qtid0073_-_akid0232_qtid0073_-_akid0232_fab1e8e2985a4323b4bbad8edb96b49f_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/qt_slim_0970cefb18fb4be4be711a8d4503cedd_1024x1024.png, "" → //cdn.hstatic.net/products/1000253775/23_13049e0e565b4aff96e9be2ab7c7c060_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-1_bfd4f5ea6acf4d8faaf9f6f274ae542b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-6_3bf47cbd20ae4be5a993d0d8fa1feba6_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-14_dd484484804f452880002e7b9abe0bc4_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-7_bb2e8f9f02d24a05aa41901ad52be33e_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-8_715ff55a521f4c08b7ea43f93a21f244_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-3_73d60ff69a8841048a4d43e48f15ded3_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-4_e270e064fb614bbbaf07bd8beceb777e_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-5_e9191ce5bd5a4cfd96954d3e87c56723_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance.-1__1__85aa520b36b7481185eda48a8a273a57_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-2_7c3b9fcae9a94508a62d1d1de1ff854b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-11_7dbf380dcbeb425b8efba8862bd7cf80_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-12_ef6fd0e10b6f4804b78fb8c9e2a72517_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance-13_7d3ca7a2573d470aa4d2ee3d1ea3b74d_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance.-2__2__ed20411ccfd543f38dcd3fef4840b16b_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   9. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

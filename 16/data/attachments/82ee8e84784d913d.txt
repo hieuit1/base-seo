@@ -1,0 +1,30 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          30
+   ❌ Không đạt:    8
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 25 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 25 ký tự, cần 40–65
+   2. [2.2 — Độ dài Meta: 320 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 320 ký tự, cần 120–160
+   3. [2.3 — Meta description chứa keyword "hướng dẫn đặt hàng"]
+      → Meta description không chứa keyword "hướng dẫn đặt hàng"
+   4. [5.3 — Keyword "hướng dẫn đặt hàng" xuất hiện trong 100 từ đầu]
+      → Keyword "hướng dẫn đặt hàng" không xuất hiện trong 100 từ đầu
+   5. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 10/29)]
+      → Có 10 hình ảnh thiếu thuộc tính 'alt'
+   6. [6.2 — Có ảnh chứa keyword "hướng dẫn đặt hàng" trong alt]
+      → Không có ảnh nào có alt chứa keyword "hướng dẫn đặt hàng"
+   7. [7.3 — Anchor text chất lượng (lỗi: 12)]
+      → 12 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/ao-khoac-du-nam-disney-racing-division, "" → /products/ao-thun-nam-disney-stitch-ohana-vibes-form-oversize, "" → /products/ao-tank-top-nam-daily-tank-form-regular, "" → /products/ao-tank-top-runpow-aero-jacquard, "" → /products/a-o-tanktop-nam-runpow-in-naturestride, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

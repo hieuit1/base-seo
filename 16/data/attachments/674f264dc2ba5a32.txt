@@ -1,0 +1,32 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     76/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          29
+   ❌ Không đạt:    9
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 30 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 30 ký tự, cần 40–65
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   3. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   4. [5.2 — Mật độ keyword: 0.19% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.19%, cần ≥ 0.5%
+   5. [5.3 — Keyword "áo polo nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "áo polo nam icondenim" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 27/64)]
+      → Có 27 hình ảnh thiếu thuộc tính 'alt'
+   7. [7.3 — Anchor text chất lượng (lỗi: 18)]
+      → 18 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-1_c2548d400cc5499993063658efa9b4b6_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-9_aa983712e0b544a5a7bb7b857cad7841_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-2_8f6cb13d0b0842ff9043e26d05d35eed_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-3_e8c7b14bc7f64c53adab7f007a5f15e6_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/polo_regular_new_796ae8ee9cd6413ab6bd8ff3fdd6f118_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-4_0edd710cc0ad46b1a0444d4b094f913b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-5_5770fbb78df74287b1b641a11d358008_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-6_fa06a68f1d754834b84933d1488a6a75_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-8_fc253242e4be434d9e6dce363c1b11f8_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-12_6a2b0f90827a4ef180348f3b2bb02544_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-imperial-14_819b9034467941198f64145e42b208ee_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   9. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock
