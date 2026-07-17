@@ -1,0 +1,28 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     82/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          31
+   ❌ Không đạt:    7
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [2.2 — Độ dài Meta: 178 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 178 ký tự, cần 120–160
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   3. [3.2 — H1 chứa keyword "procool"]
+      → Không có H1 để kiểm tra
+   4. [5.3 — Keyword "procool" xuất hiện trong 100 từ đầu]
+      → Keyword "procool" không xuất hiện trong 100 từ đầu
+   5. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 22/120)]
+      → Có 22 hình ảnh thiếu thuộc tính 'alt'
+   6. [7.3 — Anchor text chất lượng (lỗi: 18)]
+      → 18 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/quan-jeans-nam-procool-icondenim-dark-grey-form-slim, "" → /products/quan-jeans-nam-procool-icondenim-light-grey-form-slim, "" → /products/quan-jeans-nam-procool-icondenim-coolmax-indigo-slim, "" → /products/quan-jeans-nam-procool-icondenim-coolmax-sand-blue-slim, "" → /products/quan-jeans-procool-icondenim-coolmax-performance-blue-slim, "" → /products/quan-jeans-nam-procool-icondenim-coolmax-dark-blue-slim, "" → /products/quan-jeans-nam-procool-icondenim-coolmax-black-slim, "" → /products/quan-jeans-nam-procool-icondenim-coolmax-light-blue-slim, "" → /products/ao-polo-nam-icondenim-procool-new-gen-seam-sealing, "" → /products/ao-polo-procool-icondenim-slim-fit-seam-sealing, "" → /products/ao-thun-nam-tron-procool-new-gen-form-slim-fit, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   7. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
