@@ -45,7 +45,6 @@ export class SeoScorecard {
         this.totalChecks++;
 
         if (condition) {
-            // ✅ PASS — step tự nhiên hiện xanh trên Allure
             this.passedChecks++;
             await allure.step(`✅ ${stepName}`, async () => {
                 // Step rỗng → Allure tự đánh PASS

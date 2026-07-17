@@ -4,19 +4,7 @@ import { SeoPageTestData } from "../test-data/seoData";
 import { injectVisualSEOReport } from "../utils/SeoReportHelper";
 import { SeoScorecard } from "../utils/reportHelper";
 import { DEFAULT_SEO_CONFIG } from "../constants/seoDefaults";
-
-// ==================== UTILS ====================
-export function toSlug(text: string): string {
-  return text
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/đ/g, "d")
-    .replace(/Đ/g, "d")
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-");
-}
+import { toSlug } from "../utils/stringHelper";
 
 // ==================== INTERFACES ====================
 
