@@ -1,0 +1,40 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     66/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          25
+   ❌ Không đạt:    13
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.3 — Title chứa keyword "áo ni - sweater"]
+      → Title không chứa keyword "áo ni - sweater"
+   2. [1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "áo ni - sweater" không có trong Title
+   3. [2.2 — Độ dài Meta: 179 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 179 ký tự, cần 120–160
+   4. [2.3 — Meta description chứa keyword "áo ni - sweater"]
+      → Meta description không chứa keyword "áo ni - sweater"
+   5. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   6. [3.2 — H1 chứa keyword "áo ni - sweater"]
+      → Không có H1 để kiểm tra
+   7. [4.2 — URL chứa keyword slug "áo-ni---sweater" ]
+      → URL "/collections/ao-ni-sweater" không chứa keyword "áo-ni---sweater"
+   8. [5.2 — Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   9. [5.3 — Keyword "áo ni - sweater" xuất hiện trong 100 từ đầu]
+      → Keyword "áo ni - sweater" không xuất hiện trong 100 từ đầu
+   10. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 8/87)]
+      → Có 8 hình ảnh thiếu thuộc tính 'alt'
+   11. [6.2 — Có ảnh chứa keyword "áo ni - sweater" trong alt]
+      → Không có ảnh nào có alt chứa keyword "áo ni - sweater"
+   12. [7.3 — Anchor text chất lượng (lỗi: 7)]
+      → 7 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   13. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
