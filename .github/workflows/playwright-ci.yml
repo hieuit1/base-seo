@@ -12,18 +12,17 @@ on:
       environment:
         description: "Chọn môi trường kiểm thử"
         required: true
-        default: "staging"
+        default: "production"
         type: choice
-        options: [dev, qa, staging]
+        options: [dev, qa, staging, production]
       test_type:
         description: "Chọn bộ Test"
         required: true
-        default: "@smoke"
+        default: "@seo"
         type: choice
         options:
           - "@smoke"
           - "@regression"
-          - "@e2e"
           - "@seo"
           - "@performance"
 
