@@ -1,7 +1,8 @@
-import { Page, expect } from "@playwright/test";
+import { Page } from "@playwright/test";
 import { BasePage } from "./BasePage";
 import { SeoPageTestData } from "../test-data/seoData";
 import { injectVisualSEOReport } from "../utils/SeoReportHelper";
+import { SeoScorecard } from "../utils/reportHelper";
 
 // ==================== INTERFACES ====================
 
@@ -151,202 +152,256 @@ export class SeoPage extends BasePage {
     await injectVisualSEOReport(this.page, pageName, data, config);
   }
 
-  // ==================== VERIFY METHODS (expect.soft) ====================
+  // ==================== VERIFY METHODS (SeoScorecard) ====================
 
   /** A1.1→A1.4: Xác thực thẻ Title */
-  async verifyTitle(scan: SeoScanResult, data: SeoPageTestData) {
+  async verifyTitle(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const minLen = data.titleMinLength ?? 50;
     const maxLen = data.titleMaxLength ?? 60;
     const { titleVal } = scan;
 
-    // A1.1
-    expect.soft(titleVal, "1 — Title tag không tồn tại hoặc rỗng!").toBeTruthy();
-    expect.soft(titleVal.length, "A1.1 — Title phải có nội dung").toBeGreaterThan(0);
+    // A1.1 — Title phải tồn tại và có nội dung
+    await sc.check(
+      `A1.1 — Title phải có nội dung (hiện tại: ${titleVal.length} ký tự)`,
+      !!titleVal && titleVal.length > 0,
+      "Title tag không tồn tại hoặc rỗng!"
+    );
 
-    // A1.2
-    expect.soft(titleVal.length, `2 — Title quá ngắn: ${titleVal.length} ký tự, cần ≥ ${minLen}`).toBeGreaterThanOrEqual(minLen);
-    expect.soft(titleVal.length, `2 — Title quá dài: ${titleVal.length} ký tự, cần ≤ ${maxLen}`).toBeLessThanOrEqual(maxLen);
+    // A1.2 — Độ dài Title nằm trong khoảng cho phép
+    await sc.check(
+      `A1.2 — Độ dài Title: ${titleVal.length} ký tự (chuẩn: ${minLen}–${maxLen})`,
+      titleVal.length >= minLen && titleVal.length <= maxLen,
+      `Title ${titleVal.length < minLen ? "quá ngắn" : "quá dài"}: ${titleVal.length} ký tự, cần ${minLen}–${maxLen}`
+    );
 
-    // A1.3
-    expect.soft(
-      titleVal.toLowerCase(),
-      `3 — Title không chứa keyword "${data.keyword}"`
-    ).toContain(data.keyword.toLowerCase());
+    // A1.3 — Title phải chứa keyword chính
+    await sc.check(
+      `A1.3 — Title chứa keyword "${data.keyword}"`,
+      titleVal.toLowerCase().includes(data.keyword.toLowerCase()),
+      `Title không chứa keyword "${data.keyword}"`
+    );
 
-    // A1.4
+    // A1.4 — Keyword nên nằm ở nửa đầu Title
     const keywordIndex = titleVal.toLowerCase().indexOf(data.keyword.toLowerCase());
-    if (keywordIndex >= 0) {
-      expect.soft(
-        keywordIndex,
-        `4 — Keyword ở vị trí ${keywordIndex}, nên nằm trong nửa đầu title (≤ ${Math.floor(titleVal.length / 2)})`
-      ).toBeLessThanOrEqual(Math.floor(titleVal.length / 2));
-    }
+    const halfLen = Math.floor(titleVal.length / 2);
+    await sc.check(
+      `A1.4 — Keyword nằm ở nửa đầu Title (vị trí: ${keywordIndex >= 0 ? keywordIndex : "N/A"})`,
+      keywordIndex >= 0 && keywordIndex <= halfLen,
+      keywordIndex < 0
+        ? `Bỏ qua — keyword "${data.keyword}" không có trong Title`
+        : `Keyword ở vị trí ${keywordIndex}, nên ≤ ${halfLen}`
+    );
   }
 
   /** A2.1→A2.3: Xác thực Meta Description */
-  async verifyMetaDescription(scan: SeoScanResult, data: SeoPageTestData) {
+  async verifyMetaDescription(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const minLen = data.metaDescMinLength ?? 120;
     const maxLen = data.metaDescMaxLength ?? 160;
     const { metaVal } = scan;
 
-    // A2.1
-    expect.soft(metaVal, "1 — Thẻ <meta name=\"description\"> không tồn tại!").not.toBeNull();
-    if (metaVal) {
-      expect.soft(metaVal.length, "1 — Meta description rỗng").toBeGreaterThan(0);
+    // A2.1 — Meta description phải tồn tại
+    await sc.check(
+      `A2.1 — Meta description tồn tại (${metaVal ? metaVal.length + " ký tự" : "Không tìm thấy"})`,
+      metaVal !== null && metaVal.length > 0,
+      "Thẻ <meta name=\"description\"> không tồn tại hoặc rỗng!"
+    );
 
-      // A2.2
-      expect.soft(metaVal.length, `2 — Meta description quá ngắn: ${metaVal.length} ký tự, cần ≥ ${minLen}`).toBeGreaterThanOrEqual(minLen);
-      expect.soft(metaVal.length, `2 — Meta description quá dài: ${metaVal.length} ký tự, cần ≤ ${maxLen}`).toBeLessThanOrEqual(maxLen);
+    // A2.2 — Độ dài Meta description hợp lệ
+    await sc.check(
+      `A2.2 — Độ dài Meta: ${metaVal?.length ?? 0} ký tự (chuẩn: ${minLen}–${maxLen})`,
+      !!metaVal && metaVal.length >= minLen && metaVal.length <= maxLen,
+      metaVal
+        ? `Meta description ${metaVal.length < minLen ? "quá ngắn" : "quá dài"}: ${metaVal.length} ký tự, cần ${minLen}–${maxLen}`
+        : "Không thể đo — Meta description không tồn tại"
+    );
 
-      // A2.3
-      expect.soft(
-        metaVal.toLowerCase(),
-        `3 — Meta description không chứa keyword "${data.keyword}"`
-      ).toContain(data.keyword.toLowerCase());
-    }
+    // A2.3 — Meta description chứa keyword
+    await sc.check(
+      `A2.3 — Meta description chứa keyword "${data.keyword}"`,
+      !!metaVal && metaVal.toLowerCase().includes(data.keyword.toLowerCase()),
+      metaVal
+        ? `Meta description không chứa keyword "${data.keyword}"`
+        : "Không thể kiểm tra — Meta description không tồn tại"
+    );
   }
 
   /** A3.1→A3.4: Xác thực cấu trúc Heading */
-  async verifyHeadingStructure(scan: SeoScanResult, data: SeoPageTestData) {
+  async verifyHeadingStructure(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const { h1Texts, allHeadings, headingHierarchy } = scan;
 
-    // A3.1
-    expect.soft(
-      h1Texts.length,
-      `1 — Trang có ${h1Texts.length} thẻ H1, bắt buộc đúng 1 thẻ duy nhất!`
-    ).toBe(1);
+    // A3.1 — Phải có đúng 1 thẻ H1
+    await sc.check(
+      `A3.1 — Trang có đúng 1 thẻ H1 (hiện tại: ${h1Texts.length} thẻ)`,
+      h1Texts.length === 1,
+      h1Texts.length === 0
+        ? "Trang không có thẻ H1 nào!"
+        : `Trang có ${h1Texts.length} thẻ H1, bắt buộc đúng 1 thẻ duy nhất!`
+    );
 
-    // A3.2
-    if (h1Texts.length > 0) {
-      expect.soft(h1Texts[0].trim().length, "2 — Thẻ H1 tồn tại nhưng nội dung rỗng!").toBeGreaterThan(0);
-      expect.soft(
-        h1Texts[0].toLowerCase(),
-        `2 — H1 "${h1Texts[0]}" không chứa keyword "${data.keyword}"`
-      ).toContain(data.keyword.toLowerCase());
-    }
+    // A3.2 — H1 phải chứa keyword
+    const h1Text = h1Texts.length > 0 ? h1Texts[0] : "";
+    await sc.check(
+      `A3.2 — H1 chứa keyword "${data.keyword}"`,
+      h1Texts.length > 0
+        && h1Text.trim().length > 0
+        && h1Text.toLowerCase().includes(data.keyword.toLowerCase()),
+      h1Texts.length === 0
+        ? "Không có H1 để kiểm tra"
+        : h1Text.trim().length === 0
+          ? "Thẻ H1 tồn tại nhưng nội dung rỗng!"
+          : `H1 "${h1Text}" không chứa keyword "${data.keyword}"`
+    );
 
-    // A3.3
-    expect.soft(
+    // A3.3 — Heading phân cấp đúng (không nhảy cấp)
+    await sc.check(
+      `A3.3 — Heading phân cấp hợp lệ (${headingHierarchy.issues.length} lỗi)`,
       headingHierarchy.valid,
-      `3 — Heading phân cấp sai: ${headingHierarchy.issues.join("; ")}`
-    ).toBe(true);
+      `Heading phân cấp sai: ${headingHierarchy.issues.join("; ")}`
+    );
 
-    // A3.4
+    // A3.4 — Trang có ít nhất H2 hoặc H3
     const hasH2orH3 = allHeadings.some((h) => h.tag === "h2" || h.tag === "h3");
-    expect.soft(hasH2orH3, "4 — Trang nên có ít nhất 1 thẻ H2 hoặc H3").toBe(true);
+    await sc.check(
+      `A3.4 — Trang có thẻ H2/H3 hỗ trợ (${allHeadings.filter((h) => h.tag === "h2" || h.tag === "h3").length} thẻ)`,
+      hasH2orH3,
+      "Trang nên có ít nhất 1 thẻ H2 hoặc H3"
+    );
   }
 
   /** A4.1→A4.4: Xác thực cấu trúc URL */
-  async verifyUrlStructure(scan: SeoScanResult, data: SeoPageTestData) {
+  async verifyUrlStructure(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const maxLen = data.urlMaxLength ?? 75;
     const { urlPath } = scan;
 
-    // A4.1
-    expect.soft(urlPath.length, `1 — URL path quá dài: ${urlPath.length} ký tự (${urlPath})`).toBeLessThanOrEqual(maxLen);
+    // A4.1 — URL path không quá dài
+    await sc.check(
+      `A4.1 — Độ dài URL: ${urlPath.length} ký tự (tối đa: ${maxLen})`,
+      urlPath.length <= maxLen,
+      `URL path quá dài: ${urlPath.length} ký tự (${urlPath}), tối đa ${maxLen}`
+    );
 
-    // A4.2 — bỏ qua cho trang chủ
-    if (urlPath !== "/" && urlPath !== "") {
-      const keywordSlug = data.keyword.toLowerCase().replace(/\s+/g, "-");
-      expect.soft(
-        urlPath.toLowerCase(),
-        `2 — URL "${urlPath}" không chứa keyword "${keywordSlug}"`
-      ).toContain(keywordSlug);
-    }
+    // A4.2 — URL chứa keyword slug (bỏ qua trang chủ)
+    const isHomepage = urlPath === "/" || urlPath === "";
+    const keywordSlug = data.keyword.toLowerCase().replace(/\s+/g, "-");
+    await sc.check(
+      `A4.2 — URL chứa keyword slug "${keywordSlug}" ${isHomepage ? "(bỏ qua — trang chủ)" : ""}`,
+      isHomepage || urlPath.toLowerCase().includes(keywordSlug),
+      `URL "${urlPath}" không chứa keyword "${keywordSlug}"`
+    );
 
-    // A4.3
-    expect.soft(urlPath, `3 — URL chứa dấu gạch dưới: ${urlPath}`).not.toContain("_");
+    // A4.3 — URL không chứa dấu gạch dưới
+    await sc.check(
+      `A4.3 — URL không chứa dấu gạch dưới`,
+      !urlPath.includes("_"),
+      `URL chứa dấu gạch dưới: ${urlPath}`
+    );
 
-    // A4.4
-    expect.soft(urlPath, `4 — URL chứa chữ hoa: ${urlPath}`).toBe(urlPath.toLowerCase());
+    // A4.4 — URL toàn chữ thường
+    await sc.check(
+      `A4.4 — URL toàn chữ thường`,
+      urlPath === urlPath.toLowerCase(),
+      `URL chứa chữ hoa: ${urlPath}`
+    );
   }
 
   /** A5.1→A5.3: Xác thực nội dung */
-  async verifyContent(scan: SeoScanResult, data: SeoPageTestData) {
+  async verifyContent(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const minWords = data.minWordCount ?? 300;
     const densityMin = data.keywordDensityMin ?? 0.5;
     const densityMax = data.keywordDensityMax ?? 2.5;
 
-    // A5.1
-    expect.soft(
-      scan.wordCount,
-      `1 — Trang chỉ có ${scan.wordCount} từ, cần ≥ ${minWords}`
-    ).toBeGreaterThanOrEqual(minWords);
+    // A5.1 — Số lượng từ tối thiểu
+    await sc.check(
+      `A5.1 — Số lượng từ: ${scan.wordCount} (tối thiểu: ${minWords})`,
+      scan.wordCount >= minWords,
+      `Trang chỉ có ${scan.wordCount} từ, cần ≥ ${minWords}`
+    );
 
-    // A5.2
-    expect.soft(
-      scan.keywordDensity,
-      `2 — Mật độ keyword quá thấp: ${scan.keywordDensity.toFixed(2)}%`
-    ).toBeGreaterThanOrEqual(densityMin);
-    expect.soft(
-      scan.keywordDensity,
-      `2 — Mật độ keyword quá cao (stuffing): ${scan.keywordDensity.toFixed(2)}%`
-    ).toBeLessThanOrEqual(densityMax);
+    // A5.2 — Mật độ keyword hợp lý
+    await sc.check(
+      `A5.2 — Mật độ keyword: ${scan.keywordDensity.toFixed(2)}% (chuẩn: ${densityMin}%–${densityMax}%)`,
+      scan.keywordDensity >= densityMin && scan.keywordDensity <= densityMax,
+      scan.keywordDensity < densityMin
+        ? `Mật độ keyword quá thấp: ${scan.keywordDensity.toFixed(2)}%, cần ≥ ${densityMin}%`
+        : `Mật độ keyword quá cao (stuffing): ${scan.keywordDensity.toFixed(2)}%, cần ≤ ${densityMax}%`
+    );
 
-    // A5.3
-    expect.soft(
-      scan.first100Words.toLowerCase(),
-      `3 — Keyword "${data.keyword}" không xuất hiện trong 100 từ đầu`
-    ).toContain(data.keyword.toLowerCase());
+    // A5.3 — Keyword xuất hiện trong 100 từ đầu
+    await sc.check(
+      `A5.3 — Keyword "${data.keyword}" xuất hiện trong 100 từ đầu`,
+      scan.first100Words.toLowerCase().includes(data.keyword.toLowerCase()),
+      `Keyword "${data.keyword}" không xuất hiện trong 100 từ đầu`
+    );
   }
 
   /** A6.1→A6.4: Xác thực hình ảnh */
-  async verifyImages(scan: SeoScanResult, data: SeoPageTestData) {
+  async verifyImages(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const { images, missingAltCount, imagesWithBadNames, imagesWithDimensions } = scan;
 
-    // A6.1
-    expect.soft(
-      missingAltCount,
-      `1 — Đang có ${missingAltCount} hình ảnh thiếu thuộc tính 'alt'.`
-    ).toBe(0);
+    // A6.1 — Tất cả ảnh phải có thuộc tính alt
+    await sc.check(
+      `A6.1 — 100% ảnh có thuộc tính alt (thiếu: ${missingAltCount}/${images.length})`,
+      missingAltCount === 0,
+      `Có ${missingAltCount} hình ảnh thiếu thuộc tính 'alt'`
+    );
 
-    // A6.2
-    if (images.length > 0) {
-      const hasKeywordAlt = images.some(
-        (img) => img.alt && img.alt.toLowerCase().includes(data.keyword.toLowerCase())
-      );
-      expect.soft(hasKeywordAlt, `2 — Không có ảnh nào có alt chứa keyword "${data.keyword}"`).toBe(true);
-    }
+    // A6.2 — Ít nhất 1 ảnh có alt chứa keyword
+    const hasKeywordAlt = images.some(
+      (img) => img.alt && img.alt.toLowerCase().includes(data.keyword.toLowerCase())
+    );
+    await sc.check(
+      `A6.2 — Có ảnh chứa keyword "${data.keyword}" trong alt`,
+      images.length === 0 || hasKeywordAlt,
+      `Không có ảnh nào có alt chứa keyword "${data.keyword}"`
+    );
 
-    // A6.3
-    if (images.length > 0) {
-      const threshold = Math.ceil(images.length * 0.8);
-      expect.soft(
-        imagesWithDimensions,
-        `3 — Chỉ ${imagesWithDimensions}/${images.length} ảnh có width/height`
-      ).toBeGreaterThanOrEqual(threshold);
-    }
+    // A6.3 — Ảnh có khai báo width/height (≥ 80%)
+    const dimThreshold = images.length > 0 ? Math.ceil(images.length * 0.8) : 0;
+    await sc.check(
+      `A6.3 — Ảnh có width/height: ${imagesWithDimensions}/${images.length} (cần ≥ 80%)`,
+      images.length === 0 || imagesWithDimensions >= dimThreshold,
+      `Chỉ ${imagesWithDimensions}/${images.length} ảnh có width/height, cần ≥ ${dimThreshold}`
+    );
 
-    // A6.4
-    expect.soft(
-      imagesWithBadNames,
-      `4 — ${imagesWithBadNames} ảnh có tên file vô nghĩa (hash)`
-    ).toBe(0);
+    // A6.4 — Không có ảnh tên file vô nghĩa (hash)
+    await sc.check(
+      `A6.4 — Ảnh có tên file rõ nghĩa (hash: ${imagesWithBadNames})`,
+      imagesWithBadNames === 0,
+      `${imagesWithBadNames} ảnh có tên file vô nghĩa (dạng mã hash/ngẫu nhiên)`
+    );
   }
 
   /** A7.1→A7.4: Xác thực liên kết */
-  async verifyLinks(scan: SeoScanResult) {
+  async verifyLinks(scan: SeoScanResult, sc: SeoScorecard) {
     const { internalLinks, externalLinks } = scan;
 
-    // A7.1
-    expect.soft(internalLinks.length, "1 — Trang nên có ít nhất 1 internal link").toBeGreaterThan(0);
+    // A7.1 — Có ít nhất 1 internal link
+    await sc.check(
+      `A7.1 — Internal links: ${internalLinks.length} link`,
+      internalLinks.length > 0,
+      "Trang nên có ít nhất 1 internal link"
+    );
 
-    // A7.2 — Chỉ log, không enforce
-    if (externalLinks.length === 0) {
-      console.log("ℹ️ 2 — Trang không có external links — không bắt buộc nhưng nên có.");
-    }
+    // A7.2 — External links (khuyến nghị, không bắt buộc)
+    await sc.check(
+      `A7.2 — External links: ${externalLinks.length} link`,
+      true, // Luôn PASS — chỉ là khuyến nghị
+      "Trang không có external links — không bắt buộc nhưng nên có"
+    );
 
-    // A7.3
+    // A7.3 — Anchor text chất lượng
     const genericAnchors = ["click here", "here", "read more", "xem thêm", "nhấn vào đây", "tại đây"];
     const badAnchors = internalLinks.filter((link) => {
       const text = link.text.trim().toLowerCase();
       return text === "" || genericAnchors.includes(text);
     });
-    expect.soft(
-      badAnchors.length,
-      `3 — ${badAnchors.length} link có anchor text không tốt: ${badAnchors.map((l) => `"${l.text}" → ${l.href}`).join(", ")}`
-    ).toBe(0);
+    await sc.check(
+      `A7.3 — Anchor text chất lượng (lỗi: ${badAnchors.length})`,
+      badAnchors.length === 0,
+      `${badAnchors.length} link có anchor text không tốt: ${badAnchors.map((l) => `"${l.text}" → ${l.href}`).join(", ")}`
+    );
 
-    // A7.4 — Kiểm tra tối đa 10 broken internal links
+    // A7.4 — Kiểm tra broken internal links (tối đa 10)
     const origin = new URL(scan.currentUrl).origin;
     const brokenLinks: string[] = [];
     const linksToCheck = internalLinks
@@ -360,82 +415,126 @@ export class SeoPage extends BasePage {
         brokenLinks.push(`${link.href} (status: ${status})`);
       }
     }
-    expect.soft(brokenLinks.length, `4 — Broken links: ${brokenLinks.join(", ")}`).toBe(0);
+    await sc.check(
+      `A7.4 — Không có broken links (lỗi: ${brokenLinks.length}/${linksToCheck.length})`,
+      brokenLinks.length === 0,
+      `Broken links: ${brokenLinks.join(", ")}`
+    );
   }
 
   /** A8.1→A8.9: Xác thực Technical SEO */
-  async verifyTechnicalSeo(scan: SeoScanResult, data: SeoPageTestData) {
-    // A8.1
-    expect.soft(scan.canonical, "1 — Thiếu thẻ <link rel=\"canonical\">. Nguy cơ trùng lặp!").not.toBeNull();
-    if (scan.canonical !== null) {
-      expect.soft(scan.canonical, "1 — URL Canonical không hợp lệ!").toMatch(/^https?:\/\//);
-    }
+  async verifyTechnicalSeo(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
+    // A8.1 — Canonical URL
+    const isCanonicalOk = !!scan.canonical && /^https?:\/\//.test(scan.canonical);
+    await sc.check(
+      `A8.1 — Canonical URL hợp lệ (${scan.canonical || "Không có"})`,
+      isCanonicalOk,
+      scan.canonical === null
+        ? "Thiếu thẻ <link rel=\"canonical\">. Nguy cơ trùng lặp!"
+        : `URL Canonical không hợp lệ: "${scan.canonical}"`
+    );
 
-    // A8.2
+    // A8.2 — Robots/Indexability
     const expectIndexable = data.expectIndexable ?? true;
     const isNoindex = !!scan.robots?.toLowerCase().includes("noindex");
-    if (expectIndexable) {
-      expect.soft(isNoindex, "2 — Trang mong muốn INDEX nhưng đang bị gắn 'noindex'!").toBe(false);
-    } else {
-      expect.soft(isNoindex, "2 — Trang bảo mật/nội bộ nên có 'noindex' nhưng chưa gắn!").toBe(true);
-    }
+    const robotsOk = expectIndexable ? !isNoindex : isNoindex;
+    await sc.check(
+      `A8.2 — Robots: ${scan.robots || "Mặc định Index"} (mong muốn: ${expectIndexable ? "INDEX" : "NOINDEX"})`,
+      robotsOk,
+      expectIndexable
+        ? "Trang mong muốn INDEX nhưng đang bị gắn 'noindex'!"
+        : "Trang bảo mật/nội bộ nên có 'noindex' nhưng chưa gắn!"
+    );
 
-    // A8.3
+    // A8.3 — robots.txt
     const origin = new URL(scan.currentUrl).origin;
     const robotsTxtStatus = await this.checkUrlStatus(`${origin}/robots.txt`);
-    expect.soft(robotsTxtStatus, `3 — robots.txt trả về status ${robotsTxtStatus}`).toBe(200);
+    await sc.check(
+      `A8.3 — robots.txt trả về status ${robotsTxtStatus}`,
+      robotsTxtStatus === 200,
+      `robots.txt trả về status ${robotsTxtStatus}, cần 200`
+    );
 
-    // A8.4
+    // A8.4 — sitemap.xml
     const sitemapStatus = await this.checkUrlStatus(`${origin}/sitemap.xml`);
-    expect.soft(sitemapStatus, `4 — sitemap.xml trả về status ${sitemapStatus}`).toBe(200);
+    await sc.check(
+      `A8.4 — sitemap.xml trả về status ${sitemapStatus}`,
+      sitemapStatus === 200,
+      `sitemap.xml trả về status ${sitemapStatus}, cần 200`
+    );
 
-    // A8.5
-    expect.soft(scan.hasSchema, "5 — Thiếu Schema Markup (JSON-LD / Microdata / RDFa)").toBe(true);
+    // A8.5 — Schema Markup
+    await sc.check(
+      `A8.5 — Schema Markup (JSON-LD/Microdata): ${scan.hasSchema ? "Đã cài" : "Thiếu"}`,
+      scan.hasSchema,
+      "Thiếu Schema Markup (JSON-LD / Microdata / RDFa)"
+    );
 
-    // A8.6 — Open Graph (tuỳ cấu hình checkSocialOg)
+    // A8.6 — Open Graph tags (tuỳ cấu hình)
     if (data.checkSocialOg !== false) {
-      expect.soft(scan.ogTitle, "6 — Thiếu og:title").not.toBeNull();
-      expect.soft(scan.ogDesc, "6 — Thiếu og:description").not.toBeNull();
+      await sc.check(
+        `A8.6 — Open Graph: og:title=${scan.ogTitle ? "✔" : "✘"}, og:description=${scan.ogDesc ? "✔" : "✘"}`,
+        !!scan.ogTitle && !!scan.ogDesc,
+        `Thiếu ${!scan.ogTitle ? "og:title" : ""}${!scan.ogTitle && !scan.ogDesc ? " và " : ""}${!scan.ogDesc ? "og:description" : ""}`
+      );
     }
 
-    // A8.7 — Twitter Card (tuỳ cấu hình checkSocialOg)
+    // A8.7 — Twitter Card tags (tuỳ cấu hình)
     if (data.checkSocialOg !== false) {
-      expect.soft(
-        Object.keys(scan.twitterTags).length,
-        "7 — Trang thiếu Twitter Card tags"
-      ).toBeGreaterThan(0);
+      const twitterCount = Object.keys(scan.twitterTags).length;
+      await sc.check(
+        `A8.7 — Twitter Card tags: ${twitterCount} thẻ`,
+        twitterCount > 0,
+        "Trang thiếu Twitter Card tags"
+      );
     }
 
-    // A8.8
-    expect.soft(scan.lang, "8 — Thẻ <html> thiếu thuộc tính lang").not.toBeNull();
-    if (scan.lang) {
-      expect.soft(scan.lang.length, "8 — Thuộc tính lang rỗng").toBeGreaterThan(0);
-    }
+    // A8.8 — Thuộc tính lang
+    await sc.check(
+      `A8.8 — HTML lang="${scan.lang || "Thiếu"}"`,
+      !!scan.lang && scan.lang.length > 0,
+      "Thẻ <html> thiếu thuộc tính lang"
+    );
 
-    // A8.9
-    expect.soft(scan.charset, "9 — Trang thiếu khai báo charset").not.toBeNull();
-    if (scan.charset) {
-      expect.soft(scan.charset.toLowerCase(), `9 — Charset nên là UTF-8, hiện tại: ${scan.charset}`).toBe("utf-8");
-    }
-    expect.soft(scan.hasFavicon, "9 — Trang thiếu favicon").toBe(true);
+    // A8.9 — Charset + Favicon
+    const charsetOk = !!scan.charset && scan.charset.toLowerCase() === "utf-8";
+    await sc.check(
+      `A8.9 — Charset: ${scan.charset || "Thiếu"} | Favicon: ${scan.hasFavicon ? "✔" : "✘"}`,
+      charsetOk && scan.hasFavicon,
+      [
+        !scan.charset ? "Thiếu khai báo charset" : null,
+        scan.charset && scan.charset.toLowerCase() !== "utf-8" ? `Charset nên là UTF-8, hiện tại: ${scan.charset}` : null,
+        !scan.hasFavicon ? "Trang thiếu favicon" : null,
+      ].filter(Boolean).join(". ")
+    );
   }
 
   /** A9.1: Xác thực Mobile */
-  async verifyMobile(scan: SeoScanResult) {
-    expect.soft(scan.hasViewport, "1 — Trang thiếu thẻ <meta name='viewport'>").toBe(true);
+  async verifyMobile(scan: SeoScanResult, sc: SeoScorecard) {
+    await sc.check(
+      `A9.1 — Viewport meta tag: ${scan.hasViewport ? "✔" : "✘"}`,
+      scan.hasViewport,
+      "Trang thiếu thẻ <meta name='viewport'>"
+    );
   }
 
   /** A11.1→A11.2: Xác thực Bảo mật */
-  async verifySecurity(scan: SeoScanResult) {
-    // A11.1
-    expect.soft(scan.isHttps, `1 — Trang đang dùng HTTP: ${scan.currentUrl}`).toBe(true);
+  async verifySecurity(scan: SeoScanResult, sc: SeoScorecard) {
+    // A11.1 — HTTPS
+    await sc.check(
+      `A11.1 — HTTPS: ${scan.isHttps ? "Đã bật" : "Chưa bật"}`,
+      scan.isHttps,
+      `Trang đang dùng HTTP: ${scan.currentUrl}`
+    );
 
-    // A11.2
-    expect.soft(
-      scan.mixedContent.length,
-      `2 — Phát hiện ${scan.mixedContent.length} tài nguyên HTTP trên HTTPS: ${scan.mixedContent.join(", ")}`
-    ).toBe(0);
+    // A11.2 — Mixed Content
+    await sc.check(
+      `A11.2 — Mixed Content: ${scan.mixedContent.length} tài nguyên HTTP`,
+      scan.mixedContent.length === 0,
+      `Phát hiện ${scan.mixedContent.length} tài nguyên HTTP trên HTTPS: ${scan.mixedContent.slice(0, 5).join(", ")}`
+    );
   }
+
 
   // ==================== GETTER METHODS (giữ nguyên) ====================
 

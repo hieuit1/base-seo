@@ -14,6 +14,8 @@ export interface SeoPageTestData {
   keywordDensityMin?: number;
   keywordDensityMax?: number;
   urlMaxLength?: number;
+  /** Ngưỡng điểm SEO để PASS (0–100). Mặc định: 70 */
+  seoPassThreshold?: number;
 }
 
 /**
