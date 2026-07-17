@@ -409,13 +409,15 @@ export class SeoPage extends BasePage {
       .filter((l) => l.href && !l.href.startsWith("#") && !l.href.startsWith("javascript:") && !l.href.startsWith("mailto:") && !l.href.startsWith("tel:"))
       .slice(0, 10);
 
-    for (const link of linksToCheck) {
-      const fullUrl = link.href.startsWith("http") ? link.href : `${origin}${link.href}`;
-      const status = await this.checkUrlStatus(fullUrl);
-      if (status >= 400 || status === 0) {
-        brokenLinks.push(`${link.href} (status: ${status})`);
-      }
-    }
+    await Promise.all(
+      linksToCheck.map(async (link) => {
+        const fullUrl = link.href.startsWith("http") ? link.href : `${origin}${link.href}`;
+        const status = await this.checkUrlStatus(fullUrl);
+        if (status >= 400 || status === 0) {
+          brokenLinks.push(`${link.href} (status: ${status})`);
+        }
+      })
+    );
     await sc.check(
       `7.4 — Không có broken links (lỗi: ${brokenLinks.length}/${linksToCheck.length})`,
       brokenLinks.length === 0,
@@ -447,17 +449,19 @@ export class SeoPage extends BasePage {
         : "Trang bảo mật/nội bộ nên có 'noindex' nhưng chưa gắn!"
     );
 
-    // 8.3 — robots.txt
+    // 8.3 & 8.4 — robots.txt & sitemap.xml (gửi song song để tối ưu tốc độ)
     const origin = new URL(scan.currentUrl).origin;
-    const robotsTxtStatus = await this.checkUrlStatus(`${origin}/robots.txt`);
+    const [robotsTxtStatus, sitemapStatus] = await Promise.all([
+      this.checkUrlStatus(`${origin}/robots.txt`),
+      this.checkUrlStatus(`${origin}/sitemap.xml`)
+    ]);
+
     await sc.check(
       `8.3 — robots.txt trả về status ${robotsTxtStatus}`,
       robotsTxtStatus === 200,
       `robots.txt trả về status ${robotsTxtStatus}, cần 200`
     );
 
-    // 8.4 — sitemap.xml
-    const sitemapStatus = await this.checkUrlStatus(`${origin}/sitemap.xml`);
     await sc.check(
       `8.4 — sitemap.xml trả về status ${sitemapStatus}`,
       sitemapStatus === 200,

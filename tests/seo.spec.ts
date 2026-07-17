@@ -6,6 +6,8 @@ import { SeoScanResult } from "../src/pages/SeoPage";
 import { DEFAULT_SEO_CONFIG } from "../src/constants/seoDefaults";
 
 test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
+  test.describe.configure({ mode: "parallel" });
+
   test.beforeEach(async () => {
     await allure.epic("SEO Optimization");
     await allure.feature("Tiêu chuẩn cơ bản (parse HTML tĩnh)");
