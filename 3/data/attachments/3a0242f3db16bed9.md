@@ -1,0 +1,472 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: seo.spec.ts >> SEO TIÊU CHUẨN CƠ BẢN CHO WEB >> Kiểm tra SEO Onpage: Áo sơ mi
+- Location: tests/seo.spec.ts:15:9
+
+# Error details
+
+```
+Error: 2 — Title quá ngắn: 14 ký tự, cần ≥ 40
+
+expect(received).toBeGreaterThanOrEqual(expected)
+
+Expected: >= 40
+Received:    14
+```
+
+```
+Error: 3 — Title không chứa keyword "áo sơ mi"
+
+expect(received).toContain(expected) // indexOf
+
+Expected substring: "áo sơ mi"
+Received string:    "example domain"
+```
+
+```
+Error: 1 — Thẻ <meta name="description"> không tồn tại!
+
+expect(received).not.toBeNull()
+
+Received: null
+```
+
+```
+Error: 2 — H1 "Example Domain" không chứa keyword "áo sơ mi"
+
+expect(received).toContain(expected) // indexOf
+
+Expected substring: "áo sơ mi"
+Received string:    "example domain"
+```
+
+```
+Error: 4 — Trang nên có ít nhất 1 thẻ H2 hoặc H3
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+```
+
+```
+Error: 2 — URL "/collections/ao-somi" không chứa keyword "áo-sơ-mi"
+
+expect(received).toContain(expected) // indexOf
+
+Expected substring: "áo-sơ-mi"
+Received string:    "/collections/ao-somi"
+```
+
+```
+Error: 1 — Trang chỉ có 17 từ, cần ≥ 300
+
+expect(received).toBeGreaterThanOrEqual(expected)
+
+Expected: >= 300
+Received:    17
+```
+
+```
+Error: 2 — Mật độ keyword quá thấp: 0.00%
+
+expect(received).toBeGreaterThanOrEqual(expected)
+
+Expected: >= 0.5
+Received:    0
+```
+
+```
+Error: 3 — Keyword "áo sơ mi" không xuất hiện trong 100 từ đầu
+
+expect(received).toContain(expected) // indexOf
+
+Expected substring: "áo sơ mi"
+Received string:    "example domainthis domain is for use in documentation examples without needing permission. avoid use in operations.learn more"
+```
+
+```
+Error: 1 — Trang nên có ít nhất 1 internal link
+
+expect(received).toBeGreaterThan(expected)
+
+Expected: > 0
+Received:   0
+```
+
+```
+Error: 1 — Thiếu thẻ <link rel="canonical">. Nguy cơ trùng lặp!
+
+expect(received).not.toBeNull()
+
+Received: null
+```
+
+```
+Error: 3 — robots.txt trả về status 404
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+```
+
+```
+Error: 4 — sitemap.xml trả về status 404
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+```
+
+```
+Error: 5 — Thiếu Schema Markup (JSON-LD / Microdata / RDFa)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+```
+
+```
+Error: 6 — Thiếu og:title
+
+expect(received).not.toBeNull()
+
+Received: null
+```
+
+```
+Error: 6 — Thiếu og:description
+
+expect(received).not.toBeNull()
+
+Received: null
+```
+
+```
+Error: 7 — Trang thiếu Twitter Card tags
+
+expect(received).toBeGreaterThan(expected)
+
+Expected: > 0
+Received:   0
+```
+
+```
+Error: 9 — Trang thiếu khai báo charset
+
+expect(received).not.toBeNull()
+
+Received: null
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "Example Domain" [level=1] [ref=e3]
+    - paragraph [ref=e4]: This domain is for use in documentation examples without needing permission. Avoid use in operations.
+    - paragraph [ref=e5]:
+      - link "Learn more" [ref=e6] [cursor=pointer]:
+        - /url: https://iana.org/domains/example
+  - generic:
+    - generic:
+      - generic: 🎯 BÁO CÁO SEO AUDIT
+      - generic: "Phần A: On-page cơ bản"
+    - generic:
+      - generic:
+        - generic:
+          - generic: "20"
+          - generic: SEO
+      - generic: "CẢNH BÁO: SEO YẾU"
+    - generic:
+      - generic:
+        - generic: "Trang phân tích:"
+        - strong: Áo sơ mi
+      - generic:
+        - generic: "Từ khóa chính:"
+        - strong: áo sơ mi
+      - generic:
+        - generic: "Kết quả tiêu chí:"
+        - strong: 2/10 ĐẠT
+    - generic: "❌ Lỗi cần khắc phục (8):"
+    - generic:
+      - generic:
+        - generic:
+          - strong: Thẻ Title
+          - generic: LỖI
+        - generic: "Hiện tại: Example Domain"
+        - list:
+          - listitem: "Độ dài không chuẩn: 14 ký tự (yêu cầu từ 40-65)."
+          - listitem: "Không chứa từ khóa chính: \"áo sơ mi\"."
+      - generic:
+        - generic:
+          - strong: Thẻ Meta Description
+          - generic: LỖI
+        - generic: "Hiện tại: Không tìm thấy"
+        - list:
+          - listitem: Thiếu thẻ Meta Description.
+      - generic:
+        - generic:
+          - strong: Cấu trúc Thẻ Headings
+          - generic: LỖI
+        - generic: "Hiện tại: H1: 1 thẻ ・ Tổng: 1 headings"
+        - list:
+          - listitem: Thẻ H1 không chứa từ khóa "áo sơ mi".
+          - listitem: Trang nên có thêm thẻ H2 hoặc H3.
+      - generic:
+        - generic:
+          - strong: Cấu trúc Đường dẫn URL
+          - generic: LỖI
+        - generic: "Hiện tại: /collections/ao-somi"
+        - list:
+          - listitem: "Đường dẫn không chứa từ khóa viết dưới dạng slug: \"áo-sơ-mi\"."
+      - generic:
+        - generic:
+          - strong: Chất lượng Nội dung
+          - generic: LỖI
+        - generic: "Hiện tại: 17 từ ・ Mật độ keyword: 0.00%"
+        - list:
+          - listitem: "Số lượng từ quá ít: 17 từ (yêu cầu tối thiểu 300 từ)."
+          - listitem: Mật độ từ khóa (0.00%) không tối ưu (yêu cầu 0.5% - 2.5%).
+          - listitem: 100 từ đầu tiên không chứa từ khóa "áo sơ mi".
+      - generic:
+        - generic:
+          - strong: Canonical & Robots
+          - generic: LỖI
+        - generic: "Hiện tại: Robots: Mặc định Index"
+        - list:
+          - listitem: Thiếu thẻ .
+      - generic:
+        - generic:
+          - strong: Social Open Graph & Schema
+          - generic: LỖI
+        - generic: "Hiện tại: Schema: Thiếu"
+        - list:
+          - listitem: Thiếu thẻ Open Graph (og:title hoặc og:description).
+          - listitem: Thiếu Twitter Card meta tags.
+          - listitem: Thiếu cấu trúc Schema Markup (JSON-LD/Microdata).
+      - generic:
+        - generic:
+          - strong: Di động & Kỹ thuật
+          - generic: LỖI
+        - generic: "Hiện tại: Lang: en ・ Charset: Thiếu"
+        - list:
+          - listitem: Thiếu khai báo charset hoặc charset khác UTF-8.
+```
+
+# Test source
+
+```ts
+  316 |       ).toBeGreaterThanOrEqual(threshold);
+  317 |     }
+  318 | 
+  319 |     // A6.4
+  320 |     expect.soft(
+  321 |       imagesWithBadNames,
+  322 |       `4 — ${imagesWithBadNames} ảnh có tên file vô nghĩa (hash)`
+  323 |     ).toBe(0);
+  324 |   }
+  325 | 
+  326 |   /** A7.1→A7.4: Xác thực liên kết */
+  327 |   async verifyLinks(scan: SeoScanResult) {
+  328 |     const { internalLinks, externalLinks } = scan;
+  329 | 
+  330 |     // A7.1
+  331 |     expect.soft(internalLinks.length, "1 — Trang nên có ít nhất 1 internal link").toBeGreaterThan(0);
+  332 | 
+  333 |     // A7.2 — Chỉ log, không enforce
+  334 |     if (externalLinks.length === 0) {
+  335 |       console.log("ℹ️ 2 — Trang không có external links — không bắt buộc nhưng nên có.");
+  336 |     }
+  337 | 
+  338 |     // A7.3
+  339 |     const genericAnchors = ["click here", "here", "read more", "xem thêm", "nhấn vào đây", "tại đây"];
+  340 |     const badAnchors = internalLinks.filter((link) => {
+  341 |       const text = link.text.trim().toLowerCase();
+  342 |       return text === "" || genericAnchors.includes(text);
+  343 |     });
+  344 |     expect.soft(
+  345 |       badAnchors.length,
+  346 |       `3 — ${badAnchors.length} link có anchor text không tốt: ${badAnchors.map((l) => `"${l.text}" → ${l.href}`).join(", ")}`
+  347 |     ).toBe(0);
+  348 | 
+  349 |     // A7.4 — Kiểm tra tối đa 10 broken internal links
+  350 |     const origin = new URL(scan.currentUrl).origin;
+  351 |     const brokenLinks: string[] = [];
+  352 |     const linksToCheck = internalLinks
+  353 |       .filter((l) => l.href && !l.href.startsWith("#") && !l.href.startsWith("javascript:") && !l.href.startsWith("mailto:") && !l.href.startsWith("tel:"))
+  354 |       .slice(0, 10);
+  355 | 
+  356 |     for (const link of linksToCheck) {
+  357 |       const fullUrl = link.href.startsWith("http") ? link.href : `${origin}${link.href}`;
+  358 |       const status = await this.checkUrlStatus(fullUrl);
+  359 |       if (status >= 400 || status === 0) {
+  360 |         brokenLinks.push(`${link.href} (status: ${status})`);
+  361 |       }
+  362 |     }
+  363 |     expect.soft(brokenLinks.length, `4 — Broken links: ${brokenLinks.join(", ")}`).toBe(0);
+  364 |   }
+  365 | 
+  366 |   /** A8.1→A8.9: Xác thực Technical SEO */
+  367 |   async verifyTechnicalSeo(scan: SeoScanResult, data: SeoPageTestData) {
+  368 |     // A8.1
+  369 |     expect.soft(scan.canonical, "1 — Thiếu thẻ <link rel=\"canonical\">. Nguy cơ trùng lặp!").not.toBeNull();
+  370 |     if (scan.canonical !== null) {
+  371 |       expect.soft(scan.canonical, "1 — URL Canonical không hợp lệ!").toMatch(/^https?:\/\//);
+  372 |     }
+  373 | 
+  374 |     // A8.2
+  375 |     const expectIndexable = data.expectIndexable ?? true;
+  376 |     const isNoindex = !!scan.robots?.toLowerCase().includes("noindex");
+  377 |     if (expectIndexable) {
+  378 |       expect.soft(isNoindex, "2 — Trang mong muốn INDEX nhưng đang bị gắn 'noindex'!").toBe(false);
+  379 |     } else {
+  380 |       expect.soft(isNoindex, "2 — Trang bảo mật/nội bộ nên có 'noindex' nhưng chưa gắn!").toBe(true);
+  381 |     }
+  382 | 
+  383 |     // A8.3
+  384 |     const origin = new URL(scan.currentUrl).origin;
+  385 |     const robotsTxtStatus = await this.checkUrlStatus(`${origin}/robots.txt`);
+  386 |     expect.soft(robotsTxtStatus, `3 — robots.txt trả về status ${robotsTxtStatus}`).toBe(200);
+  387 | 
+  388 |     // A8.4
+  389 |     const sitemapStatus = await this.checkUrlStatus(`${origin}/sitemap.xml`);
+  390 |     expect.soft(sitemapStatus, `4 — sitemap.xml trả về status ${sitemapStatus}`).toBe(200);
+  391 | 
+  392 |     // A8.5
+  393 |     expect.soft(scan.hasSchema, "5 — Thiếu Schema Markup (JSON-LD / Microdata / RDFa)").toBe(true);
+  394 | 
+  395 |     // A8.6 — Open Graph (tuỳ cấu hình checkSocialOg)
+  396 |     if (data.checkSocialOg !== false) {
+  397 |       expect.soft(scan.ogTitle, "6 — Thiếu og:title").not.toBeNull();
+  398 |       expect.soft(scan.ogDesc, "6 — Thiếu og:description").not.toBeNull();
+  399 |     }
+  400 | 
+  401 |     // A8.7 — Twitter Card (tuỳ cấu hình checkSocialOg)
+  402 |     if (data.checkSocialOg !== false) {
+  403 |       expect.soft(
+  404 |         Object.keys(scan.twitterTags).length,
+  405 |         "7 — Trang thiếu Twitter Card tags"
+  406 |       ).toBeGreaterThan(0);
+  407 |     }
+  408 | 
+  409 |     // A8.8
+  410 |     expect.soft(scan.lang, "8 — Thẻ <html> thiếu thuộc tính lang").not.toBeNull();
+  411 |     if (scan.lang) {
+  412 |       expect.soft(scan.lang.length, "8 — Thuộc tính lang rỗng").toBeGreaterThan(0);
+  413 |     }
+  414 | 
+  415 |     // A8.9
+> 416 |     expect.soft(scan.charset, "9 — Trang thiếu khai báo charset").not.toBeNull();
+      |                                                                       ^ Error: 9 — Trang thiếu khai báo charset
+  417 |     if (scan.charset) {
+  418 |       expect.soft(scan.charset.toLowerCase(), `9 — Charset nên là UTF-8, hiện tại: ${scan.charset}`).toBe("utf-8");
+  419 |     }
+  420 |     expect.soft(scan.hasFavicon, "9 — Trang thiếu favicon").toBe(true);
+  421 |   }
+  422 | 
+  423 |   /** A9.1: Xác thực Mobile */
+  424 |   async verifyMobile(scan: SeoScanResult) {
+  425 |     expect.soft(scan.hasViewport, "1 — Trang thiếu thẻ <meta name='viewport'>").toBe(true);
+  426 |   }
+  427 | 
+  428 |   /** A11.1→A11.2: Xác thực Bảo mật */
+  429 |   async verifySecurity(scan: SeoScanResult) {
+  430 |     // A11.1
+  431 |     expect.soft(scan.isHttps, `1 — Trang đang dùng HTTP: ${scan.currentUrl}`).toBe(true);
+  432 | 
+  433 |     // A11.2
+  434 |     expect.soft(
+  435 |       scan.mixedContent.length,
+  436 |       `2 — Phát hiện ${scan.mixedContent.length} tài nguyên HTTP trên HTTPS: ${scan.mixedContent.join(", ")}`
+  437 |     ).toBe(0);
+  438 |   }
+  439 | 
+  440 |   // ==================== GETTER METHODS (giữ nguyên) ====================
+  441 | 
+  442 |   async getTitle(): Promise<string> {
+  443 |     return await this.page.title();
+  444 |   }
+  445 | 
+  446 |   async getMetaDescription(): Promise<string | null> {
+  447 |     return await this.getMetaContent("description");
+  448 |   }
+  449 | 
+  450 |   async getH1Elements(): Promise<string[]> {
+  451 |     return await this.getAllElementsText("h1");
+  452 |   }
+  453 | 
+  454 |   async getAllHeadings(): Promise<{ tag: string; text: string }[]> {
+  455 |     return await this.page.evaluate(() => {
+  456 |       const headings: { tag: string; text: string }[] = [];
+  457 |       document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((el) => {
+  458 |         headings.push({ tag: el.tagName.toLowerCase(), text: (el.textContent || "").trim() });
+  459 |       });
+  460 |       return headings;
+  461 |     });
+  462 |   }
+  463 | 
+  464 |   async checkHeadingHierarchy(): Promise<{ valid: boolean; issues: string[] }> {
+  465 |     const headings = await this.getAllHeadings();
+  466 |     const issues: string[] = [];
+  467 |     let lastLevel = 0;
+  468 |     for (const heading of headings) {
+  469 |       const level = parseInt(heading.tag.replace("h", ""));
+  470 |       if (lastLevel > 0 && level > lastLevel + 1) {
+  471 |         issues.push(`Nhảy cấp từ H${lastLevel} → H${level} ("${heading.text}")`);
+  472 |       }
+  473 |       lastLevel = level;
+  474 |     }
+  475 |     return { valid: issues.length === 0, issues };
+  476 |   }
+  477 | 
+  478 |   async getBodyText(): Promise<string> {
+  479 |     return await this.page.evaluate(() => {
+  480 |       const clone = document.body.cloneNode(true) as HTMLElement;
+  481 |       clone.querySelectorAll("script, style, noscript, iframe").forEach((el) => el.remove());
+  482 |       return (clone.textContent || "").replace(/\s+/g, " ").trim();
+  483 |     });
+  484 |   }
+  485 | 
+  486 |   async getWordCount(): Promise<number> {
+  487 |     const text = await this.getBodyText();
+  488 |     return text.split(/\s+/).filter((w) => w.length > 0).length;
+  489 |   }
+  490 | 
+  491 |   async getFirst100Words(): Promise<string> {
+  492 |     const text = await this.getBodyText();
+  493 |     return text.split(/\s+/).slice(0, 100).join(" ");
+  494 |   }
+  495 | 
+  496 |   async calculateKeywordDensity(keyword: string): Promise<number> {
+  497 |     const text = await this.getBodyText();
+  498 |     const words = text.split(/\s+/).filter((w) => w.length > 0);
+  499 |     const totalWords = words.length;
+  500 |     if (totalWords === 0) return 0;
+  501 |     const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  502 |     const regex = new RegExp(escapedKeyword, "gi");
+  503 |     const matches = text.match(regex);
+  504 |     return ((matches ? matches.length : 0) / totalWords) * 100;
+  505 |   }
+  506 | 
+  507 |   async getImages(): Promise<{ src: string; alt: string | null; width: string | null; height: string | null }[]> {
+  508 |     return await this.page.evaluate(() => {
+  509 |       return Array.from(document.querySelectorAll("img")).map((img) => ({
+  510 |         src: img.getAttribute("src") || "",
+  511 |         alt: img.getAttribute("alt"),
+  512 |         width: img.getAttribute("width") || img.style.width || null,
+  513 |         height: img.getAttribute("height") || img.style.height || null,
+  514 |       }));
+  515 |     });
+  516 |   }
+```
