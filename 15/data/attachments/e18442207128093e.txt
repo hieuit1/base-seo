@@ -1,0 +1,38 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     68/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          26
+   ❌ Không đạt:    12
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 21 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 21 ký tự, cần 40–65
+   2. [1.3 — Title chứa keyword "san pham moi"]
+      → Title không chứa keyword "san pham moi"
+   3. [1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "san pham moi" không có trong Title
+   4. [2.3 — Meta description chứa keyword "san pham moi"]
+      → Meta description không chứa keyword "san pham moi"
+   5. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   6. [3.2 — H1 chứa keyword "san pham moi"]
+      → Không có H1 để kiểm tra
+   7. [5.2 — Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   8. [5.3 — Keyword "san pham moi" xuất hiện trong 100 từ đầu]
+      → Keyword "san pham moi" không xuất hiện trong 100 từ đầu
+   9. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/240)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   10. [6.2 — Có ảnh chứa keyword "san pham moi" trong alt]
+      → Không có ảnh nào có alt chứa keyword "san pham moi"
+   11. [7.3 — Anchor text chất lượng (lỗi: 29)]
+      → 29 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/quan-short-nam-pique-icondenim-heatwave, "" → /products/ao-thun-nam-icondenim-bear-team, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals, "" → /products/ao-thun-nam-icondenim-retro-cooler, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-midnight-garden, "" → /products/ao-polo-nam-icondenim-puro, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-wildbloom, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-blanko, "" → /products/ao-tanktop-nam-icondenim-coastal-knit, "" → /products/quan-boxer-nam-icondenim-sanctum, "" → /products/ao-thun-nam-icondenim-regal, "" → /products/non-bucket-nam-icondenim-urban-relic, "" → /products/ao-thun-nam-icondenim-homefield, "" → /products/ao-thun-nam-icondenim-archive, "" → /products/quan-jeans-nam-icondenim-fadeline, "" → /products/combo-3-vo-nam-no-show-icondenim-pure-ease, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-riviera-knit, "" → /products/set-ao-quan-nam-icondenim-lazy-fish, "" → /products/quan-short-nam-icondenim-tropical-mono, "" → /products/ao-thun-nam-icondenim-fishing, "" → /products/ao-thun-nam-icondenim-riviera-stripe, "" → /collections/san-pham-moi?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   12. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

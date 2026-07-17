@@ -1,0 +1,30 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          30
+   ❌ Không đạt:    8
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [2.2 — Độ dài Meta: 162 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 162 ký tự, cần 120–160
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   3. [3.2 — H1 chứa keyword "áo thun"]
+      → Không có H1 để kiểm tra
+   4. [5.2 — Mật độ keyword: 3.90% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 3.90%, cần ≤ 2.5%
+   5. [5.3 — Keyword "áo thun" xuất hiện trong 100 từ đầu]
+      → Keyword "áo thun" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/249)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   7. [7.3 — Anchor text chất lượng (lỗi: 31)]
+      → 31 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/ao-thun-nam-icondenim-bear-team, "" → /products/ao-thun-nam-icondenim-retro-cooler, "" → /products/ao-thun-nam-icondenim-regal, "" → /products/ao-thun-nam-icondenim-homefield, "" → /products/ao-thun-nam-icondenim-archive, "" → /products/ao-thun-nam-icondenim-fishing, "" → /products/ao-thun-nam-icondenim-riviera-stripe, "" → /products/ao-thun-nam-icondenim-summer-never-ends, "" → /products/ao-thun-nam-icondenim-blue-paradise, "" → /products/ao-thun-nam-icondenim-precision, "" → /products/ao-thun-nam-icondenim-atelier-1, "" → /products/ao-thun-nam-icondenim-standard, "" → /products/ao-thun-nam-icondenim-old-memories, "" → /products/ao-thun-nam-icondenim-flux, "" → /products/ao-thun-nam-icondenim-seminal, "" → /products/ao-thun-nam-icondenim-arch, "" → /products/ao-thun-nam-icondenim-turbo-booster, "" → /products/ao-thun-nam-icondenim-token, "" → /products/ao-thun-nam-icondenim-rawmute, "" → /products/ao-thun-nam-icondenim-velocity, "" → /products/ao-thun-nam-icondenim-star-signal, "" → /products/ao-thun-nam-icondenim-boston-athens, "" → /products/ao-thun-nam-icondenim-loud-dreams, "" → /collections/ao-thun?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

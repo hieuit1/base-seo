@@ -1,0 +1,34 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          28
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 35 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 35 ký tự, cần 40–65
+   2. [2.2 — Độ dài Meta: 200 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 200 ký tự, cần 120–160
+   3. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [3.3 — Heading phân cấp hợp lệ (3 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("BỀ MẶT KNIT"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [5.2 — Mật độ keyword: 0.18% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.18%, cần ≥ 0.5%
+   6. [5.3 — Keyword "áo polo nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "áo polo nam icondenim" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 41/82)]
+      → Có 41 hình ảnh thiếu thuộc tính 'alt'
+   8. [7.3 — Anchor text chất lượng (lỗi: 20)]
+      → 20 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/24_365c45836725482aa2ec1a7f18d5175e_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/25_046668528c1342f3a6819184c253b569_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-14_f46ffab340a34eacb82a95e951ace13f_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-pl-regular-c_e3557c24c0584ef4b92a7f0db3c2a751_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-13_c8635a7c6190418d8be69b3c08bb750e_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-11_fe2af53c2e9743f1b532c9fc72c6000a_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-3_5f8bd15303f642eeabd5d9122e111f24_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-4_9eb46d35128e48909e8be3f2e958f817_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-5_427e8c57155b47378f08cb213b1f768f_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-6_104a0ce2fe41424e8ec6632a99a0fa92_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-7_d461e89bd99f4d4aafd44067ef1baa67_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-8_1a87f0e3ca2b4195bce4ba2ee282b3c7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-textured-knit-2_9a3b262493fc4b438470da1b9c221e26_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   10. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

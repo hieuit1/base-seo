@@ -1,0 +1,30 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          30
+   ❌ Không đạt:    8
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   2. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   3. [5.2 — Mật độ keyword: 0.17% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.17%, cần ≥ 0.5%
+   4. [5.3 — Keyword "áo thun nam disney stitch" xuất hiện trong 100 từ đầu]
+      → Keyword "áo thun nam disney stitch" không xuất hiện trong 100 từ đầu
+   5. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 32/70)]
+      → Có 32 hình ảnh thiếu thuộc tính 'alt'
+   6. [7.3 — Anchor text chất lượng (lỗi: 18)]
+      → 18 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //product.hstatic.net/1000253775/product/anh_sp-06_90435b07636749f78bd2e789efe956bc_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_thun_568-13_b9d7093dc6664ef7b8cd7ec2da427e65_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/anh_sp-07_4a14684fa5e44c368bd9a5902b685a03_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/bang_size_atid0568-08_ec4dd6a93a_410e849336db426480d59d8e374c819a_1024x1024.png, "" → //product.hstatic.net/1000253775/product/160_ao_thun_568-2_7a399ea122f1439eb2690552f462e813_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_thun_568-3_ca32edc3e63140429458cd49f0a8e624_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_thun_568-4_7241be7645a74ed3ae164ba3e84986ab_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_thun_568-5_aefedfd1b09c41c2ae6e43e5adadae7e_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_thun_568-6_f15ab7f7db4e4598b8a4c105fdd9ff41_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_thun_568-11_3e6d363e049749599e8b905366ce42c0_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_ao_thun_568-8_1c502241cd734d3e9e6b8a19d96d30fc_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   7. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   8. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

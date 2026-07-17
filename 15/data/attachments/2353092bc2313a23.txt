@@ -1,0 +1,44 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     61/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          23
+   ❌ Không đạt:    15
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 37 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 37 ký tự, cần 40–65
+   2. [1.3 — Title chứa keyword "set đồ nam icondenim"]
+      → Title không chứa keyword "set đồ nam icondenim"
+   3. [1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "set đồ nam icondenim" không có trong Title
+   4. [2.2 — Độ dài Meta: 178 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 178 ký tự, cần 120–160
+   5. [2.3 — Meta description chứa keyword "set đồ nam icondenim"]
+      → Meta description không chứa keyword "set đồ nam icondenim"
+   6. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 59 thẻ)]
+      → Trang có 59 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   7. [3.2 — H1 chứa keyword "set đồ nam icondenim"]
+      → H1 "Set Đồ Nam ICONDENIM ICDN PanelPlay" không chứa keyword "set đồ nam icondenim"
+   8. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   9. [5.2 — Mật độ keyword: 0.04% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.04%, cần ≥ 0.5%
+   10. [5.3 — Keyword "set đồ nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "set đồ nam icondenim" không xuất hiện trong 100 từ đầu
+   11. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 31/66)]
+      → Có 31 hình ảnh thiếu thuộc tính 'alt'
+   12. [6.2 — Có ảnh chứa keyword "set đồ nam icondenim" trong alt]
+      → Không có ảnh nào có alt chứa keyword "set đồ nam icondenim"
+   13. [7.3 — Anchor text chất lượng (lỗi: 17)]
+      → 17 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //product.hstatic.net/1000253775/product/160_set_bo_081-10_6ce372768e004cfa81e18cc0d1268f8c_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_set_bo_081-12_00b4618c98244346a8bfcb311975874e_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_set_bo_081-13_7ec12c7b13d1488ea7525301a2b1d093_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-form-regular_a09b5bf2266044c3a74cd0777b01a82f_1024x1024.png, "" → //product.hstatic.net/1000253775/product/160_set_bo_081-3_6749f4ff887642a7a497c03381828d78_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-lung-thun-form-regular_ef5c8b8d0ef44acf969c6938cf1dbdd5_1024x1024.png, "" → //product.hstatic.net/1000253775/product/160_set_bo_081-4_5ab7a3e7a4214555a3db30c31f4d8097_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_set_bo_081-6_5c872e374c1e48ca81f24577d7110715_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_set_bo_081-1_22503d36dfc24db18e6f4745737fed06_1024x1024.jpg, "" → //product.hstatic.net/1000253775/product/160_set_bo_081-11_3dbf248365e545cbb517579adaed9db2_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   14. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   15. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

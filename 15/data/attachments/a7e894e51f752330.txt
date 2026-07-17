@@ -1,0 +1,24 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     87/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          33
+   ❌ Không đạt:    5
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [5.2 — Mật độ keyword: 2.61% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 2.61%, cần ≤ 2.5%
+   2. [5.3 — Keyword "quần kaki" xuất hiện trong 100 từ đầu]
+      → Keyword "quần kaki" không xuất hiện trong 100 từ đầu
+   3. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/147)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   4. [7.3 — Anchor text chất lượng (lỗi: 14)]
+      → 14 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/quan-kaki-nam-icondenim-simple, "" → /products/quan-kaki-nam-icondenim-sandfold, "" → /products/quan-cargo-kaki-nam-icondenim-washed, "" → /products/quan-kaki-nam-icondenim-classic-fit-sideband-form-straight, "" → /products/quan-kaki-cargo-icondenim-icdn-tag, "" → /products/quan-kaki-nam-icondenim-form-straight-fit, "" → /products/quan-kaki-icondenim-fundamental, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   5. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

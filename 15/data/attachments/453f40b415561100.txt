@@ -1,0 +1,34 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          28
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 37 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 37 ký tự, cần 40–65
+   2. [2.2 — Độ dài Meta: 177 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 177 ký tự, cần 120–160
+   3. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 59 thẻ)]
+      → Trang có 59 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [5.2 — Mật độ keyword: 0.17% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.17%, cần ≥ 0.5%
+   6. [5.3 — Keyword "set đồ nam runpow" xuất hiện trong 100 từ đầu]
+      → Keyword "set đồ nam runpow" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 29/86)]
+      → Có 29 hình ảnh thiếu thuộc tính 'alt'
+   8. [7.3 — Anchor text chất lượng (lỗi: 28)]
+      → 28 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-14_cd68829e67d44088ad3387e6319bdb86_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/untitled-2_7839dc3e9ff34bb895207eae151bf93a_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/dsc07185_copy_2_a4ef3cf3ba4a43ef8907e23a6249cc06_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/untitled-4_85bac50710204caa99e94c1f89482373_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-tt-vainho-regular-c_68b0478146b640eaaf01c2fa275fd05c_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sq-qstn-regular-c_2b8670faf1474b5da342164efcc21a45_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/untitled-5_7b344cbe96834d77831ab5440c473c23_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/dsc07272_copy_2_c59d89d7e0f5428eb5068a8401862112_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/untitled-3_ae9f687f7b0947d8b6489a3cdc79fbbb_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-1_acce9c6ad99f4feaae5c2d32f09fb76d_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-5_d934001db7534591992ea5a06ca347cd_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-2_3e8d0190660d48db8e90765ba596963c_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-3_d2d6b49482e64272bb541d8d4cc8129b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-4_4a6dace7060b4a269fba856a86334b08_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-11_09f29f987084435aa9e6ade7d93ae169_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-6_ab9993b309ad45cd8cf33caec7bbd98c_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-9_60900aaf34ef4b7b84f24814ef261ca8_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-8_5fdd3246344a40e3b6d91f50a82496b6_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-10_b139ed9205464ff4bfcd502aaec09c2b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-12_13d97978778743ada915d292bf9f6b0a_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_set_bo_006-13_7194a3cb673d4267b96816a594820e8f_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   10. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

@@ -1,0 +1,32 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     76/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          29
+   ❌ Không đạt:    9
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 37 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 37 ký tự, cần 40–65
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   3. [3.3 — Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   4. [5.2 — Mật độ keyword: 0.17% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.17%, cần ≥ 0.5%
+   5. [5.3 — Keyword "áo thun nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "áo thun nam icondenim" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 27/64)]
+      → Có 27 hình ảnh thiếu thuộc tính 'alt'
+   7. [7.3 — Anchor text chất lượng (lỗi: 18)]
+      → 18 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend_cb2f58c5b63b492a9428d317c95a202f_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-11_b75a6f2719bc4d9f93582131be4854e2_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-5_1adf6d1f8da14fa2a38cb92f230e5772_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-2_578038316e0043b9993e17e14cbc6ee0_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-attn-regular-c_14f403b1d85b45c3918e4be960805ee6_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-3_0ef5d21be9ab4cf88f27b35340b3c3ae_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-4_be65e813ed934e888aae851eea004ed0_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-7_cada26e8a0bc41379900f464ec9e05fb_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-8_f8aa22abbf344b6db29b80f5383787d4_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-10_da2b9db9d94a477085f4bd5b63f4ed74_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-thun-nam-icondenim-lusitano-legend-14_df2e14f19e2146c2ab7d5a8b9b151c47_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   9. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

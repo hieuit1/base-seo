@@ -1,0 +1,30 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          30
+   ❌ Không đạt:    8
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [2.2 — Độ dài Meta: 174 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 174 ký tự, cần 120–160
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   3. [3.2 — H1 chứa keyword "áo khoác"]
+      → Không có H1 để kiểm tra
+   4. [5.2 — Mật độ keyword: 2.98% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 2.98%, cần ≤ 2.5%
+   5. [5.3 — Keyword "áo khoác" xuất hiện trong 100 từ đầu]
+      → Keyword "áo khoác" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/239)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   7. [7.3 — Anchor text chất lượng (lỗi: 20)]
+      → 20 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/ao-khoac-bomber-nam-icondenim-allstar, "" → /products/ao-khoac-gio-active-nam-icondenim-airflex-gon-nhe-linh-hoat, "" → /products/ao-khoac-du-nam-icondenim-strikeline, "" → /products/ao-khoac-jeans-nam-icondenim-skyfold, "" → /products/ao-khoac-jeans-nam-icondenim-duskpath, "" → /products/ao-khoac-gio-nam-icondenim-phoi-non-roi, "" → /products/ao-khoac-jeans-nam-icondenim-trucker-steel-mark, "" → /products/ao-khoac-nam-kaki-icondenim-origin-jacket, "" → /products/ao-khoac-jeans-nam-icon105-lightweight-icondenim-indigo, "" → /products/ao-khoac-jeans-nam-icon105-lightweight-icondenim-mid-blue, "" → /products/ao-khoac-jeans-nam-icon105-lightweight-icondenim-black, "" → /products/ao-khoac-jeans-nam-icondenim-dust-black-trucker, "" → /collections/ao-khoac?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
