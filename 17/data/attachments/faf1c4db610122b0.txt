@@ -1,0 +1,34 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          28
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Độ dài Title: 38 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 38 ký tự, cần 40–65
+   2. [Độ dài Meta: 205 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 205 ký tự, cần 120–160
+   3. [Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [Mật độ keyword: 0.18% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.18%, cần ≥ 0.5%
+   6. [Keyword "áo sơ mi nam tay ngắn" xuất hiện trong 100 từ đầu]
+      → Keyword "áo sơ mi nam tay ngắn" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 27/68)]
+      → Có 27 hình ảnh thiếu thuộc tính 'alt'
+   8. [Anchor text chất lượng (lỗi: 20)]
+      → 20 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-11_86f747e758a74a3697482780b5ed8f72_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-13_bc110d5135c6425d91d3631d0c6dfe35_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-4_0cf5c97352ae4f12b300990223d82da1_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-1_e1cbd70fcb534c9895a1313404d9ead0_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-smtn-slim-new_cf53eadb844946f9bcff7bce72a52aa6_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-2_dd8a3524fc374ee39a6755400fb13699_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-5_bbbca03c0f0140aabaccc24f7f6e2677_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-9_61513bf296a745cd863d35e6b9207eaf_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-8_3a8421471dba42d3a7ad2707e895e806_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-3_194234e4a08840359d26f798e70183e0_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-10_0aad8dcd06be4966a4804d0de41cb2b0_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-12_ba28df5452784facb30a3d3037c1e37d_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-so-mi-nam-tay-ngan-icondenim-blanko-14_074feab2e20c4823ab082d02d269b831_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   10. [Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

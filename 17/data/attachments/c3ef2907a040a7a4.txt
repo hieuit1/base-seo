@@ -1,0 +1,30 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          30
+   ❌ Không đạt:    8
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   2. [H1 chứa keyword "áo hoodie"]
+      → Không có H1 để kiểm tra
+   3. [URL chứa keyword slug "ao-hoodie" ]
+      → URL "/collections/hoodie" không chứa keyword "ao-hoodie"
+   4. [Mật độ keyword: 2.55% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 2.55%, cần ≤ 2.5%
+   5. [Keyword "áo hoodie" xuất hiện trong 100 từ đầu]
+      → Keyword "áo hoodie" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/76)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   7. [Anchor text chất lượng (lỗi: 7)]
+      → 7 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

@@ -1,0 +1,34 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          28
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Độ dài Title: 36 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 36 ký tự, cần 40–65
+   2. [Độ dài Meta: 242 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 242 ký tự, cần 120–160
+   3. [Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [Mật độ keyword: 0.17% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.17%, cần ≥ 0.5%
+   6. [Keyword "áo khoác dù nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "áo khoác dù nam icondenim" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 27/76)]
+      → Có 27 hình ảnh thiếu thuộc tính 'alt'
+   8. [Anchor text chất lượng (lỗi: 24)]
+      → 24 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-1_534f0fee36dc4fd79fec69302b59e3c7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-14_54b02068608d46ab93fbfc32dd49c217_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160s.14011783_89f67703e1ef419087cd793641ce4028_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-4_11f2022f7dc54409a545c7fe2298b572_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ak-raglan-loose_70c65d138d4d4d0f837d03f7232572be_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160s.14011742_a41311ff210243ea92f2cddb1de18381_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-9_6a6a33c6dee74ae0b7364f7230bd77f1_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-6_37f55b119db5453595011b139fb472b3_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-2_6670ea6db687474aa02848e7fb3b6369_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-5_cf275dbca2f3422cb8345629c5dd9b27_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-12_384f0eaec3d840f7bbeca21169c0cc53_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-10_fc0163d424a64c35aaac1a0801e33d43_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-11_8a4b0d4a0623469a9bfa3e3f321981e3_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-3_dd5803294c174ee0853025fb67a33601_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-7_45a9ff0c21d142ffa11fef292636d029_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-8_88ffb98f055c4686964504e2ab389ee7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-khoac-du-nam-icondenim-strikeline-13_57693c0f1f7445b38817554ecc53473a_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   10. [Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

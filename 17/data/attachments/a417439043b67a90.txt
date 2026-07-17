@@ -1,0 +1,34 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          28
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Độ dài Title: 33 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 33 ký tự, cần 40–65
+   2. [Độ dài Meta: 166 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 166 ký tự, cần 120–160
+   3. [Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [Mật độ keyword: 0.25% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.25%, cần ≥ 0.5%
+   6. [Keyword "quần jeans nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "quần jeans nam icondenim" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 29/72)]
+      → Có 29 hình ảnh thiếu thuộc tính 'alt'
+   8. [Anchor text chất lượng (lỗi: 21)]
+      → 21 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-1_8477ef1f7ed144c0a448a4dee9e9be13_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-14_9ea2cb1a6dfc450182b645bf9f7525ea_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-5_02df636ca2744ec7ababb93eb8a9dfe2_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-13_aa24d815e9184b6182e7445d920053d4_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sq-qj-baggy-new_c7ef596deae847e599288d5f72e492ff_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-7_4243f718a49547b58f9837b82eb2f4fe_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-10_021a4611bdcd4b08886f2021eb26ac36_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-9_472c372d35b6402e971a8cca907d77fd_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-3_6349ab7884a84f508cfc562db6163531_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-8_b3b9b72ca86c4479b761bda4df101a0c_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-4_e34bca0f5977419cb4a36de67fdde06f_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-2_7b08e977c3be4c689c67ab3f7d0012d7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-6_665d4480e5f4467db6d7c41cfb3fc4ad_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-jeans-nam-icondenim-fadeline-12_0ae47bc9193e4281bc72a68c5f63ac7c_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   10. [Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

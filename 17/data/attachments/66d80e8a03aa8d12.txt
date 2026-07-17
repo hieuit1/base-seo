@@ -1,0 +1,46 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     58/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          22
+   ❌ Không đạt:    16
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Title chứa keyword "disney mickey friend"]
+      → Title không chứa keyword "disney mickey friend"
+   2. [Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "disney mickey friend" không có trong Title
+   3. [Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   4. [Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   5. [Meta description chứa keyword "disney mickey friend"]
+      → Không thể kiểm tra — Meta description không tồn tại
+   6. [Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   7. [H1 chứa keyword "disney mickey friend"]
+      → Không có H1 để kiểm tra
+   8. [Trang có thẻ H2/H3 hỗ trợ (0 thẻ)]
+      → Trang nên có ít nhất 1 thẻ H2 hoặc H3
+   9. [URL chứa keyword slug "disney-mickey-friend" ]
+      → URL "/collections/disney-collection-mickey-in-real-life-real-friends" không chứa keyword "disney-mickey-friend"
+   10. [Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   11. [Keyword "disney mickey friend" xuất hiện trong 100 từ đầu]
+      → Keyword "disney mickey friend" không xuất hiện trong 100 từ đầu
+   12. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/22)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   13. [Có ảnh chứa keyword "disney mickey friend" trong alt]
+      → Không có ảnh nào có alt chứa keyword "disney mickey friend"
+   14. [Anchor text chất lượng (lỗi: 7)]
+      → 7 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   15. [Open Graph: og:title=✔, og:description=✘]
+      → Thiếu og:description
+   16. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

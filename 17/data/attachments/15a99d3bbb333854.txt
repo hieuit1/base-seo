@@ -1,0 +1,50 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     53/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          20
+   ❌ Không đạt:    18
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Title chứa keyword "chính sách gov"]
+      → Title không chứa keyword "chính sách gov"
+   2. [Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "chính sách gov" không có trong Title
+   3. [Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   4. [Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   5. [Meta description chứa keyword "chính sách gov"]
+      → Không thể kiểm tra — Meta description không tồn tại
+   6. [Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   7. [H1 chứa keyword "chính sách gov"]
+      → Không có H1 để kiểm tra
+   8. [Trang có thẻ H2/H3 hỗ trợ (0 thẻ)]
+      → Trang nên có ít nhất 1 thẻ H2 hoặc H3
+   9. [URL chứa keyword slug "chinh-sach-gov" ]
+      → URL "/nen-tang/1a643809-3f92-4419-944d-c2d4fdffb78b" không chứa keyword "chinh-sach-gov"
+   10. [Số lượng từ: 0 (tối thiểu: 300)]
+      → Trang chỉ có 0 từ, cần ≥ 300
+   11. [Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   12. [Keyword "chính sách gov" xuất hiện trong 100 từ đầu]
+      → Keyword "chính sách gov" không xuất hiện trong 100 từ đầu
+   13. [Internal links: 0 link]
+      → Trang nên có ít nhất 1 internal link
+   14. [Canonical URL hợp lệ (Không có)]
+      → Thiếu thẻ <link rel="canonical">. Nguy cơ trùng lặp!
+   15. [Schema Markup (JSON-LD/Microdata): Thiếu]
+      → Thiếu Schema Markup (JSON-LD / Microdata / RDFa)
+   16. [Open Graph: og:title=✘, og:description=✘]
+      → Thiếu og:title và og:description
+   17. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   18. [HTTPS: Chưa bật]
+      → Trang đang dùng HTTP: http://online.gov.vn/nen-tang/1a643809-3f92-4419-944d-c2d4fdffb78b

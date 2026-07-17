@@ -1,0 +1,34 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          28
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Độ dài Title: 35 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 35 ký tự, cần 40–65
+   2. [Độ dài Meta: 214 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 214 ký tự, cần 120–160
+   3. [Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [Mật độ keyword: 0.24% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.24%, cần ≥ 0.5%
+   6. [Keyword "quần short kaki nam" xuất hiện trong 100 từ đầu]
+      → Keyword "quần short kaki nam" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 27/74)]
+      → Có 27 hình ảnh thiếu thuộc tính 'alt'
+   8. [Anchor text chất lượng (lỗi: 23)]
+      → 23 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-10_029fa544bbc444ca98a4556f511ee438_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-3_b8a505fa553a46ef92dde00fa18ab416_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-1_7fe21433185d4d30bac2433e39facb9b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-7_dab9f6c0ac4e4848a0fb412253fe6131_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sq-qstn-regular-c_23e2b28f95744ab28ca938d344f177c8_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-4_941d1de2f8694a7280a3dd98eda25e8b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-2_09a78efd7df54896ba0e41cb6185458d_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-6_78ad9bdfc007407fb75d42e555c98c25_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-4_b6cb14dedbf34fc2bb7701a2331ee8b4_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-6_8dac539848be4f4f98e5d904f1ea5d81_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-8_192915eeea994c61bb3ffbffb3b55e6c_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-10_c2e7414d689f4b51906efe7c7029a0ef_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-11_0ec629778ee24a8ba463291c60ce0a32_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-12_2053e46b8297408ea1703d2644954152_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-13_cb0cb003935247b79c8a61e4a23ddb60_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-kaki-nam-icondenim-scisp-14_b594341b5b784d5e8f1ad4bdfaaa4339_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   10. [Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

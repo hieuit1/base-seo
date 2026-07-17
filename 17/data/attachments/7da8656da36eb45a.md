@@ -1,0 +1,602 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: seo.spec.ts >> SEO TIÊU CHUẨN CƠ BẢN CHO WEB >> Kiểm tra SEO Onpage: The Originals Legacy Collection
+- Location: tests/seo.spec.ts:18:9
+
+# Error details
+
+```
+Error: ❌ FAIL — Điểm SEO 58/100 dưới ngưỡng 70%. Có 16/38 tiêu chí không đạt.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "⚡️Flash Sale giảm 15% toàn bộ sản phẩm BST World Cup" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e7]:
+          - strong [ref=e8]: ⚡️Flash Sale giảm 15% toàn bộ sản phẩm BST World Cup
+      - link "☀️Đón hè cùng Bộ Sưu Tập The Poolside Club 2026" [ref=e10] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e11]:
+          - strong [ref=e12]: ☀️Đón hè cùng Bộ Sưu Tập The Poolside Club 2026
+      - link "Voucher 50K cho đơn từ 699K" [ref=e14] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e15]:
+          - strong [ref=e16]: Voucher 50K cho đơn từ 699K
+      - link "Voucher 80K cho đơn từ 999K" [ref=e18] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e19]:
+          - strong [ref=e20]: Voucher 80K cho đơn từ 999K
+    - generic [ref=e23]:
+      - link "160STORE" [ref=e25] [cursor=pointer]:
+        - /url: /
+        - img "160STORE" [ref=e26]
+      - navigation [ref=e27]:
+        - generic [ref=e29]:
+          - textbox "Search" [ref=e31]:
+            - /placeholder: Bạn đang tìm gì...
+          - button "Tìm kiếm" [ref=e32] [cursor=pointer]:
+            - img "Tìm kiếm" [ref=e33]
+      - list [ref=e36]:
+        - listitem [ref=e37]:
+          - generic [ref=e38]:
+            - link "Hệ thống cửa hàng Cửa hàng" [ref=e39] [cursor=pointer]:
+              - /url: https://www.160store.com/pages/lien-he
+              - img "Hệ thống cửa hàng" [ref=e41]
+              - generic [ref=e43]: Cửa hàng
+            - option "Chọn tỉnh/thành phố" [selected]
+            - option "Hà Nội"
+            - option "Bà Rịa - Vũng Tàu"
+            - option "An Giang"
+            - option "Đà Nẵng"
+            - option "Đắk Lắk"
+            - option "Hồ Chí Minh"
+            - option "Cần Thơ"
+            - option "Đồng Nai"
+            - option "Đà Nẵng"
+            - option "Hồ Chí Minh"
+            - option "TPHCM - Bình Dương"
+            - option "Hà Nội"
+            - option "Hồ Chí Minh"
+            - option "Đồng Tháp - Tiền Giang"
+            - option "Cần Thơ"
+            - option "Hồ Chí Minh"
+            - option "Chọn Quận/huyện" [selected]
+        - listitem [ref=e44]:
+          - generic [ref=e45]:
+            - link "Tài khoản Đăng nhập" [ref=e46] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - img "Tài khoản" [ref=e48]
+              - generic [ref=e49]: Đăng nhập
+            - generic:
+              - generic:
+                - generic: Đăng nhập tài khoản
+                - paragraph: "Nhập email và mật khẩu của bạn:"
+              - generic:
+                - generic:
+                  - generic:
+                    - textbox "Nhập email hoặc số điện thoại"
+                  - generic:
+                    - textbox "Mật khẩu"
+                  - generic:
+                    - button "Đăng nhập"
+                - generic:
+                  - paragraph:
+                    - text: Khách hàng mới?
+                    - link "Tạo tài khoản":
+                      - /url: /account/register
+                  - paragraph:
+                    - text: Quên mật khẩu?
+                    - button "Khôi phục mật khẩu"
+        - listitem [ref=e50]:
+          - link "Hệ thống cửa hàng 0 Giỏ hàng" [ref=e52] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=e53]:
+              - img "Hệ thống cửa hàng" [ref=e54]
+              - generic [ref=e55]: "0"
+            - generic [ref=e56]: Giỏ hàng
+    - navigation [ref=e60]:
+      - list [ref=e61]:
+        - listitem [ref=e62]:
+          - link "🔎 HÀNG MỚI" [ref=e63] [cursor=pointer]:
+            - /url: /collections/san-pham-moi
+            - generic [ref=e64]: 🔎 HÀNG MỚI
+          - generic [ref=e65]: New
+        - listitem [ref=e66]:
+          - link "SẢN PHẨM" [ref=e67] [cursor=pointer]:
+            - /url: /collections/tat-ca-san-pham
+            - generic [ref=e68]: SẢN PHẨM
+        - listitem [ref=e70]:
+          - link "ÁO NAM" [ref=e71] [cursor=pointer]:
+            - /url: /collections/ao
+            - generic [ref=e72]: ÁO NAM
+        - listitem [ref=e74]:
+          - link "QUẦN NAM" [ref=e75] [cursor=pointer]:
+            - /url: /collections/quan
+            - generic [ref=e76]: QUẦN NAM
+        - listitem [ref=e78]:
+          - link "PHỤ KIỆN" [ref=e79] [cursor=pointer]:
+            - /url: /collections/nhom-phu-kien-khac
+            - generic [ref=e80]: PHỤ KIỆN
+        - listitem [ref=e82]:
+          - link "BST Hè 2026" [ref=e83] [cursor=pointer]:
+            - /url: /collections/the-poolside-club-collection
+            - generic [ref=e84]: BST Hè 2026
+        - listitem [ref=e85]:
+          - link "OUTLET" [ref=e86] [cursor=pointer]:
+            - /url: /collections/outlet
+            - generic [ref=e87]: OUTLET
+          - generic [ref=e88]: "-50%"
+        - listitem [ref=e89]:
+          - link "COLLECTION" [ref=e90] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e91]: COLLECTION
+        - listitem [ref=e93]:
+          - link "JEANS" [ref=e94] [cursor=pointer]:
+            - /url: /collections/quan-jeans
+            - generic [ref=e95]: JEANS
+        - listitem [ref=e97]:
+          - link "TIN THỜI TRANG" [ref=e98] [cursor=pointer]:
+            - /url: https://www.160store.com/blogs/all
+            - generic [ref=e99]: TIN THỜI TRANG
+  - text: + + + + + + + + +
+  - main [ref=e100]:
+    - text: /
+    - generic [ref=e108]:
+      - generic [ref=e110]:
+        - link "Áo Thun Nam ICONDENIM Lusitano Legend" [ref=e112] [cursor=pointer]:
+          - /url: /products/ao-thun-nam-icondenim-lusitano-legend
+          - img "Áo Thun Nam ICONDENIM Lusitano Legend" [ref=e113]
+        - generic [ref=e115]: 15%
+        - generic [ref=e116]:
+          - heading "Áo Thun Nam ICONDENIM Lusitano Legend" [level=3] [ref=e117]:
+            - link "Áo Thun Nam ICONDENIM Lusitano Legend" [ref=e118] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-lusitano-legend
+          - img [ref=e121]:
+            - generic [ref=e123]: Sale
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - paragraph [ref=e126]:
+                - text: 339,000₫
+                - deletion [ref=e127]: 399,000₫
+              - generic:
+                - button "Btn Quickview":
+                  - img "Btn Quickview"
+              - button "Thêm vào giỏ Thêm vào giỏ" [ref=e129] [cursor=pointer]:
+                - generic [ref=e130]:
+                  - img "Thêm vào giỏ" [ref=e131]
+                  - img "Thêm vào giỏ" [ref=e132]
+            - list
+      - generic [ref=e134]:
+        - link "Áo Thun Nam ICONDENIM Ice Field" [ref=e136] [cursor=pointer]:
+          - /url: /products/ao-thun-nam-icondenim-ice-field
+          - img "Áo Thun Nam ICONDENIM Ice Field" [ref=e137]
+        - generic [ref=e139]: 15%
+        - generic [ref=e140]:
+          - heading "Áo Thun Nam ICONDENIM Ice Field" [level=3] [ref=e141]:
+            - link "Áo Thun Nam ICONDENIM Ice Field" [ref=e142] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-ice-field
+          - img [ref=e145]:
+            - generic [ref=e147]: Sale
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - paragraph [ref=e150]:
+                - text: 339,000₫
+                - deletion [ref=e151]: 399,000₫
+              - generic:
+                - button "Btn Quickview":
+                  - img "Btn Quickview"
+              - button "Thêm vào giỏ Thêm vào giỏ" [ref=e153] [cursor=pointer]:
+                - generic [ref=e154]:
+                  - img "Thêm vào giỏ" [ref=e155]
+                  - img "Thêm vào giỏ" [ref=e156]
+            - list
+      - generic [ref=e158]:
+        - link "Áo Thun Nam ICONDENIM Prime Seven" [ref=e160] [cursor=pointer]:
+          - /url: /products/ao-thun-nam-icondenim-prime-seven
+          - img "Áo Thun Nam ICONDENIM Prime Seven" [ref=e161]
+        - generic [ref=e163]: 15%
+        - generic [ref=e164]:
+          - heading "Áo Thun Nam ICONDENIM Prime Seven" [level=3] [ref=e165]:
+            - link "Áo Thun Nam ICONDENIM Prime Seven" [ref=e166] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-prime-seven
+          - img [ref=e169]:
+            - generic [ref=e171]: Sale
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - paragraph [ref=e174]:
+                - text: 322,000₫
+                - deletion [ref=e175]: 379,000₫
+              - generic:
+                - button "Btn Quickview":
+                  - img "Btn Quickview"
+              - button "Thêm vào giỏ Thêm vào giỏ" [ref=e177] [cursor=pointer]:
+                - generic [ref=e178]:
+                  - img "Thêm vào giỏ" [ref=e179]
+                  - img "Thêm vào giỏ" [ref=e180]
+            - list
+      - generic [ref=e182]:
+        - link "Áo Thun Nam ICONDENIM Green Pitch" [ref=e184] [cursor=pointer]:
+          - /url: /products/ao-thun-nam-icondenim-green-pitch
+          - img "Áo Thun Nam ICONDENIM Green Pitch" [ref=e185]
+        - generic [ref=e187]: 15%
+        - generic [ref=e188]:
+          - heading "Áo Thun Nam ICONDENIM Green Pitch" [level=3] [ref=e189]:
+            - link "Áo Thun Nam ICONDENIM Green Pitch" [ref=e190] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-green-pitch
+          - img [ref=e193]:
+            - generic [ref=e195]: Sale
+          - generic [ref=e196]:
+            - generic [ref=e197]:
+              - paragraph [ref=e198]:
+                - text: 339,000₫
+                - deletion [ref=e199]: 399,000₫
+              - generic:
+                - button "Btn Quickview":
+                  - img "Btn Quickview"
+              - button "Thêm vào giỏ Thêm vào giỏ" [ref=e201] [cursor=pointer]:
+                - generic [ref=e202]:
+                  - img "Thêm vào giỏ" [ref=e203]
+                  - img "Thêm vào giỏ" [ref=e204]
+            - list
+      - generic [ref=e206]:
+        - link "Áo Thun Nam ICONDENIM Golden Squad" [ref=e208] [cursor=pointer]:
+          - /url: /products/ao-thun-nam-icondenim-golden-squad
+          - img "Áo Thun Nam ICONDENIM Golden Squad" [ref=e209]
+        - generic [ref=e211]: 15%
+        - generic [ref=e212]:
+          - heading "Áo Thun Nam ICONDENIM Golden Squad" [level=3] [ref=e213]:
+            - link "Áo Thun Nam ICONDENIM Golden Squad" [ref=e214] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-golden-squad
+          - img [ref=e217]:
+            - generic [ref=e219]: Sale
+          - generic [ref=e220]:
+            - generic [ref=e221]:
+              - paragraph [ref=e222]:
+                - text: 322,000₫
+                - deletion [ref=e223]: 379,000₫
+              - generic:
+                - button "Btn Quickview":
+                  - img "Btn Quickview"
+              - button "Thêm vào giỏ Thêm vào giỏ" [ref=e225] [cursor=pointer]:
+                - generic [ref=e226]:
+                  - img "Thêm vào giỏ" [ref=e227]
+                  - img "Thêm vào giỏ" [ref=e228]
+            - list
+  - generic [ref=e250]:
+    - generic [ref=e251]:
+      - paragraph [ref=e252]: Đăng kí nhận tin
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - text: 
+          - textbox "Email" [ref=e256]
+        - button "Đăng ký" [ref=e257] [cursor=pointer]:
+          - generic [ref=e258]: 
+          - text: Đăng ký
+    - list [ref=e260]:
+      - listitem [ref=e261]:
+        - link "Liên hệ với chúng tôi qua Zalo" [ref=e262] [cursor=pointer]:
+          - /url: //zalo.me/3664144181122308942
+          - img "Liên hệ với chúng tôi qua Zalo" [ref=e263]
+      - listitem [ref=e264]:
+        - link [ref=e265] [cursor=pointer]:
+          - /url: https://www.youtube.com/@storehanghieu1608
+          - generic [ref=e266]: 
+      - listitem [ref=e267]:
+        - link [ref=e268] [cursor=pointer]:
+          - /url: https://www.instagram.com/160store
+          - generic [ref=e269]: 
+      - listitem [ref=e270]:
+        - link [ref=e271] [cursor=pointer]:
+          - /url: https://www.facebook.com/160store
+          - generic [ref=e272]: 
+  - contentinfo [ref=e273]:
+    - generic [ref=e275]:
+      - generic [ref=e276]:
+        - generic [ref=e277]:
+          - generic [ref=e279]: Giới thiệu
+          - generic [ref=e280]:
+            - paragraph [ref=e281]: 160STORE - Chuỗi Phân Phối Thời Trang Nam Chuẩn Hiệu
+            - list [ref=e282]:
+              - listitem [ref=e283]:
+                - generic [ref=e284]: 
+                - link "02871006789" [ref=e285] [cursor=pointer]:
+                  - /url: tel:02871006789
+              - listitem [ref=e286]:
+                - generic [ref=e287]: 
+                - link "cs@160store.com" [ref=e288] [cursor=pointer]:
+                  - /url: mailto:cs@160store.com
+              - listitem [ref=e289]:
+                - generic [ref=e290]: 
+                - generic [ref=e291]: "Giờ mở cửa : 08:30 - 22:00"
+              - listitem [ref=e292]:
+                - generic [ref=e293]: 
+                - generic [ref=e294]: Nhân viên tư vấn phản hồi tin nhắn đến 24:00 (Mỗi ngày)
+              - listitem [ref=e295]:
+                - link [ref=e296] [cursor=pointer]:
+                  - /url: http://online.gov.vn/Home/WebDetails/121880
+                  - img [ref=e297]
+              - listitem [ref=e298]:
+                - link "DMCA.com Protection Status" [ref=e299] [cursor=pointer]:
+                  - /url: https://www.dmca.com/Protection/Status.aspx?ID=9049de26-d97b-48dc-ab97-1e5fcb221fba&refurl=https://160store.com/collections/the-originals-legacy-2026
+                  - img "DMCA.com Protection Status" [ref=e300]
+        - generic [ref=e301]:
+          - generic [ref=e303]: CHÍNH SÁCH
+          - list [ref=e305]:
+            - listitem [ref=e306]:
+              - link "Hướng dẫn đặt hàng" [ref=e307] [cursor=pointer]:
+                - /url: /pages/huong-dan-dat-hang
+            - listitem [ref=e308]:
+              - paragraph [ref=e311] [cursor=pointer]: Chính sách
+        - generic [ref=e313]:
+          - link "ĐỊA CHỈ CỬA HÀNG (20 CH)" [ref=e316] [cursor=pointer]:
+            - /url: https://www.160store.com/pages/lien-he
+          - generic [ref=e318]:
+            - generic [ref=e319]:
+              - generic [ref=e320]:
+                - img [ref=e321]
+                - paragraph [ref=e322]: HỒ CHÍ MINH (10 CH)
+              - paragraph [ref=e323]: 274 Ba Cu, Phường Vũng Tàu, TP.HCM
+            - generic [ref=e324]:
+              - generic [ref=e325]:
+                - img [ref=e326]
+                - paragraph [ref=e327]:
+                  - text: HÀ NỘI (2 CH)
+                  - generic [ref=e328]: New
+              - paragraph [ref=e329]: 27 Tôn Đức Thắng - P. Văn Miếu - Quốc Tử Giám; TP. Hà Nội
+            - generic [ref=e330]:
+              - generic [ref=e331]:
+                - img [ref=e332]
+                - paragraph [ref=e333]: CẦN THƠ (2 CH)
+              - paragraph [ref=e334]: Số 35 Trần Phú, Phường Ninh Kiều, TP.Cần Thơ
+            - generic [ref=e335]:
+              - generic [ref=e336]:
+                - img [ref=e337]
+                - paragraph [ref=e338]: ĐÀ NẴNG (2 CH)
+              - paragraph [ref=e339]: 332 Đ. Lê Duẩn, Phường Thanh Khê, TP.Đà Nẵng
+            - link "XEM TẤT CẢ CỬA HÀNG" [ref=e341] [cursor=pointer]:
+              - /url: https://www.160store.com/pages/lien-he
+        - generic [ref=e344]:
+          - generic [ref=e345]: PHƯƠNG THỨC THANH TOÁN
+          - generic [ref=e346]:
+            - img "Image Spay" [ref=e347]
+            - img "Image VNPay" [ref=e348]
+            - img "Image Cod" [ref=e349]
+      - generic [ref=e354]: BẢN QUYỀN THUỘC VỀ 160STORE
+  - list [ref=e356]
+  - button "back to top" [ref=e358] [cursor=pointer]:
+    - img [ref=e359]
+    - text: back to top
+  - paragraph [ref=e365]: Bạn chưa chọn size sản phẩm!
+  - generic:
+    - generic:
+      - generic: 🎯 BÁO CÁO SEO AUDIT CHUYÊN SÂU
+      - generic: "Phần A: On-page cơ bản"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: "58"
+              - generic: SEO
+          - generic: TRUNG BÌNH
+        - generic:
+          - generic:
+            - generic: "Trang phân tích:"
+            - strong: The Originals Legacy Collection
+          - generic:
+            - generic: "Từ khóa chính:"
+            - strong: the originals legacy collection
+          - generic:
+            - generic: "Tiêu chí đạt:"
+            - strong: 22/38
+      - generic [ref=e366]:
+        - generic [ref=e367]: "❌ Chi tiết lỗi cần khắc phục (16):"
+        - generic [ref=e368]:
+          - generic [ref=e369]:
+            - generic [ref=e370]:
+              - strong [ref=e371]: "Độ dài Title: 36 ký tự (chuẩn: 40–65)"
+              - generic [ref=e372]: "1.2"
+            - generic [ref=e373]: "⚠️ Lỗi: Title quá ngắn hoặc quá dài (36 ký tự), cần 40–65"
+          - generic [ref=e374]:
+            - generic [ref=e375]:
+              - strong [ref=e376]: Title chứa keyword "the originals legacy collection"
+              - generic [ref=e377]: "1.3"
+            - generic [ref=e378]: "⚠️ Lỗi: Title không chứa keyword \"the originals legacy collection\""
+          - generic [ref=e379]:
+            - generic [ref=e380]:
+              - strong [ref=e381]: "Keyword nằm ở nửa đầu Title (vị trí: N/A)"
+              - generic [ref=e382]: "1.4"
+            - generic [ref=e383]: "⚠️ Lỗi: Bỏ qua — keyword \"the originals legacy collection\" không có trong Title"
+          - generic [ref=e384]:
+            - generic [ref=e385]:
+              - strong [ref=e386]: Meta description tồn tại (Không tìm thấy)
+              - generic [ref=e387]: "2.1"
+            - generic [ref=e388]: "⚠️ Lỗi: Thẻ không tồn tại hoặc rỗng!"
+          - generic [ref=e389]:
+            - generic [ref=e390]:
+              - strong [ref=e391]: "Độ dài Meta: 0 ký tự (chuẩn: 120–160)"
+              - generic [ref=e392]: "2.2"
+            - generic [ref=e393]: "⚠️ Lỗi: Không thể đo — Meta description không tồn tại"
+          - generic [ref=e394]:
+            - generic [ref=e395]:
+              - strong [ref=e396]: Meta description chứa keyword "the originals legacy collection"
+              - generic [ref=e397]: "2.3"
+            - generic [ref=e398]: "⚠️ Lỗi: Không thể kiểm tra — Meta description không tồn tại"
+          - generic [ref=e399]:
+            - generic [ref=e400]:
+              - strong [ref=e401]: "Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)"
+              - generic [ref=e402]: "3.1"
+            - generic [ref=e403]: "⚠️ Lỗi: Trang không có thẻ H1 nào!"
+          - generic [ref=e404]:
+            - generic [ref=e405]:
+              - strong [ref=e406]: H1 chứa keyword "the originals legacy collection"
+              - generic [ref=e407]: "3.2"
+            - generic [ref=e408]: "⚠️ Lỗi: Không có H1 để kiểm tra"
+          - generic [ref=e409]:
+            - generic [ref=e410]:
+              - strong [ref=e411]: URL chứa keyword slug "the-originals-legacy-collection"
+              - generic [ref=e412]: "4.2"
+            - generic [ref=e413]: "⚠️ Lỗi: URL \"/collections/the-originals-legacy-2026\" không chứa keyword \"the-originals-legacy-collection\""
+          - generic [ref=e414]:
+            - generic [ref=e415]:
+              - strong [ref=e416]: "Mật độ keyword: 0.08% (chuẩn: 0.5%–2.5%)"
+              - generic [ref=e417]: "5.2"
+            - generic [ref=e418]: "⚠️ Lỗi: Mật độ keyword quá thấp: 0.08%, cần ≥ 0.5%"
+          - generic [ref=e419]:
+            - generic [ref=e420]:
+              - strong [ref=e421]: Keyword "the originals legacy collection" xuất hiện trong 100 từ đầu
+              - generic [ref=e422]: "5.3"
+            - generic [ref=e423]: "⚠️ Lỗi: Keyword \"the originals legacy collection\" không xuất hiện trong 100 từ đầu"
+          - generic [ref=e424]:
+            - generic [ref=e425]:
+              - strong [ref=e426]: "100% ảnh có thuộc tính alt (thiếu: 14/63)"
+              - generic [ref=e427]: "6.1"
+            - generic [ref=e428]: "⚠️ Lỗi: Có 14 hình ảnh thiếu thuộc tính 'alt'"
+          - generic [ref=e429]:
+            - generic [ref=e430]:
+              - strong [ref=e431]: Có ảnh chứa keyword "the originals legacy collection" trong alt
+              - generic [ref=e432]: "6.2"
+            - generic [ref=e433]: "⚠️ Lỗi: Không có ảnh nào có alt chứa keyword \"the originals legacy collection\""
+          - generic [ref=e434]:
+            - generic [ref=e435]:
+              - strong [ref=e436]: "Anchor text chất lượng (lỗi: 7)"
+              - generic [ref=e437]: "7.3"
+            - generic [ref=e438]: "⚠️ Lỗi: 7 link có anchor text không tốt: \"\" → /, \"\" → /, \"\" → /, \"\" → /, \"\" → //zalo.me/3664144181122308942, \"\" → //m.me/1042686802417049, \"\" → //zalo.me/3664144181122308942"
+          - generic [ref=e439]:
+            - generic [ref=e440]:
+              - strong [ref=e441]: "Open Graph: og:title=✔, og:description=✘"
+              - generic [ref=e442]: "8.6"
+            - generic [ref=e443]: "⚠️ Lỗi: Thiếu og:description"
+          - generic [ref=e444]:
+            - generic [ref=e445]:
+              - strong [ref=e446]: "Twitter Card tags: 0 thẻ"
+              - generic [ref=e447]: "8.7"
+            - generic [ref=e448]: "⚠️ Lỗi: Trang thiếu Twitter Card tags"
+```
+
+# Test source
+
+```ts
+  60  |                         "text/plain"
+  61  |                     );
+  62  |                     throw new Error(errorMessage); // Ép Allure đánh ❌ cho step này
+  63  |                 });
+  64  |             } catch {
+  65  |                 // Nuốt lỗi — test tiếp tục chạy bình thường
+  66  |             }
+  67  |         }
+  68  |     }
+  69  | 
+  70  |     /** Lấy điểm hiện tại (0–100) */
+  71  |     get score(): number {
+  72  |         if (this.totalChecks === 0) return 100;
+  73  |         return Math.round((this.passedChecks / this.totalChecks) * 100);
+  74  |     }
+  75  | 
+  76  |     /** Lấy thống kê chi tiết */
+  77  |     get stats() {
+  78  |         return {
+  79  |             total: this.totalChecks,
+  80  |             passed: this.passedChecks,
+  81  |             failed: this.totalChecks - this.passedChecks,
+  82  |             score: this.score,
+  83  |             failures: [...this.failures],
+  84  |         };
+  85  |     }
+  86  | 
+  87  |     async finalizeScore(page: Page, threshold = 70): Promise<void> {
+  88  |         const { total, passed, failed, score, failures } = this.stats;
+  89  | 
+  90  |         // Xác định trạng thái
+  91  |         const isPass = score >= threshold;
+  92  |         const statusText = isPass ? "PASS" : "FAIL";
+  93  | 
+  94  |         // Thang điểm SEO mới
+  95  |         let scoreLabel: string;
+  96  |         let statusIcon: string;
+  97  |         if (score >= 93) {
+  98  |             scoreLabel = "XUẤT SẮC";
+  99  |             statusIcon = "💎";
+  100 |         } else if (score >= 77) {
+  101 |             scoreLabel = "TỐT";
+  102 |             statusIcon = "🟢";
+  103 |         } else if (score >= 65) {
+  104 |             scoreLabel = "KHÁ";
+  105 |             statusIcon = "🟡";
+  106 |         } else if (score >= 50) {
+  107 |             scoreLabel = "TRUNG BÌNH";
+  108 |             statusIcon = "🟠";
+  109 |         } else {
+  110 |             scoreLabel = "KÉM";
+  111 |             statusIcon = "🔴";
+  112 |         }
+  113 | 
+  114 |         // Tạo báo cáo tổng kết dạng text
+  115 |         const summaryLines = [
+  116 |             `══════════════════════════════════════`,
+  117 |             `   ${statusIcon} KẾT QUẢ CHẤM ĐIỂM SEO`,
+  118 |             `══════════════════════════════════════`,
+  119 |             `   Điểm số:     ${score}/100`,
+  120 |             `   Đánh giá:    ${scoreLabel}`,
+  121 |             `   Ngưỡng đạt:  ${threshold}%`,
+  122 |             `   Kết quả:     ${statusText}`,
+  123 |             `──────────────────────────────────────`,
+  124 |             `   Tổng tiêu chí:  ${total}`,
+  125 |             `   ✅ Đạt:          ${passed}`,
+  126 |             `   ❌ Không đạt:    ${failed}`,
+  127 |             `══════════════════════════════════════`,
+  128 |         ];
+  129 | 
+  130 |         if (failures.length > 0) {
+  131 |             summaryLines.push(``, `📋 CHI TIẾT LỖI:`);
+  132 |             failures.forEach((f, i) => {
+  133 |                 summaryLines.push(`   ${i + 1}. [${f.step}]`);
+  134 |                 summaryLines.push(`      → ${f.message}`);
+  135 |             });
+  136 |         }
+  137 | 
+  138 |         const summaryText = summaryLines.join("\n");
+  139 | 
+  140 |         // Step cuối cùng — hiển thị bảng điểm + quyết định PASS/FAIL
+  141 |         await customStep(
+  142 |             page,
+  143 |             `13. 🏆 Kết quả chấm điểm SEO: ${score}/100 — ${statusText} (${scoreLabel})`,
+  144 |             async () => {
+  145 |                 // Đính kèm bảng điểm text
+  146 |                 await allure.attachment(
+  147 |                     "Bảng điểm SEO",
+  148 |                     Buffer.from(summaryText, "utf-8"),
+  149 |                     "text/plain"
+  150 |                 );
+  151 | 
+  152 |                 // Gắn description vào Test Case trên Allure
+  153 |                 await allure.description(
+  154 |                     `[${statusText}] Điểm SEO: ${score}/100 | Đạt: ${passed}/${total} tiêu chí | Ngưỡng: ${threshold}%\n\n` +
+  155 |                     `${scoreLabel}`
+  156 |                 );
+  157 | 
+  158 |                 // 🚀 ĐÂY LÀ DÒNG DUY NHẤT quyết định Test PASS hay FAIL
+  159 |                 if (!isPass) {
+> 160 |                     throw new Error(
+      |                           ^ Error: ❌ FAIL — Điểm SEO 58/100 dưới ngưỡng 70%. Có 16/38 tiêu chí không đạt.
+  161 |                         `❌ FAIL — Điểm SEO ${score}/100 dưới ngưỡng ${threshold}%. ` +
+  162 |                         `Có ${failed}/${total} tiêu chí không đạt.`
+  163 |                     );
+  164 |                 }
+  165 |             },
+  166 |             { screenshot: true }
+  167 |         );
+  168 |     }
+  169 | }
+```

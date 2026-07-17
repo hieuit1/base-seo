@@ -1,0 +1,30 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          30
+   ❌ Không đạt:    8
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Độ dài Title: 18 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 18 ký tự, cần 40–65
+   2. [Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   3. [H1 chứa keyword "phụ kiện"]
+      → Không có H1 để kiểm tra
+   4. [Mật độ keyword: 0.19% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.19%, cần ≥ 0.5%
+   5. [Keyword "phụ kiện" xuất hiện trong 100 từ đầu]
+      → Keyword "phụ kiện" không xuất hiện trong 100 từ đầu
+   6. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/232)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   7. [Anchor text chất lượng (lỗi: 35)]
+      → 35 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/non-bucket-nam-icondenim-urban-relic, "" → /products/combo-3-vo-nam-no-show-icondenim-pure-ease, "" → /products/tui-tote-nam-icondenim-sea-stripe, "" → /products/vo-crew-nam-icondenim-sunstep, "" → /products/non-luoi-trai-nam-icondenim-blue-stripe, "" → /products/non-luoi-trai-nam-icondenim-urban-pinstripe, "" → /products/mu-luoi-trai-nam-icondenim-intials, "" → /products/combo-3-vo-crew-nam-icondenim-understate, "" → /products/combo-3-vo-ankle-nam-icondenim-inner-ease, "" → /products/combo-3-vo-crow-nam-icondenim-inner-ease, "" → /products/non-luoi-trai-nam-icondenim-passion, "" → /products/tui-deo-cheo-nam-icondenim, "" → /products/non-luoi-trai-nam-disney-pitlane-28, "" → /products/balo-unisex-icondenim-leather, "" → /products/vi-da-nam-icondenim-urbane-bifold, "" → /products/combo-3-vo-nam-no-show-icondenim-twinline, "" → /products/tui-deo-cheo-nam-icondenim-pu-multi-pocket, "" → /products/tui-deo-cheo-nam-icondenim-leather-pattern-id, "" → /products/non-luoi-trai-nam-icondenim-twentyfive, "" → /products/tui-deo-cheo-nam-icondenim-black-reign, "" → /products/mat-kinh-nam-icondenim-bronze-view, "" → /products/mat-kinh-nam-urban-edge-trong-den, "" → /products/mat-kinh-nam-icondenim-vintage-wave, "" → /products/tui-deo-cheo-nam-icondenim-urban-outlaw, "" → /products/that-lung-icondenim-ethan, "" → /products/vo-combo-3-mau-icondenim-form-ankle, "" → /products/vo-no-show-icondenim-twinline, "" → /collections/nhom-phu-kien-khac?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   8. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
