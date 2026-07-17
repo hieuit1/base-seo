@@ -1,0 +1,38 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     68/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          26
+   ❌ Không đạt:    12
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.3 — Title chứa keyword "ba lô"]
+      → Title không chứa keyword "ba lô"
+   2. [1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "ba lô" không có trong Title
+   3. [2.3 — Meta description chứa keyword "ba lô"]
+      → Meta description không chứa keyword "ba lô"
+   4. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   5. [3.2 — H1 chứa keyword "ba lô"]
+      → Không có H1 để kiểm tra
+   6. [4.2 — URL chứa keyword slug "ba-lô" ]
+      → URL "/collections/ba-lo" không chứa keyword "ba-lô"
+   7. [5.2 — Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   8. [5.3 — Keyword "ba lô" xuất hiện trong 100 từ đầu]
+      → Keyword "ba lô" không xuất hiện trong 100 từ đầu
+   9. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 9/115)]
+      → Có 9 hình ảnh thiếu thuộc tính 'alt'
+   10. [6.2 — Có ảnh chứa keyword "ba lô" trong alt]
+      → Không có ảnh nào có alt chứa keyword "ba lô"
+   11. [7.3 — Anchor text chất lượng (lỗi: 10)]
+      → 10 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/ao-tanktop-nam-icondenim-coastal-knit, "" → /products/ao-tanktop-nam-icondenim-blackcourt, "" → /products/ao-tanktop-nam-icondenim-steel-fade, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   12. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
