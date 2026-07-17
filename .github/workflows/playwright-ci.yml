@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # BỔ SUNG DÒNG NÀY: Để GitHub biết chui vào Settings -> Environments lấy đúng BASE_URL
-    environment: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'staging' }}
+    environment: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}
 
     strategy:
       fail-fast: false
