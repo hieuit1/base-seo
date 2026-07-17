@@ -1,0 +1,32 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     76/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          29
+   ❌ Không đạt:    9
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [2.2 — Độ dài Meta: 161 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 161 ký tự, cần 120–160
+   2. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   3. [3.2 — H1 chứa keyword "áo"]
+      → Không có H1 để kiểm tra
+   4. [4.2 — URL chứa keyword slug "áo" ]
+      → URL "/collections/ao" không chứa keyword "áo"
+   5. [5.2 — Mật độ keyword: 4.33% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 4.33%, cần ≤ 2.5%
+   6. [5.3 — Keyword "áo" xuất hiện trong 100 từ đầu]
+      → Keyword "áo" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 9/238)]
+      → Có 9 hình ảnh thiếu thuộc tính 'alt'
+   8. [7.3 — Anchor text chất lượng (lỗi: 30)]
+      → 30 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/ao-thun-nam-icondenim-bear-team, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals, "" → /products/ao-thun-nam-icondenim-retro-cooler, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-midnight-garden, "" → /products/ao-polo-nam-icondenim-puro, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-wildbloom, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-blanko, "" → /products/ao-tanktop-nam-icondenim-coastal-knit, "" → /products/ao-thun-nam-icondenim-regal, "" → /products/ao-thun-nam-icondenim-homefield, "" → /products/ao-thun-nam-icondenim-archive, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-riviera-knit, "" → /products/set-ao-quan-nam-icondenim-lazy-fish, "" → /products/ao-thun-nam-icondenim-fishing, "" → /products/ao-thun-nam-icondenim-riviera-stripe, "" → /products/ao-thun-nam-icondenim-summer-never-ends, "" → /products/ao-thun-nam-icondenim-blue-paradise, "" → /products/ao-so-mi-nam-tay-ngan-linen-cuban-icondenim-littoral, "" → /products/ao-polo-nam-icondenim-textured-knit, "" → /products/ao-so-mi-nam-tay-dai-icondenim-warp-knit, "" → /products/ao-so-mi-nam-tay-ngan-icondenim-cuban-fluid-mark, "" → /products/ao-khoac-bomber-nam-icondenim-allstar, "" → /collections/ao?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

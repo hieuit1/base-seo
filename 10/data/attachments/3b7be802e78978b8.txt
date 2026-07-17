@@ -1,0 +1,36 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     71/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          27
+   ❌ Không đạt:    11
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 36 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 36 ký tự, cần 40–65
+   2. [2.2 — Độ dài Meta: 241 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 241 ký tự, cần 120–160
+   3. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [3.3 — Heading phân cấp hợp lệ (3 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("TÚI THÂN TRƯỚC"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [4.2 — URL chứa keyword slug "áo-khoác-jeans-nam-icondenim" ]
+      → URL "/products/ao-khoac-jeans-nam-icondenim-skyfold" không chứa keyword "áo-khoác-jeans-nam-icondenim"
+   6. [5.2 — Mật độ keyword: 0.17% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.17%, cần ≥ 0.5%
+   7. [5.3 — Keyword "áo khoác jeans nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "áo khoác jeans nam icondenim" không xuất hiện trong 100 từ đầu
+   8. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 41/82)]
+      → Có 41 hình ảnh thiếu thuộc tính 'alt'
+   9. [7.3 — Anchor text chất lượng (lỗi: 20)]
+      → 20 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-1_5e105f0099084f59aa38330c157c9998_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-13_4d5cfe71aed64cde9ca27f0dae4f2e9f_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-7_e14c71e411b0457ea47418c0c631e470_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-9_97b8e54b576947cca51d27dcb3457ced_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-ak-jean-regular-c_2d95310c8ee64bcc99ae16ab61a94c90_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-6_1ef17d6209e746688505b4b73fdd81cc_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-10_6a169f28b13440faa22aeecfc52b6649_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-2_1ff267b45f1440ceac8d3a0a677dd4c7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-3_946f4e63aed84a7090a09956b8bce46d_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-4_8e3426d56b574868a4bea2eb1e96c76a_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-8_9002ce32508246049e45dec568e28244_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-11_c404901a97a84d7383f25507540863b2_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160_ao_khoac_255-12_866d5948df7946b9a6f1b027dbc076e6_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   10. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   11. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

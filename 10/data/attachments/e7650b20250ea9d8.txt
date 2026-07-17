@@ -1,0 +1,40 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     66/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          25
+   ❌ Không đạt:    13
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.3 — Title chứa keyword "quần jogger quần dài"]
+      → Title không chứa keyword "quần jogger quần dài"
+   2. [1.4 — Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "quần jogger quần dài" không có trong Title
+   3. [2.2 — Độ dài Meta: 179 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 179 ký tự, cần 120–160
+   4. [2.3 — Meta description chứa keyword "quần jogger quần dài"]
+      → Meta description không chứa keyword "quần jogger quần dài"
+   5. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   6. [3.2 — H1 chứa keyword "quần jogger quần dài"]
+      → Không có H1 để kiểm tra
+   7. [4.2 — URL chứa keyword slug "quần-jogger-quần-dài" ]
+      → URL "/collections/quan-joggers" không chứa keyword "quần-jogger-quần-dài"
+   8. [5.2 — Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   9. [5.3 — Keyword "quần jogger quần dài" xuất hiện trong 100 từ đầu]
+      → Keyword "quần jogger quần dài" không xuất hiện trong 100 từ đầu
+   10. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 9/117)]
+      → Có 9 hình ảnh thiếu thuộc tính 'alt'
+   11. [6.2 — Có ảnh chứa keyword "quần jogger quần dài" trong alt]
+      → Không có ảnh nào có alt chứa keyword "quần jogger quần dài"
+   12. [7.3 — Anchor text chất lượng (lỗi: 12)]
+      → 12 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/quan-jogger-nam-icondenim-calm, "" → /products/quan-jogger-nam-icondenim-roadman, "" → /products/quan-jogger-nam-cargo-icondenim-military, "" → /products/quan-dai-nam-icondenim-tatical-geared, "" → /products/quan-dai-nam-icondenim-basic, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   13. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

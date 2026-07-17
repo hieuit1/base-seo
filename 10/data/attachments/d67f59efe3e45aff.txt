@@ -1,0 +1,36 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     71/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          27
+   ❌ Không đạt:    11
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 38 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 38 ký tự, cần 40–65
+   2. [2.2 — Độ dài Meta: 228 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 228 ký tự, cần 120–160
+   3. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [3.3 — Heading phân cấp hợp lệ (3 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("PATTERN TROPICAL"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [4.2 — URL chứa keyword slug "quần-short-nam-icondenim" ]
+      → URL "/products/quan-short-nam-icondenim-tropical-mono" không chứa keyword "quần-short-nam-icondenim"
+   6. [5.2 — Mật độ keyword: 0.17% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.17%, cần ≥ 0.5%
+   7. [5.3 — Keyword "quần short nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "quần short nam icondenim" không xuất hiện trong 100 từ đầu
+   8. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 41/88)]
+      → Có 41 hình ảnh thiếu thuộc tính 'alt'
+   9. [7.3 — Anchor text chất lượng (lỗi: 23)]
+      → 23 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono_31119d79452b40e4954732a4380a09f0_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/32_a27108a0c6384374a1937251cf6b44bb_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/17_55af27321fbe46ae9efa1cf402a19cf3_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-4_36c4bc90a3ed43989e32be32405a5d42_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sq-qstn-regular-c-new_16fc6ddb9bca4809aab6125ff048300b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-6_e4e8f5bbe6ec45a5a480726181dd2af3_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-2_547b0c32f730438da83c2453b7353493_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-3_94e93d0003f2490eb2a5d596b181d937_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/33_217b8e68645546a88506e27fa456c1a8_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-7_77ed42412a99439d9a1e5ffc38477eab_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-8_2d32863d21654410b089b7b362b85a70_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-9_34d0a0c9f8dd4c188f5df8068fa39b90_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-11_92d8daa39d4944de99bc110f11486e23_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-12_94db67b0f34748c782231996ac820a03_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/quan-short-nam-icondenim-tropical-mono-13_b40ec0d7264847c38be29dd991ee7d45_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/160-short-314-14_8de531854eff449e996b15652601c3ad_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   10. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   11. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

@@ -1,0 +1,36 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     71/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          27
+   ❌ Không đạt:    11
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [1.2 — Độ dài Title: 35 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 35 ký tự, cần 40–65
+   2. [2.2 — Độ dài Meta: 193 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 193 ký tự, cần 120–160
+   3. [3.1 — Trang có đúng 1 thẻ H1 (hiện tại: 59 thẻ)]
+      → Trang có 59 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [3.3 — Heading phân cấp hợp lệ (5 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("HỌA TIẾT CÁ"); Nhảy cấp từ H2 → H4 ("Đánh giá"); Nhảy cấp từ H1 → H3 ("160STORE – Set Áo Quần Nam ICONDENIM Lazy Fish"); Nhảy cấp từ H2 → H4 ("HỌA TIẾT CÁ")
+   5. [4.2 — URL chứa keyword slug "set-áo-quần-nam-icondenim" ]
+      → URL "/products/set-ao-quan-nam-icondenim-lazy-fish" không chứa keyword "set-áo-quần-nam-icondenim"
+   6. [5.2 — Mật độ keyword: 0.20% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.20%, cần ≥ 0.5%
+   7. [5.3 — Keyword "set áo quần nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "set áo quần nam icondenim" không xuất hiện trong 100 từ đầu
+   8. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 58/103)]
+      → Có 58 hình ảnh thiếu thuộc tính 'alt'
+   9. [7.3 — Anchor text chất lượng (lỗi: 22)]
+      → 22 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/7_c9008f775fb6484cbe95655515498850_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-1_c0d35f8b01ec427d97b555f1cc78f22c_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/6_4736c44d77e9427398ec66e4b6a6db8b_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-smtn-relax-new_89c279c7a50144f3ab6a63e88f4ca4a0_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sq-qstn-regular-c-seid0108_547d9815374b41039020f6efa6ff122a_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-4_4a22001bd22b4db3ba307ed4fad772d1_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-5_163f31f6b7cf48019abba55a08617ecd_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-2_fc8d0465eead4b13aa6758f0a6bcdc59_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-7_5c9971cc32f74a44afa5d7c5fdc96373_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-3_ec4f6cb057f54ae0a51f4159dbeaa3d8_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-6_fdf6c848896b416688ba2c5a4078e258_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-9_6756d128a2ae4e56b053a609dab39cd1_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-10_64fb3b3ac2d743d3843b4ffd8f1d6459_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-12_0b169b8c23c64ce0b70fe655061df914_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/set-ao-quan-nam-icondenim-lazy-fish-13_9fda93771e7d45b1a2331ad10d020365_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   10. [8.7 — Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   11. [11.2 — Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock
