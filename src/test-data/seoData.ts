@@ -14,15 +14,8 @@ export interface SeoPageTestData {
   keywordDensityMin?: number;
   keywordDensityMax?: number;
   urlMaxLength?: number;
-  /** Ngưỡng điểm SEO để PASS (0–100). Mặc định: 70 */
   seoPassThreshold?: number;
 }
-
-/**
- * 📌 Danh sách các trang cần kiểm tra SEO.
- *    Path sẽ tự nối với BASE_URL trong .env
- *    Thêm/sửa/xóa entry tùy ý.
- */
 export const seoTestData: SeoPageTestData[] = [
   {
     name: "Trang chủ (Home Page)",

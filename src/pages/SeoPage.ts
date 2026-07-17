@@ -164,21 +164,21 @@ export class SeoPage extends BasePage {
 
     // 1.1 — Title phải tồn tại và có nội dung
     await sc.check(
-      `1.1 — Title phải có nội dung (hiện tại: ${titleVal.length} ký tự)`,
+      `Title phải có nội dung (hiện tại: ${titleVal.length} ký tự)`,
       !!titleVal && titleVal.length > 0,
       "Title tag không tồn tại hoặc rỗng!"
     );
 
     // 1.2 — Độ dài Title nằm trong khoảng cho phép
     await sc.check(
-      `1.2 — Độ dài Title: ${titleVal.length} ký tự (chuẩn: ${minLen}–${maxLen})`,
+      `Độ dài Title: ${titleVal.length} ký tự (chuẩn: ${minLen}–${maxLen})`,
       titleVal.length >= minLen && titleVal.length <= maxLen,
       `Title ${titleVal.length < minLen ? "quá ngắn" : "quá dài"}: ${titleVal.length} ký tự, cần ${minLen}–${maxLen}`
     );
 
     // 1.3 — Title phải chứa keyword chính
     await sc.check(
-      `1.3 — Title chứa keyword "${data.keyword}"`,
+      `Title chứa keyword "${data.keyword}"`,
       titleVal.toLowerCase().includes(data.keyword.toLowerCase()),
       `Title không chứa keyword "${data.keyword}"`
     );
@@ -187,7 +187,7 @@ export class SeoPage extends BasePage {
     const keywordIndex = titleVal.toLowerCase().indexOf(data.keyword.toLowerCase());
     const halfLen = Math.floor(titleVal.length / 2);
     await sc.check(
-      `1.4 — Keyword nằm ở nửa đầu Title (vị trí: ${keywordIndex >= 0 ? keywordIndex : "N/A"})`,
+      `Keyword nằm ở nửa đầu Title (vị trí: ${keywordIndex >= 0 ? keywordIndex : "N/A"})`,
       keywordIndex >= 0 && keywordIndex <= halfLen,
       keywordIndex < 0
         ? `Bỏ qua — keyword "${data.keyword}" không có trong Title`
@@ -203,14 +203,14 @@ export class SeoPage extends BasePage {
 
     // 2.1 — Meta description phải tồn tại
     await sc.check(
-      `2.1 — Meta description tồn tại (${metaVal ? metaVal.length + " ký tự" : "Không tìm thấy"})`,
+      `Meta description tồn tại (${metaVal ? metaVal.length + " ký tự" : "Không tìm thấy"})`,
       metaVal !== null && metaVal.length > 0,
       "Thẻ <meta name=\"description\"> không tồn tại hoặc rỗng!"
     );
 
     // 2.2 — Độ dài Meta description hợp lệ
     await sc.check(
-      `2.2 — Độ dài Meta: ${metaVal?.length ?? 0} ký tự (chuẩn: ${minLen}–${maxLen})`,
+      `Độ dài Meta: ${metaVal?.length ?? 0} ký tự (chuẩn: ${minLen}–${maxLen})`,
       !!metaVal && metaVal.length >= minLen && metaVal.length <= maxLen,
       metaVal
         ? `Meta description ${metaVal.length < minLen ? "quá ngắn" : "quá dài"}: ${metaVal.length} ký tự, cần ${minLen}–${maxLen}`
@@ -219,7 +219,7 @@ export class SeoPage extends BasePage {
 
     // 2.3 — Meta description chứa keyword
     await sc.check(
-      `2.3 — Meta description chứa keyword "${data.keyword}"`,
+      `Meta description chứa keyword "${data.keyword}"`,
       !!metaVal && metaVal.toLowerCase().includes(data.keyword.toLowerCase()),
       metaVal
         ? `Meta description không chứa keyword "${data.keyword}"`
@@ -233,7 +233,7 @@ export class SeoPage extends BasePage {
 
     // 3.1 — Phải có đúng 1 thẻ H1
     await sc.check(
-      `3.1 — Trang có đúng 1 thẻ H1 (hiện tại: ${h1Texts.length} thẻ)`,
+      `Trang có đúng 1 thẻ H1 (hiện tại: ${h1Texts.length} thẻ)`,
       h1Texts.length === 1,
       h1Texts.length === 0
         ? "Trang không có thẻ H1 nào!"
@@ -243,7 +243,7 @@ export class SeoPage extends BasePage {
     // 3.2 — H1 phải chứa keyword
     const h1Text = h1Texts.length > 0 ? h1Texts[0] : "";
     await sc.check(
-      `3.2 — H1 chứa keyword "${data.keyword}"`,
+      `H1 chứa keyword "${data.keyword}"`,
       h1Texts.length > 0
       && h1Text.trim().length > 0
       && h1Text.toLowerCase().includes(data.keyword.toLowerCase()),
@@ -256,7 +256,7 @@ export class SeoPage extends BasePage {
 
     // 3.3 — Heading phân cấp đúng (không nhảy cấp)
     await sc.check(
-      `3.3 — Heading phân cấp hợp lệ (${headingHierarchy.issues.length} lỗi)`,
+      `Heading phân cấp hợp lệ (${headingHierarchy.issues.length} lỗi)`,
       headingHierarchy.valid,
       `Heading phân cấp sai: ${headingHierarchy.issues.join("; ")}`
     );
@@ -264,7 +264,7 @@ export class SeoPage extends BasePage {
     // 3.4 — Trang có ít nhất H2 hoặc H3
     const hasH2orH3 = allHeadings.some((h) => h.tag === "h2" || h.tag === "h3");
     await sc.check(
-      `3.4 — Trang có thẻ H2/H3 hỗ trợ (${allHeadings.filter((h) => h.tag === "h2" || h.tag === "h3").length} thẻ)`,
+      `Trang có thẻ H2/H3 hỗ trợ (${allHeadings.filter((h) => h.tag === "h2" || h.tag === "h3").length} thẻ)`,
       hasH2orH3,
       "Trang nên có ít nhất 1 thẻ H2 hoặc H3"
     );
@@ -277,7 +277,7 @@ export class SeoPage extends BasePage {
 
     // 4.1 — URL path không quá dài
     await sc.check(
-      `4.1 — Độ dài URL: ${urlPath.length} ký tự (tối đa: ${maxLen})`,
+      `Độ dài URL: ${urlPath.length} ký tự (tối đa: ${maxLen})`,
       urlPath.length <= maxLen,
       `URL path quá dài: ${urlPath.length} ký tự (${urlPath}), tối đa ${maxLen}`
     );
@@ -286,7 +286,7 @@ export class SeoPage extends BasePage {
     const isHomepage = urlPath === "/" || urlPath === "";
     const keywordSlug = toSlug(data.keyword);
     await sc.check(
-      `4.2 — URL chứa keyword slug "${keywordSlug}" ${isHomepage ? "(bỏ qua — trang chủ)" : ""}`,
+      `URL chứa keyword slug "${keywordSlug}" ${isHomepage ? "(bỏ qua — trang chủ)" : ""}`,
       isHomepage || urlPath.toLowerCase().includes(keywordSlug),
       `URL "${urlPath}" không chứa keyword "${keywordSlug}"`
     );
@@ -314,14 +314,14 @@ export class SeoPage extends BasePage {
 
     // 5.1 — Số lượng từ tối thiểu
     await sc.check(
-      `5.1 — Số lượng từ: ${scan.wordCount} (tối thiểu: ${minWords})`,
+      `Số lượng từ: ${scan.wordCount} (tối thiểu: ${minWords})`,
       scan.wordCount >= minWords,
       `Trang chỉ có ${scan.wordCount} từ, cần ≥ ${minWords}`
     );
 
     // 5.2 — Mật độ keyword hợp lý
     await sc.check(
-      `5.2 — Mật độ keyword: ${scan.keywordDensity.toFixed(2)}% (chuẩn: ${densityMin}%–${densityMax}%)`,
+      `Mật độ keyword: ${scan.keywordDensity.toFixed(2)}% (chuẩn: ${densityMin}%–${densityMax}%)`,
       scan.keywordDensity >= densityMin && scan.keywordDensity <= densityMax,
       scan.keywordDensity < densityMin
         ? `Mật độ keyword quá thấp: ${scan.keywordDensity.toFixed(2)}%, cần ≥ ${densityMin}%`
@@ -330,7 +330,7 @@ export class SeoPage extends BasePage {
 
     // 5.3 — Keyword xuất hiện trong 100 từ đầu
     await sc.check(
-      `5.3 — Keyword "${data.keyword}" xuất hiện trong 100 từ đầu`,
+      `Keyword "${data.keyword}" xuất hiện trong 100 từ đầu`,
       scan.first100Words.toLowerCase().includes(data.keyword.toLowerCase()),
       `Keyword "${data.keyword}" không xuất hiện trong 100 từ đầu`
     );
@@ -352,7 +352,7 @@ export class SeoPage extends BasePage {
       (img) => img.alt && img.alt.toLowerCase().includes(data.keyword.toLowerCase())
     );
     await sc.check(
-      `6.2 — Có ảnh chứa keyword "${data.keyword}" trong alt`,
+      `Có ảnh chứa keyword "${data.keyword}" trong alt`,
       images.length === 0 || hasKeywordAlt,
       `Không có ảnh nào có alt chứa keyword "${data.keyword}"`
     );
@@ -360,14 +360,14 @@ export class SeoPage extends BasePage {
     // 6.3 — Ảnh có khai báo width/height (≥ 80%)
     const dimThreshold = images.length > 0 ? Math.ceil(images.length * 0.8) : 0;
     await sc.check(
-      `6.3 — Ảnh có width/height: ${imagesWithDimensions}/${images.length} (cần ≥ 80%)`,
+      `Ảnh có width/height: ${imagesWithDimensions}/${images.length} (cần ≥ 80%)`,
       images.length === 0 || imagesWithDimensions >= dimThreshold,
       `Chỉ ${imagesWithDimensions}/${images.length} ảnh có width/height, cần ≥ ${dimThreshold}`
     );
 
     // 6.4 — Không có ảnh tên file vô nghĩa (hash)
     await sc.check(
-      `6.4 — Ảnh có tên file rõ nghĩa (hash: ${imagesWithBadNames})`,
+      `Ảnh có tên file rõ nghĩa (hash: ${imagesWithBadNames})`,
       imagesWithBadNames === 0,
       `${imagesWithBadNames} ảnh có tên file vô nghĩa (dạng mã hash/ngẫu nhiên)`
     );
@@ -379,14 +379,14 @@ export class SeoPage extends BasePage {
 
     // 7.1 — Có ít nhất 1 internal link
     await sc.check(
-      `7.1 — Internal links: ${internalLinks.length} link`,
+      `Internal links: ${internalLinks.length} link`,
       internalLinks.length > 0,
       "Trang nên có ít nhất 1 internal link"
     );
 
     // 7.2 — External links (khuyến nghị, không bắt buộc)
     await sc.check(
-      `7.2 — External links: ${externalLinks.length} link`,
+      `External links: ${externalLinks.length} link`,
       true, // Luôn PASS — chỉ là khuyến nghị
       "Trang không có external links — không bắt buộc nhưng nên có"
     );
@@ -398,7 +398,7 @@ export class SeoPage extends BasePage {
       return text === "" || genericAnchors.includes(text);
     });
     await sc.check(
-      `7.3 — Anchor text chất lượng (lỗi: ${badAnchors.length})`,
+      `Anchor text chất lượng (lỗi: ${badAnchors.length})`,
       badAnchors.length === 0,
       `${badAnchors.length} link có anchor text không tốt: ${badAnchors.map((l) => `"${l.text}" → ${l.href}`).join(", ")}`
     );
@@ -420,7 +420,7 @@ export class SeoPage extends BasePage {
       })
     );
     await sc.check(
-      `7.4 — Không có broken links (lỗi: ${brokenLinks.length}/${linksToCheck.length})`,
+      `Không có broken links (lỗi: ${brokenLinks.length}/${linksToCheck.length})`,
       brokenLinks.length === 0,
       `Broken links: ${brokenLinks.join(", ")}`
     );
@@ -431,7 +431,7 @@ export class SeoPage extends BasePage {
     // 8.1 — Canonical URL
     const isCanonicalOk = !!scan.canonical && /^https?:\/\//.test(scan.canonical);
     await sc.check(
-      `8.1 — Canonical URL hợp lệ (${scan.canonical || "Không có"})`,
+      `Canonical URL hợp lệ (${scan.canonical || "Không có"})`,
       isCanonicalOk,
       scan.canonical === null
         ? "Thiếu thẻ <link rel=\"canonical\">. Nguy cơ trùng lặp!"
@@ -443,7 +443,7 @@ export class SeoPage extends BasePage {
     const isNoindex = !!scan.robots?.toLowerCase().includes("noindex");
     const robotsOk = expectIndexable ? !isNoindex : isNoindex;
     await sc.check(
-      `8.2 — Robots: ${scan.robots || "Mặc định Index"} (mong muốn: ${expectIndexable ? "INDEX" : "NOINDEX"})`,
+      `Robots: ${scan.robots || "Mặc định Index"} (mong muốn: ${expectIndexable ? "INDEX" : "NOINDEX"})`,
       robotsOk,
       expectIndexable
         ? "Trang mong muốn INDEX nhưng đang bị gắn 'noindex'!"
@@ -458,20 +458,20 @@ export class SeoPage extends BasePage {
     ]);
 
     await sc.check(
-      `8.3 — robots.txt trả về status ${robotsTxtStatus}`,
+      `robots.txt trả về status ${robotsTxtStatus}`,
       robotsTxtStatus === 200,
       `robots.txt trả về status ${robotsTxtStatus}, cần 200`
     );
 
     await sc.check(
-      `8.4 — sitemap.xml trả về status ${sitemapStatus}`,
+      `sitemap.xml trả về status ${sitemapStatus}`,
       sitemapStatus === 200,
       `sitemap.xml trả về status ${sitemapStatus}, cần 200`
     );
 
     // 8.5 — Schema Markup
     await sc.check(
-      `8.5 — Schema Markup (JSON-LD/Microdata): ${scan.hasSchema ? "Đã cài" : "Thiếu"}`,
+      `Schema Markup (JSON-LD/Microdata): ${scan.hasSchema ? "Đã cài" : "Thiếu"}`,
       scan.hasSchema,
       "Thiếu Schema Markup (JSON-LD / Microdata / RDFa)"
     );
@@ -479,7 +479,7 @@ export class SeoPage extends BasePage {
     // 8.6 — Open Graph tags (tuỳ cấu hình)
     if (data.checkSocialOg !== false) {
       await sc.check(
-        `8.6 — Open Graph: og:title=${scan.ogTitle ? "✔" : "✘"}, og:description=${scan.ogDesc ? "✔" : "✘"}`,
+        `Open Graph: og:title=${scan.ogTitle ? "✔" : "✘"}, og:description=${scan.ogDesc ? "✔" : "✘"}`,
         !!scan.ogTitle && !!scan.ogDesc,
         `Thiếu ${!scan.ogTitle ? "og:title" : ""}${!scan.ogTitle && !scan.ogDesc ? " và " : ""}${!scan.ogDesc ? "og:description" : ""}`
       );
@@ -489,7 +489,7 @@ export class SeoPage extends BasePage {
     if (data.checkSocialOg !== false) {
       const twitterCount = Object.keys(scan.twitterTags).length;
       await sc.check(
-        `8.7 — Twitter Card tags: ${twitterCount} thẻ`,
+        `Twitter Card tags: ${twitterCount} thẻ`,
         twitterCount > 0,
         "Trang thiếu Twitter Card tags"
       );
@@ -497,7 +497,7 @@ export class SeoPage extends BasePage {
 
     // 8.8 — Thuộc tính lang
     await sc.check(
-      `8.8 — HTML lang="${scan.lang || "Thiếu"}"`,
+      `HTML lang="${scan.lang || "Thiếu"}"`,
       !!scan.lang && scan.lang.length > 0,
       "Thẻ <html> thiếu thuộc tính lang"
     );
@@ -505,7 +505,7 @@ export class SeoPage extends BasePage {
     // 8.9 — Charset + Favicon
     const charsetOk = !!scan.charset && scan.charset.toLowerCase() === "utf-8";
     await sc.check(
-      `8.9 — Charset: ${scan.charset || "Thiếu"} | Favicon: ${scan.hasFavicon ? "✔" : "✘"}`,
+      `Charset: ${scan.charset || "Thiếu"} | Favicon: ${scan.hasFavicon ? "✔" : "✘"}`,
       charsetOk && scan.hasFavicon,
       [
         !scan.charset ? "Thiếu khai báo charset" : null,
@@ -518,7 +518,7 @@ export class SeoPage extends BasePage {
   /** 9.1: Xác thực Mobile */
   async verifyMobile(scan: SeoScanResult, sc: SeoScorecard) {
     await sc.check(
-      `9.1 — Viewport meta tag: ${scan.hasViewport ? "✔" : "✘"}`,
+      `Viewport meta tag: ${scan.hasViewport ? "✔" : "✘"}`,
       scan.hasViewport,
       "Trang thiếu thẻ <meta name='viewport'>"
     );
@@ -528,14 +528,14 @@ export class SeoPage extends BasePage {
   async verifySecurity(scan: SeoScanResult, sc: SeoScorecard) {
     // 11.1 — HTTPS
     await sc.check(
-      `11.1 — HTTPS: ${scan.isHttps ? "Đã bật" : "Chưa bật"}`,
+      `HTTPS: ${scan.isHttps ? "Đã bật" : "Chưa bật"}`,
       scan.isHttps,
       `Trang đang dùng HTTP: ${scan.currentUrl}`
     );
 
     // 11.2 — Mixed Content
     await sc.check(
-      `11.2 — Mixed Content: ${scan.mixedContent.length} tài nguyên HTTP`,
+      `Mixed Content: ${scan.mixedContent.length} tài nguyên HTTP`,
       scan.mixedContent.length === 0,
       `Phát hiện ${scan.mixedContent.length} tài nguyên HTTP trên HTTPS: ${scan.mixedContent.slice(0, 5).join(", ")}`
     );
