@@ -1,0 +1,34 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          28
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Độ dài Title: 26 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 26 ký tự, cần 40–65
+   2. [Độ dài Meta: 228 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 228 ký tự, cần 120–160
+   3. [Trang có đúng 1 thẻ H1 (hiện tại: 58 thẻ)]
+      → Trang có 58 thẻ H1, bắt buộc đúng 1 thẻ duy nhất!
+   4. [Heading phân cấp hợp lệ (2 lỗi)]
+      → Heading phân cấp sai: Nhảy cấp từ H1 → H3 ("KHUYẾN MÃI - ONLY ONLINE"); Nhảy cấp từ H2 → H4 ("Đánh giá")
+   5. [Mật độ keyword: 0.25% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.25%, cần ≥ 0.5%
+   6. [Keyword "áo polo nam icondenim" xuất hiện trong 100 từ đầu]
+      → Keyword "áo polo nam icondenim" không xuất hiện trong 100 từ đầu
+   7. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 27/70)]
+      → Có 27 hình ảnh thiếu thuộc tính 'alt'
+   8. [Anchor text chất lượng (lỗi: 21)]
+      → 21 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-1_3d18357bd8fc44d1888f21bd9b44785c_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-13_451e849c31dc4d0c953d21206c118084_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-2_199b5a748642436f834f70b98f592d6c_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-3_849a3313e69549a78782c8fa36944894_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/sa-pl-regular-c_4130c5b49d7f4b6897dfb7792f09e6ca_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-4_07a745d8641d48ec932b0577480bc9dd_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-5_85f03d5a9c174ed09e34aeb1d6773dc7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-6_fad0529970ec4f6d9c89351cbcedacd6_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-7_2b5571d79eaf4cf48d4a4a7d2d822f4e_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-9_a9af9aacb28c4391b65b9f6df0c27838_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-10_9c76f82672e4450bae8d2f9a1f5755f8_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-11_3fc6eaa73dd949569e65e252df31760e_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-12_9a90db3a29054b5294ca14dc367fd1d7_1024x1024.jpg, "" → //cdn.hstatic.net/products/1000253775/ao-polo-nam-icondenim-mono-14_408f7cfa96b44cf38f09ebdc91c06c97_1024x1024.jpg, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   9. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   10. [Mixed Content: 2 tài nguyên HTTP]
+      → Phát hiện 2 tài nguyên HTTP trên HTTPS: http://schema.org/NewCondition, http://schema.org/InStock

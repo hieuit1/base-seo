@@ -1,0 +1,1220 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: seo.spec.ts >> SEO TIÊU CHUẨN CƠ BẢN CHO WEB >> Kiểm tra SEO Onpage: San Pham Moi
+- Location: tests/seo.spec.ts:18:9
+
+# Error details
+
+```
+Error: ❌ FAIL — Điểm SEO 68/100 dưới ngưỡng 70%. Có 12/38 tiêu chí không đạt.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "⚡️Flash Sale giảm 15% toàn bộ sản phẩm BST World Cup" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e7]:
+          - strong [ref=e8]: ⚡️Flash Sale giảm 15% toàn bộ sản phẩm BST World Cup
+      - link "☀️Đón hè cùng Bộ Sưu Tập The Poolside Club 2026" [ref=e10] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e11]:
+          - strong [ref=e12]: ☀️Đón hè cùng Bộ Sưu Tập The Poolside Club 2026
+      - link "Voucher 50K cho đơn từ 699K" [ref=e14] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e15]:
+          - strong [ref=e16]: Voucher 50K cho đơn từ 699K
+      - link "Voucher 80K cho đơn từ 999K" [ref=e18] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e19]:
+          - strong [ref=e20]: Voucher 80K cho đơn từ 999K
+    - generic [ref=e23]:
+      - link "160STORE" [ref=e25] [cursor=pointer]:
+        - /url: /
+        - img "160STORE" [ref=e26]
+      - navigation [ref=e27]:
+        - generic [ref=e29]:
+          - textbox "Search" [ref=e31]:
+            - /placeholder: Bạn đang tìm gì...
+          - button "Tìm kiếm" [ref=e32] [cursor=pointer]:
+            - img "Tìm kiếm" [ref=e33]
+      - list [ref=e36]:
+        - listitem [ref=e37]:
+          - generic [ref=e38]:
+            - link "Hệ thống cửa hàng Cửa hàng" [ref=e39] [cursor=pointer]:
+              - /url: https://www.160store.com/pages/lien-he
+              - img "Hệ thống cửa hàng" [ref=e41]
+              - generic [ref=e43]: Cửa hàng
+            - option "Chọn tỉnh/thành phố" [selected]
+            - option "Hà Nội"
+            - option "Bà Rịa - Vũng Tàu"
+            - option "An Giang"
+            - option "Đà Nẵng"
+            - option "Đắk Lắk"
+            - option "Hồ Chí Minh"
+            - option "Cần Thơ"
+            - option "Đồng Nai"
+            - option "Đà Nẵng"
+            - option "Hồ Chí Minh"
+            - option "TPHCM - Bình Dương"
+            - option "Hà Nội"
+            - option "Hồ Chí Minh"
+            - option "Đồng Tháp - Tiền Giang"
+            - option "Cần Thơ"
+            - option "Hồ Chí Minh"
+            - option "Chọn Quận/huyện" [selected]
+        - listitem [ref=e44]:
+          - generic [ref=e45]:
+            - link "Tài khoản Đăng nhập" [ref=e46] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - img "Tài khoản" [ref=e48]
+              - generic [ref=e49]: Đăng nhập
+            - generic:
+              - generic:
+                - generic: Đăng nhập tài khoản
+                - paragraph: "Nhập email và mật khẩu của bạn:"
+              - generic:
+                - generic:
+                  - generic:
+                    - textbox "Nhập email hoặc số điện thoại"
+                  - generic:
+                    - textbox "Mật khẩu"
+                  - generic:
+                    - button "Đăng nhập"
+                - generic:
+                  - paragraph:
+                    - text: Khách hàng mới?
+                    - link "Tạo tài khoản":
+                      - /url: /account/register
+                  - paragraph:
+                    - text: Quên mật khẩu?
+                    - button "Khôi phục mật khẩu"
+        - listitem [ref=e50]:
+          - link "Hệ thống cửa hàng 0 Giỏ hàng" [ref=e52] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=e53]:
+              - img "Hệ thống cửa hàng" [ref=e54]
+              - generic [ref=e55]: "0"
+            - generic [ref=e56]: Giỏ hàng
+    - navigation [ref=e60]:
+      - list [ref=e61]:
+        - listitem [ref=e62]:
+          - link "🔎 HÀNG MỚI" [ref=e63] [cursor=pointer]:
+            - /url: /collections/san-pham-moi
+            - generic [ref=e64]: 🔎 HÀNG MỚI
+          - generic [ref=e65]: New
+        - listitem [ref=e66]:
+          - link "SẢN PHẨM" [ref=e67] [cursor=pointer]:
+            - /url: /collections/tat-ca-san-pham
+            - generic [ref=e68]: SẢN PHẨM
+        - listitem [ref=e70]:
+          - link "ÁO NAM" [ref=e71] [cursor=pointer]:
+            - /url: /collections/ao
+            - generic [ref=e72]: ÁO NAM
+        - listitem [ref=e74]:
+          - link "QUẦN NAM" [ref=e75] [cursor=pointer]:
+            - /url: /collections/quan
+            - generic [ref=e76]: QUẦN NAM
+        - listitem [ref=e78]:
+          - link "PHỤ KIỆN" [ref=e79] [cursor=pointer]:
+            - /url: /collections/nhom-phu-kien-khac
+            - generic [ref=e80]: PHỤ KIỆN
+        - listitem [ref=e82]:
+          - link "BST Hè 2026" [ref=e83] [cursor=pointer]:
+            - /url: /collections/the-poolside-club-collection
+            - generic [ref=e84]: BST Hè 2026
+        - listitem [ref=e85]:
+          - link "OUTLET" [ref=e86] [cursor=pointer]:
+            - /url: /collections/outlet
+            - generic [ref=e87]: OUTLET
+          - generic [ref=e88]: "-50%"
+        - listitem [ref=e89]:
+          - link "COLLECTION" [ref=e90] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e91]: COLLECTION
+        - listitem [ref=e93]:
+          - link "JEANS" [ref=e94] [cursor=pointer]:
+            - /url: /collections/quan-jeans
+            - generic [ref=e95]: JEANS
+        - listitem [ref=e97]:
+          - link "TIN THỜI TRANG" [ref=e98] [cursor=pointer]:
+            - /url: https://www.160store.com/blogs/all
+            - generic [ref=e99]: TIN THỜI TRANG
+  - text: + + + + + + + + +
+  - main [ref=e100]:
+    - list [ref=e103]:
+      - listitem [ref=e104]:
+        - link "Trang chủ" [ref=e105] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=e106]:
+        - text: /
+        - generic [ref=e107]: SẢN PHẨM MỚI
+    - generic [ref=e110]:
+      - img "SẢN PHẨM MỚI" [ref=e113]
+      - generic [ref=e115]:
+        - heading "ƯU ĐÃI - ONLY ONLINE" [level=2] [ref=e117]
+        - generic [ref=e119]:
+          - generic [ref=e121] [cursor=pointer]:
+            - strong [ref=e123]: JUL20
+            - generic [ref=e124]:
+              - generic [ref=e125]:
+                - generic [ref=e127]: Giảm 20K
+                - text: đơn từ 419K (Only Online)
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - generic [ref=e130]:
+                    - text: "Mã:"
+                    - strong [ref=e131]: JUL20
+                  - generic [ref=e132]: "HSD: 31/07/2026"
+                - button "Sao chép mã" [ref=e134]
+          - generic [ref=e136] [cursor=pointer]:
+            - strong [ref=e138]: JUL50
+            - generic [ref=e139]:
+              - generic [ref=e140]:
+                - generic [ref=e142]: Giảm 50K
+                - text: đơn từ 699K (Only Online)
+              - generic [ref=e143]:
+                - generic [ref=e144]:
+                  - generic [ref=e145]:
+                    - text: "Mã:"
+                    - strong [ref=e146]: JUL50
+                  - generic [ref=e147]: "HSD: 31/07/2026"
+                - button "Sao chép mã" [ref=e149]
+          - generic [ref=e151] [cursor=pointer]:
+            - strong [ref=e153]: JUL80
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - generic [ref=e157]: Giảm 80K
+                - text: đơn từ 999K (Only Online)
+              - generic [ref=e158]:
+                - generic [ref=e159]:
+                  - generic [ref=e160]:
+                    - text: "Mã:"
+                    - strong [ref=e161]: JUL80
+                  - generic [ref=e162]: "HSD: 31/07/2026"
+                - button "Sao chép mã" [ref=e164]
+          - generic [ref=e166] [cursor=pointer]:
+            - strong [ref=e168]: JUL120
+            - generic [ref=e169]:
+              - generic [ref=e170]:
+                - generic [ref=e172]: Giảm 120K
+                - text: đơn từ 1399K (Only Online)
+              - generic [ref=e173]:
+                - generic [ref=e174]:
+                  - generic [ref=e175]:
+                    - text: "Mã:"
+                    - strong [ref=e176]: JUL120
+                  - generic [ref=e177]: "HSD: 31/07/2026"
+                - button "Sao chép mã" [ref=e179]
+      - generic [ref=e181]:
+        - generic [ref=e184]:
+          - text: "Sắp xếp:"
+          - combobox [ref=e185] [cursor=pointer]:
+            - option "Sản phẩm nổi bật" [selected]
+            - 'option "Giá: Tăng dần"'
+            - 'option "Giá: Giảm dần"'
+            - 'option "Tên: A-Z"'
+            - 'option "Tên: Z-A"'
+            - option "Cũ nhất"
+            - option "Mới nhất"
+            - option "Bán chạy nhất"
+            - 'option "Tồn kho: Giảm dần"'
+        - text: 
+        - generic [ref=e186]:
+          - generic [ref=e188]:
+            - link "Quần Short Nam Pique ICONDENIM Heatwave" [ref=e190] [cursor=pointer]:
+              - /url: /products/quan-short-nam-pique-icondenim-heatwave
+              - img "Quần Short Nam Pique ICONDENIM Heatwave" [ref=e191]
+            - generic [ref=e192]:
+              - heading "Quần Short Nam Pique ICONDENIM Heatwave" [level=3] [ref=e193]:
+                - link "Quần Short Nam Pique ICONDENIM Heatwave" [ref=e194] [cursor=pointer]:
+                  - /url: /products/quan-short-nam-pique-icondenim-heatwave
+              - img [ref=e197]:
+                - generic [ref=e198]: Hàng Mới
+              - generic [ref=e199]:
+                - generic [ref=e200]:
+                  - paragraph [ref=e201]: 349,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e203] [cursor=pointer]:
+                    - generic [ref=e204]:
+                      - img "Thêm vào giỏ" [ref=e205]
+                      - img "Thêm vào giỏ" [ref=e206]
+                - list
+          - generic [ref=e208]:
+            - link "Áo Thun Nam ICONDENIM Bear Team" [ref=e210] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-bear-team
+              - img "Áo Thun Nam ICONDENIM Bear Team" [ref=e211]
+            - generic [ref=e212]:
+              - heading "Áo Thun Nam ICONDENIM Bear Team" [level=3] [ref=e213]:
+                - link "Áo Thun Nam ICONDENIM Bear Team" [ref=e214] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-icondenim-bear-team
+              - img [ref=e217]:
+                - generic [ref=e218]: Hàng Mới
+              - generic [ref=e219]:
+                - generic [ref=e220]:
+                  - paragraph [ref=e221]: 329,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e223] [cursor=pointer]:
+                    - generic [ref=e224]:
+                      - img "Thêm vào giỏ" [ref=e225]
+                      - img "Thêm vào giỏ" [ref=e226]
+                - list
+          - generic [ref=e228]:
+            - link "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Whirling Petals" [ref=e230] [cursor=pointer]:
+              - /url: /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals
+              - img "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Whirling Petals" [ref=e231]
+            - generic [ref=e232]:
+              - heading "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Whirling Petals" [level=3] [ref=e233]:
+                - link "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Whirling Petals" [ref=e234] [cursor=pointer]:
+                  - /url: /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals
+              - img [ref=e237]:
+                - generic [ref=e238]: Hàng Mới
+              - generic [ref=e239]:
+                - generic [ref=e240]:
+                  - paragraph [ref=e241]: 349,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e243] [cursor=pointer]:
+                    - generic [ref=e244]:
+                      - img "Thêm vào giỏ" [ref=e245]
+                      - img "Thêm vào giỏ" [ref=e246]
+                - list
+          - generic [ref=e248]:
+            - link "Áo Thun Nam ICONDENIM Retro Cooler" [ref=e250] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-retro-cooler
+              - img "Áo Thun Nam ICONDENIM Retro Cooler" [ref=e251]
+            - generic [ref=e252]:
+              - heading "Áo Thun Nam ICONDENIM Retro Cooler" [level=3] [ref=e253]:
+                - link "Áo Thun Nam ICONDENIM Retro Cooler" [ref=e254] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-icondenim-retro-cooler
+              - img [ref=e257]:
+                - generic [ref=e258]: Hàng Mới
+              - generic [ref=e259]:
+                - generic [ref=e260]:
+                  - paragraph [ref=e261]: 329,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e263] [cursor=pointer]:
+                    - generic [ref=e264]:
+                      - img "Thêm vào giỏ" [ref=e265]
+                      - img "Thêm vào giỏ" [ref=e266]
+                - list
+          - generic [ref=e268]:
+            - link "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Midnight Garden" [ref=e270] [cursor=pointer]:
+              - /url: /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-midnight-garden
+              - img "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Midnight Garden" [ref=e271]
+            - generic [ref=e272]:
+              - heading "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Midnight Garden" [level=3] [ref=e273]:
+                - link "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Midnight Garden" [ref=e274] [cursor=pointer]:
+                  - /url: /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-midnight-garden
+              - img [ref=e277]:
+                - generic [ref=e278]: Hàng Mới
+              - generic [ref=e279]:
+                - generic [ref=e280]:
+                  - paragraph [ref=e281]: 349,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e283] [cursor=pointer]:
+                    - generic [ref=e284]:
+                      - img "Thêm vào giỏ" [ref=e285]
+                      - img "Thêm vào giỏ" [ref=e286]
+                - list
+          - generic [ref=e288]:
+            - link "Áo Polo Nam ICONDENIM Puro" [ref=e290] [cursor=pointer]:
+              - /url: /products/ao-polo-nam-icondenim-puro
+              - img "Áo Polo Nam ICONDENIM Puro" [ref=e291]
+            - generic [ref=e292]:
+              - heading "Áo Polo Nam ICONDENIM Puro" [level=3] [ref=e293]:
+                - link "Áo Polo Nam ICONDENIM Puro" [ref=e294] [cursor=pointer]:
+                  - /url: /products/ao-polo-nam-icondenim-puro
+              - img [ref=e297]:
+                - generic [ref=e298]: Hàng Mới
+              - generic [ref=e299]:
+                - generic [ref=e300]:
+                  - paragraph [ref=e301]: 449,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e303] [cursor=pointer]:
+                    - generic [ref=e304]:
+                      - img "Thêm vào giỏ" [ref=e305]
+                      - img "Thêm vào giỏ" [ref=e306]
+                - list
+          - generic [ref=e308]:
+            - link "Áo Thun Nam ICONDENIM Lusitano Legend" [ref=e310] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-lusitano-legend
+              - img "Áo Thun Nam ICONDENIM Lusitano Legend" [ref=e311]
+            - generic [ref=e313]: 15%
+            - generic [ref=e314]:
+              - heading "Áo Thun Nam ICONDENIM Lusitano Legend" [level=3] [ref=e315]:
+                - link "Áo Thun Nam ICONDENIM Lusitano Legend" [ref=e316] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-icondenim-lusitano-legend
+              - img [ref=e319]:
+                - generic [ref=e321]: Sale
+              - generic [ref=e322]:
+                - generic [ref=e323]:
+                  - paragraph [ref=e324]:
+                    - text: 339,000₫
+                    - deletion [ref=e325]: 399,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e327] [cursor=pointer]:
+                    - generic [ref=e328]:
+                      - img "Thêm vào giỏ" [ref=e329]
+                      - img "Thêm vào giỏ" [ref=e330]
+                - list
+          - generic [ref=e332]:
+            - link "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Wildbloom" [ref=e334] [cursor=pointer]:
+              - /url: /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-wildbloom
+              - img "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Wildbloom" [ref=e335]
+            - generic [ref=e336]:
+              - heading "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Wildbloom" [level=3] [ref=e337]:
+                - link "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Wildbloom" [ref=e338] [cursor=pointer]:
+                  - /url: /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-wildbloom
+              - img [ref=e341]:
+                - generic [ref=e342]: Hàng Mới
+              - generic [ref=e343]:
+                - generic [ref=e344]:
+                  - paragraph [ref=e345]: 349,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e347] [cursor=pointer]:
+                    - generic [ref=e348]:
+                      - img "Thêm vào giỏ" [ref=e349]
+                      - img "Thêm vào giỏ" [ref=e350]
+                - list
+          - generic [ref=e352]:
+            - link "Áo Sơ Mi Nam Tay Ngắn ICONDENIM Blanko" [ref=e354] [cursor=pointer]:
+              - /url: /products/ao-so-mi-nam-tay-ngan-icondenim-blanko
+              - img "Áo Sơ Mi Nam Tay Ngắn ICONDENIM Blanko" [ref=e355]
+            - generic [ref=e356]:
+              - heading "Áo Sơ Mi Nam Tay Ngắn ICONDENIM Blanko" [level=3] [ref=e357]:
+                - link "Áo Sơ Mi Nam Tay Ngắn ICONDENIM Blanko" [ref=e358] [cursor=pointer]:
+                  - /url: /products/ao-so-mi-nam-tay-ngan-icondenim-blanko
+              - img [ref=e361]:
+                - generic [ref=e362]: Hàng Mới
+              - generic [ref=e363]:
+                - generic [ref=e364]:
+                  - paragraph [ref=e365]: 429,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e367] [cursor=pointer]:
+                    - generic [ref=e368]:
+                      - img "Thêm vào giỏ" [ref=e369]
+                      - img "Thêm vào giỏ" [ref=e370]
+                - list
+          - generic [ref=e372]:
+            - link "Áo Tanktop Nam ICONDENIM Coastal Knit" [ref=e374] [cursor=pointer]:
+              - /url: /products/ao-tanktop-nam-icondenim-coastal-knit
+              - img "Áo Tanktop Nam ICONDENIM Coastal Knit" [ref=e375]
+            - generic [ref=e376]:
+              - heading "Áo Tanktop Nam ICONDENIM Coastal Knit" [level=3] [ref=e377]:
+                - link "Áo Tanktop Nam ICONDENIM Coastal Knit" [ref=e378] [cursor=pointer]:
+                  - /url: /products/ao-tanktop-nam-icondenim-coastal-knit
+              - img [ref=e381]:
+                - generic [ref=e382]: Hàng Mới
+              - generic [ref=e383]:
+                - generic [ref=e384]:
+                  - paragraph [ref=e385]: 249,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e387] [cursor=pointer]:
+                    - generic [ref=e388]:
+                      - img "Thêm vào giỏ" [ref=e389]
+                      - img "Thêm vào giỏ" [ref=e390]
+                - list
+          - generic [ref=e392]:
+            - link "Quần Boxer Nam ICONDENIM Sanctum" [ref=e394] [cursor=pointer]:
+              - /url: /products/quan-boxer-nam-icondenim-sanctum
+              - img "Quần Boxer Nam ICONDENIM Sanctum" [ref=e395]
+            - generic [ref=e396]:
+              - heading "Quần Boxer Nam ICONDENIM Sanctum" [level=3] [ref=e397]:
+                - link "Quần Boxer Nam ICONDENIM Sanctum" [ref=e398] [cursor=pointer]:
+                  - /url: /products/quan-boxer-nam-icondenim-sanctum
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e399]:
+                - generic [ref=e400]:
+                  - paragraph [ref=e401]: 399,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e403] [cursor=pointer]:
+                    - generic [ref=e404]:
+                      - img "Thêm vào giỏ" [ref=e405]
+                      - img "Thêm vào giỏ" [ref=e406]
+                - list
+          - generic [ref=e408]:
+            - link "Quần Jogger Nam RUNPOW Urban Stride" [ref=e410] [cursor=pointer]:
+              - /url: /products/quan-jogger-nam-runpow-urban-stride
+              - img "Quần Jogger Nam RUNPOW Urban Stride" [ref=e411]
+            - generic [ref=e413]: 20%
+            - generic [ref=e414]:
+              - heading "Quần Jogger Nam RUNPOW Urban Stride" [level=3] [ref=e415]:
+                - link "Quần Jogger Nam RUNPOW Urban Stride" [ref=e416] [cursor=pointer]:
+                  - /url: /products/quan-jogger-nam-runpow-urban-stride
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e417]:
+                - generic [ref=e418]:
+                  - paragraph [ref=e419]:
+                    - text: 429,000₫
+                    - deletion [ref=e420]: 539,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e422] [cursor=pointer]:
+                    - generic [ref=e423]:
+                      - img "Thêm vào giỏ" [ref=e424]
+                      - img "Thêm vào giỏ" [ref=e425]
+                - list
+          - generic [ref=e427]:
+            - link "Áo Thun Nam ICONDENIM Regal" [ref=e429] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-regal
+              - img "Áo Thun Nam ICONDENIM Regal" [ref=e430]
+            - generic [ref=e431]:
+              - heading "Áo Thun Nam ICONDENIM Regal" [level=3] [ref=e432]:
+                - link "Áo Thun Nam ICONDENIM Regal" [ref=e433] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-icondenim-regal
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e434]:
+                - generic [ref=e435]:
+                  - paragraph [ref=e436]: 299,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e438] [cursor=pointer]:
+                    - generic [ref=e439]:
+                      - img "Thêm vào giỏ" [ref=e440]
+                      - img "Thêm vào giỏ" [ref=e441]
+                - list
+          - generic [ref=e443]:
+            - link "Nón Bucket Nam ICONDENIM Urban Relic" [ref=e445] [cursor=pointer]:
+              - /url: /products/non-bucket-nam-icondenim-urban-relic
+              - img "Nón Bucket Nam ICONDENIM Urban Relic" [ref=e446]
+            - generic [ref=e447]:
+              - heading "Nón Bucket Nam ICONDENIM Urban Relic" [level=3] [ref=e448]:
+                - link "Nón Bucket Nam ICONDENIM Urban Relic" [ref=e449] [cursor=pointer]:
+                  - /url: /products/non-bucket-nam-icondenim-urban-relic
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e450]:
+                - generic [ref=e451]:
+                  - paragraph [ref=e452]: 279,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e454] [cursor=pointer]:
+                    - generic [ref=e455]:
+                      - img "Thêm vào giỏ" [ref=e456]
+                      - img "Thêm vào giỏ" [ref=e457]
+                - list
+          - generic [ref=e459]:
+            - link "Quần Short Nam RUNPOW In Camo" [ref=e461] [cursor=pointer]:
+              - /url: /products/quan-short-nam-runpow-in-camo
+              - img "Quần Short Nam RUNPOW In Camo" [ref=e462]
+            - generic [ref=e464]: 21%
+            - generic [ref=e465]:
+              - heading "Quần Short Nam RUNPOW In Camo" [level=3] [ref=e466]:
+                - link "Quần Short Nam RUNPOW In Camo" [ref=e467] [cursor=pointer]:
+                  - /url: /products/quan-short-nam-runpow-in-camo
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e468]:
+                - generic [ref=e469]:
+                  - paragraph [ref=e470]:
+                    - text: 379,000₫
+                    - deletion [ref=e471]: 479,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e473] [cursor=pointer]:
+                    - generic [ref=e474]:
+                      - img "Thêm vào giỏ" [ref=e475]
+                      - img "Thêm vào giỏ" [ref=e476]
+                - list
+          - generic [ref=e478]:
+            - link "Áo Thun Nam ICONDENIM Homefield" [ref=e480] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-homefield
+              - img "Áo Thun Nam ICONDENIM Homefield" [ref=e481]
+            - generic [ref=e482]:
+              - heading "Áo Thun Nam ICONDENIM Homefield" [level=3] [ref=e483]:
+                - link "Áo Thun Nam ICONDENIM Homefield" [ref=e484] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-icondenim-homefield
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e485]:
+                - generic [ref=e486]:
+                  - paragraph [ref=e487]: 379,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e489] [cursor=pointer]:
+                    - generic [ref=e490]:
+                      - img "Thêm vào giỏ" [ref=e491]
+                      - img "Thêm vào giỏ" [ref=e492]
+                - list
+          - generic [ref=e494]:
+            - link "Áo Tanktop Nam RUNPOW Pro Swift" [ref=e496] [cursor=pointer]:
+              - /url: /products/ao-tanktop-nam-runpow-pro-swift
+              - img "Áo Tanktop Nam RUNPOW Pro Swift" [ref=e497]
+            - generic [ref=e499]: 21%
+            - generic [ref=e500]:
+              - heading "Áo Tanktop Nam RUNPOW Pro Swift" [level=3] [ref=e501]:
+                - link "Áo Tanktop Nam RUNPOW Pro Swift" [ref=e502] [cursor=pointer]:
+                  - /url: /products/ao-tanktop-nam-runpow-pro-swift
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e503]:
+                - generic [ref=e504]:
+                  - paragraph [ref=e505]:
+                    - text: 229,000₫
+                    - deletion [ref=e506]: 289,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e508] [cursor=pointer]:
+                    - generic [ref=e509]:
+                      - img "Thêm vào giỏ" [ref=e510]
+                      - img "Thêm vào giỏ" [ref=e511]
+                - list
+          - generic [ref=e513]:
+            - link "Áo Thun Nam ICONDENIM Archive" [ref=e515] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-archive
+              - img "Áo Thun Nam ICONDENIM Archive" [ref=e516]
+            - generic [ref=e517]:
+              - heading "Áo Thun Nam ICONDENIM Archive" [level=3] [ref=e518]:
+                - link "Áo Thun Nam ICONDENIM Archive" [ref=e519] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-icondenim-archive
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e520]:
+                - generic [ref=e521]:
+                  - paragraph [ref=e522]: 329,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e524] [cursor=pointer]:
+                    - generic [ref=e525]:
+                      - img "Thêm vào giỏ" [ref=e526]
+                      - img "Thêm vào giỏ" [ref=e527]
+                - list
+          - generic [ref=e529]:
+            - link "Quần Jeans Nam ICONDENIM Fadeline" [ref=e531] [cursor=pointer]:
+              - /url: /products/quan-jeans-nam-icondenim-fadeline
+              - img "Quần Jeans Nam ICONDENIM Fadeline" [ref=e532]
+            - generic [ref=e533]:
+              - heading "Quần Jeans Nam ICONDENIM Fadeline" [level=3] [ref=e534]:
+                - link "Quần Jeans Nam ICONDENIM Fadeline" [ref=e535] [cursor=pointer]:
+                  - /url: /products/quan-jeans-nam-icondenim-fadeline
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e536]:
+                - generic [ref=e537]:
+                  - paragraph [ref=e538]: 579,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e540] [cursor=pointer]:
+                    - generic [ref=e541]:
+                      - img "Thêm vào giỏ" [ref=e542]
+                      - img "Thêm vào giỏ" [ref=e543]
+                - list
+          - generic [ref=e545]:
+            - link "Combo 3 Vớ Nam No-Show ICONDENIM Pure Ease" [ref=e547] [cursor=pointer]:
+              - /url: /products/combo-3-vo-nam-no-show-icondenim-pure-ease
+              - img "Combo 3 Vớ Nam No-Show ICONDENIM Pure Ease" [ref=e548]
+            - generic [ref=e549]:
+              - heading "Combo 3 Vớ Nam No-Show ICONDENIM Pure Ease" [level=3] [ref=e550]:
+                - link "Combo 3 Vớ Nam No-Show ICONDENIM Pure Ease" [ref=e551] [cursor=pointer]:
+                  - /url: /products/combo-3-vo-nam-no-show-icondenim-pure-ease
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e552]:
+                - generic [ref=e553]:
+                  - paragraph [ref=e554]: 89,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e556] [cursor=pointer]:
+                    - generic [ref=e557]:
+                      - img "Thêm vào giỏ" [ref=e558]
+                      - img "Thêm vào giỏ" [ref=e559]
+                - list
+          - generic [ref=e561]:
+            - link "Quần Short Nam RUNPOW Aero Twin" [ref=e563] [cursor=pointer]:
+              - /url: /products/quan-short-nam-runpow-aero-twin
+              - img "Quần Short Nam RUNPOW Aero Twin" [ref=e564]
+            - generic [ref=e566]: 20%
+            - generic [ref=e567]:
+              - heading "Quần Short Nam RUNPOW Aero Twin" [level=3] [ref=e568]:
+                - link "Quần Short Nam RUNPOW Aero Twin" [ref=e569] [cursor=pointer]:
+                  - /url: /products/quan-short-nam-runpow-aero-twin
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e570]:
+                - generic [ref=e571]:
+                  - paragraph [ref=e572]:
+                    - text: 359,000₫
+                    - deletion [ref=e573]: 449,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e575] [cursor=pointer]:
+                    - generic [ref=e576]:
+                      - img "Thêm vào giỏ" [ref=e577]
+                      - img "Thêm vào giỏ" [ref=e578]
+                - list
+          - generic [ref=e580]:
+            - link "Áo Tanktop Nam RUNPOW Movefree" [ref=e582] [cursor=pointer]:
+              - /url: /products/ao-tanktop-runpow-movefree
+              - img "Áo Tanktop Nam RUNPOW Movefree" [ref=e583]
+            - generic [ref=e585]: 21%
+            - generic [ref=e586]:
+              - heading "Áo Tanktop Nam RUNPOW Movefree" [level=3] [ref=e587]:
+                - link "Áo Tanktop Nam RUNPOW Movefree" [ref=e588] [cursor=pointer]:
+                  - /url: /products/ao-tanktop-runpow-movefree
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e589]:
+                - generic [ref=e590]:
+                  - paragraph [ref=e591]:
+                    - text: 229,000₫
+                    - deletion [ref=e592]: 289,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e594] [cursor=pointer]:
+                    - generic [ref=e595]:
+                      - img "Thêm vào giỏ" [ref=e596]
+                      - img "Thêm vào giỏ" [ref=e597]
+                - list
+          - generic [ref=e599]:
+            - link "Áo Thun Nam RUNPOW Momentum" [ref=e601] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-runpow-momentum
+              - img "Áo Thun Nam RUNPOW Momentum" [ref=e602]
+            - generic [ref=e604]: 20%
+            - generic [ref=e605]:
+              - heading "Áo Thun Nam RUNPOW Momentum" [level=3] [ref=e606]:
+                - link "Áo Thun Nam RUNPOW Momentum" [ref=e607] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-runpow-momentum
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e608]:
+                - generic [ref=e609]:
+                  - paragraph [ref=e610]:
+                    - text: 279,000₫
+                    - deletion [ref=e611]: 349,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e613] [cursor=pointer]:
+                    - generic [ref=e614]:
+                      - img "Thêm vào giỏ" [ref=e615]
+                      - img "Thêm vào giỏ" [ref=e616]
+                - list
+          - generic [ref=e618]:
+            - link "Áo Thun Nam RUNPOW Raglan Active" [ref=e620] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-runpow-raglan-active
+              - img "Áo Thun Nam RUNPOW Raglan Active" [ref=e621]
+            - generic [ref=e623]: 20%
+            - generic [ref=e624]:
+              - heading "Áo Thun Nam RUNPOW Raglan Active" [level=3] [ref=e625]:
+                - link "Áo Thun Nam RUNPOW Raglan Active" [ref=e626] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-runpow-raglan-active
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e627]:
+                - generic [ref=e628]:
+                  - paragraph [ref=e629]:
+                    - text: 279,000₫
+                    - deletion [ref=e630]: 349,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e632] [cursor=pointer]:
+                    - generic [ref=e633]:
+                      - img "Thêm vào giỏ" [ref=e634]
+                      - img "Thêm vào giỏ" [ref=e635]
+                - list
+          - generic [ref=e637]:
+            - link "Áo Tanktop Nam RUNPOW In Camo" [ref=e639] [cursor=pointer]:
+              - /url: /products/ao-tanktop-nam-runpow-in-camo
+              - img "Áo Tanktop Nam RUNPOW In Camo" [ref=e640]
+            - generic [ref=e642]: 20%
+            - generic [ref=e643]:
+              - heading "Áo Tanktop Nam RUNPOW In Camo" [level=3] [ref=e644]:
+                - link "Áo Tanktop Nam RUNPOW In Camo" [ref=e645] [cursor=pointer]:
+                  - /url: /products/ao-tanktop-nam-runpow-in-camo
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e646]:
+                - generic [ref=e647]:
+                  - paragraph [ref=e648]:
+                    - text: 239,000₫
+                    - deletion [ref=e649]: 299,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e651] [cursor=pointer]:
+                    - generic [ref=e652]:
+                      - img "Thêm vào giỏ" [ref=e653]
+                      - img "Thêm vào giỏ" [ref=e654]
+                - list
+          - generic [ref=e656]:
+            - link "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Riviera Knit" [ref=e658] [cursor=pointer]:
+              - /url: /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-riviera-knit
+              - img "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Riviera Knit" [ref=e659]
+            - generic [ref=e660]:
+              - heading "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Riviera Knit" [level=3] [ref=e661]:
+                - link "Áo Sơ Mi Nam Tay Ngắn Cuban ICONDENIM Riviera Knit" [ref=e662] [cursor=pointer]:
+                  - /url: /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-riviera-knit
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e663]:
+                - generic [ref=e664]:
+                  - paragraph [ref=e665]: 349,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e667] [cursor=pointer]:
+                    - generic [ref=e668]:
+                      - img "Thêm vào giỏ" [ref=e669]
+                      - img "Thêm vào giỏ" [ref=e670]
+                - list
+          - generic [ref=e672]:
+            - link "Set Áo Quần Nam ICONDENIM Lazy Fish" [ref=e674] [cursor=pointer]:
+              - /url: /products/set-ao-quan-nam-icondenim-lazy-fish
+              - img "Set Áo Quần Nam ICONDENIM Lazy Fish" [ref=e675]
+            - generic [ref=e676]:
+              - heading "Set Áo Quần Nam ICONDENIM Lazy Fish" [level=3] [ref=e677]:
+                - link "Set Áo Quần Nam ICONDENIM Lazy Fish" [ref=e678] [cursor=pointer]:
+                  - /url: /products/set-ao-quan-nam-icondenim-lazy-fish
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e679]:
+                - generic [ref=e680]:
+                  - paragraph [ref=e681]: 329,000₫ ~ 678,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e683] [cursor=pointer]:
+                    - generic [ref=e684]:
+                      - img "Thêm vào giỏ" [ref=e685]
+                      - img "Thêm vào giỏ" [ref=e686]
+                - list
+          - generic [ref=e688]:
+            - link "Quần Short Nam ICONDENIM Tropical Mono" [ref=e690] [cursor=pointer]:
+              - /url: /products/quan-short-nam-icondenim-tropical-mono
+              - img "Quần Short Nam ICONDENIM Tropical Mono" [ref=e691]
+            - generic [ref=e692]:
+              - heading "Quần Short Nam ICONDENIM Tropical Mono" [level=3] [ref=e693]:
+                - link "Quần Short Nam ICONDENIM Tropical Mono" [ref=e694] [cursor=pointer]:
+                  - /url: /products/quan-short-nam-icondenim-tropical-mono
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e695]:
+                - generic [ref=e696]:
+                  - paragraph [ref=e697]: 299,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e699] [cursor=pointer]:
+                    - generic [ref=e700]:
+                      - img "Thêm vào giỏ" [ref=e701]
+                      - img "Thêm vào giỏ" [ref=e702]
+                - list
+          - generic [ref=e704]:
+            - link "Áo Thun Nam ICONDENIM Fishing" [ref=e706] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-fishing
+              - img "Áo Thun Nam ICONDENIM Fishing" [ref=e707]
+            - generic [ref=e708]:
+              - heading "Áo Thun Nam ICONDENIM Fishing" [level=3] [ref=e709]:
+                - link "Áo Thun Nam ICONDENIM Fishing" [ref=e710] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-icondenim-fishing
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e711]:
+                - generic [ref=e712]:
+                  - paragraph [ref=e713]: 349,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e715] [cursor=pointer]:
+                    - generic [ref=e716]:
+                      - img "Thêm vào giỏ" [ref=e717]
+                      - img "Thêm vào giỏ" [ref=e718]
+                - list
+          - generic [ref=e720]:
+            - link "Áo Thun Nam ICONDENIM Riviera Stripe" [ref=e722] [cursor=pointer]:
+              - /url: /products/ao-thun-nam-icondenim-riviera-stripe
+              - img "Áo Thun Nam ICONDENIM Riviera Stripe" [ref=e723]
+            - generic [ref=e724]:
+              - heading "Áo Thun Nam ICONDENIM Riviera Stripe" [level=3] [ref=e725]:
+                - link "Áo Thun Nam ICONDENIM Riviera Stripe" [ref=e726] [cursor=pointer]:
+                  - /url: /products/ao-thun-nam-icondenim-riviera-stripe
+              - generic:
+                - generic:
+                  - img
+              - generic [ref=e727]:
+                - generic [ref=e728]:
+                  - paragraph [ref=e729]: 329,000₫
+                  - generic:
+                    - button "Btn Quickview":
+                      - img "Btn Quickview"
+                  - button "Thêm vào giỏ Thêm vào giỏ" [ref=e731] [cursor=pointer]:
+                    - generic [ref=e732]:
+                      - img "Thêm vào giỏ" [ref=e733]
+                      - img "Thêm vào giỏ" [ref=e734]
+                - list
+        - generic [ref=e735]:
+          - button "Xem thêm" [ref=e736] [cursor=pointer]
+          - paragraph
+        - text: 
+  - generic [ref=e740]:
+    - generic [ref=e741]:
+      - paragraph [ref=e742]: Đăng kí nhận tin
+      - generic [ref=e744]:
+        - generic [ref=e745]:
+          - text: 
+          - textbox "Email" [ref=e746]
+        - button "Đăng ký" [ref=e747] [cursor=pointer]:
+          - generic [ref=e748]: 
+          - text: Đăng ký
+    - list [ref=e750]:
+      - listitem [ref=e751]:
+        - link "Liên hệ với chúng tôi qua Zalo" [ref=e752] [cursor=pointer]:
+          - /url: //zalo.me/3664144181122308942
+          - img "Liên hệ với chúng tôi qua Zalo" [ref=e753]
+      - listitem [ref=e754]:
+        - link [ref=e755] [cursor=pointer]:
+          - /url: https://www.youtube.com/@storehanghieu1608
+          - generic [ref=e756]: 
+      - listitem [ref=e757]:
+        - link [ref=e758] [cursor=pointer]:
+          - /url: https://www.instagram.com/160store
+          - generic [ref=e759]: 
+      - listitem [ref=e760]:
+        - link [ref=e761] [cursor=pointer]:
+          - /url: https://www.facebook.com/160store
+          - generic [ref=e762]: 
+  - contentinfo [ref=e763]:
+    - generic [ref=e765]:
+      - generic [ref=e766]:
+        - generic [ref=e767]:
+          - generic [ref=e769]: Giới thiệu
+          - generic [ref=e770]:
+            - paragraph [ref=e771]: 160STORE - Chuỗi Phân Phối Thời Trang Nam Chuẩn Hiệu
+            - list [ref=e772]:
+              - listitem [ref=e773]:
+                - generic [ref=e774]: 
+                - link "02871006789" [ref=e775] [cursor=pointer]:
+                  - /url: tel:02871006789
+              - listitem [ref=e776]:
+                - generic [ref=e777]: 
+                - link "cs@160store.com" [ref=e778] [cursor=pointer]:
+                  - /url: mailto:cs@160store.com
+              - listitem [ref=e779]:
+                - generic [ref=e780]: 
+                - generic [ref=e781]: "Giờ mở cửa : 08:30 - 22:00"
+              - listitem [ref=e782]:
+                - generic [ref=e783]: 
+                - generic [ref=e784]: Nhân viên tư vấn phản hồi tin nhắn đến 24:00 (Mỗi ngày)
+              - listitem [ref=e785]:
+                - link [ref=e786] [cursor=pointer]:
+                  - /url: http://online.gov.vn/Home/WebDetails/121880
+                  - img [ref=e787]
+              - listitem [ref=e788]:
+                - link "DMCA.com Protection Status" [ref=e789] [cursor=pointer]:
+                  - /url: https://www.dmca.com/Protection/Status.aspx?ID=9049de26-d97b-48dc-ab97-1e5fcb221fba&refurl=https://160store.com/collections/san-pham-moi
+                  - img "DMCA.com Protection Status" [ref=e790]
+        - generic [ref=e791]:
+          - generic [ref=e793]: CHÍNH SÁCH
+          - list [ref=e795]:
+            - listitem [ref=e796]:
+              - link "Hướng dẫn đặt hàng" [ref=e797] [cursor=pointer]:
+                - /url: /pages/huong-dan-dat-hang
+            - listitem [ref=e798]:
+              - paragraph [ref=e801] [cursor=pointer]: Chính sách
+        - generic [ref=e803]:
+          - link "ĐỊA CHỈ CỬA HÀNG (20 CH)" [ref=e806] [cursor=pointer]:
+            - /url: https://www.160store.com/pages/lien-he
+          - generic [ref=e808]:
+            - generic [ref=e809]:
+              - generic [ref=e810]:
+                - img [ref=e811]
+                - paragraph [ref=e812]: HỒ CHÍ MINH (10 CH)
+              - paragraph [ref=e813]: 274 Ba Cu, Phường Vũng Tàu, TP.HCM
+            - generic [ref=e814]:
+              - generic [ref=e815]:
+                - img [ref=e816]
+                - paragraph [ref=e817]:
+                  - text: HÀ NỘI (2 CH)
+                  - generic [ref=e818]: New
+              - paragraph [ref=e819]: 27 Tôn Đức Thắng - P. Văn Miếu - Quốc Tử Giám; TP. Hà Nội
+            - generic [ref=e820]:
+              - generic [ref=e821]:
+                - img [ref=e822]
+                - paragraph [ref=e823]: CẦN THƠ (2 CH)
+              - paragraph [ref=e824]: Số 35 Trần Phú, Phường Ninh Kiều, TP.Cần Thơ
+            - generic [ref=e825]:
+              - generic [ref=e826]:
+                - img [ref=e827]
+                - paragraph [ref=e828]: ĐÀ NẴNG (2 CH)
+              - paragraph [ref=e829]: 332 Đ. Lê Duẩn, Phường Thanh Khê, TP.Đà Nẵng
+            - link "XEM TẤT CẢ CỬA HÀNG" [ref=e831] [cursor=pointer]:
+              - /url: https://www.160store.com/pages/lien-he
+        - generic [ref=e834]:
+          - generic [ref=e835]: PHƯƠNG THỨC THANH TOÁN
+          - generic [ref=e836]:
+            - img "Image Spay" [ref=e837]
+            - img "Image VNPay" [ref=e838]
+            - img "Image Cod" [ref=e839]
+      - generic [ref=e844]: BẢN QUYỀN THUỘC VỀ 160STORE
+  - list [ref=e846]
+  - button "back to top" [ref=e848] [cursor=pointer]:
+    - img [ref=e849]
+    - text: back to top
+  - paragraph [ref=e855]: Bạn chưa chọn size sản phẩm!
+  - generic:
+    - generic:
+      - generic: 🎯 BÁO CÁO SEO AUDIT CHUYÊN SÂU
+      - generic: "Phần A: On-page cơ bản"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: "68"
+              - generic: SEO
+          - generic: KHÁ
+        - generic:
+          - generic:
+            - generic: "Trang phân tích:"
+            - strong: San Pham Moi
+          - generic:
+            - generic: "Từ khóa chính:"
+            - strong: san pham moi
+          - generic:
+            - generic: "Tiêu chí đạt:"
+            - strong: 26/38
+      - generic [ref=e856]:
+        - generic [ref=e857]: "❌ Chi tiết lỗi cần khắc phục (12):"
+        - generic [ref=e858]:
+          - generic [ref=e859]:
+            - generic [ref=e860]:
+              - strong [ref=e861]: "Độ dài Title: 21 ký tự (chuẩn: 40–65)"
+              - generic [ref=e862]: "1.2"
+            - generic [ref=e863]: "⚠️ Lỗi: Title quá ngắn hoặc quá dài (21 ký tự), cần 40–65"
+          - generic [ref=e864]:
+            - generic [ref=e865]:
+              - strong [ref=e866]: Title chứa keyword "san pham moi"
+              - generic [ref=e867]: "1.3"
+            - generic [ref=e868]: "⚠️ Lỗi: Title không chứa keyword \"san pham moi\""
+          - generic [ref=e869]:
+            - generic [ref=e870]:
+              - strong [ref=e871]: "Keyword nằm ở nửa đầu Title (vị trí: N/A)"
+              - generic [ref=e872]: "1.4"
+            - generic [ref=e873]: "⚠️ Lỗi: Bỏ qua — keyword \"san pham moi\" không có trong Title"
+          - generic [ref=e874]:
+            - generic [ref=e875]:
+              - strong [ref=e876]: Meta description chứa keyword "san pham moi"
+              - generic [ref=e877]: "2.3"
+            - generic [ref=e878]: "⚠️ Lỗi: Meta description không chứa keyword \"san pham moi\""
+          - generic [ref=e879]:
+            - generic [ref=e880]:
+              - strong [ref=e881]: "Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)"
+              - generic [ref=e882]: "3.1"
+            - generic [ref=e883]: "⚠️ Lỗi: Trang không có thẻ H1 nào!"
+          - generic [ref=e884]:
+            - generic [ref=e885]:
+              - strong [ref=e886]: H1 chứa keyword "san pham moi"
+              - generic [ref=e887]: "3.2"
+            - generic [ref=e888]: "⚠️ Lỗi: Không có H1 để kiểm tra"
+          - generic [ref=e889]:
+            - generic [ref=e890]:
+              - strong [ref=e891]: "Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)"
+              - generic [ref=e892]: "5.2"
+            - generic [ref=e893]: "⚠️ Lỗi: Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%"
+          - generic [ref=e894]:
+            - generic [ref=e895]:
+              - strong [ref=e896]: Keyword "san pham moi" xuất hiện trong 100 từ đầu
+              - generic [ref=e897]: "5.3"
+            - generic [ref=e898]: "⚠️ Lỗi: Keyword \"san pham moi\" không xuất hiện trong 100 từ đầu"
+          - generic [ref=e899]:
+            - generic [ref=e900]:
+              - strong [ref=e901]: "100% ảnh có thuộc tính alt (thiếu: 7/240)"
+              - generic [ref=e902]: "6.1"
+            - generic [ref=e903]: "⚠️ Lỗi: Có 7 hình ảnh thiếu thuộc tính 'alt'"
+          - generic [ref=e904]:
+            - generic [ref=e905]:
+              - strong [ref=e906]: Có ảnh chứa keyword "san pham moi" trong alt
+              - generic [ref=e907]: "6.2"
+            - generic [ref=e908]: "⚠️ Lỗi: Không có ảnh nào có alt chứa keyword \"san pham moi\""
+          - generic [ref=e909]:
+            - generic [ref=e910]:
+              - strong [ref=e911]: "Anchor text chất lượng (lỗi: 29)"
+              - generic [ref=e912]: "7.3"
+            - generic [ref=e913]: "⚠️ Lỗi: 29 link có anchor text không tốt: \"\" → /, \"\" → /, \"\" → /, \"\" → /, \"\" → /products/quan-short-nam-pique-icondenim-heatwave, \"\" → /products/ao-thun-nam-icondenim-bear-team, \"\" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals, \"\" → /products/ao-thun-nam-icondenim-retro-cooler, \"\" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-midnight-garden, \"\" → /products/ao-polo-nam-icondenim-puro, \"\" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-wildbloom, \"\" → /products/ao-so-mi-nam-tay-ngan-icondenim-blanko, \"\" → /products/ao-tanktop-nam-icondenim-coastal-knit, \"\" → /products/quan-boxer-nam-icondenim-sanctum, \"\" → /products/ao-thun-nam-icondenim-regal, \"\" → /products/non-bucket-nam-icondenim-urban-relic, \"\" → /products/ao-thun-nam-icondenim-homefield, \"\" → /products/ao-thun-nam-icondenim-archive, \"\" → /products/quan-jeans-nam-icondenim-fadeline, \"\" → /products/combo-3-vo-nam-no-show-icondenim-pure-ease, \"\" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-riviera-knit, \"\" → /products/set-ao-quan-nam-icondenim-lazy-fish, \"\" → /products/quan-short-nam-icondenim-tropical-mono, \"\" → /products/ao-thun-nam-icondenim-fishing, \"\" → /products/ao-thun-nam-icondenim-riviera-stripe, \"\" → /collections/san-pham-moi?page=2, \"\" → //zalo.me/3664144181122308942, \"\" → //m.me/1042686802417049, \"\" → //zalo.me/3664144181122308942"
+          - generic [ref=e914]:
+            - generic [ref=e915]:
+              - strong [ref=e916]: "Twitter Card tags: 0 thẻ"
+              - generic [ref=e917]: "8.7"
+            - generic [ref=e918]: "⚠️ Lỗi: Trang thiếu Twitter Card tags"
+```
+
+# Test source
+
+```ts
+  60  |                         "text/plain"
+  61  |                     );
+  62  |                     throw new Error(errorMessage); // Ép Allure đánh ❌ cho step này
+  63  |                 });
+  64  |             } catch {
+  65  |                 // Nuốt lỗi — test tiếp tục chạy bình thường
+  66  |             }
+  67  |         }
+  68  |     }
+  69  | 
+  70  |     /** Lấy điểm hiện tại (0–100) */
+  71  |     get score(): number {
+  72  |         if (this.totalChecks === 0) return 100;
+  73  |         return Math.round((this.passedChecks / this.totalChecks) * 100);
+  74  |     }
+  75  | 
+  76  |     /** Lấy thống kê chi tiết */
+  77  |     get stats() {
+  78  |         return {
+  79  |             total: this.totalChecks,
+  80  |             passed: this.passedChecks,
+  81  |             failed: this.totalChecks - this.passedChecks,
+  82  |             score: this.score,
+  83  |             failures: [...this.failures],
+  84  |         };
+  85  |     }
+  86  | 
+  87  |     async finalizeScore(page: Page, threshold = 70): Promise<void> {
+  88  |         const { total, passed, failed, score, failures } = this.stats;
+  89  | 
+  90  |         // Xác định trạng thái
+  91  |         const isPass = score >= threshold;
+  92  |         const statusText = isPass ? "PASS" : "FAIL";
+  93  | 
+  94  |         // Thang điểm SEO mới
+  95  |         let scoreLabel: string;
+  96  |         let statusIcon: string;
+  97  |         if (score >= 93) {
+  98  |             scoreLabel = "XUẤT SẮC";
+  99  |             statusIcon = "💎";
+  100 |         } else if (score >= 77) {
+  101 |             scoreLabel = "TỐT";
+  102 |             statusIcon = "🟢";
+  103 |         } else if (score >= 65) {
+  104 |             scoreLabel = "KHÁ";
+  105 |             statusIcon = "🟡";
+  106 |         } else if (score >= 50) {
+  107 |             scoreLabel = "TRUNG BÌNH";
+  108 |             statusIcon = "🟠";
+  109 |         } else {
+  110 |             scoreLabel = "KÉM";
+  111 |             statusIcon = "🔴";
+  112 |         }
+  113 | 
+  114 |         // Tạo báo cáo tổng kết dạng text
+  115 |         const summaryLines = [
+  116 |             `══════════════════════════════════════`,
+  117 |             `   ${statusIcon} KẾT QUẢ CHẤM ĐIỂM SEO`,
+  118 |             `══════════════════════════════════════`,
+  119 |             `   Điểm số:     ${score}/100`,
+  120 |             `   Đánh giá:    ${scoreLabel}`,
+  121 |             `   Ngưỡng đạt:  ${threshold}%`,
+  122 |             `   Kết quả:     ${statusText}`,
+  123 |             `──────────────────────────────────────`,
+  124 |             `   Tổng tiêu chí:  ${total}`,
+  125 |             `   ✅ Đạt:          ${passed}`,
+  126 |             `   ❌ Không đạt:    ${failed}`,
+  127 |             `══════════════════════════════════════`,
+  128 |         ];
+  129 | 
+  130 |         if (failures.length > 0) {
+  131 |             summaryLines.push(``, `📋 CHI TIẾT LỖI:`);
+  132 |             failures.forEach((f, i) => {
+  133 |                 summaryLines.push(`   ${i + 1}. [${f.step}]`);
+  134 |                 summaryLines.push(`      → ${f.message}`);
+  135 |             });
+  136 |         }
+  137 | 
+  138 |         const summaryText = summaryLines.join("\n");
+  139 | 
+  140 |         // Step cuối cùng — hiển thị bảng điểm + quyết định PASS/FAIL
+  141 |         await customStep(
+  142 |             page,
+  143 |             `13. 🏆 Kết quả chấm điểm SEO: ${score}/100 — ${statusText} (${scoreLabel})`,
+  144 |             async () => {
+  145 |                 // Đính kèm bảng điểm text
+  146 |                 await allure.attachment(
+  147 |                     "Bảng điểm SEO",
+  148 |                     Buffer.from(summaryText, "utf-8"),
+  149 |                     "text/plain"
+  150 |                 );
+  151 | 
+  152 |                 // Gắn description vào Test Case trên Allure
+  153 |                 await allure.description(
+  154 |                     `[${statusText}] Điểm SEO: ${score}/100 | Đạt: ${passed}/${total} tiêu chí | Ngưỡng: ${threshold}%\n\n` +
+  155 |                     `${scoreLabel}`
+  156 |                 );
+  157 | 
+  158 |                 // 🚀 ĐÂY LÀ DÒNG DUY NHẤT quyết định Test PASS hay FAIL
+  159 |                 if (!isPass) {
+> 160 |                     throw new Error(
+      |                           ^ Error: ❌ FAIL — Điểm SEO 68/100 dưới ngưỡng 70%. Có 12/38 tiêu chí không đạt.
+  161 |                         `❌ FAIL — Điểm SEO ${score}/100 dưới ngưỡng ${threshold}%. ` +
+  162 |                         `Có ${failed}/${total} tiêu chí không đạt.`
+  163 |                     );
+  164 |                 }
+  165 |             },
+  166 |             { screenshot: true }
+  167 |         );
+  168 |     }
+  169 | }
+```

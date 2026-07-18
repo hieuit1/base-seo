@@ -1,0 +1,28 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     82/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  38
+   ✅ Đạt:          31
+   ❌ Không đạt:    7
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   2. [H1 chứa keyword "quần tây"]
+      → Không có H1 để kiểm tra
+   3. [Mật độ keyword: 2.51% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 2.51%, cần ≤ 2.5%
+   4. [Keyword "quần tây" xuất hiện trong 100 từ đầu]
+      → Keyword "quần tây" không xuất hiện trong 100 từ đầu
+   5. [6.1 — 100% ảnh có thuộc tính alt (thiếu: 7/146)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   6. [Anchor text chất lượng (lỗi: 18)]
+      → 18 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /products/quan-tay-nam-icondenim-axis-wide, "" → /products/quan-tay-nam-icondenim-city-straight, "" → /products/quan-tay-nam-icondenim-zenith, "" → /products/quan-tay-nam-icondenim-airflex-gon-nhe-linh-hoat-performance, "" → /products/quan-tay-nam-icondenim-urban-slim-crop-trousers, "" → /products/quan-tay-nam-icondenim-monte-harrison-trousers, "" → /products/quan-tay-nam-icondenim-button-sidetab, "" → /products/quan-tay-icondenim-basic-form-straight, "" → /products/quan-tay-icondenim-sidetab-form-crop, "" → /products/quan-tay-icondenim-basic-slimfit-trousers, "" → /products/quan-tay-nam-icondenim-slim-ratchet-straps, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   7. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
