@@ -77,7 +77,6 @@ jobs:
       - name: Execute Parallel Shard Testing
         env:
           ENV: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}
-          BASE_URL: ${{ vars.BASE_URL }}
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
             echo "🔥 Chạy Smoke Test cho Pull Request..."

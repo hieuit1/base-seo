@@ -195,7 +195,7 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 2.1→2.3: Xác thực Meta Description */
+  /** Xác thực Meta Description */
   async verifyMetaDescription(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const minLen = data.metaDescMinLength ?? DEFAULT_SEO_CONFIG.metaDescMinLength;
     const maxLen = data.metaDescMaxLength ?? DEFAULT_SEO_CONFIG.metaDescMaxLength;
@@ -227,11 +227,11 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 3.1→3.4: Xác thực cấu trúc Heading */
+  /** Xác thực cấu trúc Heading */
   async verifyHeadingStructure(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const { h1Texts, allHeadings, headingHierarchy } = scan;
 
-    // 3.1 — Phải có đúng 1 thẻ H1
+    // Phải có đúng 1 thẻ H1
     await sc.check(
       `Trang có đúng 1 thẻ H1 (hiện tại: ${h1Texts.length} thẻ)`,
       h1Texts.length === 1,
@@ -270,12 +270,12 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 4.1→4.4: Xác thực cấu trúc URL */
+  /** Xác thực cấu trúc URL */
   async verifyUrlStructure(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const maxLen = data.urlMaxLength ?? DEFAULT_SEO_CONFIG.urlMaxLength;
     const { urlPath } = scan;
 
-    // 4.1 — URL path không quá dài
+    // URL path không quá dài
     await sc.check(
       `Độ dài URL: ${urlPath.length} ký tự (tối đa: ${maxLen})`,
       urlPath.length <= maxLen,
@@ -306,20 +306,20 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 5.1→5.3: Xác thực nội dung */
+  /** Xác thực nội dung */
   async verifyContent(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const minWords = data.minWordCount ?? DEFAULT_SEO_CONFIG.minWordCount;
     const densityMin = data.keywordDensityMin ?? DEFAULT_SEO_CONFIG.keywordDensityMin;
     const densityMax = data.keywordDensityMax ?? DEFAULT_SEO_CONFIG.keywordDensityMax;
 
-    // 5.1 — Số lượng từ tối thiểu
+    // Số lượng từ tối thiểu
     await sc.check(
       `Số lượng từ: ${scan.wordCount} (tối thiểu: ${minWords})`,
       scan.wordCount >= minWords,
       `Trang chỉ có ${scan.wordCount} từ, cần ≥ ${minWords}`
     );
 
-    // 5.2 — Mật độ keyword hợp lý
+    // Mật độ keyword hợp lý
     await sc.check(
       `Mật độ keyword: ${scan.keywordDensity.toFixed(2)}% (chuẩn: ${densityMin}%–${densityMax}%)`,
       scan.keywordDensity >= densityMin && scan.keywordDensity <= densityMax,
@@ -328,7 +328,7 @@ export class SeoPage extends BasePage {
         : `Mật độ keyword quá cao (stuffing): ${scan.keywordDensity.toFixed(2)}%, cần ≤ ${densityMax}%`
     );
 
-    // 5.3 — Keyword xuất hiện trong 100 từ đầu
+    // Keyword xuất hiện trong 100 từ đầu
     await sc.check(
       `Keyword "${data.keyword}" xuất hiện trong 100 từ đầu`,
       scan.first100Words.toLowerCase().includes(data.keyword.toLowerCase()),
@@ -336,18 +336,18 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 6.1→6.4: Xác thực hình ảnh */
+  /** Xác thực hình ảnh */
   async verifyImages(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const { images, missingAltCount, imagesWithBadNames, imagesWithDimensions } = scan;
 
-    // 6.1 — Tất cả ảnh phải có thuộc tính alt
+    // Tất cả ảnh phải có thuộc tính alt
     await sc.check(
-      `6.1 — 100% ảnh có thuộc tính alt (thiếu: ${missingAltCount}/${images.length})`,
+      `100% ảnh có thuộc tính alt (thiếu: ${missingAltCount}/${images.length})`,
       missingAltCount === 0,
       `Có ${missingAltCount} hình ảnh thiếu thuộc tính 'alt'`
     );
 
-    // 6.2 — Ít nhất 1 ảnh có alt chứa keyword
+    // Ít nhất 1 ảnh có alt chứa keyword
     const hasKeywordAlt = images.some(
       (img) => img.alt && img.alt.toLowerCase().includes(data.keyword.toLowerCase())
     );
@@ -357,7 +357,7 @@ export class SeoPage extends BasePage {
       `Không có ảnh nào có alt chứa keyword "${data.keyword}"`
     );
 
-    // 6.3 — Ảnh có khai báo width/height (≥ 80%)
+    // Ảnh có khai báo width/height (≥ 80%)
     const dimThreshold = images.length > 0 ? Math.ceil(images.length * 0.8) : 0;
     await sc.check(
       `Ảnh có width/height: ${imagesWithDimensions}/${images.length} (cần ≥ 80%)`,
@@ -365,7 +365,7 @@ export class SeoPage extends BasePage {
       `Chỉ ${imagesWithDimensions}/${images.length} ảnh có width/height, cần ≥ ${dimThreshold}`
     );
 
-    // 6.4 — Không có ảnh tên file vô nghĩa (hash)
+    // Không có ảnh tên file vô nghĩa (hash)
     await sc.check(
       `Ảnh có tên file rõ nghĩa (hash: ${imagesWithBadNames})`,
       imagesWithBadNames === 0,
@@ -373,25 +373,25 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 7.1→7.4: Xác thực liên kết */
+  /** Xác thực liên kết */
   async verifyLinks(scan: SeoScanResult, sc: SeoScorecard) {
     const { internalLinks, externalLinks } = scan;
 
-    // 7.1 — Có ít nhất 1 internal link
+    // Có ít nhất 1 internal link
     await sc.check(
       `Internal links: ${internalLinks.length} link`,
       internalLinks.length > 0,
       "Trang nên có ít nhất 1 internal link"
     );
 
-    // 7.2 — External links (khuyến nghị, không bắt buộc)
+    // External links (khuyến nghị, không bắt buộc)
     await sc.check(
       `External links: ${externalLinks.length} link`,
       true, // Luôn PASS — chỉ là khuyến nghị
       "Trang không có external links — không bắt buộc nhưng nên có"
     );
 
-    // 7.3 — Anchor text chất lượng
+    // Anchor text chất lượng
     const genericAnchors = ["click here", "here", "read more", "xem thêm", "nhấn vào đây", "tại đây"];
     const badAnchors = internalLinks.filter((link) => {
       const text = link.text.trim().toLowerCase();
@@ -403,7 +403,7 @@ export class SeoPage extends BasePage {
       `${badAnchors.length} link có anchor text không tốt: ${badAnchors.map((l) => `"${l.text}" → ${l.href}`).join(", ")}`
     );
 
-    // 7.4 — Kiểm tra broken internal links (tối đa 10)
+    // Kiểm tra broken internal links (tối đa 10)
     const origin = new URL(scan.currentUrl).origin;
     const brokenLinks: string[] = [];
     const linksToCheck = internalLinks
@@ -426,9 +426,9 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 8.1→8.9: Xác thực Technical SEO */
+  /** Xác thực Technical SEO */
   async verifyTechnicalSeo(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
-    // 8.1 — Canonical URL
+    // Canonical URL
     const isCanonicalOk = !!scan.canonical && /^https?:\/\//.test(scan.canonical);
     await sc.check(
       `Canonical URL hợp lệ (${scan.canonical || "Không có"})`,
@@ -438,7 +438,7 @@ export class SeoPage extends BasePage {
         : `URL Canonical không hợp lệ: "${scan.canonical}"`
     );
 
-    // 8.2 — Robots/Indexability
+    // Robots/Indexability
     const expectIndexable = data.expectIndexable ?? true;
     const isNoindex = !!scan.robots?.toLowerCase().includes("noindex");
     const robotsOk = expectIndexable ? !isNoindex : isNoindex;
@@ -450,7 +450,7 @@ export class SeoPage extends BasePage {
         : "Trang bảo mật/nội bộ nên có 'noindex' nhưng chưa gắn!"
     );
 
-    // 8.3 & 8.4 — robots.txt & sitemap.xml (gửi song song để tối ưu tốc độ)
+    // robots.txt & sitemap.xml (gửi song song để tối ưu tốc độ)
     const origin = new URL(scan.currentUrl).origin;
     const [robotsTxtStatus, sitemapStatus] = await Promise.all([
       this.checkUrlStatus(`${origin}/robots.txt`),
@@ -469,14 +469,14 @@ export class SeoPage extends BasePage {
       `sitemap.xml trả về status ${sitemapStatus}, cần 200`
     );
 
-    // 8.5 — Schema Markup
+    // Schema Markup
     await sc.check(
       `Schema Markup (JSON-LD/Microdata): ${scan.hasSchema ? "Đã cài" : "Thiếu"}`,
       scan.hasSchema,
       "Thiếu Schema Markup (JSON-LD / Microdata / RDFa)"
     );
 
-    // 8.6 — Open Graph tags (tuỳ cấu hình)
+    // Open Graph tags (tuỳ cấu hình)
     if (data.checkSocialOg !== false) {
       await sc.check(
         `Open Graph: og:title=${scan.ogTitle ? "✔" : "✘"}, og:description=${scan.ogDesc ? "✔" : "✘"}`,
@@ -485,7 +485,7 @@ export class SeoPage extends BasePage {
       );
     }
 
-    // 8.7 — Twitter Card tags (tuỳ cấu hình)
+    // Twitter Card tags (tuỳ cấu hình)
     if (data.checkSocialOg !== false) {
       const twitterCount = Object.keys(scan.twitterTags).length;
       await sc.check(
@@ -495,14 +495,14 @@ export class SeoPage extends BasePage {
       );
     }
 
-    // 8.8 — Thuộc tính lang
+    // Thuộc tính lang
     await sc.check(
       `HTML lang="${scan.lang || "Thiếu"}"`,
       !!scan.lang && scan.lang.length > 0,
       "Thẻ <html> thiếu thuộc tính lang"
     );
 
-    // 8.9 — Charset + Favicon
+    // Charset + Favicon
     const charsetOk = !!scan.charset && scan.charset.toLowerCase() === "utf-8";
     await sc.check(
       `Charset: ${scan.charset || "Thiếu"} | Favicon: ${scan.hasFavicon ? "✔" : "✘"}`,
@@ -515,7 +515,7 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 9.1: Xác thực Mobile */
+  /** Xác thực Mobile */
   async verifyMobile(scan: SeoScanResult, sc: SeoScorecard) {
     await sc.check(
       `Viewport meta tag: ${scan.hasViewport ? "✔" : "✘"}`,
@@ -524,16 +524,16 @@ export class SeoPage extends BasePage {
     );
   }
 
-  /** 11.1→11.2: Xác thực Bảo mật */
+  /** Xác thực Bảo mật */
   async verifySecurity(scan: SeoScanResult, sc: SeoScorecard) {
-    // 11.1 — HTTPS
+    // HTTPS
     await sc.check(
       `HTTPS: ${scan.isHttps ? "Đã bật" : "Chưa bật"}`,
       scan.isHttps,
       `Trang đang dùng HTTP: ${scan.currentUrl}`
     );
 
-    // 11.2 — Mixed Content
+    // Mixed Content
     await sc.check(
       `Mixed Content: ${scan.mixedContent.length} tài nguyên HTTP`,
       scan.mixedContent.length === 0,
