@@ -1,15 +1,23 @@
 import { test as baseTest } from "@playwright/test";
 import { SeoPage } from "../pages/SeoPage";
+import { AdvancedSeoPage } from "../pages/AdvancedSeoPage";
 
 type CoreFixtures = {
-    // Page Object cho kiểm tra SEO Onpage
+    // Page Object cho kiểm tra SEO Onpage (Phần A)
     seoPage: SeoPage;
+    // Page Object cho kiểm tra SEO chuyên sâu (Phần B) — kế thừa SeoPage
+    advancedSeoPage: AdvancedSeoPage;
 };
 
 export const test = baseTest.extend<CoreFixtures>({
     // Inject SeoPage tự động qua fixture — kế thừa BasePage
     seoPage: async ({ page }, use) => {
         await use(new SeoPage(page));
+    },
+
+    // Inject AdvancedSeoPage — kế thừa SeoPage → BasePage
+    advancedSeoPage: async ({ page }, use) => {
+        await use(new AdvancedSeoPage(page));
     },
 
     page: async ({ page }, use) => {
