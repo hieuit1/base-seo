@@ -17,6 +17,7 @@
     "dotenv": "^17.4.2"
   },
   "dependencies": {
+    "cheerio": "^1.2.0",
     "openai": "^6.48.0"
   }
 }

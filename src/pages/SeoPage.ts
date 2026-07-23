@@ -5,6 +5,7 @@ import { injectVisualSEOReport } from "../utils/SeoReportHelper";
 import { SeoScorecard } from "../utils/reportHelper";
 import { DEFAULT_SEO_CONFIG } from "../constants/seoDefaults";
 import { toSlug } from "../utils/stringHelper";
+import { CheerioService, StaticSeoData } from "../services/CheerioService";
 
 // ==================== INTERFACES ====================
 
@@ -19,6 +20,7 @@ export interface SeoScanResult {
   wordCount: number;
   first100Words: string;
   keywordDensity: number;
+  staticData?: StaticSeoData;
   images: {
     src: string; 
     alt: string | null; 
@@ -60,9 +62,23 @@ export class SeoPage extends BasePage {
    * Dữ liệu trả về dùng cho injectVisualSEOReport() và verify*().
    */
   async scanSEOMetadata(keyword: string): Promise<SeoScanResult> {
-    const currentUrl = this.getCurrentUrl();
-    const urlPath = new URL(currentUrl).pathname;
+    const currentUrl = this.page.url();
+    const urlObj = new URL(currentUrl);
+    const urlPath = urlObj.pathname + urlObj.search;
     const isHttps = this.isHttps();
+
+    // --- 0. Static HTML Parse via Cheerio ---
+    let staticData: StaticSeoData | undefined;
+    try {
+      const response = await this.page.request.get(currentUrl, { timeout: 10000 });
+      if (response.ok()) {
+        const html = await response.text();
+        staticData = CheerioService.parseStaticHtml(html);
+      }
+    } catch (e) {
+      console.error(`Không thể lấy Static HTML cho ${currentUrl}:`, e);
+    }
+
     const [
       titleVal,
       metaVal,
@@ -161,7 +177,7 @@ export class SeoPage extends BasePage {
 
     return {
       titleVal, metaVal, h1Texts, allHeadings, headingHierarchy,
-      currentUrl, urlPath, wordCount, first100Words, keywordDensity,
+      currentUrl, urlPath, wordCount, first100Words, keywordDensity, staticData,
       images, missingAltCount, imagesWithBadNames, imagesWithDimensions,
       internalLinks, externalLinks,
       canonical, robots, hasSchema,
@@ -212,7 +228,16 @@ export class SeoPage extends BasePage {
       `Title không chứa keyword "${data.keyword}"`
     );
 
-    // 1.4 — Keyword nên nằm ở nửa đầu Title
+    // 1.4 — Đối chiếu Raw vs Rendered HTML (Nếu có)
+    if (scan.staticData && scan.staticData.title) {
+      await sc.check(
+        `Đồng bộ Title tĩnh và động (CSR vs SSR/SSG)`,
+        scan.staticData.title === titleVal,
+        `Title HTML gốc là "${scan.staticData.title}" nhưng Render ra là "${titleVal}" (Nguy cơ SEO nếu Bot không chạy JS)`
+      );
+    }
+
+    // 1.5 — Keyword nên nằm ở nửa đầu Title
     const keywordIndex = titleVal.toLowerCase().indexOf(data.keyword.toLowerCase());
     const halfLen = Math.floor(titleVal.length / 2);
     await sc.check(
@@ -254,6 +279,15 @@ export class SeoPage extends BasePage {
         ? `Meta description không chứa keyword "${data.keyword}"`
         : "Không thể kiểm tra — Meta description không tồn tại"
     );
+
+    // 2.4 — Đối chiếu Raw vs Rendered HTML (Cheerio vs Playwright)
+    if (scan.staticData && scan.staticData.metaDesc) {
+      await sc.check(
+        `Đồng bộ Meta tĩnh và động (CSR vs SSR/SSG)`,
+        scan.staticData.metaDesc === metaVal,
+        `Meta HTML gốc là "${scan.staticData.metaDesc}" nhưng Render ra là "${metaVal}"`
+      );
+    }
   }
 
   /** Xác thực cấu trúc Heading */
