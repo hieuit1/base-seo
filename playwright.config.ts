@@ -25,7 +25,7 @@ export default defineConfig({
         baseURL: process.env.BASE_URL || "https://example.com",
         headless: process.env.CI ? true : false,
         screenshot: "on",
-        // video: "on",
+        video: "on",
         trace: "on-first-retry",
     },
     reporter: [
