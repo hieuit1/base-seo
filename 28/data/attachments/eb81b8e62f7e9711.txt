@@ -1,0 +1,1 @@
+URL trailing slash không nhất quán. Cần redirect /page và /page/ về cùng 1 phiên bản.

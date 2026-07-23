@@ -1,0 +1,39 @@
+[LLMService] Error evaluating content: RateLimitError: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+    at APIError.generate (/home/runner/work/base-seo/base-seo/node_modules/openai/src/core/error.ts:97:14)
+    at OpenAI.makeStatusError (/home/runner/work/base-seo/base-seo/node_modules/openai/src/client.ts:636:28)
+    at OpenAI.makeRequest (/home/runner/work/base-seo/base-seo/node_modules/openai/src/client.ts:932:24)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at LLMService.evaluateContentQuality (/home/runner/work/base-seo/base-seo/src/services/LLMService.ts:62:24)
+    at async Promise.all (index 0)
+    at AdvancedSeoPage.scanAdvancedSEO (/home/runner/work/base-seo/base-seo/src/pages/AdvancedSeoPage.ts:152:47)
+    at /home/runner/work/base-seo/base-seo/tests/seo-advanced.spec.ts:49:21
+    at /home/runner/work/base-seo/base-seo/src/utils/reportHelper.ts:13:9 {
+  status: 429,
+  headers: Headers {
+    date: 'Thu, 23 Jul 2026 09:57:04 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '337',
+    connection: 'keep-alive',
+    'cf-ray': 'a1f9d1a0a984f434-LAX',
+    'cf-cache-status': 'DYNAMIC',
+    server: 'cloudflare',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    vary: 'Origin',
+    'access-control-expose-headers': 'CF-Ray, CF-Ray',
+    'x-content-type-options': 'nosniff',
+    'x-openai-proxy-wasm': 'v0.1',
+    'x-request-id': 'req_89305d9d538d474ea357a3c101e61db2',
+    'set-cookie': '__cf_bm=IrsYzayWmGCFPSuZ5bJQZMdSzspcXgEGLXafYcAajII-1784800624.7418547-1.0.1.1-IgHwtgTTXSPHP4lMssvQxm1cT1B9T022k2ZGxZHPtmcedXaQqnz5_bjdBop7Et2.tcG7qNPi610Xet.X6hqJMe.059r7Hw0788geddkM.lcowfZsEwDTcpve1wIGfAbx; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.openai.com; Expires=Thu, 23 Jul 2026 10:27:04 GMT',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_89305d9d538d474ea357a3c101e61db2',
+  error: {
+    message: 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.',
+    type: 'insufficient_quota',
+    param: null,
+    code: 'insufficient_quota'
+  },
+  code: 'insufficient_quota',
+  param: null,
+  type: 'insufficient_quota'
+}

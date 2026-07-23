@@ -1,0 +1,50 @@
+══════════════════════════════════════
+   🔴 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     45/100
+   Đánh giá:    KÉM
+   Ngưỡng đạt:  60%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  33
+   ✅ Đạt:          15
+   ❌ Không đạt:    18
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [B2.1 — Thông tin tác giả: Thiếu]
+      → Trang thiếu thông tin tác giả (author schema/byline). Google ưu tiên nội dung có tác giả rõ ràng.
+   2. [B2.2 — Ngày đăng bài (datePublished): Thiếu]
+      → Thiếu datePublished — Google dùng để đánh giá tính mới của nội dung.
+   3. [B2.3 — Ngày cập nhật (dateModified): Thiếu]
+      → Thiếu dateModified — Bài viết nên hiển thị ngày cập nhật gần nhất.
+   4. [B2.4 — Trust Pages: 0/8 trang tồn tại]
+      → Chỉ 0 trust pages tồn tại. Cần ≥ 2 trong: About, Contact, Privacy Policy.
+   5. [B3.1 — Schema types: [ClothingStore, WebSite] (kỳ vọng: [Organization, BreadcrumbList])]
+      → Thiếu Schema types: Organization, BreadcrumbList
+   6. [B3.4 — BreadcrumbList Schema: Thiếu]
+      → Thiếu BreadcrumbList Schema — giúp Google hiểu cấu trúc site tốt hơn.
+   7. [B5.1 — Breadcrumb navigation: Thiếu]
+      → Trang thiếu breadcrumb navigation. Giúp Google hiểu cấu trúc site và cải thiện UX.
+   8. [B5.2 — Breadcrumb Schema (JSON-LD): Thiếu]
+      → Có breadcrumb nhưng thiếu BreadcrumbList Schema. Thêm JSON-LD để hiển thị trên SERP.
+   9. [B6.1 — TTFB: 1845ms (tối đa: 800ms)]
+      → TTFB quá cao: 1845ms, cần ≤ 800ms. Kiểm tra server/hosting/CDN.
+   10. [B6.2 — DOM Size: 4631 elements (tối đa: 1500)]
+      → DOM quá lớn: 4631 elements, cần ≤ 1500. DOM cồng kềnh làm chậm render.
+   11. [B6.5 — Lazy Loading: 198/406 ảnh below-fold (49%)]
+      → Chỉ 49% ảnh below-fold có loading="lazy", cần ≥ 80%.
+   12. [B6.6 — Font Optimization: font-display:swap=✘, preload=0]
+      → Font chưa được tối ưu. Thêm font-display: swap và/hoặc preload font files.
+   13. [B6.7 — Responsive Images: 37/576 ảnh có srcset]
+      → Chỉ 6% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
+   14. [B7.3 — ARIA Labels thiếu: 120 phần tử]
+      → 120 phần tử interactive thiếu ARIA label. Ảnh hưởng accessibility.
+   15. [B8.1 — WWW Redirect: Lỗi]
+      → www ↔ non-www không redirect đúng. Có thể gây duplicate content.
+   16. [B8.2 — HTTPS Redirect: Lỗi]
+      → HTTP không redirect sang HTTPS. Ảnh hưởng bảo mật và SEO.
+   17. [CrUX — LCP (Largest Contentful Paint): 10029ms]
+      → LCP quá chậm (10029ms). Cần ≤ 2500ms.
+   18. [SERP — Keyword Cannibalization: Phát hiện 2 trang]
+      → Phát hiện 2 trang cùng domain rank cho từ khóa này. Có thể bị ăn thịt từ khóa.

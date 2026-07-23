@@ -1,0 +1,128 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"[FAIL] Điểm SEO: 69/100 | Đạt: 31/45 tiêu chí | Ngưỡng: 70%
+
+KHÁ","14658","Kiểm tra SEO Onpage: Hàng bán chạy Best Seller","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 80/100 | Đạt: 36/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","10681","Kiểm tra SEO Onpage: AIRFLEX™","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 50/100 | Đạt: 17/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","21994","[Advanced] Kiểm tra SEO chuyên sâu: QUẦN","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 18/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","51462","[Advanced] Kiểm tra SEO chuyên sâu: ProCOOL™","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"","60412","[Advanced] Kiểm tra SEO chuyên sâu: ÁO HOODIE","","2026-07-23","broken","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[PASS] Điểm SEO: 84/100 | Đạt: 38/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","14172","Kiểm tra SEO Onpage: ÁO POLO","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"","60453","[Advanced] Kiểm tra SEO chuyên sâu: ÁO SƠ MI","","2026-07-23","broken","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 56/100 | Đạt: 19/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","11344","[Advanced] Kiểm tra SEO chuyên sâu: AIRFLEX™","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 61/100 | Đạt: 27/44 tiêu chí | Ngưỡng: 70%
+
+TRUNG BÌNH","7464","Kiểm tra SEO Onpage: Disney | Mickey & Friend","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 56/100 | Đạt: 19/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","35099","[Advanced] Kiểm tra SEO chuyên sâu: BALO - TÚI XÁCH","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 37/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","9572","Kiểm tra SEO Onpage: QUẦN","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 18/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","40311","[Advanced] Kiểm tra SEO chuyên sâu: ÁO THUN","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 55/100 | Đạt: 18/33 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","13438","[Advanced] Kiểm tra SEO chuyên sâu: MẮT KÍNH","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 56/100 | Đạt: 19/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","36281","[Advanced] Kiểm tra SEO chuyên sâu: GIÀY DÉP","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[PASS] Điểm SEO: 80/100 | Đạt: 36/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","7719","Kiểm tra SEO Onpage: ÁO","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 18/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","47155","[Advanced] Kiểm tra SEO chuyên sâu: ÁO BA LỖ","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 45/100 | Đạt: 15/33 tiêu chí | Ngưỡng: 60%
+
+KÉM","60269","[Advanced] Kiểm tra SEO chuyên sâu: Trang chủ (Home Page)","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 18/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","46824","[Advanced] Kiểm tra SEO chuyên sâu: Hàng bán chạy Best Seller","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[PASS] Điểm SEO: 87/100 | Đạt: 39/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","14054","Kiểm tra SEO Onpage: Trang chủ (Home Page)","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 18/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","58078","[Advanced] Kiểm tra SEO chuyên sâu: ÁO POLO","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 37/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","6289","Kiểm tra SEO Onpage: MẮT KÍNH","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 37/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","11113","Kiểm tra SEO Onpage: ÁO SƠ MI","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 76/100 | Đạt: 34/45 tiêu chí | Ngưỡng: 70%
+
+KHÁ","8450","Kiểm tra SEO Onpage: ÁO BA LỖ","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 48/100 | Đạt: 16/33 tiêu chí | Ngưỡng: 60%
+
+KÉM","38760","[Advanced] Kiểm tra SEO chuyên sâu: ÁO KHOÁC","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 18/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","54807","[Advanced] Kiểm tra SEO chuyên sâu: Outlet","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"","3052","Kịch bản Test @smoke @regression","","2026-07-23","passed","2026-07-23","","example.spec.ts","",""
+"[PASS] Điểm SEO: 80/100 | Đạt: 36/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","7102","Kiểm tra SEO Onpage: ÁO KHOÁC","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 52/100 | Đạt: 17/33 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","11484","[Advanced] Kiểm tra SEO chuyên sâu: ÁO","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[PASS] Điểm SEO: 84/100 | Đạt: 38/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","9855","Kiểm tra SEO Onpage: NÓN","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"","60295","[Advanced] Kiểm tra SEO chuyên sâu: PHỤ KIỆN","","2026-07-23","broken","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 56/100 | Đạt: 19/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","35453","[Advanced] Kiểm tra SEO chuyên sâu: NÓN","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 18/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","35843","[Advanced] Kiểm tra SEO chuyên sâu: ÁO LEN","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[PASS] Điểm SEO: 80/100 | Đạt: 36/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","14821","Kiểm tra SEO Onpage: ÁO HOODIE","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 82/100 | Đạt: 37/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","9914","Kiểm tra SEO Onpage: ProCOOL™","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 73/100 | Đạt: 33/45 tiêu chí | Ngưỡng: 70%
+
+KHÁ","15558","Kiểm tra SEO Onpage: ÁO NỈ - SWEATER","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 78/100 | Đạt: 35/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","7879","Kiểm tra SEO Onpage: BALO - TÚI XÁCH","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 71/100 | Đạt: 32/45 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7609","Kiểm tra SEO Onpage: ĐỒ LÓT - BOXER","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 59/100 | Đạt: 20/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","35645","[Advanced] Kiểm tra SEO chuyên sâu: Disney | Mickey & Friend","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[FAIL] Điểm SEO: 48/100 | Đạt: 16/33 tiêu chí | Ngưỡng: 60%
+
+KÉM","60698","[Advanced] Kiểm tra SEO chuyên sâu: ÁO NỈ - SWEATER","","2026-07-23","broken","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
+"[PASS] Điểm SEO: 84/100 | Đạt: 38/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","15076","Kiểm tra SEO Onpage: ÁO LEN","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 80/100 | Đạt: 36/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","17176","Kiểm tra SEO Onpage: PHỤ KIỆN","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 73/100 | Đạt: 33/45 tiêu chí | Ngưỡng: 70%
+
+KHÁ","7946","Kiểm tra SEO Onpage: Outlet","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 80/100 | Đạt: 36/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","8739","Kiểm tra SEO Onpage: ÁO THUN","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[PASS] Điểm SEO: 80/100 | Đạt: 36/45 tiêu chí | Ngưỡng: 70%
+
+TỐT","8891","Kiểm tra SEO Onpage: GIÀY DÉP","","2026-07-23","passed","2026-07-23","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
+"[FAIL] Điểm SEO: 53/100 | Đạt: 18/34 tiêu chí | Ngưỡng: 60%
+
+TRUNG BÌNH","36310","[Advanced] Kiểm tra SEO chuyên sâu: ĐỒ LÓT - BOXER","","2026-07-23","failed","2026-07-23","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""

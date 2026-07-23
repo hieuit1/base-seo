@@ -1,0 +1,1 @@
+Có breadcrumb nhưng thiếu BreadcrumbList Schema. Thêm JSON-LD để hiển thị trên SERP.

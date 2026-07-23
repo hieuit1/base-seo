@@ -1,0 +1,1 @@
+LCP quá chậm (4222ms). Cần ≤ 2500ms.

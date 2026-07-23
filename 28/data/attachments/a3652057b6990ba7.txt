@@ -1,0 +1,1 @@
+TTFB quá cao: 846ms, cần ≤ 800ms. Kiểm tra server/hosting/CDN.
