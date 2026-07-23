@@ -147,7 +147,7 @@ export class SeoPage extends BasePage {
       if (!img.src || img.src.startsWith('data:')) return;
       try {
         const fullUrl = img.src.startsWith('http') ? img.src : (img.src.startsWith('//') ? `https:${img.src}` : new URL(img.src, origin).href);
-        const response = await this.page.request.head(fullUrl);
+        const response = await this.page.request.head(fullUrl, { timeout: 2000 });
         if (response.ok()) {
           const headers = response.headers();
           if (headers['content-length']) {
