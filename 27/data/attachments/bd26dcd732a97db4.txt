@@ -1,0 +1,1 @@
+37 phần tử interactive thiếu ARIA label. Ảnh hưởng accessibility.

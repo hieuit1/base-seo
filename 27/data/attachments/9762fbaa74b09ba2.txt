@@ -1,0 +1,38 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     73/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  45
+   ✅ Đạt:          33
+   ❌ Không đạt:    12
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Độ dài Title: 19 ký tự (chuẩn: 40–65)]
+      → Title quá ngắn: 19 ký tự, cần 40–65
+   2. [Title chứa keyword "outlet"]
+      → Title không chứa keyword "outlet"
+   3. [Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "outlet" không có trong Title
+   4. [Trang có đúng 1 thẻ H1 (hiện tại: 0 thẻ)]
+      → Trang không có thẻ H1 nào!
+   5. [H1 chứa keyword "outlet"]
+      → Không có H1 để kiểm tra
+   6. [Mật độ keyword: 0.15% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.15%, cần ≥ 0.5%
+   7. [Keyword "outlet" xuất hiện trong 100 từ đầu]
+      → Keyword "outlet" không xuất hiện trong 100 từ đầu
+   8. [Điểm dễ đọc (Flesch): 45.0 (khuyến nghị ≥ 50)]
+      → Nội dung khó đọc, điểm Flesch 45.0 < 50
+   9. [100% ảnh có thuộc tính alt (thiếu: 7/247)]
+      → Có 7 hình ảnh thiếu thuộc tính 'alt'
+   10. [Định dạng ảnh tối ưu (WebP/AVIF): 24% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 60/247 ảnh (24%)
+   11. [Anchor text chất lượng (lỗi: 8)]
+      → 8 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → /collections/outlet?page=2, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   12. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags

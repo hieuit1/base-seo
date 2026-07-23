@@ -1,0 +1,1 @@
+Chỉ 60% ảnh below-fold có loading="lazy", cần ≥ 80%.

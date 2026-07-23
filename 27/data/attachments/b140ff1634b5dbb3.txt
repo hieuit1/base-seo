@@ -1,0 +1,1 @@
+DOM quá lớn: 4629 elements, cần ≤ 1500. DOM cồng kềnh làm chậm render.

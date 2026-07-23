@@ -1,0 +1,26 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     87/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  45
+   ✅ Đạt:          39
+   ❌ Không đạt:    6
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Mật độ keyword: 0.18% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.18%, cần ≥ 0.5%
+   2. [Điểm dễ đọc (Flesch): 15.1 (khuyến nghị ≥ 50)]
+      → Nội dung khó đọc, điểm Flesch 15.1 < 50
+   3. [100% ảnh có thuộc tính alt (thiếu: 26/576)]
+      → Có 26 hình ảnh thiếu thuộc tính 'alt'
+   4. [Định dạng ảnh tối ưu (WebP/AVIF): 26% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 151/576 ảnh (26%)
+   5. [Anchor text chất lượng (lỗi: 95)]
+      → 95 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → https://160store.com/collections/runpow-26, "" → https://160store.com/collections/san-pham-moi, "" → https://160store.com/collections/the-poolside-club-collection, "" → https://160store.com/collections/san-pham-moi, "" → /products/ao-thun-nam-runpow-naturestride, "" → /products/ao-polo-nam-len-icondenim-black-ace, "" → /products/ao-so-mi-nam-tay-dai-mascus-ascend, "" → /products/ao-polo-nam-bouton-forne, "" → /products/ao-thun-nam-bouton-primo, "" → /products/ao-thun-nam-icondenim-midnight-sushi, "" → /products/quan-tay-nam-icondenim-calmstride, "" → /products/quan-short-kaki-nam-icondenim-settle, "" → /products/ao-thun-nam-icondenim-ballpark, "" → /products/quan-short-nam-chino-icondenim-neat, "" → , "" → , "" → , "" → , "" → , "" → , "" → , "" → , "" → , "" → , "" → /products/ao-tank-top-nam-daily-tank-form-regular, "" → /products/ao-tank-top-runpow-aero-jacquard, "" → /products/a-o-tanktop-nam-runpow-in-naturestride, "" → /products/set-do-nam-runpow-airflow-mesh-jersey, "" → /products/set-do-nam-icondenim-icdn-panelplay, "" → /products/ao-khoac-du-nam-disney-racing-division, "" → /products/ao-thun-nam-disney-stitch-ohana-vibes-form-oversize, "" → /products/ao-tank-top-nam-daily-tank-form-regular, "" → /products/ao-tank-top-runpow-aero-jacquard, "" → /products/a-o-tanktop-nam-runpow-in-naturestride, "" → /products/set-do-nam-runpow-airflow-mesh-jersey, "" → /products/set-do-nam-icondenim-icdn-panelplay, "" → /products/ao-khoac-du-nam-disney-racing-division, "" → /products/ao-thun-nam-disney-stitch-ohana-vibes-form-oversize, "" → /products/ao-tank-top-nam-daily-tank-form-regular, "" → /products/ao-tank-top-runpow-aero-jacquard, "" → /products/a-o-tanktop-nam-runpow-in-naturestride, "" → /products/set-do-nam-runpow-airflow-mesh-jersey, "" → /products/set-do-nam-icondenim-icdn-panelplay, "" → /products/quan-short-linen-nam-icondenim-azura, "" → /products/quan-short-kaki-nam-icondenim-scisp, "" → /products/quan-short-nam-icondenim-striped, "" → /products/ao-polo-procool-icondenim-slim-fit-seam-sealing, "" → /products/ao-thun-nam-icondenim-ice-field, "" → /products/ao-polo-nam-icondenim-textured-knit, "" → /products/ao-thun-nam-bouton-primo, "" → /products/ao-thun-nam-icondenim-midnight-sushi, "" → /products/ao-thun-nam-icondenim-ballpark, "" → /products/ao-thun-nam-icondenim-bear-team, "" → /products/quan-short-kaki-nam-icondenim-settle, "" → /products/quan-short-nam-chino-icondenim-neat, "" → /products/quan-short-nam-pique-icondenim-heatwave, "" → /products/ao-so-mi-nam-tay-dai-mascus-ascend, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-midnight-garden, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-wildbloom, "" → /products/ao-khoac-bomber-nam-icondenim-allstar, "" → /products/ao-khoac-gio-active-nam-icondenim-airflex-gon-nhe-linh-hoat, "" → /products/ao-khoac-du-nam-icondenim-strikeline, "" → /products/ao-khoac-jeans-nam-icondenim-skyfold, "" → /products/ao-polo-nam-len-icondenim-black-ace, "" → /products/ao-polo-nam-bouton-forne, "" → /products/ao-polo-nam-icondenim-puro, "" → /products/ao-polo-nam-icondenim-textured-knit, "" → /products/set-ao-quan-nam-icondenim-lazy-fish, "" → /products/set-ao-quan-nam-icondenim-edgestitch, "" → /products/set-do-nam-ngan-icondenim-orgnls, "" → /products/set-do-nam-icondenim-lunary, "" → /products/quan-jeans-nam-icondenim-fadeline, "" → /products/quan-jeans-nam-icondenim-stonefade, "" → /products/quan-jeans-nam-icondenim-vintage-brown, "" → /products/quan-jeans-nam-icondenim-dark-mode, "" → /products/quan-tay-nam-icondenim-calmstride, "" → /products/quan-tay-nam-icondenim-axis-wide, "" → /products/quan-tay-nam-icondenim-city-straight, "" → /products/quan-tay-nam-icondenim-zenith, "" → https://160store.com/pages/poolside-club-collection-2, "" → https://160store.com/pages/poolside-club-collection-2, "" → https://160store.com/pages/poolside-club-collection-6, "" → https://160store.com/pages/poolside-club-collection-6, "" → https://160store.com/pages/poolside-club-collection-7, "" → https://160store.com/pages/poolside-club-collection-7, "" → https://160store.com/pages/poolside-club-collection-10, "" → https://160store.com/pages/poolside-club-collection-10, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   6. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
