@@ -19,7 +19,15 @@ export interface SeoScanResult {
   wordCount: number;
   first100Words: string;
   keywordDensity: number;
-  images: { src: string; alt: string | null; width: string | null; height: string | null }[];
+  images: {
+    src: string; 
+    alt: string | null; 
+    width: string | null; 
+    height: string | null;
+    extension: string;
+    isModernFormat: boolean;
+    sizeBytes: number | null;
+  }[];
   missingAltCount: number;
   imagesWithBadNames: number;
   imagesWithDimensions: number;
@@ -38,6 +46,7 @@ export interface SeoScanResult {
   hasViewport: boolean;
   isHttps: boolean;
   mixedContent: string[];
+  bodyText: string;
 }
 
 export class SeoPage extends BasePage {
@@ -102,11 +111,12 @@ export class SeoPage extends BasePage {
 
     // 2. Keyword density
     let keywordDensity = 0;
-    if (wordCount > 0) {
+    if (wordCount > 0 && keyword.trim().length > 0) {
       const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       const regex = new RegExp(escapedKeyword, "gi");
       const matches = bodyText.match(regex);
-      keywordDensity = ((matches ? matches.length : 0) / wordCount) * 100;
+      const keywordWordCount = keyword.split(/\s+/).filter(w => w.length > 0).length;
+      keywordDensity = ((matches ? (matches.length * keywordWordCount) : 0) / wordCount) * 100;
     }
 
     // 3. Heading hierarchy check
@@ -130,6 +140,25 @@ export class SeoPage extends BasePage {
     }).length;
     const imagesWithDimensions = images.filter((img) => img.width || img.height).length;
 
+    // 5. Fetch image sizes (limit to first 20 images to avoid timeouts)
+    const origin = new URL(currentUrl).origin;
+    const imagesToCheck = images.slice(0, 20);
+    await Promise.all(imagesToCheck.map(async (img) => {
+      if (!img.src || img.src.startsWith('data:')) return;
+      try {
+        const fullUrl = img.src.startsWith('http') ? img.src : (img.src.startsWith('//') ? `https:${img.src}` : new URL(img.src, origin).href);
+        const response = await this.page.request.head(fullUrl);
+        if (response.ok()) {
+          const headers = response.headers();
+          if (headers['content-length']) {
+            img.sizeBytes = parseInt(headers['content-length'], 10);
+          }
+        }
+      } catch (error) {
+        // ignore fetch errors
+      }
+    }));
+
     return {
       titleVal, metaVal, h1Texts, allHeadings, headingHierarchy,
       currentUrl, urlPath, wordCount, first100Words, keywordDensity,
@@ -140,7 +169,7 @@ export class SeoPage extends BasePage {
       ogDesc: ogTags["og:description"] || null,
       ogImage: ogTags["og:image"] || null,
       twitterTags, lang, charset, hasFavicon, hasViewport,
-      isHttps, mixedContent,
+      isHttps, mixedContent, bodyText,
     };
   }
 
@@ -334,6 +363,43 @@ export class SeoPage extends BasePage {
       scan.first100Words.toLowerCase().includes(data.keyword.toLowerCase()),
       `Keyword "${data.keyword}" không xuất hiện trong 100 từ đầu`
     );
+
+    // Có từ khóa liên quan / LSI
+    const lsiKeywords = data.lsiKeywords || [];
+    if (lsiKeywords.length > 0) {
+      const foundLsi = lsiKeywords.filter(lsi => scan.bodyText.toLowerCase().includes(lsi.toLowerCase()));
+      await sc.check(
+        `Có từ khóa liên quan / LSI (tìm thấy ${foundLsi.length}/${lsiKeywords.length})`,
+        foundLsi.length > 0,
+        `Nội dung không chứa từ khóa LSI nào trong danh sách: ${lsiKeywords.join(", ")}`
+      );
+    } else {
+      await sc.check(
+        `Có từ khóa liên quan / LSI`,
+        true,
+        `Bỏ qua - không có cấu hình LSI Keywords`
+      );
+    }
+
+    // Điểm dễ đọc (readability – Flesch)
+    const sentences = scan.bodyText.split(/[.?!]+/).filter(s => s.trim().length > 0).length || 1;
+    const syllables = scan.bodyText.match(/[aeiouyàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹ]+/gi)?.length || scan.wordCount;
+    const readabilityScore = 206.835 - 1.015 * (scan.wordCount / sentences) - 84.6 * (syllables / scan.wordCount);
+    const minReadability = data.minReadabilityScore ?? 50;
+
+    await sc.check(
+      `Điểm dễ đọc (Flesch): ${readabilityScore.toFixed(1)} (khuyến nghị ≥ ${minReadability})`,
+      readabilityScore >= minReadability,
+      `Nội dung khó đọc, điểm Flesch ${readabilityScore.toFixed(1)} < ${minReadability}`
+    );
+
+    // Nội dung không trùng lặp (duplicate content)
+    const isCanonicalSelf = !scan.canonical || scan.canonical === scan.currentUrl;
+    await sc.check(
+      `Nội dung không trùng lặp (Duplicate content)`,
+      isCanonicalSelf,
+      `Có khả năng trùng lặp nội dung, canonical URL (${scan.canonical}) khác với URL hiện tại (${scan.currentUrl})`
+    );
   }
 
   /** Xác thực hình ảnh */
@@ -370,6 +436,29 @@ export class SeoPage extends BasePage {
       `Ảnh có tên file rõ nghĩa (hash: ${imagesWithBadNames})`,
       imagesWithBadNames === 0,
       `${imagesWithBadNames} ảnh có tên file vô nghĩa (dạng mã hash/ngẫu nhiên)`
+    );
+
+    // Kiểm tra định dạng ảnh (WebP/AVIF)
+    const expectedModernRatio = data.modernImageRatio ?? 80;
+    const modernImagesCount = images.filter(img => img.isModernFormat).length;
+    const actualModernRatio = images.length > 0 ? (modernImagesCount / images.length) * 100 : 100;
+
+    await sc.check(
+      `Định dạng ảnh tối ưu (WebP/AVIF): ${actualModernRatio.toFixed(0)}% (cần ≥ ${expectedModernRatio}%)`,
+      actualModernRatio >= expectedModernRatio,
+      `Tỷ lệ ảnh WebP/AVIF quá thấp: ${modernImagesCount}/${images.length} ảnh (${actualModernRatio.toFixed(0)}%)`
+    );
+
+    // Kiểm tra dung lượng ảnh
+    const maxKb = data.maxImageSizeKb ?? 250;
+    const maxBytes = maxKb * 1024;
+    const oversizedImages = images.filter(img => img.sizeBytes !== null && img.sizeBytes > maxBytes);
+    const checkedImagesCount = images.filter(img => img.sizeBytes !== null).length;
+
+    await sc.check(
+      `Dung lượng ảnh tối ưu (≤ ${maxKb}KB)`,
+      oversizedImages.length === 0,
+      `${oversizedImages.length}/${checkedImagesCount} ảnh vượt quá ${maxKb}KB (Ví dụ: ${oversizedImages[0]?.src})`
     );
   }
 
@@ -574,14 +663,36 @@ export class SeoPage extends BasePage {
     });
   }
 
-  async getImages(): Promise<{ src: string; alt: string | null; width: string | null; height: string | null }[]> {
+  async getImages(): Promise<{ src: string; alt: string | null; width: string | null; height: string | null; extension: string; isModernFormat: boolean; sizeBytes: number | null }[]> {
     return await this.page.evaluate(() => {
-      return Array.from(document.querySelectorAll("img")).map((img) => ({
-        src: img.getAttribute("src") || "",
-        alt: img.getAttribute("alt"),
-        width: img.getAttribute("width") || img.style.width || null,
-        height: img.getAttribute("height") || img.style.height || null,
-      }));
+      return Array.from(document.querySelectorAll("img")).map((img) => {
+        const src = img.getAttribute("src") || (img as HTMLImageElement).currentSrc || "";
+        let extension = "";
+        try {
+          const urlObj = new URL(src, window.location.origin);
+          const extMatch = urlObj.pathname.match(/\.([a-zA-Z0-9]+)$/);
+          if (extMatch) extension = extMatch[1].toLowerCase();
+        } catch (e) { }
+
+        let isModernFormat = extension === "webp" || extension === "avif";
+
+        const parent = img.parentElement;
+        if (!isModernFormat && parent && parent.tagName.toLowerCase() === "picture") {
+          const sources = Array.from(parent.querySelectorAll("source"));
+          const modernSource = sources.find(s => s.type === "image/webp" || s.type === "image/avif");
+          if (modernSource) isModernFormat = true;
+        }
+
+        return {
+          src,
+          alt: img.getAttribute("alt"),
+          width: img.getAttribute("width") || img.style.width || null,
+          height: img.getAttribute("height") || img.style.height || null,
+          extension,
+          isModernFormat,
+          sizeBytes: null
+        };
+      });
     });
   }
 

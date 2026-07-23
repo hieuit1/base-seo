@@ -91,7 +91,14 @@ test.describe("SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B", () => {
           await advancedSeoPage.verifyUrlConsistency(advScan!, scorecard);
         });
 
-        // ── STEP 11: Tổng kết điểm ──
+        // ── STEP 11: Phase 2 API Verification (LLM, CrUX, SerpAPI) ──
+        await customStep(page, "11. Xác thực qua API (Semantic, Core Web Vitals, SERP)", async () => {
+          await advancedSeoPage.verifySemanticSEO(advScan!, scorecard);
+          await advancedSeoPage.verifyCoreWebVitalsAPI(advScan!, scorecard);
+          await advancedSeoPage.verifySerpData(advScan!, scorecard);
+        });
+
+        // ── STEP 12: Tổng kết điểm ──
         await scorecard.finalizeScore(page, config.advancedPassThreshold ?? 60);
       }
     );

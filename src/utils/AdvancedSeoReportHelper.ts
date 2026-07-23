@@ -229,6 +229,50 @@ export async function injectAdvancedVisualSEOReport(
       });
 
       // ── Tính toán điểm ──
+      
+      // Phase 2 APIs (Chỉ tính vào điểm nếu API có trả kết quả)
+      if (data.contentEvaluation) {
+        itemsList.push({
+          id: "API.1", group: "Semantic (AI)",
+          name: `Khớp Search Intent: ${data.contentEvaluation.isIntentMatched ? "Có" : "Không"}`,
+          isPass: data.contentEvaluation.isIntentMatched,
+          err: "Nội dung không khớp intent"
+        });
+        itemsList.push({
+          id: "API.2", group: "Semantic (AI)",
+          name: `E-E-A-T Score: ${data.contentEvaluation.score}/100`,
+          isPass: data.contentEvaluation.score >= 70,
+          err: `Điểm thấp: ${data.contentEvaluation.score}/100`
+        });
+      }
+
+      if (data.coreWebVitals) {
+        if (data.coreWebVitals.lcp !== null) {
+          itemsList.push({
+            id: "API.3", group: "CrUX",
+            name: `LCP (Thực tế): ${data.coreWebVitals.lcp}ms`,
+            isPass: data.coreWebVitals.lcp <= 2500,
+            err: `LCP chậm (${data.coreWebVitals.lcp}ms)`
+          });
+        }
+        if (data.coreWebVitals.cls !== null) {
+          itemsList.push({
+            id: "API.4", group: "CrUX",
+            name: `CLS (Thực tế): ${data.coreWebVitals.cls}`,
+            isPass: data.coreWebVitals.cls <= 0.1,
+            err: `CLS cao (${data.coreWebVitals.cls})`
+          });
+        }
+      }
+
+      if (data.serpData) {
+        itemsList.push({
+          id: "API.5", group: "SERP",
+          name: `Cannibalization: ${data.serpData.competingPagesCount > 1 ? "Có" : "Không"}`,
+          isPass: data.serpData.competingPagesCount <= 1,
+          err: `Cạnh tranh: ${data.serpData.competingPagesCount} trang`
+        });
+      }
       const failedItems = itemsList.filter(item => !item.isPass);
       const passedCount = itemsList.length - failedItems.length;
       const score = Math.round((passedCount / itemsList.length) * 100);

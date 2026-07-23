@@ -15,6 +15,10 @@ export interface SeoPageTestData {
   keywordDensityMax?: number;
   urlMaxLength?: number;
   seoPassThreshold?: number;
+  lsiKeywords?: string[];
+  minReadabilityScore?: number;
+  maxImageSizeKb?: number;
+  modernImageRatio?: number;
 
   // ═══════ PHẦN B: Tiêu chuẩn chuyên sâu (ADVANCED) ═══════
   checkAdvanced?: boolean;            // Bật/tắt kiểm tra Phần B (default: false)
@@ -31,7 +35,7 @@ export const seoTestData: SeoPageTestData[] = [
   {
     name: "Trang chủ (Home Page)",
     path: "/",
-    keyword: "TỪ-KHÓA-CHÍNH", // ← Thay bằng keyword thực tế
+    keyword: "160STORE", // ← Thay bằng keyword thực tế
     expectIndexable: true,
     checkSocialOg: true,
     priority: "critical",

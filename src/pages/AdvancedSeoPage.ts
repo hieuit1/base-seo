@@ -4,6 +4,9 @@ import { SeoPageTestData } from "../test-data/seoData";
 import { SeoScorecard } from "../utils/reportHelper";
 import { DEFAULT_ADVANCED_SEO_CONFIG } from "../constants/advancedSeoDefaults";
 import { injectAdvancedVisualSEOReport } from "../utils/AdvancedSeoReportHelper";
+import { LLMService, ContentEvaluationResult } from "../services/LLMService";
+import { PageSpeedService, CoreWebVitals } from "../services/PageSpeedService";
+import { SerpService, SerpResult } from "../services/SerpService";
 
 // ==================== INTERFACES ====================
 
@@ -71,6 +74,11 @@ export interface AdvancedSeoScanResult {
   httpsRedirectOk: boolean;       // HTTP → HTTPS redirect đúng
   trailingSlashConsistent: boolean; // Trailing slash nhất quán
   hasHSTS: boolean;               // Strict-Transport-Security header
+
+  // Phase 2: API Integrations
+  contentEvaluation: ContentEvaluationResult | null;
+  coreWebVitals: CoreWebVitals | null;
+  serpData: SerpResult | null;
 }
 
 // ==================== PAGE OBJECT ====================
@@ -133,6 +141,20 @@ export class AdvancedSeoPage extends SeoPage {
       this.checkUrlConsistency(origin, baseScan.currentUrl, config),
     ]);
 
+    // Lấy nội dung text để cho LLM đánh giá (loại bỏ script, style)
+    const pageContent = await this.page.evaluate(() => document.body.innerText);
+
+    // Gọi các API bên ngoài song song
+    const llmService = new LLMService();
+    const pageSpeedService = new PageSpeedService();
+    const serpService = new SerpService();
+
+    const [contentEval, cwVitals, serpData] = await Promise.all([
+      llmService.isAvailable() ? llmService.evaluateContentQuality(config.keyword, pageContent) : Promise.resolve(null),
+      pageSpeedService.isAvailable() ? pageSpeedService.getCoreWebVitals(baseScan.currentUrl) : Promise.resolve(null),
+      serpService.isAvailable() ? serpService.analyzeSerp(new URL(baseScan.currentUrl).hostname, config.keyword) : Promise.resolve(null)
+    ]);
+
     return {
       // B2
       hasAuthorInfo: authorInfo,
@@ -170,6 +192,11 @@ export class AdvancedSeoPage extends SeoPage {
       httpsRedirectOk: urlConsistency.httpsOk,
       trailingSlashConsistent: urlConsistency.trailingSlashOk,
       hasHSTS: urlConsistency.hasHSTS,
+
+      // Phase 2
+      contentEvaluation: contentEval,
+      coreWebVitals: cwVitals,
+      serpData: serpData,
     };
   }
 
@@ -184,6 +211,74 @@ export class AdvancedSeoPage extends SeoPage {
   }
 
   // ==================== VERIFY METHODS ====================
+
+  // ──────────────────────────────────────────────────────────
+  // Phase 2 APIs (Semantic SEO, Core Web Vitals, SERP)
+  // ──────────────────────────────────────────────────────────
+
+  async verifySemanticSEO(
+    scan: AdvancedSeoScanResult,
+    sc: SeoScorecard
+  ): Promise<void> {
+    const evalData = scan.contentEvaluation;
+    if (!evalData) {
+      // Bỏ qua nếu không có API key
+      return;
+    }
+
+    await sc.check(
+      `Semantic — Khớp Search Intent: ${evalData.isIntentMatched ? "Có" : "Không"}`,
+      evalData.isIntentMatched,
+      `Nội dung không thỏa mãn search intent. Đề xuất: ${evalData.recommendations.join(", ")}`
+    );
+
+    await sc.check(
+      `Semantic — Điểm E-E-A-T (AI chấm): ${evalData.score}/100`,
+      evalData.score >= 70,
+      `Điểm E-E-A-T thấp (${evalData.score}/100): ${evalData.explanation}`
+    );
+  }
+
+  async verifyCoreWebVitalsAPI(
+    scan: AdvancedSeoScanResult,
+    sc: SeoScorecard
+  ): Promise<void> {
+    const cw = scan.coreWebVitals;
+    if (!cw) return;
+
+    if (cw.lcp !== null) {
+      await sc.check(
+        `CrUX — LCP (Largest Contentful Paint): ${cw.lcp}ms`,
+        cw.lcp <= 2500,
+        `LCP quá chậm (${cw.lcp}ms). Cần ≤ 2500ms.`
+      );
+    }
+    if (cw.cls !== null) {
+      await sc.check(
+        `CrUX — CLS (Cumulative Layout Shift): ${cw.cls}`,
+        cw.cls <= 0.1,
+        `CLS quá cao (${cw.cls}). Cần ≤ 0.1.`
+      );
+    }
+  }
+
+  async verifySerpData(
+    scan: AdvancedSeoScanResult,
+    sc: SeoScorecard
+  ): Promise<void> {
+    const serp = scan.serpData;
+    if (!serp) return;
+
+    if (serp.competingPagesCount > 1) {
+      await sc.check(
+        `SERP — Keyword Cannibalization: Phát hiện ${serp.competingPagesCount} trang`,
+        false,
+        `Phát hiện ${serp.competingPagesCount} trang cùng domain rank cho từ khóa này. Có thể bị ăn thịt từ khóa.`
+      );
+    } else {
+      await sc.check(`SERP — Keyword Cannibalization: Không`, true, "");
+    }
+  }
 
   // ──────────────────────────────────────────────────────────
   // B2. E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
