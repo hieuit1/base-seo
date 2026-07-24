@@ -1,0 +1,42 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     75/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  56
+   ✅ Đạt:          42
+   ❌ Không đạt:    14
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Mật độ keyword: 0.15% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.15%, cần ≥ 0.5%
+   2. [Keyword "160STORE" xuất hiện trong 100 từ đầu]
+      → Keyword "160STORE" không xuất hiện trong 100 từ đầu
+   3. [Điểm dễ đọc (Flesch): 17.6 (khuyến nghị ≥ 50)]
+      → Nội dung khó đọc, điểm Flesch 17.6 < 50
+   4. [100% ảnh có thuộc tính alt (thiếu: 30/572)]
+      → Có 30 hình ảnh thiếu thuộc tính 'alt'
+   5. [Định dạng ảnh tối ưu (WebP/AVIF): 26% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 151/572 ảnh (26%)
+   6. [Anchor text chất lượng (lỗi: 101)]
+      → 101 link có anchor text không tốt: "" → /, "" → /, "" → /, "" → /, "" → https://160store.com/collections/outlet, "" → https://160store.com/collections/san-pham-moi, "" → https://160store.com/collections/runpow-26, "" → https://160store.com/collections/san-pham-moi, "" → /products/ao-tank-top-nam-daily-tank-form-regular, "" → /products/ao-tank-top-runpow-aero-jacquard, "" → /products/a-o-tanktop-nam-runpow-in-naturestride, "" → /products/set-do-nam-runpow-airflow-mesh-jersey, "" → /products/set-do-nam-icondenim-icdn-panelplay, "" → /products/ao-khoac-du-nam-disney-racing-division, "" → /products/ao-thun-nam-disney-stitch-ohana-vibes-form-oversize, "" → /products/ao-tank-top-nam-daily-tank-form-regular, "" → /products/ao-tank-top-runpow-aero-jacquard, "" → /products/a-o-tanktop-nam-runpow-in-naturestride, "" → /products/set-do-nam-runpow-airflow-mesh-jersey, "" → /products/set-do-nam-icondenim-icdn-panelplay, "" → /products/ao-khoac-du-nam-disney-racing-division, "" → /products/ao-thun-nam-disney-stitch-ohana-vibes-form-oversize, "" → /products/ao-tank-top-nam-daily-tank-form-regular, "" → /products/ao-tank-top-runpow-aero-jacquard, "" → /products/a-o-tanktop-nam-runpow-in-naturestride, "" → /products/set-do-nam-runpow-airflow-mesh-jersey, "" → /products/set-do-nam-icondenim-icdn-panelplay, "" → /products/ao-polo-nam-len-icondenim-black-ace, "" → /products/ao-so-mi-nam-tay-dai-mascus-ascend, "" → /products/ao-polo-nam-bouton-forne, "" → /products/ao-thun-nam-bouton-primo, "" → /products/ao-thun-nam-icondenim-midnight-sushi, "" → /products/quan-tay-nam-icondenim-calmstride, "" → /products/quan-short-nam-runpow-velocity, "" → /products/quan-short-kaki-nam-icondenim-settle, "" → /products/ao-thun-nam-icondenim-ballpark, "" → /products/quan-short-nam-chino-icondenim-neat, "" → , "" → , "" → , "" → , "" → , "" → , "" → , "" → , "" → , "" → , "" → /products/quan-short-linen-nam-icondenim-azura, "" → /products/quan-short-kaki-nam-icondenim-scisp, "" → /products/quan-short-nam-icondenim-striped, "" → /products/ao-polo-procool-icondenim-slim-fit-seam-sealing, "" → /products/ao-thun-nam-icondenim-ice-field, "" → /products/ao-polo-nam-icondenim-textured-knit, "" → /products/ao-tanktop-nam-runpow-in-camo, "" → /products/ao-tanktop-runpow-movefree, "" → /products/ao-tanktop-nam-runpow-pro-swift, "" → /products/ao-thun-nam-runpow-momentum, "" → /products/ao-thun-nam-runpow-naturestride, "" → /products/ao-thun-nam-bouton-primo, "" → /products/ao-thun-nam-icondenim-midnight-sushi, "" → /products/ao-thun-nam-icondenim-ballpark, "" → /products/ao-thun-nam-icondenim-bear-team, "" → /products/quan-short-nam-runpow-velocity, "" → /products/quan-short-kaki-nam-icondenim-settle, "" → /products/quan-short-nam-chino-icondenim-neat, "" → /products/quan-short-nam-pique-icondenim-heatwave, "" → /products/ao-so-mi-nam-tay-dai-mascus-ascend, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-whirling-petals, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-midnight-garden, "" → /products/ao-so-mi-nam-tay-ngan-cuban-icondenim-wildbloom, "" → /products/ao-khoac-bomber-nam-icondenim-allstar, "" → /products/ao-khoac-gio-active-nam-icondenim-airflex-gon-nhe-linh-hoat, "" → /products/ao-khoac-du-nam-icondenim-strikeline, "" → /products/ao-khoac-jeans-nam-icondenim-skyfold, "" → /products/ao-polo-nam-len-icondenim-black-ace, "" → /products/ao-polo-nam-bouton-forne, "" → /products/ao-polo-nam-icondenim-puro, "" → /products/ao-polo-nam-icondenim-textured-knit, "" → /products/set-ao-quan-nam-icondenim-lazy-fish, "" → /products/set-ao-quan-nam-icondenim-edgestitch, "" → /products/set-do-nam-ngan-icondenim-orgnls, "" → /products/set-do-nam-icondenim-lunary, "" → /products/quan-jeans-nam-icondenim-fadeline, "" → /products/quan-jeans-nam-icondenim-stonefade, "" → /products/quan-jeans-nam-icondenim-vintage-brown, "" → /products/quan-jeans-nam-icondenim-dark-mode, "" → /products/quan-tay-nam-icondenim-calmstride, "" → /products/quan-tay-nam-icondenim-axis-wide, "" → /products/quan-tay-nam-icondenim-city-straight, "" → /products/quan-tay-nam-icondenim-zenith, "" → https://160store.com/pages/poolside-club-collection-2, "" → https://160store.com/pages/poolside-club-collection-2, "" → https://160store.com/pages/poolside-club-collection-6, "" → https://160store.com/pages/poolside-club-collection-6, "" → https://160store.com/pages/poolside-club-collection-7, "" → https://160store.com/pages/poolside-club-collection-7, "" → https://160store.com/pages/poolside-club-collection-10, "" → https://160store.com/pages/poolside-club-collection-10, "" → //zalo.me/3664144181122308942, "" → //m.me/1042686802417049, "" → //zalo.me/3664144181122308942
+   7. [Twitter Card tags: 0 thẻ]
+      → Trang thiếu Twitter Card tags
+   8. [Font size trên mobile (≥ 12px): 10px]
+      → Có text quá nhỏ (10px), khó đọc trên thiết bị di động
+   9. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 314 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+   10. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-cache, no-store
+   11. [LCP (Largest Contentful Paint): 8898ms (< 2500ms)]
+      → LCP quá cao: 8898ms (chuẩn: < 2.5s)
+   12. [INP (Interaction to Next Paint): N/A (< 200ms)]
+      → INP quá cao: nullms (chuẩn: < 200ms)
+   13. [CLS (Cumulative Layout Shift): N/A (< 0.1)]
+      → CLS quá cao: null (chuẩn: < 0.1)
+   14. [Performance Score (Lighthouse): 38/100]
+      → Điểm tốc độ tải trang quá thấp: 38/100 (cần ≥ 80)
