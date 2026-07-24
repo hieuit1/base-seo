@@ -1,1 +1,0 @@
-Thiếu BreadcrumbList Schema — giúp Google hiểu cấu trúc site tốt hơn.

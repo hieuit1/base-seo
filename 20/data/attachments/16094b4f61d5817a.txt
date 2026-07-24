@@ -1,1 +1,0 @@
-sitemap.xml trả về status 415, cần 200

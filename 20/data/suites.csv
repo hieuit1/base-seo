@@ -1,8 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"[FAIL] Điểm SEO: 47/100 | Đạt: 18/38 tiêu chí | Ngưỡng: 70%
-
-KÉM","2266","Kiểm tra SEO Onpage: Trang chủ (Home Page)","","2026-07-19","failed","2026-07-19","SEO TIÊU CHUẨN CƠ BẢN CHO WEB","seo.spec.ts","",""
-"[PASS] Điểm SEO: 74/100 | Đạt: 23/31 tiêu chí | Ngưỡng: 60%
-
-KHÁ","15616","[Advanced] Kiểm tra SEO chuyên sâu: Trang chủ (Home Page)","","2026-07-19","passed","2026-07-19","SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B","seo-advanced.spec.ts","",""
-"","2752","Kịch bản Test @smoke @regression","","2026-07-19","passed","2026-07-19","","example.spec.ts","",""

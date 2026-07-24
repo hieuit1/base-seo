@@ -1,1 +1,0 @@
-Trang thiếu thông tin tác giả (author schema/byline). Google ưu tiên nội dung có tác giả rõ ràng.

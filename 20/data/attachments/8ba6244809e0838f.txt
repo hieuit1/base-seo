@@ -1,1 +1,0 @@
-robots.txt trả về status 415, cần 200

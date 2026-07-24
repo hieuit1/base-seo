@@ -1,1 +1,0 @@
-Mật độ keyword quá cao (stuffing): 3.20%, cần ≤ 2.5%

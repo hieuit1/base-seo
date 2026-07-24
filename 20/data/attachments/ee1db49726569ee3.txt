@@ -1,1 +1,0 @@
-Phát hiện popup/overlay che nội dung. Google phạt trang có intrusive interstitials trên mobile.

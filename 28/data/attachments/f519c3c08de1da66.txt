@@ -1,1 +1,0 @@
-HTTP không redirect sang HTTPS. Ảnh hưởng bảo mật và SEO.

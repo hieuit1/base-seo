@@ -1,0 +1,38 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     77/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  53
+   ✅ Đạt:          41
+   ❌ Không đạt:    12
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [Độ dài Meta: 189 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 189 ký tự, cần 120–160
+   2. [Meta description chứa keyword "Thuê văn phòng Bình Dương"]
+      → Meta description không chứa keyword "Thuê văn phòng Bình Dương"
+   3. [Mật độ keyword: 0.20% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.20%, cần ≥ 0.5%
+   4. [Keyword "Thuê văn phòng Bình Dương" xuất hiện trong 100 từ đầu]
+      → Keyword "Thuê văn phòng Bình Dương" không xuất hiện trong 100 từ đầu
+   5. [Có ảnh chứa keyword "Thuê văn phòng Bình Dương" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Thuê văn phòng Bình Dương"
+   6. [Ảnh có width/height: 10/24 (cần ≥ 80%)]
+      → Chỉ 10/24 ảnh có width/height, cần ≥ 20
+   7. [Định dạng ảnh tối ưu (WebP/AVIF): 13% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 3/24 ảnh (13%)
+   8. [Anchor text chất lượng (lỗi: 2)]
+      → 2 link có anchor text không tốt: "" → #menu, "Xem thêm" → gioi-thieu 
+   9. [Không có broken links (lỗi: 10/10)]
+      → Broken links: van-phong-cho-thue (error), thue-phong-hop-theo-gio (error), setup-dich-vu-van-phong (error), gioi-thieu (error), dich-vu (error), hoat-dong (error), tien-ich (error), van-phong-cho-thue (error), lien-he (error), https://thuevanphongbinhduong.com/ (status: 404)
+   10. [sitemap.xml trả về status 404]
+      → sitemap.xml trả về status 404, cần 200
+   11. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 26 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+   12. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate

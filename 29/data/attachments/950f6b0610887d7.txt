@@ -1,1 +1,0 @@
-Phát hiện 314 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)

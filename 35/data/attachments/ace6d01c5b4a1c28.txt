@@ -1,0 +1,1 @@
+Trang không sử dụng resource hints (preload/preconnect). Thêm để tối ưu tải tài nguyên.

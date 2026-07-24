@@ -1,1 +1,0 @@
-Chỉ 11% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
