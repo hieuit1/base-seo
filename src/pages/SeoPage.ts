@@ -464,7 +464,7 @@ export class SeoPage extends BasePage {
     await sc.check(
       `100% ảnh có thuộc tính alt (thiếu: ${missingAltCount}/${images.length})`,
       missingAltCount === 0,
-      `Có ${missingAltCount} hình ảnh thiếu thuộc tính 'alt'`
+      `Có ${missingAltCount} hình ảnh thiếu thuộc tính 'alt'. VD: ${images.filter((img) => !img.alt).slice(0, 3).map((img) => img.src).join(", ")}`
     );
 
     // Ít nhất 1 ảnh có alt chứa keyword
@@ -540,10 +540,11 @@ export class SeoPage extends BasePage {
       const text = link.text.trim().toLowerCase();
       return text === "" || genericAnchors.includes(text);
     });
+    const extraBadAnchors = badAnchors.length > 5 ? `... và ${badAnchors.length - 5} link khác` : "";
     await sc.check(
       `Anchor text chất lượng (lỗi: ${badAnchors.length})`,
       badAnchors.length === 0,
-      `${badAnchors.length} link có anchor text không tốt: ${badAnchors.map((l) => `"${l.text}" → ${l.href}`).join(", ")}`
+      `${badAnchors.length} link có anchor text không tốt: ${badAnchors.slice(0, 5).map((l) => `"${l.text}" → ${l.href}`).join(", ")} ${extraBadAnchors}`
     );
 
     // Kiểm tra broken internal links & redirect chain (tối đa 10)
@@ -884,7 +885,17 @@ export class SeoPage extends BasePage {
             return url.hostname === host || href.startsWith("/") || href.startsWith("#");
           } catch { return href.startsWith("/") || href.startsWith("#"); }
         })
-        .map((a) => ({ href: a.getAttribute("href") || "", text: (a.textContent || "").trim() }));
+        .map((a) => {
+          let text = (a.textContent || "").trim();
+          if (!text) {
+             const img = a.querySelector("img");
+             if (img) text = (img.getAttribute("alt") || "").trim();
+          }
+          if (!text) {
+             text = (a.getAttribute("aria-label") || "").trim();
+          }
+          return { href: a.getAttribute("href") || "", text };
+        });
     }, currentHost);
   }
 
@@ -899,7 +910,17 @@ export class SeoPage extends BasePage {
             return url.hostname !== host && !href.startsWith("/") && !href.startsWith("#");
           } catch { return false; }
         })
-        .map((a) => ({ href: a.getAttribute("href") || "", text: (a.textContent || "").trim(), rel: a.getAttribute("rel") }));
+        .map((a) => {
+          let text = (a.textContent || "").trim();
+          if (!text) {
+             const img = a.querySelector("img");
+             if (img) text = (img.getAttribute("alt") || "").trim();
+          }
+          if (!text) {
+             text = (a.getAttribute("aria-label") || "").trim();
+          }
+          return { href: a.getAttribute("href") || "", text, rel: a.getAttribute("rel") };
+        });
     }, currentHost);
   }
 

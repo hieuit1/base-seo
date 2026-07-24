@@ -172,7 +172,7 @@ export async function injectVisualSEOReport(
         id: "6.1",
         name: `100% ảnh có thuộc tính alt (thiếu: ${data.missingAltCount}/${data.images.length})`,
         isPass: data.missingAltCount === 0,
-        err: `Có ${data.missingAltCount} hình ảnh thiếu thuộc tính 'alt'`
+        err: `Có ${data.missingAltCount} hình ảnh thiếu thuộc tính 'alt'. VD: ${data.images.filter((img: any) => !img.alt).slice(0, 3).map((img: any) => img.src).join(", ")}`
       });
       const hasKeywordAlt = data.images.some((img: any) => img.alt && img.alt.toLowerCase().includes(config.keyword.toLowerCase()));
       itemsList.push({
@@ -213,11 +213,12 @@ export async function injectVisualSEOReport(
         const text = link.text.trim().toLowerCase();
         return text === "" || genericAnchors.includes(text);
       });
+      const extraBadAnchors = badAnchors.length > 5 ? `... và ${badAnchors.length - 5} link khác` : "";
       itemsList.push({
         id: "7.3",
         name: `Anchor text chất lượng (lỗi: ${badAnchors.length})`,
         isPass: badAnchors.length === 0,
-        err: `${badAnchors.length} link có anchor text không tốt: ${badAnchors.map((l: any) => `"${l.text}" → ${l.href}`).join(", ")}`
+        err: `${badAnchors.length} link có anchor text không tốt: ${badAnchors.slice(0, 5).map((l: any) => `"${l.text}" → ${l.href}`).join(", ")} ${extraBadAnchors}`
       });
       itemsList.push({
         id: "7.4",
