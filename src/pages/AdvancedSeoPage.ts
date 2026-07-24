@@ -96,8 +96,6 @@ export class AdvancedSeoPage extends SeoPage {
    */
   async scanAdvancedSEO(baseScan: SeoScanResult, config: SeoPageTestData): Promise<AdvancedSeoScanResult> {
     const origin = new URL(baseScan.currentUrl).origin;
-
-    // Song song hóa tối đa — chia thành các nhóm không phụ thuộc nhau
     const [
       authorInfo,
       dateInfo,

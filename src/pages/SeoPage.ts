@@ -22,9 +22,9 @@ export interface SeoScanResult {
   keywordDensity: number;
   staticData?: StaticSeoData;
   images: {
-    src: string; 
-    alt: string | null; 
-    width: string | null; 
+    src: string;
+    alt: string | null;
+    width: string | null;
     height: string | null;
     extension: string;
     isModernFormat: boolean;
@@ -62,10 +62,6 @@ export class SeoPage extends BasePage {
   }
 
   // ==================== SCAN METHOD ====================
-  /**
-   * Quét toàn diện dữ liệu SEO từ DOM — gọi 1 lần duy nhất.
-   * Dữ liệu trả về dùng cho injectVisualSEOReport() và verify*().
-   */
   async scanSEOMetadata(keyword: string): Promise<SeoScanResult> {
     const currentUrl = this.page.url();
     const urlObj = new URL(currentUrl);
@@ -204,7 +200,6 @@ export class SeoPage extends BasePage {
   }
 
   // ==================== VISUAL REPORT ====================
-
   /**
    * Inject bảng báo cáo SEO trực quan lên DOM — hiển thị trong screenshot.
    * Bao gồm tất cả 11 nhóm PHẦN A.
@@ -445,10 +440,10 @@ export class SeoPage extends BasePage {
     const isNoindex = scan.robots?.toLowerCase().includes("noindex");
     const hasExplicitCanonical = scan.canonical && scan.canonical !== scan.currentUrl;
     const expectIndexable = data.expectIndexable ?? true;
-    
+
     // Nếu trang được mong muốn index, nó không nên có dấu hiệu duplicate (noindex hoặc trỏ canonical đi nơi khác)
     const duplicateRisk = (isNoindex || hasExplicitCanonical);
-    
+
     await sc.check(
       `Nội dung không bị đánh dấu Duplicate/Mirror (noindex hoặc trỏ canonical ra ngoài)`,
       !duplicateRisk || expectIndexable === false,
@@ -551,7 +546,7 @@ export class SeoPage extends BasePage {
     const origin = new URL(scan.currentUrl).origin;
     const brokenLinks: string[] = [];
     const redirectChains: { from: string; to: string; count: number }[] = [];
-    
+
     const linksToCheck = internalLinks
       .filter((l) => l.href && !l.href.startsWith("#") && !l.href.startsWith("javascript:") && !l.href.startsWith("mailto:") && !l.href.startsWith("tel:"))
       .slice(0, 10);
@@ -559,15 +554,15 @@ export class SeoPage extends BasePage {
     await Promise.all(
       linksToCheck.map(async (link) => {
         const fullUrl = link.href.startsWith("http") ? link.href : `${origin}${link.href}`;
-        
+
         let current = fullUrl;
         let count = 0;
         const visited = new Set<string>();
-        
+
         while (count < 10) {
           if (visited.has(current)) break;
           visited.add(current);
-          
+
           try {
             const resp = await this.page.request.head(current, { timeout: 3000 });
             if ([301, 302, 307, 308].includes(resp.status())) {
@@ -589,13 +584,13 @@ export class SeoPage extends BasePage {
             break;
           }
         }
-        
+
         if (count > 1) {
           redirectChains.push({ from: fullUrl, to: current, count });
         }
       })
     );
-    
+
     await sc.check(
       `Không có broken links (lỗi: ${brokenLinks.length}/${linksToCheck.length})`,
       brokenLinks.length === 0,
@@ -733,7 +728,7 @@ export class SeoPage extends BasePage {
   /** Xác thực Tối ưu hoá (Compression, Cache, Minify) */
   async verifyPageOptimization(scan: SeoScanResult, sc: SeoScorecard) {
     const headers = scan.pageHeaders || {};
-    
+
     // Gzip / Brotli
     const encoding = (headers["content-encoding"] || headers["Content-Encoding"] || "none").toLowerCase();
     await sc.check(
@@ -765,7 +760,7 @@ export class SeoPage extends BasePage {
       await sc.check(`Core Web Vitals & Tốc độ tải trang`, true, "Bỏ qua — Không có dữ liệu (API Key lỗi hoặc timeout)");
       return;
     }
-    
+
     await sc.check(
       `LCP (Largest Contentful Paint): ${vitals.lcp ? vitals.lcp + "ms" : "N/A"} (< 2500ms)`,
       vitals.lcp !== null && vitals.lcp < 2500,
@@ -888,11 +883,11 @@ export class SeoPage extends BasePage {
         .map((a) => {
           let text = (a.textContent || "").trim();
           if (!text) {
-             const img = a.querySelector("img");
-             if (img) text = (img.getAttribute("alt") || "").trim();
+            const img = a.querySelector("img");
+            if (img) text = (img.getAttribute("alt") || "").trim();
           }
           if (!text) {
-             text = (a.getAttribute("aria-label") || "").trim();
+            text = (a.getAttribute("aria-label") || "").trim();
           }
           return { href: a.getAttribute("href") || "", text };
         });
@@ -913,11 +908,11 @@ export class SeoPage extends BasePage {
         .map((a) => {
           let text = (a.textContent || "").trim();
           if (!text) {
-             const img = a.querySelector("img");
-             if (img) text = (img.getAttribute("alt") || "").trim();
+            const img = a.querySelector("img");
+            if (img) text = (img.getAttribute("alt") || "").trim();
           }
           if (!text) {
-             text = (a.getAttribute("aria-label") || "").trim();
+            text = (a.getAttribute("aria-label") || "").trim();
           }
           return { href: a.getAttribute("href") || "", text, rel: a.getAttribute("rel") };
         });
@@ -1034,12 +1029,12 @@ export class SeoPage extends BasePage {
         const size = parseFloat(style.fontSize);
         if (size > 0 && size < minSize) minSize = size;
       });
-      
+
       let badTargets = 0;
       document.querySelectorAll("button, a, input").forEach((el) => {
         const rect = el.getBoundingClientRect();
         if (rect.width > 0 && rect.height > 0) {
-           if (rect.width < 48 || rect.height < 48) badTargets++;
+          if (rect.width < 48 || rect.height < 48) badTargets++;
         }
       });
       return { minFontSize: Math.round(minSize), badTouchTargets: badTargets };

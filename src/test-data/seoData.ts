@@ -36,7 +36,7 @@ export const seoTestData: SeoPageTestData[] = [
   {
     name: "Trang chủ (Home Page)",
     path: "/",
-    keyword: "SEO starter guide", // ← Thay bằng keyword thực tế
+    keyword: "Thuê văn phòng Bình Dương", // ← Thay bằng keyword thực tế
     expectIndexable: true,
     checkSocialOg: true,
     priority: "critical",
@@ -44,16 +44,16 @@ export const seoTestData: SeoPageTestData[] = [
   },
 
   // ── Thêm trang khác tại đây ──────────────────────────
-  {
-    name: "SEO starter guide",
-    path: "/search/docs/fundamentals/seo-starter-guide",
-    keyword: "SEO starter guide",
-    expectIndexable: true,
-    checkSocialOg: true,
-    priority: "high",
-    severity: "critical",
-    titleMinLength: 40,
-    titleMaxLength: 65,
-  },
+  // {
+  //   name: "SEO starter guide",
+  //   path: "/search/docs/fundamentals/seo-starter-guide",
+  //   keyword: "SEO starter guide",
+  //   expectIndexable: true,
+  //   checkSocialOg: true,
+  //   priority: "high",
+  //   severity: "critical",
+  //   titleMinLength: 40,
+  //   titleMaxLength: 65,
+  // },
 
 ];
