@@ -148,11 +148,6 @@ jobs:
           path: gh-pages-dir
           fetch-depth: 0
       
-      - name: Clean Gh-Pages Git History
-        run: |
-          sudo rm -rf gh-pages-dir/.git
-          sudo rm -rf allure-history/.git
-          
       - name: Create environment.properties
         run: |
           mkdir -p target/allure-results
@@ -170,10 +165,6 @@ jobs:
           allure_history: allure-history
           gh_pages: gh-pages-dir
           keep_reports: 20
-
-      # 👉 BỔ SUNG BƯỚC NÀY ĐỂ FIX TRIỆT ĐỂ LỖI TREO 5 PHÚT (EACCES)
-      - name: Clean Allure Git History Permissions
-        run: sudo rm -rf allure-history/.git
 
       - name: Host Dashboard on GitHub Pages
         if: github.event_name != 'pull_request'
