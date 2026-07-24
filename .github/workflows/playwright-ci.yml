@@ -77,7 +77,7 @@ jobs:
       - name: Execute Parallel Shard Testing
         env:
           ENV: ${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |

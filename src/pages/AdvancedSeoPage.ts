@@ -456,7 +456,7 @@ export class AdvancedSeoPage extends SeoPage {
   // B6. Performance
   // ──────────────────────────────────────────────────────────
 
-  async verifyPerformance(
+  async verifyPerformanceAdvanced(
     scan: AdvancedSeoScanResult,
     config: SeoPageTestData,
     sc: SeoScorecard

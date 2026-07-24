@@ -19,7 +19,7 @@ export class LLMService {
     if (apiKey) {
       this.genAI = new GoogleGenerativeAI(apiKey);
       // Sử dụng gemini-1.5-flash vì nó nhanh và hỗ trợ tốt JSON output
-      this.model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      this.model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     }
   }
 
@@ -64,11 +64,11 @@ ${truncatedContent}
     try {
       const result = await this.model.generateContent({
         contents: [
-            { role: "user", parts: [{ text: systemPrompt + "\n\n" + userPrompt }] }
+          { role: "user", parts: [{ text: systemPrompt + "\n\n" + userPrompt }] }
         ],
         generationConfig: {
-            temperature: 0.2,
-            responseMimeType: "application/json"
+          temperature: 0.2,
+          responseMimeType: "application/json"
         }
       });
 

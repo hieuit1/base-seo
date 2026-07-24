@@ -75,7 +75,7 @@ test.describe("SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B", () => {
         // ── STEP 8: Performance ──
         if (data.checkPerformance !== false) {
           await customStep(page, "8. Xác thực Performance (TTFB, DOM Size, HTTP/2, Lazy Load)", async () => {
-            await advancedSeoPage.verifyPerformance(advScan!, config, scorecard);
+            await advancedSeoPage.verifyPerformanceAdvanced(advScan!, config, scorecard);
           });
         }
 
