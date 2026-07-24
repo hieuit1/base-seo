@@ -148,6 +148,11 @@ jobs:
           path: gh-pages-dir
           fetch-depth: 0
       
+      - name: Clean Gh-Pages Git History
+        run: |
+          sudo rm -rf gh-pages-dir/.git
+          sudo rm -rf allure-history/.git
+          
       - name: Create environment.properties
         run: |
           mkdir -p target/allure-results
