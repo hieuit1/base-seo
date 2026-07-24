@@ -4,6 +4,7 @@ import { customStep, SeoScorecard } from "../src/utils/reportHelper";
 import { seoTestData } from "../src/test-data/seoData";
 import { SeoScanResult } from "../src/pages/SeoPage";
 import { DEFAULT_SEO_CONFIG } from "../src/constants/seoDefaults";
+import { PageSpeedService } from "../src/services/PageSpeedService";
 
 test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
   test.describe.configure({ mode: "parallel" });
@@ -32,6 +33,7 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
         const config = { ...DEFAULT_SEO_CONFIG, ...data };
 
         const scorecard = new SeoScorecard();
+        const pageSpeedService = new PageSpeedService();
 
         // ── STEP 1: Truy cập trang ──
         await customStep(page, `1. Truy cập trang: ${config.name}`, async () => {
@@ -40,9 +42,17 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
 
         // ── STEP 2: Quét toàn bộ dữ liệu SEO ──
         let scan: SeoScanResult;
+        let vitals: any = null;
 
-        await customStep(page, "2. Quét toàn bộ dữ liệu Technical SEO", async () => {
-          scan = await seoPage.scanSEOMetadata(config.keyword);
+        await customStep(page, "2. Quét toàn bộ dữ liệu Technical SEO & Performance", async () => {
+          // Khởi chạy quét DOM và API Google song song để tiết kiệm thời gian
+          const [scanResult, vitalsResult] = await Promise.all([
+            seoPage.scanSEOMetadata(config.keyword),
+            pageSpeedService.getCoreWebVitals(page.url())
+          ]);
+          scan = scanResult;
+          vitals = vitalsResult;
+          
           await seoPage.injectVisualSEOReport(config.name, scan, config);
         });
 
@@ -62,7 +72,7 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
           await seoPage.verifyUrlStructure(scan!, config, scorecard);
         });
 
-        await customStep(page, `7. Xác thực Nội dung (≥ ${config.minWordCount} từ, keyword density)`, async () => {
+        await customStep(page, `7. Xác thực Nội dung (≥ ${config.minWordCount} từ, keyword density, không trùng lặp)`, async () => {
           await seoPage.verifyContent(scan!, config, scorecard);
         });
 
@@ -70,19 +80,27 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
           await seoPage.verifyImages(scan!, config, scorecard);
         });
 
-        await customStep(page, "9. Xác thực Internal/External links + broken links", async () => {
+        await customStep(page, "9. Xác thực Internal/External links + broken links + redirect chain", async () => {
           await seoPage.verifyLinks(scan!, scorecard);
         });
 
-        await customStep(page, "10. Xác thực Technical SEO (Canonical, Robots, Schema, OG, Twitter)", async () => {
+        await customStep(page, "10. Xác thực Technical SEO (Canonical, Robots, Schema, OG, Twitter, Hreflang)", async () => {
           await seoPage.verifyTechnicalSeo(scan!, config, scorecard);
         });
 
-        await customStep(page, "11. Xác thực Mobile (Viewport meta)", async () => {
+        await customStep(page, "11. Xác thực Mobile (Viewport, Font size, Touch targets)", async () => {
           await seoPage.verifyMobile(scan!, scorecard);
         });
 
-        await customStep(page, "12. Xác thực Bảo mật (HTTPS + Mixed Content)", async () => {
+        await customStep(page, "12. Xác thực Tối ưu hoá (Gzip/Brotli, Cache, Minify CSS)", async () => {
+          await seoPage.verifyPageOptimization(scan!, scorecard);
+        });
+
+        await customStep(page, "13. Xác thực Tốc độ tải trang & Core Web Vitals", async () => {
+          await seoPage.verifyPerformance(vitals, scorecard);
+        });
+
+        await customStep(page, "14. Xác thực Bảo mật (HTTPS + Mixed Content)", async () => {
           await seoPage.verifySecurity(scan!, scorecard);
         });
 

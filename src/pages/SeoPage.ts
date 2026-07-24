@@ -49,6 +49,11 @@ export interface SeoScanResult {
   isHttps: boolean;
   mixedContent: string[];
   bodyText: string;
+  hreflangs: { rel: string; href: string; lang: string }[];
+  pageHeaders: Record<string, string>;
+  cssFiles: string[];
+  minFontSize: number;
+  badTouchTargets: number;
 }
 
 export class SeoPage extends BasePage {
@@ -69,11 +74,13 @@ export class SeoPage extends BasePage {
 
     // --- 0. Static HTML Parse via Cheerio ---
     let staticData: StaticSeoData | undefined;
+    let pageHeaders: Record<string, string> = {};
     try {
       const response = await this.page.request.get(currentUrl, { timeout: 10000 });
       if (response.ok()) {
         const html = await response.text();
         staticData = CheerioService.parseStaticHtml(html);
+        pageHeaders = response.headers();
       }
     } catch (e) {
       console.error(`Không thể lấy Static HTML cho ${currentUrl}:`, e);
@@ -98,6 +105,9 @@ export class SeoPage extends BasePage {
       hasFavicon,
       hasViewport,
       mixedContent,
+      hreflangs,
+      cssFiles,
+      mobileMetrics,
     ] = await Promise.all([
       this.getTitle(),
       this.getMetaDescription(),
@@ -117,6 +127,9 @@ export class SeoPage extends BasePage {
       this.hasFavicon(),
       this.hasViewportMeta(),
       this.getMixedContent(),
+      this.getHreflangs(),
+      this.getCssFiles(),
+      this.getMobileMetrics(),
     ]);
 
     // Local Node.js computations to avoid browser roundtrips:
@@ -186,6 +199,7 @@ export class SeoPage extends BasePage {
       ogImage: ogTags["og:image"] || null,
       twitterTags, lang, charset, hasFavicon, hasViewport,
       isHttps, mixedContent, bodyText,
+      hreflangs, pageHeaders, cssFiles, minFontSize: mobileMetrics.minFontSize, badTouchTargets: mobileMetrics.badTouchTargets,
     };
   }
 
@@ -428,11 +442,17 @@ export class SeoPage extends BasePage {
     );
 
     // Nội dung không trùng lặp (duplicate content)
-    const isCanonicalSelf = !scan.canonical || scan.canonical === scan.currentUrl;
+    const isNoindex = scan.robots?.toLowerCase().includes("noindex");
+    const hasExplicitCanonical = scan.canonical && scan.canonical !== scan.currentUrl;
+    const expectIndexable = data.expectIndexable ?? true;
+    
+    // Nếu trang được mong muốn index, nó không nên có dấu hiệu duplicate (noindex hoặc trỏ canonical đi nơi khác)
+    const duplicateRisk = (isNoindex || hasExplicitCanonical);
+    
     await sc.check(
-      `Nội dung không trùng lặp (Duplicate content)`,
-      isCanonicalSelf,
-      `Có khả năng trùng lặp nội dung, canonical URL (${scan.canonical}) khác với URL hiện tại (${scan.currentUrl})`
+      `Nội dung không bị đánh dấu Duplicate/Mirror (noindex hoặc trỏ canonical ra ngoài)`,
+      !duplicateRisk || expectIndexable === false,
+      `Trang có nguy cơ là duplicate content vì ${isNoindex ? "bị gắn thẻ noindex" : "có thẻ canonical trỏ sang trang khác"}`
     );
   }
 
@@ -526,9 +546,11 @@ export class SeoPage extends BasePage {
       `${badAnchors.length} link có anchor text không tốt: ${badAnchors.map((l) => `"${l.text}" → ${l.href}`).join(", ")}`
     );
 
-    // Kiểm tra broken internal links (tối đa 10)
+    // Kiểm tra broken internal links & redirect chain (tối đa 10)
     const origin = new URL(scan.currentUrl).origin;
     const brokenLinks: string[] = [];
+    const redirectChains: { from: string; to: string; count: number }[] = [];
+    
     const linksToCheck = internalLinks
       .filter((l) => l.href && !l.href.startsWith("#") && !l.href.startsWith("javascript:") && !l.href.startsWith("mailto:") && !l.href.startsWith("tel:"))
       .slice(0, 10);
@@ -536,16 +558,53 @@ export class SeoPage extends BasePage {
     await Promise.all(
       linksToCheck.map(async (link) => {
         const fullUrl = link.href.startsWith("http") ? link.href : `${origin}${link.href}`;
-        const status = await this.checkUrlStatus(fullUrl);
-        if (status >= 400 || status === 0) {
-          brokenLinks.push(`${link.href} (status: ${status})`);
+        
+        let current = fullUrl;
+        let count = 0;
+        const visited = new Set<string>();
+        
+        while (count < 10) {
+          if (visited.has(current)) break;
+          visited.add(current);
+          
+          try {
+            const resp = await this.page.request.head(current, { timeout: 3000 });
+            if ([301, 302, 307, 308].includes(resp.status())) {
+              const location = resp.headers()["location"];
+              if (location) {
+                current = new URL(location, current).href;
+                count++;
+              } else {
+                break;
+              }
+            } else {
+              if (count === 0 && (resp.status() >= 400 || resp.status() === 0)) {
+                brokenLinks.push(`${link.href} (status: ${resp.status()})`);
+              }
+              break;
+            }
+          } catch (e) {
+            if (count === 0) brokenLinks.push(`${link.href} (error)`);
+            break;
+          }
+        }
+        
+        if (count > 1) {
+          redirectChains.push({ from: fullUrl, to: current, count });
         }
       })
     );
+    
     await sc.check(
       `Không có broken links (lỗi: ${brokenLinks.length}/${linksToCheck.length})`,
       brokenLinks.length === 0,
       `Broken links: ${brokenLinks.join(", ")}`
+    );
+
+    await sc.check(
+      `Không có redirect chain (lỗi: ${redirectChains.length})`,
+      redirectChains.length === 0,
+      `Detected redirect chains: ${redirectChains.map(r => `${r.count} hops: ${r.from}`).join("; ")}`
     );
   }
 
@@ -625,6 +684,17 @@ export class SeoPage extends BasePage {
       "Thẻ <html> thiếu thuộc tính lang"
     );
 
+    // Hreflang Tags
+    if (data.languages && data.languages.length > 1) {
+      await sc.check(
+        `Hreflang tags (${scan.hreflangs.length} tags cho ${data.languages.length} ngôn ngữ)`,
+        scan.hreflangs.length >= data.languages.length,
+        `Thiếu hreflang. Chỉ tìm thấy ${scan.hreflangs.length} tags, cần ít nhất ${data.languages.length}`
+      );
+    } else {
+      await sc.check(`Hreflang tags (Bỏ qua vì đơn ngôn ngữ)`, true, "Bỏ qua");
+    }
+
     // Charset + Favicon
     const charsetOk = !!scan.charset && scan.charset.toLowerCase() === "utf-8";
     await sc.check(
@@ -644,6 +714,79 @@ export class SeoPage extends BasePage {
       `Viewport meta tag: ${scan.hasViewport ? "✔" : "✘"}`,
       scan.hasViewport,
       "Trang thiếu thẻ <meta name='viewport'>"
+    );
+
+    await sc.check(
+      `Font size trên mobile (≥ 12px): ${scan.minFontSize}px`,
+      scan.minFontSize >= 12,
+      `Có text quá nhỏ (${scan.minFontSize}px), khó đọc trên thiết bị di động`
+    );
+
+    await sc.check(
+      `Touch targets (nút/link) đủ lớn (≥ 48x48px): ${scan.badTouchTargets === 0 ? "✔" : "✘"}`,
+      scan.badTouchTargets === 0,
+      `Phát hiện ${scan.badTouchTargets} nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)`
+    );
+  }
+
+  /** Xác thực Tối ưu hoá (Compression, Cache, Minify) */
+  async verifyPageOptimization(scan: SeoScanResult, sc: SeoScorecard) {
+    const headers = scan.pageHeaders || {};
+    
+    // Gzip / Brotli
+    const encoding = (headers["content-encoding"] || headers["Content-Encoding"] || "none").toLowerCase();
+    await sc.check(
+      `Nén dữ liệu (Gzip/Brotli): ${encoding !== "none" ? encoding.toUpperCase() : "✘"}`,
+      ["gzip", "br", "deflate"].includes(encoding),
+      `Trang không được nén bằng Gzip hoặc Brotli (Content-Encoding: ${encoding})`
+    );
+
+    // Caching
+    const cacheControl = (headers["cache-control"] || headers["Cache-Control"] || "No cache").toLowerCase();
+    await sc.check(
+      `Browser caching (Cache-Control): ${cacheControl !== "no cache" ? "✔" : "✘"}`,
+      cacheControl.includes("max-age") && !cacheControl.includes("no-store"),
+      `Cache header chưa tối ưu hoặc bị disable: ${cacheControl}`
+    );
+
+    // Minify CSS
+    const nonMinifiedCss = scan.cssFiles.filter(href => !href.includes(".min.css") && !href.includes("?"));
+    await sc.check(
+      `CSS Minified: ${nonMinifiedCss.length === 0 ? "✔" : "✘"}`,
+      nonMinifiedCss.length === 0,
+      `Phát hiện ${nonMinifiedCss.length} file CSS chưa được minify (Ví dụ: ${nonMinifiedCss[0]})`
+    );
+  }
+
+  /** Xác thực Core Web Vitals (Tốc độ tải trang) */
+  async verifyPerformance(vitals: any, sc: SeoScorecard) {
+    if (!vitals) {
+      await sc.check(`Core Web Vitals & Tốc độ tải trang`, true, "Bỏ qua — Không có dữ liệu (API Key lỗi hoặc timeout)");
+      return;
+    }
+    
+    await sc.check(
+      `LCP (Largest Contentful Paint): ${vitals.lcp ? vitals.lcp + "ms" : "N/A"} (< 2500ms)`,
+      vitals.lcp !== null && vitals.lcp < 2500,
+      `LCP quá cao: ${vitals.lcp}ms (chuẩn: < 2.5s)`
+    );
+
+    await sc.check(
+      `INP (Interaction to Next Paint): ${vitals.inp ? vitals.inp + "ms" : "N/A"} (< 200ms)`,
+      vitals.inp !== null && vitals.inp < 200,
+      `INP quá cao: ${vitals.inp}ms (chuẩn: < 200ms)`
+    );
+
+    await sc.check(
+      `CLS (Cumulative Layout Shift): ${vitals.cls ?? "N/A"} (< 0.1)`,
+      vitals.cls !== null && vitals.cls < 0.1,
+      `CLS quá cao: ${vitals.cls} (chuẩn: < 0.1)`
+    );
+
+    await sc.check(
+      `Performance Score (Lighthouse): ${vitals.score ?? "N/A"}/100`,
+      vitals.score !== null && vitals.score >= 80,
+      `Điểm tốc độ tải trang quá thấp: ${vitals.score}/100 (cần ≥ 80)`
     );
   }
 
@@ -842,6 +985,43 @@ export class SeoPage extends BasePage {
         if (url.startsWith("http://")) mixed.push(url);
       });
       return mixed;
+    });
+  }
+
+  async getHreflangs(): Promise<{ rel: string; href: string; lang: string }[]> {
+    return await this.page.evaluate(() => {
+      return Array.from(document.querySelectorAll('link[rel="alternate"][hreflang]')).map(link => ({
+        rel: link.getAttribute("rel") || "",
+        href: link.getAttribute("href") || "",
+        lang: link.getAttribute("hreflang") || ""
+      }));
+    });
+  }
+
+  async getCssFiles(): Promise<string[]> {
+    return await this.page.evaluate(() => {
+      return Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
+        .map(link => link.getAttribute("href") || "");
+    });
+  }
+
+  async getMobileMetrics(): Promise<{ minFontSize: number; badTouchTargets: number }> {
+    return await this.page.evaluate(() => {
+      let minSize = 16;
+      document.querySelectorAll("body, p, span, a").forEach((el) => {
+        const style = window.getComputedStyle(el);
+        const size = parseFloat(style.fontSize);
+        if (size > 0 && size < minSize) minSize = size;
+      });
+      
+      let badTargets = 0;
+      document.querySelectorAll("button, a, input").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.width > 0 && rect.height > 0) {
+           if (rect.width < 48 || rect.height < 48) badTargets++;
+        }
+      });
+      return { minFontSize: Math.round(minSize), badTouchTargets: badTargets };
     });
   }
 }

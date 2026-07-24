@@ -1,4 +1,4 @@
-import OpenAI from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import * as dotenv from "dotenv";
 
 dotenv.config();
@@ -11,27 +11,30 @@ export interface ContentEvaluationResult {
 }
 
 export class LLMService {
-  private openai: OpenAI | null = null;
+  private genAI: GoogleGenerativeAI | null = null;
+  private model: any = null;
 
   constructor() {
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey) {
-      this.openai = new OpenAI({ apiKey });
+      this.genAI = new GoogleGenerativeAI(apiKey);
+      // Sử dụng gemini-1.5-flash vì nó nhanh và hỗ trợ tốt JSON output
+      this.model = this.genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     }
   }
 
   public isAvailable(): boolean {
-    return this.openai !== null;
+    return this.genAI !== null;
   }
 
   /**
    * Gọi LLM để đánh giá Content theo Search Intent và E-E-A-T.
    */
   public async evaluateContentQuality(keyword: string, content: string): Promise<ContentEvaluationResult | null> {
-    if (!this.openai) return null;
+    if (!this.model) return null;
 
-    // Giới hạn content length để tránh vượt quá token limit của model
-    const truncatedContent = content.substring(0, 4000);
+    // Giới hạn content length (Gemini hỗ trợ token lớn hơn nên có thể tăng lên một chút)
+    const truncatedContent = content.substring(0, 8000);
 
     const systemPrompt = `
 Bạn là một chuyên gia SEO (Search Engine Optimization). 
@@ -59,17 +62,17 @@ ${truncatedContent}
 `;
 
     try {
-      const response = await this.openai.chat.completions.create({
-        model: "gpt-4o-mini", // Dùng model nhỏ gọn, nhanh, tiết kiệm
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: userPrompt }
+      const result = await this.model.generateContent({
+        contents: [
+            { role: "user", parts: [{ text: systemPrompt + "\n\n" + userPrompt }] }
         ],
-        response_format: { type: "json_object" },
-        temperature: 0.2,
+        generationConfig: {
+            temperature: 0.2,
+            responseMimeType: "application/json"
+        }
       });
 
-      const responseText = response.choices[0].message.content;
+      const responseText = result.response.text();
       if (!responseText) return null;
 
       const parsed = JSON.parse(responseText);

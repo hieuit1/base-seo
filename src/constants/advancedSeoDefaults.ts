@@ -1,6 +1,3 @@
-// ==================== ADVANCED SEO DEFAULTS (PHẦN B) ====================
-// Cấu hình mặc định cho các tiêu chí chuyên sâu — override được qua test data
-
 export const DEFAULT_ADVANCED_SEO_CONFIG = {
   // ── B4. Crawlability & Indexability ──
   softErrorPatterns: [
@@ -24,5 +21,5 @@ export const DEFAULT_ADVANCED_SEO_CONFIG = {
   minColorContrast: 4.5, // WCAG AA contrast ratio tối thiểu
 
   // ── B8. URL & Domain Consistency ──
-  enforceTrailingSlash: false, // true = URL phải có trailing slash, false = không có
+  enforceTrailingSlash: false,
 };
