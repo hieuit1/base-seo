@@ -35,6 +35,7 @@ export interface SeoPageTestData {
   maxThirdPartyScripts?: number;      // B6.8: Số lượng third-party script domains tối đa (default: 5)
   anchorDiversityThreshold?: number;  // B5.4: Tỷ lệ anchor text unique tối thiểu % (default: 70)
 }
+
 export const seoTestData: SeoPageTestData[] = [
   {
     name: "Trang chủ (Home Page)",

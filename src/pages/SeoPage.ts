@@ -400,9 +400,16 @@ export class SeoPage extends BasePage {
       
       await Promise.all(
         chunk.map(async (href) => {
-          const fullUrl = href.startsWith("http") ? href : `${origin}${href}`;
+          // Xử lý chuẩn tất cả các loại link (tuyệt đối, tương đối, có/không có gạch chéo)
+          let current;
+          try {
+            current = new URL(href, scan.currentUrl).href;
+          } catch (e) {
+            brokenLinks.push(`${href} (Invalid URL format)`);
+            return; // Skip this one
+          }
 
-          let current = fullUrl;
+          const fullUrl = current;
           let count = 0;
           const visited = new Set<string>();
 
