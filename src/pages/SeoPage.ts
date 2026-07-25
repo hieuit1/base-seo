@@ -418,7 +418,17 @@ export class SeoPage extends BasePage {
             visited.add(current);
 
             try {
-              const resp = await this.page.request.head(current, { timeout: 3000 });
+              let resp = await this.page.request.head(current, { timeout: 3000 });
+              
+              // Fallback to GET if HEAD request is blocked or returns an error (404, 403, 405)
+              if (resp.status() >= 400) {
+                try {
+                  resp = await this.page.request.get(current, { timeout: 5000 });
+                } catch (fallbackError) {
+                  // Fallback GET also failed
+                }
+              }
+
               if ([301, 302, 307, 308].includes(resp.status())) {
                 const location = resp.headers()["location"];
                 if (location) {
