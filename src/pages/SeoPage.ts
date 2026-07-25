@@ -5,198 +5,15 @@ import { injectVisualSEOReport } from "../utils/SeoReportHelper";
 import { SeoScorecard } from "../utils/reportHelper";
 import { DEFAULT_SEO_CONFIG } from "../constants/seoDefaults";
 import { toSlug } from "../utils/stringHelper";
-import { CheerioService, StaticSeoData } from "../services/CheerioService";
-
-// ==================== INTERFACES ====================
-
-export interface SeoScanResult {
-  titleVal: string;
-  metaVal: string | null;
-  h1Texts: string[];
-  allHeadings: { tag: string; text: string }[];
-  headingHierarchy: { valid: boolean; issues: string[] };
-  currentUrl: string;
-  urlPath: string;
-  wordCount: number;
-  first100Words: string;
-  keywordDensity: number;
-  staticData?: StaticSeoData;
-  images: {
-    src: string;
-    alt: string | null;
-    width: string | null;
-    height: string | null;
-    extension: string;
-    isModernFormat: boolean;
-    sizeBytes: number | null;
-  }[];
-  missingAltCount: number;
-  imagesWithBadNames: number;
-  imagesWithDimensions: number;
-  internalLinks: { href: string; text: string }[];
-  externalLinks: { href: string; text: string; rel: string | null }[];
-  canonical: string | null;
-  robots: string | null;
-  hasSchema: boolean;
-  ogTitle: string | null;
-  ogDesc: string | null;
-  ogImage: string | null;
-  twitterTags: Record<string, string>;
-  lang: string | null;
-  charset: string | null;
-  hasFavicon: boolean;
-  hasViewport: boolean;
-  isHttps: boolean;
-  mixedContent: string[];
-  bodyText: string;
-  hreflangs: { rel: string; href: string; lang: string }[];
-  pageHeaders: Record<string, string>;
-  cssFiles: string[];
-  minFontSize: number;
-  badTouchTargets: number;
-}
+import { SeoScanResult } from "../interfaces/SeoScanResult";
+import { DomExtractor } from "./extractors/DomExtractor";
+import { SeoScanner } from "./scanners/SeoScanner";
 
 export class SeoPage extends BasePage {
-  constructor(page: Page) {
-    super(page);
-  }
-
-  // ==================== SCAN METHOD ====================
   async scanSEOMetadata(keyword: string): Promise<SeoScanResult> {
-    const currentUrl = this.page.url();
-    const urlObj = new URL(currentUrl);
-    const urlPath = urlObj.pathname + urlObj.search;
-    const isHttps = this.isHttps();
-
-    // --- 0. Static HTML Parse via Cheerio ---
-    let staticData: StaticSeoData | undefined;
-    let pageHeaders: Record<string, string> = {};
-    try {
-      const response = await this.page.request.get(currentUrl, { timeout: 10000 });
-      if (response.ok()) {
-        const html = await response.text();
-        staticData = CheerioService.parseStaticHtml(html);
-        pageHeaders = response.headers();
-      }
-    } catch (e) {
-      console.error(`Không thể lấy Static HTML cho ${currentUrl}:`, e);
-    }
-
-    const [
-      titleVal,
-      metaVal,
-      h1Texts,
-      allHeadings,
-      bodyText,
-      images,
-      internalLinks,
-      externalLinks,
-      canonical,
-      robots,
-      hasSchema,
-      ogTags,
-      twitterTags,
-      lang,
-      charset,
-      hasFavicon,
-      hasViewport,
-      mixedContent,
-      hreflangs,
-      cssFiles,
-      mobileMetrics,
-    ] = await Promise.all([
-      this.getTitle(),
-      this.getMetaDescription(),
-      this.getH1Elements(),
-      this.getAllHeadings(),
-      this.getBodyText(),
-      this.getImages(),
-      this.getInternalLinks(),
-      this.getExternalLinks(),
-      this.getCanonicalUrl(),
-      this.getRobotsContent(),
-      this.hasSchemaMarkup(),
-      this.getOpenGraphTags(),
-      this.getTwitterCardTags(),
-      this.getLangAttribute(),
-      this.getCharset(),
-      this.hasFavicon(),
-      this.hasViewportMeta(),
-      this.getMixedContent(),
-      this.getHreflangs(),
-      this.getCssFiles(),
-      this.getMobileMetrics(),
-    ]);
-
-    // Local Node.js computations to avoid browser roundtrips:
-    // 1. Word count & first 100 words
-    const words = bodyText.split(/\s+/).filter((w) => w.length > 0);
-    const wordCount = words.length;
-    const first100Words = words.slice(0, 100).join(" ");
-
-    // 2. Keyword density
-    let keywordDensity = 0;
-    if (wordCount > 0 && keyword.trim().length > 0) {
-      const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      const regex = new RegExp(escapedKeyword, "gi");
-      const matches = bodyText.match(regex);
-      const keywordWordCount = keyword.split(/\s+/).filter(w => w.length > 0).length;
-      keywordDensity = ((matches ? (matches.length * keywordWordCount) : 0) / wordCount) * 100;
-    }
-
-    // 3. Heading hierarchy check
-    const hierarchyIssues: string[] = [];
-    let lastLevel = 0;
-    for (const heading of allHeadings) {
-      const level = parseInt(heading.tag.replace("h", ""));
-      if (lastLevel > 0 && level > lastLevel + 1) {
-        hierarchyIssues.push(`Nhảy cấp từ H${lastLevel} → H${level} ("${heading.text}")`);
-      }
-      lastLevel = level;
-    }
-    const headingHierarchy = { valid: hierarchyIssues.length === 0, issues: hierarchyIssues };
-
-    // 4. Image calculations
-    const missingAltCount = images.filter((img) => img.alt === null || img.alt.trim() === "").length;
-    const hashPattern = /^[a-f0-9]{8,}\.(jpg|jpeg|png|gif|webp|svg|avif)$/i;
-    const imagesWithBadNames = images.filter((img) => {
-      const fileName = img.src.split("/").pop()?.split("?")[0] || "";
-      return hashPattern.test(fileName);
-    }).length;
-    const imagesWithDimensions = images.filter((img) => img.width || img.height).length;
-
-    // 5. Fetch image sizes (limit to first 20 images to avoid timeouts)
-    const origin = new URL(currentUrl).origin;
-    const imagesToCheck = images.slice(0, 20);
-    await Promise.all(imagesToCheck.map(async (img) => {
-      if (!img.src || img.src.startsWith('data:')) return;
-      try {
-        const fullUrl = img.src.startsWith('http') ? img.src : (img.src.startsWith('//') ? `https:${img.src}` : new URL(img.src, origin).href);
-        const response = await this.page.request.head(fullUrl, { timeout: 2000 });
-        if (response.ok()) {
-          const headers = response.headers();
-          if (headers['content-length']) {
-            img.sizeBytes = parseInt(headers['content-length'], 10);
-          }
-        }
-      } catch (error) {
-        // ignore fetch errors
-      }
-    }));
-
-    return {
-      titleVal, metaVal, h1Texts, allHeadings, headingHierarchy,
-      currentUrl, urlPath, wordCount, first100Words, keywordDensity, staticData,
-      images, missingAltCount, imagesWithBadNames, imagesWithDimensions,
-      internalLinks, externalLinks,
-      canonical, robots, hasSchema,
-      ogTitle: ogTags["og:title"] || null,
-      ogDesc: ogTags["og:description"] || null,
-      ogImage: ogTags["og:image"] || null,
-      twitterTags, lang, charset, hasFavicon, hasViewport,
-      isHttps, mixedContent, bodyText,
-      hreflangs, pageHeaders, cssFiles, minFontSize: mobileMetrics.minFontSize, badTouchTargets: mobileMetrics.badTouchTargets,
-    };
+    const domExtractor = new DomExtractor(this.page);
+    const seoScanner = new SeoScanner(this.page, domExtractor);
+    return seoScanner.scanSEOMetadata(keyword);
   }
 
   // ==================== VISUAL REPORT ====================
@@ -210,7 +27,7 @@ export class SeoPage extends BasePage {
 
   // ==================== VERIFY METHODS ====================
 
-  /** 1.1→1.4: Xác thực thẻ Title */
+  /** Xác thực thẻ Title */
   async verifyTitle(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
     const minLen = data.titleMinLength ?? DEFAULT_SEO_CONFIG.titleMinLength;
     const maxLen = data.titleMaxLength ?? DEFAULT_SEO_CONFIG.titleMaxLength;
@@ -256,6 +73,8 @@ export class SeoPage extends BasePage {
         ? `Bỏ qua — keyword "${data.keyword}" không có trong Title`
         : `Keyword ở vị trí ${keywordIndex}, nên ≤ ${halfLen}`
     );
+
+
   }
 
   /** Xác thực Meta Description */
@@ -376,6 +195,14 @@ export class SeoPage extends BasePage {
       urlPath === urlPath.toLowerCase(),
       `URL chứa chữ hoa: ${urlPath}`
     );
+    const hasSpecialChars = /[^a-z0-9\-\/\.]/i.test(urlPath.split("?")[0]);
+    const hasTrackingParams = /[?&](utm_|fbclid|gclid|ref=)/.test(urlPath);
+    await sc.check(
+      `URL không chứa ký tự đặc biệt hoặc tham số tracking thừa`,
+      !hasSpecialChars && !hasTrackingParams,
+      `URL "${urlPath}" ${hasSpecialChars ? "chứa ký tự đặc biệt" : ""} ${hasTrackingParams ? "chứa tracking param" : ""}`
+    );
+
   }
 
   /** Xác thực nội dung */
@@ -801,243 +628,5 @@ export class SeoPage extends BasePage {
       scan.mixedContent.length === 0,
       `Phát hiện ${scan.mixedContent.length} tài nguyên HTTP trên HTTPS: ${scan.mixedContent.slice(0, 5).join(", ")}`
     );
-  }
-
-
-  // ==================== GETTER METHODS ====================
-
-  async getTitle(): Promise<string> {
-    return await this.page.title();
-  }
-
-  async getMetaDescription(): Promise<string | null> {
-    return await this.getMetaContent("description");
-  }
-
-  async getH1Elements(): Promise<string[]> {
-    return await this.getAllElementsText("h1");
-  }
-
-  async getAllHeadings(): Promise<{ tag: string; text: string }[]> {
-    return await this.page.evaluate(() => {
-      const headings: { tag: string; text: string }[] = [];
-      document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((el) => {
-        headings.push({ tag: el.tagName.toLowerCase(), text: (el.textContent || "").trim() });
-      });
-      return headings;
-    });
-  }
-
-  async getBodyText(): Promise<string> {
-    return await this.page.evaluate(() => {
-      const clone = document.body.cloneNode(true) as HTMLElement;
-      clone.querySelectorAll("script, style, noscript, iframe").forEach((el) => el.remove());
-      return (clone.textContent || "").replace(/\s+/g, " ").trim();
-    });
-  }
-
-  async getImages(): Promise<{ src: string; alt: string | null; width: string | null; height: string | null; extension: string; isModernFormat: boolean; sizeBytes: number | null }[]> {
-    return await this.page.evaluate(() => {
-      return Array.from(document.querySelectorAll("img")).map((img) => {
-        const src = img.getAttribute("src") || (img as HTMLImageElement).currentSrc || "";
-        let extension = "";
-        try {
-          const urlObj = new URL(src, window.location.origin);
-          const extMatch = urlObj.pathname.match(/\.([a-zA-Z0-9]+)$/);
-          if (extMatch) extension = extMatch[1].toLowerCase();
-        } catch (e) { }
-
-        let isModernFormat = extension === "webp" || extension === "avif";
-
-        const parent = img.parentElement;
-        if (!isModernFormat && parent && parent.tagName.toLowerCase() === "picture") {
-          const sources = Array.from(parent.querySelectorAll("source"));
-          const modernSource = sources.find(s => s.type === "image/webp" || s.type === "image/avif");
-          if (modernSource) isModernFormat = true;
-        }
-
-        return {
-          src,
-          alt: img.getAttribute("alt"),
-          width: img.getAttribute("width") || img.style.width || null,
-          height: img.getAttribute("height") || img.style.height || null,
-          extension,
-          isModernFormat,
-          sizeBytes: null
-        };
-      });
-    });
-  }
-
-  async getInternalLinks(): Promise<{ href: string; text: string }[]> {
-    const currentHost = new URL(this.getCurrentUrl()).hostname;
-    return await this.page.evaluate((host) => {
-      return Array.from(document.querySelectorAll("a[href]"))
-        .filter((a) => {
-          const href = a.getAttribute("href") || "";
-          try {
-            const url = new URL(href, window.location.origin);
-            return url.hostname === host || href.startsWith("/") || href.startsWith("#");
-          } catch { return href.startsWith("/") || href.startsWith("#"); }
-        })
-        .map((a) => {
-          let text = (a.textContent || "").trim();
-          if (!text) {
-            const img = a.querySelector("img");
-            if (img) text = (img.getAttribute("alt") || "").trim();
-          }
-          if (!text) {
-            text = (a.getAttribute("aria-label") || "").trim();
-          }
-          return { href: a.getAttribute("href") || "", text };
-        });
-    }, currentHost);
-  }
-
-  async getExternalLinks(): Promise<{ href: string; text: string; rel: string | null }[]> {
-    const currentHost = new URL(this.getCurrentUrl()).hostname;
-    return await this.page.evaluate((host) => {
-      return Array.from(document.querySelectorAll("a[href]"))
-        .filter((a) => {
-          const href = a.getAttribute("href") || "";
-          try {
-            const url = new URL(href, window.location.origin);
-            return url.hostname !== host && !href.startsWith("/") && !href.startsWith("#");
-          } catch { return false; }
-        })
-        .map((a) => {
-          let text = (a.textContent || "").trim();
-          if (!text) {
-            const img = a.querySelector("img");
-            if (img) text = (img.getAttribute("alt") || "").trim();
-          }
-          if (!text) {
-            text = (a.getAttribute("aria-label") || "").trim();
-          }
-          return { href: a.getAttribute("href") || "", text, rel: a.getAttribute("rel") };
-        });
-    }, currentHost);
-  }
-
-  async getCanonicalUrl(): Promise<string | null> {
-    return await this.page.evaluate(() => {
-      const link = document.querySelector('link[rel="canonical"]');
-      return link ? link.getAttribute("href") : null;
-    });
-  }
-
-  async getRobotsContent(): Promise<string | null> {
-    return await this.getMetaContent("robots");
-  }
-
-  async hasSchemaMarkup(): Promise<boolean> {
-    return await this.page.evaluate(() => {
-      if (document.querySelectorAll('script[type="application/ld+json"]').length > 0) return true;
-      if (document.querySelectorAll("[itemscope]").length > 0) return true;
-      return document.querySelectorAll("[vocab]").length > 0;
-    });
-  }
-
-  async getOpenGraphTags(): Promise<Record<string, string>> {
-    return await this.page.evaluate(() => {
-      const tags: Record<string, string> = {};
-      document.querySelectorAll('meta[property^="og:"]').forEach((meta) => {
-        const p = meta.getAttribute("property"), c = meta.getAttribute("content");
-        if (p && c) tags[p] = c;
-      });
-      return tags;
-    });
-  }
-
-  async getTwitterCardTags(): Promise<Record<string, string>> {
-    return await this.page.evaluate(() => {
-      const tags: Record<string, string> = {};
-      document.querySelectorAll('meta[name^="twitter:"]').forEach((meta) => {
-        const n = meta.getAttribute("name"), c = meta.getAttribute("content");
-        if (n && c) tags[n] = c;
-      });
-      return tags;
-    });
-  }
-
-  async getLangAttribute(): Promise<string | null> {
-    return await this.page.evaluate(() => document.documentElement.getAttribute("lang"));
-  }
-
-  async getCharset(): Promise<string | null> {
-    return await this.page.evaluate(() => {
-      const meta = document.querySelector("meta[charset]");
-      if (meta) return meta.getAttribute("charset");
-      const httpEquiv = document.querySelector('meta[http-equiv="Content-Type"]');
-      if (httpEquiv) {
-        const match = (httpEquiv.getAttribute("content") || "").match(/charset=([^\s;]+)/i);
-        return match ? match[1] : null;
-      }
-      return null;
-    });
-  }
-
-  async hasFavicon(): Promise<boolean> {
-    return await this.page.evaluate(() => {
-      return document.querySelector('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]') !== null;
-    });
-  }
-
-  async hasViewportMeta(): Promise<boolean> {
-    const content = await this.getMetaContent("viewport");
-    return content !== null && content.length > 0;
-  }
-
-  isHttps(): boolean {
-    return this.getCurrentUrl().startsWith("https://");
-  }
-
-  async getMixedContent(): Promise<string[]> {
-    if (!this.isHttps()) return [];
-    return await this.page.evaluate(() => {
-      const mixed: string[] = [];
-      document.querySelectorAll("img[src], script[src], link[href], iframe[src], video[src], audio[src], source[src]").forEach((el) => {
-        const url = el.getAttribute("src") || el.getAttribute("href") || "";
-        if (url.startsWith("http://")) mixed.push(url);
-      });
-      return mixed;
-    });
-  }
-
-  async getHreflangs(): Promise<{ rel: string; href: string; lang: string }[]> {
-    return await this.page.evaluate(() => {
-      return Array.from(document.querySelectorAll('link[rel="alternate"][hreflang]')).map(link => ({
-        rel: link.getAttribute("rel") || "",
-        href: link.getAttribute("href") || "",
-        lang: link.getAttribute("hreflang") || ""
-      }));
-    });
-  }
-
-  async getCssFiles(): Promise<string[]> {
-    return await this.page.evaluate(() => {
-      return Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
-        .map(link => link.getAttribute("href") || "");
-    });
-  }
-
-  async getMobileMetrics(): Promise<{ minFontSize: number; badTouchTargets: number }> {
-    return await this.page.evaluate(() => {
-      let minSize = 16;
-      document.querySelectorAll("body, p, span, a").forEach((el) => {
-        const style = window.getComputedStyle(el);
-        const size = parseFloat(style.fontSize);
-        if (size > 0 && size < minSize) minSize = size;
-      });
-
-      let badTargets = 0;
-      document.querySelectorAll("button, a, input").forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.width > 0 && rect.height > 0) {
-          if (rect.width < 48 || rect.height < 48) badTargets++;
-        }
-      });
-      return { minFontSize: Math.round(minSize), badTouchTargets: badTargets };
-    });
   }
 }

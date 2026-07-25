@@ -128,7 +128,7 @@ jobs:
             git reset --hard
             git commit --allow-empty -m "Initialize gh-pages branch"
             git push origin gh-pages
-            git checkout -f ${{ github.ref_name }}
+            git checkout -f -
           else
             echo "Branch gh-pages already exists."
           fi
@@ -181,10 +181,17 @@ jobs:
       - name: Save Allure reports
         run: |
           mkdir -p allure-history
-          cp -r allure-report "allure-history/${{ github.run_number }}"
-          if [ -d target/allure-results/history ]; then
+          # Copy toàn bộ báo cáo mới nhất ra thư mục gốc để truy cập link chính
+          cp -r allure-report/* allure-history/
+          
+          # Lưu thêm 1 bản copy theo run_number để giữ lịch sử
+          mkdir -p "allure-history/${{ github.run_number }}"
+          cp -r allure-report/* "allure-history/${{ github.run_number }}/"
+          
+          # Lưu history data MỚI NHẤT cho lần chạy sau
+          if [ -d allure-report/history ]; then
             mkdir -p allure-history/last-history
-            cp -r target/allure-results/history/* allure-history/last-history/
+            cp -r allure-report/history/* allure-history/last-history/
           fi
 
       - name: Host Dashboard on GitHub Pages
@@ -194,6 +201,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
+          keep_files: true
 
       - name: Publish Test Report Link
         if: github.event_name != 'pull_request'
