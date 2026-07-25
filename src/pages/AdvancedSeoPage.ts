@@ -13,10 +13,18 @@ import { AdvancedDomExtractor } from "./extractors/AdvancedDomExtractor";
 import { AdvancedSeoScanner } from "./scanners/AdvancedSeoScanner";
 
 export class AdvancedSeoPage extends SeoPage {
-  async scanAdvancedSEO(baseScan: SeoScanResult, config: SeoPageTestData): Promise<AdvancedSeoScanResult> {
+  async scanAdvancedSEO(
+    baseScan: SeoScanResult, 
+    config: SeoPageTestData,
+    apiResults: {
+      contentEvaluation?: any;
+      coreWebVitals?: any;
+      serpData?: any;
+    } = {}
+  ): Promise<AdvancedSeoScanResult> {
     const advExtractor = new AdvancedDomExtractor(this.page);
     const advScanner = new AdvancedSeoScanner(this.page, advExtractor);
-    return advScanner.scanAdvancedSEO(baseScan, config);
+    return advScanner.scanAdvancedSEO(baseScan, config, apiResults);
   }
 
   // ==================== VISUAL REPORT ====================
@@ -82,7 +90,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B1 — SEMANTIC SEO (ADVANCED)");
+    sc.startGroup("SEMANTIC SEO (ADVANCED)");
     // B1.2 — Entity SEO (từ LLM)
     const evalData = scan.contentEvaluation;
     if (evalData) {
@@ -147,7 +155,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B2 — E-E-A-T");
+    sc.startGroup("E-E-A-T");
     await sc.check(
       `B2.1 — Thông tin tác giả: ${scan.hasAuthorInfo ? "Có" : "Thiếu"}`,
       scan.hasAuthorInfo,
@@ -189,7 +197,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B3 — SCHEMA MARKUP");
+    sc.startGroup("SCHEMA MARKUP");
     const { schemaAnalysis } = scan;
     const expectedTypes = config.expectedSchemaTypes || [];
 
@@ -250,7 +258,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B4 — CRAWLABILITY");
+    sc.startGroup("CRAWLABILITY");
     await sc.check(
       `B4.1 — Không phải Soft 404`,
       !scan.isSoft404,
@@ -289,7 +297,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B5 — INTERNAL LINKING");
+    sc.startGroup("INTERNAL LINKING");
     // B5.1 — Breadcrumb DOM
     await sc.check(
       `B5.1 — Breadcrumb navigation: ${scan.hasBreadcrumb ? "Có" : "Thiếu"}`,
@@ -320,7 +328,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B5 — ANCHOR DIVERSITY");
+    sc.startGroup("ANCHOR DIVERSITY");
     const { anchorDiversity } = scan;
     const threshold = config.anchorDiversityThreshold ?? 70;
 
@@ -346,7 +354,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B6 — PERFORMANCE (ADV)");
+    sc.startGroup("PERFORMANCE (ADV)");
     const maxTTFB = config.maxTTFB ?? DEFAULT_ADVANCED_SEO_CONFIG.maxTTFB;
     const maxDOM = config.maxDOMSize ?? DEFAULT_ADVANCED_SEO_CONFIG.maxDOMSize;
     const perf = scan.performance;
@@ -419,7 +427,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B6 — THIRD-PARTY SCRIPTS");
+    sc.startGroup("THIRD-PARTY SCRIPTS");
     const { thirdPartyScripts } = scan;
     const maxAllowed = config.maxThirdPartyScripts ?? 5;
 
@@ -438,7 +446,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B7 — UX SIGNALS");
+    sc.startGroup("UX SIGNALS");
     await sc.check(
       `B7.1 — Intrusive Interstitials: ${scan.hasIntrusiveInterstitials ? "Phát hiện" : "Không có"}`,
       !scan.hasIntrusiveInterstitials,
@@ -472,7 +480,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
-    sc.startGroup("B8 — URL CONSISTENCY");
+    sc.startGroup("URL CONSISTENCY");
     await sc.check(
       `B8.1 — WWW Redirect: ${scan.wwwRedirectOk ? "OK" : "Lỗi"}`,
       scan.wwwRedirectOk,

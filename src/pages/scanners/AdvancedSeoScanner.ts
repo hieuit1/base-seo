@@ -10,7 +10,15 @@ import { SerpService } from "../../services/SerpService";
 export class AdvancedSeoScanner {
   constructor(private page: Page, private extractor: AdvancedDomExtractor) { }
 
-  async scanAdvancedSEO(baseScan: SeoScanResult, config: SeoPageTestData): Promise<AdvancedSeoScanResult> {
+  async scanAdvancedSEO(
+    baseScan: SeoScanResult, 
+    config: SeoPageTestData,
+    apiResults: {
+      contentEvaluation?: any;
+      coreWebVitals?: any;
+      serpData?: any;
+    } = {}
+  ): Promise<AdvancedSeoScanResult> {
     const origin = new URL(baseScan.currentUrl).origin;
 
     const [
@@ -60,24 +68,7 @@ export class AdvancedSeoScanner {
     // B5.4 — Anchor diversity (sync, không cần await)
     const anchorDiversity = this.extractor.analyzeAnchorDiversity(baseScan.internalLinks);
 
-    // Phase 2 APIs — chạy song song
-    const pageContent = await this.page.evaluate(() => document.body.innerText);
-
-    const llmService = new LLMService();
-    const pageSpeedService = new PageSpeedService();
-    const serpService = new SerpService();
-
-    const [contentEval, cwVitals, serpData] = await Promise.all([
-      llmService.isAvailable()
-        ? llmService.evaluateContentQuality(config.keyword, pageContent)
-        : Promise.resolve(null),
-      pageSpeedService.isAvailable()
-        ? pageSpeedService.getCoreWebVitals(baseScan.currentUrl)
-        : Promise.resolve(null),
-      serpService.isAvailable()
-        ? serpService.analyzeSerp(new URL(baseScan.currentUrl).hostname, config.keyword)
-        : Promise.resolve(null),
-    ]);
+    // API results are now passed from the spec to allow parallel execution
 
     return {
       // B2. E-E-A-T
@@ -124,9 +115,9 @@ export class AdvancedSeoScanner {
       featuredSnippetCheck,
 
       // Phase 2 APIs
-      contentEvaluation: contentEval,
-      coreWebVitals: cwVitals,
-      serpData: serpData,
+      contentEvaluation: apiResults.contentEvaluation || null,
+      coreWebVitals: apiResults.coreWebVitals || null,
+      serpData: apiResults.serpData || null,
     };
   }
 }

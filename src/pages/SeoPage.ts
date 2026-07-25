@@ -10,10 +10,10 @@ import { DomExtractor } from "./extractors/DomExtractor";
 import { SeoScanner } from "./scanners/SeoScanner";
 
 export class SeoPage extends BasePage {
-  async scanSEOMetadata(keyword: string): Promise<SeoScanResult> {
+  async scanSEOMetadata(keyword: string, rawHtml?: string, passedHeaders?: Record<string, string>): Promise<SeoScanResult> {
     const domExtractor = new DomExtractor(this.page);
     const seoScanner = new SeoScanner(this.page, domExtractor);
-    return seoScanner.scanSEOMetadata(keyword);
+    return seoScanner.scanSEOMetadata(keyword, rawHtml, passedHeaders);
   }
 
   // ==================== VISUAL REPORT ====================

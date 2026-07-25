@@ -2,7 +2,7 @@ import { test } from "../src/fixtures/baseTest";
 import { allure } from "allure-playwright";
 import { customStep, SeoScorecard } from "../src/utils/reportHelper";
 import { seoTestData } from "../src/test-data/seoData";
-import { SeoScanResult } from "../src/pages/SeoPage";
+import { SeoScanResult } from "../src/interfaces/SeoScanResult";
 import { DEFAULT_SEO_CONFIG } from "../src/constants/seoDefaults";
 import { PageSpeedService } from "../src/services/PageSpeedService";
 
@@ -35,9 +35,16 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
         const scorecard = new SeoScorecard();
         const pageSpeedService = new PageSpeedService();
 
+        // ── KÍCH HOẠT API SONG SONG NGAY TỪ ĐẦU ──
+        const fullUrl = new URL(config.path, process.env.BASE_URL as string).href;
+        const vitalsPromise = config.checkCoreWebVitals !== false
+            ? pageSpeedService.getCoreWebVitals(fullUrl)
+            : Promise.resolve(null);
+
         // ── STEP 1: Truy cập trang ──
+        let navigationResponse: any;
         await customStep(page, `1. Truy cập trang: ${config.name}`, async () => {
-          await page.goto(config.path, { waitUntil: "domcontentloaded" });
+          navigationResponse = await page.goto(config.path, { waitUntil: "domcontentloaded" });
         });
 
         // ── STEP 2: Quét toàn bộ dữ liệu SEO ──
@@ -45,14 +52,14 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
         let vitals: any = null;
 
         await customStep(page, "2. Quét toàn bộ dữ liệu Technical SEO & Performance", async () => {
-          // Khởi chạy quét DOM và API Google song song để tiết kiệm thời gian
-          const [scanResult, vitalsResult] = await Promise.all([
-            seoPage.scanSEOMetadata(config.keyword),
-            pageSpeedService.getCoreWebVitals(page.url())
-          ]);
+          const rawHtml = navigationResponse ? await navigationResponse.text() : undefined;
+          const passedHeaders = navigationResponse ? navigationResponse.headers() : undefined;
+          
+          const scanPromise = seoPage.scanSEOMetadata(config.keyword, rawHtml, passedHeaders);
+          const [scanResult, vitalsResult] = await Promise.all([scanPromise, vitalsPromise]);
           scan = scanResult;
           vitals = vitalsResult;
-          
+
           await seoPage.injectVisualSEOReport(config.name, scan, config);
         });
 

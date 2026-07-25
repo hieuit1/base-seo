@@ -20,6 +20,7 @@ export interface SeoPageTestData {
   maxImageSizeKb?: number;
   modernImageRatio?: number;
   languages?: string[]; // Thêm ngôn ngữ hỗ trợ (VD: ['vi', 'en'])
+  checkCoreWebVitals?: boolean; // Bật/tắt gọi PageSpeed API
 
   // ═══════ PHẦN B: Tiêu chuẩn chuyên sâu (ADVANCED) ═══════
   checkAdvanced?: boolean;            // Bật/tắt kiểm tra Phần B (default: false)
@@ -41,6 +42,7 @@ export const seoTestData: SeoPageTestData[] = [
     keyword: "Thuê văn phòng Bình Dương", // ← Thay bằng keyword thực tế
     expectIndexable: true,
     checkSocialOg: true,
+    checkCoreWebVitals: false,
     priority: "critical",
     severity: "blocker",
   },

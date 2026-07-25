@@ -6,23 +6,28 @@ import { CheerioService, StaticSeoData } from "../../services/CheerioService";
 export class SeoScanner {
   constructor(private page: Page, private extractor: DomExtractor) {}
 
-  async scanSEOMetadata(keyword: string): Promise<SeoScanResult> {
+  async scanSEOMetadata(keyword: string, rawHtml?: string, passedHeaders?: Record<string, string>): Promise<SeoScanResult> {
     const currentUrl = this.page.url();
     const urlObj = new URL(currentUrl);
     const urlPath = urlObj.pathname + urlObj.search;
     const isHttps = this.extractor.isHttps();
 
     let staticData: StaticSeoData | undefined;
-    let pageHeaders: Record<string, string> = {};
-    try {
-      const response = await this.page.request.get(currentUrl, { timeout: 10000 });
-      if (response.ok()) {
-        const html = await response.text();
-        staticData = CheerioService.parseStaticHtml(html);
-        pageHeaders = response.headers();
+    let pageHeaders: Record<string, string> = passedHeaders || {};
+    
+    if (rawHtml) {
+      staticData = CheerioService.parseStaticHtml(rawHtml);
+    } else {
+      try {
+        const response = await this.page.request.get(currentUrl, { timeout: 10000 });
+        if (response.ok()) {
+          const html = await response.text();
+          staticData = CheerioService.parseStaticHtml(html);
+          pageHeaders = response.headers();
+        }
+      } catch (e) {
+        console.error(`Không thể lấy Static HTML cho ${currentUrl}:`, e);
       }
-    } catch (e) {
-      console.error(`Không thể lấy Static HTML cho ${currentUrl}:`, e);
     }
 
     const [

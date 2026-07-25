@@ -5,6 +5,9 @@ import { advancedSeoTestData } from "../src/test-data/advancedSeoData";
 import { SeoScanResult } from "../src/interfaces/SeoScanResult";
 import { AdvancedSeoScanResult } from "../src/pages/AdvancedSeoPage";
 import { DEFAULT_SEO_CONFIG } from "../src/constants/seoDefaults";
+import { PageSpeedService } from "../src/services/PageSpeedService";
+import { SerpService } from "../src/services/SerpService";
+import { LLMService } from "../src/services/LLMService";
 
 test.describe("SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B", () => {
   test.describe.configure({ mode: "parallel" });
@@ -32,21 +35,51 @@ test.describe("SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B", () => {
         const config = { ...DEFAULT_SEO_CONFIG, ...data };
         const scorecard = new SeoScorecard();
 
+        // ── KÍCH HOẠT API SONG SONG NGAY TỪ ĐẦU ──
+        const fullUrl = new URL(config.path, process.env.BASE_URL as string).href;
+        
+        const pageSpeedService = new PageSpeedService();
+        const serpService = new SerpService();
+        const llmService = new LLMService();
+
+        const vitalsPromise = config.checkCoreWebVitals !== false && pageSpeedService.isAvailable()
+            ? pageSpeedService.getCoreWebVitals(fullUrl)
+            : Promise.resolve(null);
+            
+        const serpPromise = serpService.isAvailable()
+            ? serpService.analyzeSerp(new URL(fullUrl).hostname, config.keyword)
+            : Promise.resolve(null);
+
         // ── STEP 1: Truy cập trang ──
+        let navigationResponse: any;
         await customStep(page, `1. Truy cập trang: ${config.name}`, async () => {
-          await page.goto(config.path, { waitUntil: "domcontentloaded" });
+          navigationResponse = await page.goto(config.path, { waitUntil: "domcontentloaded" });
         });
+
+        // Kích hoạt LLM song song với parse DOM vì đã có pageContent
+        const pageContent = await page.evaluate(() => document.body.innerText);
+        const llmPromise = llmService.isAvailable()
+            ? llmService.evaluateContentQuality(config.keyword, pageContent)
+            : Promise.resolve(null);
 
         // ── STEP 2: Quét dữ liệu SEO cơ bản (reuse Phần A) ──
         let baseScan: SeoScanResult;
         await customStep(page, "2. Quét dữ liệu SEO cơ bản (Phần A)", async () => {
-          baseScan = await advancedSeoPage.scanSEOMetadata(config.keyword);
+          const rawHtml = navigationResponse ? await navigationResponse.text() : undefined;
+          const passedHeaders = navigationResponse ? navigationResponse.headers() : undefined;
+          baseScan = await advancedSeoPage.scanSEOMetadata(config.keyword, rawHtml, passedHeaders);
         });
 
         // ── STEP 3: Quét dữ liệu SEO chuyên sâu (Phần B) ──
         let advScan: AdvancedSeoScanResult;
-        await customStep(page, "3. Quét dữ liệu SEO chuyên sâu (Phần B)", async () => {
-          advScan = await advancedSeoPage.scanAdvancedSEO(baseScan!, config);
+        await customStep(page, "3. Quét dữ liệu SEO chuyên sâu (Phần B) và chờ APIs", async () => {
+          const [contentEval, cwVitals, serpData] = await Promise.all([llmPromise, vitalsPromise, serpPromise]);
+          
+          advScan = await advancedSeoPage.scanAdvancedSEO(baseScan!, config, {
+            contentEvaluation: contentEval,
+            coreWebVitals: cwVitals,
+            serpData: serpData
+          });
           await advancedSeoPage.injectAdvancedVisualSEOReport(config.name, advScan, config);
         });
 
