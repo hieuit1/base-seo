@@ -160,9 +160,21 @@ jobs:
       - name: Create environment.properties
         run: |
           mkdir -p target/allure-results
+          
+          ENV_NAME="${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}"
+          ENV_FILE="src/config/.env.$ENV_NAME"
+          
+          if [ -f "$ENV_FILE" ]; then
+            # Lấy BASE_URL từ file .env tương ứng và xoá ký tự xuống dòng (nếu có)
+            EXTRACTED_URL=$(grep -i '^BASE_URL=' "$ENV_FILE" | cut -d '=' -f2 | tr -d '\r' | tr -d ' ')
+          fi
+          
+          # Ưu tiên lấy trong file .env, nếu không có mới fallback về biến GitHub
+          FINAL_BASE_URL="${EXTRACTED_URL:-${{ vars.BASE_URL }}}"
+          
           cat <<EOF > target/allure-results/environment.properties
-          BaseURL=${{ vars.BASE_URL }}
-          Environment=${{ github.event.client_payload.environment || github.event.inputs.environment || 'production' }}
+          BaseURL=$FINAL_BASE_URL
+          Environment=$ENV_NAME
           Browser=Chromium
           Project=${{ github.event.repository.name }}
           EOF
