@@ -31,6 +31,8 @@ export interface SeoPageTestData {
   checkAccessibility?: boolean;       // B7: Kiểm tra UX/Accessibility signals
   enforceTrailingSlash?: boolean;     // B8: Enforce trailing slash consistency
   advancedPassThreshold?: number;     // Ngưỡng pass riêng cho Phần B (default: 60)
+  maxThirdPartyScripts?: number;      // B6.8: Số lượng third-party script domains tối đa (default: 5)
+  anchorDiversityThreshold?: number;  // B5.4: Tỷ lệ anchor text unique tối thiểu % (default: 70)
 }
 export const seoTestData: SeoPageTestData[] = [
   {

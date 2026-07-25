@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { AdvancedSeoScanResult } from "../pages/AdvancedSeoPage";
+import { AdvancedSeoScanResult } from "../interfaces/AdvancedSeoScanResult";
 import { SeoPageTestData } from "../test-data/seoData";
 import { DEFAULT_ADVANCED_SEO_CONFIG } from "../constants/advancedSeoDefaults";
 
@@ -21,7 +21,20 @@ export async function injectAdvancedVisualSEOReport(
       // ── Định nghĩa các tiêu chí check ──
       const itemsList: { id: string; group: string; name: string; isPass: boolean; err: string }[] = [];
 
+      // ─────────────────────────────────────────────────
+      // B1. Semantic SEO (DOM-based)
+      // ─────────────────────────────────────────────────
+      const fs = data.featuredSnippetCheck;
+      itemsList.push({
+        id: "B1.4", group: "Semantic",
+        name: `Featured Snippet DOM: list=${fs.hasList ? "✔" : "✘"} table=${fs.hasTable ? "✔" : "✘"} (${fs.score}/100)`,
+        isPass: fs.score >= 30,
+        err: `Cấu trúc FS yếu (${fs.score}/100)`
+      });
+
+      // ─────────────────────────────────────────────────
       // B2. E-E-A-T
+      // ─────────────────────────────────────────────────
       itemsList.push({
         id: "B2.1", group: "E-E-A-T",
         name: `Thông tin tác giả: ${data.hasAuthorInfo ? "Có" : "Thiếu"}`,
@@ -54,7 +67,9 @@ export async function injectAdvancedVisualSEOReport(
         err: "Không có external link dẫn nguồn"
       });
 
+      // ─────────────────────────────────────────────────
       // B3. Schema nâng cao
+      // ─────────────────────────────────────────────────
       const expectedTypes = config.expectedSchemaTypes || [];
       if (expectedTypes.length > 0) {
         const missing = expectedTypes.filter(t => !data.schemaAnalysis.types.includes(t));
@@ -90,8 +105,17 @@ export async function injectAdvancedVisualSEOReport(
         isPass: data.schemaAnalysis.types.includes("BreadcrumbList"),
         err: "Thiếu BreadcrumbList Schema"
       });
+      // B3.6 MỚI — Schema consistency
+      itemsList.push({
+        id: "B3.6", group: "Schema",
+        name: `Schema vs DOM: ${data.schemaConsistency.isConsistent ? "Nhất quán ✔" : `${data.schemaConsistency.issues.length} vấn đề`}`,
+        isPass: data.schemaConsistency.isConsistent,
+        err: data.schemaConsistency.issues.slice(0, 2).join("; ")
+      });
 
+      // ─────────────────────────────────────────────────
       // B4. Crawlability
+      // ─────────────────────────────────────────────────
       itemsList.push({
         id: "B4.1", group: "Crawlability",
         name: `Soft 404: ${data.isSoft404 ? "Phát hiện!" : "Không"}`,
@@ -111,7 +135,9 @@ export async function injectAdvancedVisualSEOReport(
         err: "Canonical không khớp URL hiện tại"
       });
 
+      // ─────────────────────────────────────────────────
       // B5. Internal Linking
+      // ─────────────────────────────────────────────────
       itemsList.push({
         id: "B5.1", group: "Linking",
         name: `Breadcrumb: ${data.hasBreadcrumb ? "Có" : "Thiếu"}`,
@@ -124,8 +150,24 @@ export async function injectAdvancedVisualSEOReport(
         isPass: data.breadcrumbSchema,
         err: "Thiếu BreadcrumbList Schema"
       });
+      // B5.4 MỚI — Anchor diversity
+      const ad = data.anchorDiversity;
+      itemsList.push({
+        id: "B5.4", group: "Linking",
+        name: `Anchor Diversity: ${ad.unique}/${ad.total} unique (${ad.ratio}%)`,
+        isPass: ad.ratio >= 70,
+        err: `Anchor text không đa dạng (${ad.ratio}%)`
+      });
+      itemsList.push({
+        id: "B5.4b", group: "Linking",
+        name: `Anchor chung chung: ${ad.genericCount} link`,
+        isPass: ad.genericCount <= 2,
+        err: `${ad.genericCount} anchor text chung chung`
+      });
 
+      // ─────────────────────────────────────────────────
       // B6. Performance
+      // ─────────────────────────────────────────────────
       const maxTTFB = config.maxTTFB || 800;
       const maxDOM = config.maxDOMSize || 1500;
       const perf = data.performance;
@@ -175,8 +217,17 @@ export async function injectAdvancedVisualSEOReport(
         isPass: responsiveRatio >= 50,
         err: `Chỉ ${responsiveRatio.toFixed(0)}% có srcset`
       });
+      // B6.8 MỚI — Third-party scripts
+      itemsList.push({
+        id: "B6.8", group: "Performance",
+        name: `3rd-party Scripts: ${data.thirdPartyScripts.count} domains`,
+        isPass: data.thirdPartyScripts.count <= 5,
+        err: `${data.thirdPartyScripts.count} 3rd-party domains: ${data.thirdPartyScripts.names.slice(0, 3).join(", ")}`
+      });
 
+      // ─────────────────────────────────────────────────
       // B7. UX Signals
+      // ─────────────────────────────────────────────────
       itemsList.push({
         id: "B7.1", group: "UX",
         name: `Interstitials: ${data.hasIntrusiveInterstitials ? "Phát hiện!" : "Không"}`,
@@ -202,7 +253,9 @@ export async function injectAdvancedVisualSEOReport(
         err: "Thiếu focus styles"
       });
 
+      // ─────────────────────────────────────────────────
       // B8. URL Consistency
+      // ─────────────────────────────────────────────────
       itemsList.push({
         id: "B8.1", group: "URL",
         name: `WWW Redirect: ${data.wwwRedirectOk ? "OK" : "Lỗi"}`,
@@ -228,51 +281,103 @@ export async function injectAdvancedVisualSEOReport(
         err: "Thiếu HSTS header"
       });
 
-      // ── Tính toán điểm ──
-      
-      // Phase 2 APIs (Chỉ tính vào điểm nếu API có trả kết quả)
+      // ─────────────────────────────────────────────────
+      // Phase 2 APIs
+      // ─────────────────────────────────────────────────
       if (data.contentEvaluation) {
+        const ce = data.contentEvaluation;
         itemsList.push({
-          id: "API.1", group: "Semantic (AI)",
-          name: `Khớp Search Intent: ${data.contentEvaluation.isIntentMatched ? "Có" : "Không"}`,
-          isPass: data.contentEvaluation.isIntentMatched,
+          id: "API.1", group: "Semantic (Gemini)",
+          name: `Khớp Search Intent: ${ce.isIntentMatched ? "Có" : "Không"}`,
+          isPass: ce.isIntentMatched,
           err: "Nội dung không khớp intent"
         });
         itemsList.push({
-          id: "API.2", group: "Semantic (AI)",
-          name: `E-E-A-T Score: ${data.contentEvaluation.score}/100`,
-          isPass: data.contentEvaluation.score >= 70,
-          err: `Điểm thấp: ${data.contentEvaluation.score}/100`
+          id: "API.2", group: "Semantic (Gemini)",
+          name: `E-E-A-T Score: ${ce.score}/100`,
+          isPass: ce.score >= 70,
+          err: `Điểm thấp: ${ce.score}/100`
+        });
+        itemsList.push({
+          id: "API.3", group: "Semantic (Gemini)",
+          name: `TF-IDF Relevance: ${ce.tfIdfScore}/100`,
+          isPass: ce.tfIdfScore >= 60,
+          err: `TF-IDF thấp: ${ce.tfIdfScore}/100`
+        });
+        itemsList.push({
+          id: "API.4", group: "Semantic (Gemini)",
+          name: `Entity SEO: ${ce.entities.length} có, ${ce.missingEntities.length} thiếu`,
+          isPass: ce.missingEntities.length === 0,
+          err: `Thiếu entities: ${ce.missingEntities.join(", ")}`
+        });
+        itemsList.push({
+          id: "API.5", group: "Semantic (Gemini)",
+          name: `Featured Snippet (AI): ${ce.featuredSnippetScore}/100 | Direct Answer: ${ce.hasDirectAnswer ? "✔" : "✘"}`,
+          isPass: ce.featuredSnippetScore >= 50,
+          err: `FS tiềm năng thấp: ${ce.featuredSnippetScore}/100`
         });
       }
 
       if (data.coreWebVitals) {
-        if (data.coreWebVitals.lcp !== null) {
+        const cw = data.coreWebVitals;
+        if (cw.lcp !== null) {
           itemsList.push({
-            id: "API.3", group: "CrUX",
-            name: `LCP (Thực tế): ${data.coreWebVitals.lcp}ms`,
-            isPass: data.coreWebVitals.lcp <= 2500,
-            err: `LCP chậm (${data.coreWebVitals.lcp}ms)`
+            id: "CrUX.1", group: "CrUX",
+            name: `LCP: ${cw.lcp}ms`,
+            isPass: cw.lcp <= 2500,
+            err: `LCP chậm (${cw.lcp}ms)`
           });
         }
-        if (data.coreWebVitals.cls !== null) {
+        if (cw.cls !== null) {
           itemsList.push({
-            id: "API.4", group: "CrUX",
-            name: `CLS (Thực tế): ${data.coreWebVitals.cls}`,
-            isPass: data.coreWebVitals.cls <= 0.1,
-            err: `CLS cao (${data.coreWebVitals.cls})`
+            id: "CrUX.2", group: "CrUX",
+            name: `CLS: ${cw.cls}`,
+            isPass: cw.cls <= 0.1,
+            err: `CLS cao (${cw.cls})`
+          });
+        }
+        if (cw.inp !== null) {
+          itemsList.push({
+            id: "CrUX.3", group: "CrUX",
+            name: `INP: ${cw.inp}ms`,
+            isPass: cw.inp <= 200,
+            err: `INP cao (${cw.inp}ms)`
+          });
+        }
+        if (cw.score !== null) {
+          itemsList.push({
+            id: "CrUX.4", group: "CrUX",
+            name: `PageSpeed Score: ${cw.score}/100`,
+            isPass: cw.score >= 70,
+            err: `Score thấp (${cw.score}/100)`
           });
         }
       }
 
       if (data.serpData) {
         itemsList.push({
-          id: "API.5", group: "SERP",
+          id: "SERP.1", group: "SERP",
           name: `Cannibalization: ${data.serpData.competingPagesCount > 1 ? "Có" : "Không"}`,
           isPass: data.serpData.competingPagesCount <= 1,
           err: `Cạnh tranh: ${data.serpData.competingPagesCount} trang`
         });
+        itemsList.push({
+          id: "SERP.2", group: "SERP",
+          name: `PAA: ${data.serpData.hasPaa ? `Có (${data.serpData.paaQuestions.length} câu)` : "Không"}`,
+          isPass: data.serpData.hasPaa,
+          err: "Không có PAA cho từ khóa này"
+        });
+        if (data.serpData.rank !== null) {
+          itemsList.push({
+            id: "SERP.3", group: "SERP",
+            name: `Vị trí xếp hạng: #${data.serpData.rank}`,
+            isPass: data.serpData.rank <= 10,
+            err: `Xếp hạng #${data.serpData.rank} — ngoài top 10`
+          });
+        }
       }
+
+      // ── Tính toán điểm ──
       const failedItems = itemsList.filter(item => !item.isPass);
       const passedCount = itemsList.length - failedItems.length;
       const score = Math.round((passedCount / itemsList.length) * 100);
@@ -357,7 +462,6 @@ export async function injectAdvancedVisualSEOReport(
         </div>
         `;
       } else {
-        // Group failed items by category
         let groupedHtml = "";
         for (const group of groups) {
           const groupItems = failedItems.filter(i => i.group === group);
