@@ -21,6 +21,7 @@ export async function customStep(
 // ==================== SEO SCORECARD ====================
 
 interface ScorecardFailure {
+    group: string;
     step: string;
     message: string;
 }
@@ -29,6 +30,12 @@ export class SeoScorecard {
     private totalChecks = 0;
     private passedChecks = 0;
     private failures: ScorecardFailure[] = [];
+    private currentGroup: string = "KHÁC";
+
+    /** Bắt đầu một nhóm tiêu chí mới (vd: "META DESCRIPTION") */
+    startGroup(groupName: string) {
+        this.currentGroup = groupName;
+    }
 
     /**
      * Wrap 1 tiêu chí SEO con vào allure.step().
@@ -51,7 +58,7 @@ export class SeoScorecard {
             });
         } else {
             // ❌ FAIL — ép Allure hiện đỏ nhưng KHÔNG crash test
-            this.failures.push({ step: stepName, message: errorMessage });
+            this.failures.push({ group: this.currentGroup, step: stepName, message: errorMessage });
             try {
                 await allure.step(`❌ ${stepName}`, async () => {
                     await allure.attachment(
@@ -128,11 +135,24 @@ export class SeoScorecard {
         ];
 
         if (failures.length > 0) {
-            summaryLines.push(``, `📋 CHI TIẾT LỖI:`);
-            failures.forEach((f, i) => {
-                summaryLines.push(`   ${i + 1}. [${f.step}]`);
-                summaryLines.push(`      → ${f.message}`);
-            });
+            summaryLines.push(``, `📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (${failed}/${total}):`);
+            
+            // Group errors by their assigned group
+            const groupedFailures = failures.reduce((acc, f) => {
+                if (!acc[f.group]) acc[f.group] = [];
+                acc[f.group].push(f);
+                return acc;
+            }, {} as Record<string, ScorecardFailure[]>);
+
+            let globalIndex = 1;
+            for (const [group, items] of Object.entries(groupedFailures)) {
+                summaryLines.push(`--- ${group.toUpperCase()} ---`);
+                items.forEach((f) => {
+                    summaryLines.push(`   ${globalIndex}. [${f.step}]`);
+                    summaryLines.push(`      → ${f.message}`);
+                    globalIndex++;
+                });
+            }
         }
 
         const summaryText = summaryLines.join("\n");

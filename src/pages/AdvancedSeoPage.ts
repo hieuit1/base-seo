@@ -55,6 +55,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B1 — SEMANTIC SEO");
     const evalData = scan.contentEvaluation;
     if (!evalData) {
       // Bỏ qua nếu không có API key
@@ -81,6 +82,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B1 — SEMANTIC SEO (ADVANCED)");
     // B1.2 — Entity SEO (từ LLM)
     const evalData = scan.contentEvaluation;
     if (evalData) {
@@ -145,6 +147,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B2 — E-E-A-T");
     await sc.check(
       `B2.1 — Thông tin tác giả: ${scan.hasAuthorInfo ? "Có" : "Thiếu"}`,
       scan.hasAuthorInfo,
@@ -186,6 +189,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B3 — SCHEMA MARKUP");
     const { schemaAnalysis } = scan;
     const expectedTypes = config.expectedSchemaTypes || [];
 
@@ -246,6 +250,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B4 — CRAWLABILITY");
     await sc.check(
       `B4.1 — Không phải Soft 404`,
       !scan.isSoft404,
@@ -284,6 +289,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B5 — INTERNAL LINKING");
     // B5.1 — Breadcrumb DOM
     await sc.check(
       `B5.1 — Breadcrumb navigation: ${scan.hasBreadcrumb ? "Có" : "Thiếu"}`,
@@ -314,6 +320,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B5 — ANCHOR DIVERSITY");
     const { anchorDiversity } = scan;
     const threshold = config.anchorDiversityThreshold ?? 70;
 
@@ -339,6 +346,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B6 — PERFORMANCE (ADV)");
     const maxTTFB = config.maxTTFB ?? DEFAULT_ADVANCED_SEO_CONFIG.maxTTFB;
     const maxDOM = config.maxDOMSize ?? DEFAULT_ADVANCED_SEO_CONFIG.maxDOMSize;
     const perf = scan.performance;
@@ -411,6 +419,7 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B6 — THIRD-PARTY SCRIPTS");
     const { thirdPartyScripts } = scan;
     const maxAllowed = config.maxThirdPartyScripts ?? 5;
 
@@ -429,6 +438,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B7 — UX SIGNALS");
     await sc.check(
       `B7.1 — Intrusive Interstitials: ${scan.hasIntrusiveInterstitials ? "Phát hiện" : "Không có"}`,
       !scan.hasIntrusiveInterstitials,
@@ -462,6 +472,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("B8 — URL CONSISTENCY");
     await sc.check(
       `B8.1 — WWW Redirect: ${scan.wwwRedirectOk ? "OK" : "Lỗi"}`,
       scan.wwwRedirectOk,
@@ -495,6 +506,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("CORE WEB VITALS");
     const cw = scan.coreWebVitals;
     if (!cw) return;
 
@@ -532,6 +544,7 @@ export class AdvancedSeoPage extends SeoPage {
     scan: AdvancedSeoScanResult,
     sc: SeoScorecard
   ): Promise<void> {
+    sc.startGroup("SERP & COMPETITOR");
     const serp = scan.serpData;
     if (!serp) return;
 

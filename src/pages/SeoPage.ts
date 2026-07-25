@@ -29,6 +29,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực thẻ Title */
   async verifyTitle(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
+    sc.startGroup("TITLE");
     const minLen = data.titleMinLength ?? DEFAULT_SEO_CONFIG.titleMinLength;
     const maxLen = data.titleMaxLength ?? DEFAULT_SEO_CONFIG.titleMaxLength;
     const { titleVal } = scan;
@@ -79,6 +80,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực Meta Description */
   async verifyMetaDescription(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
+    sc.startGroup("META DESCRIPTION");
     const minLen = data.metaDescMinLength ?? DEFAULT_SEO_CONFIG.metaDescMinLength;
     const maxLen = data.metaDescMaxLength ?? DEFAULT_SEO_CONFIG.metaDescMaxLength;
     const { metaVal } = scan;
@@ -120,6 +122,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực cấu trúc Heading */
   async verifyHeadingStructure(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
+    sc.startGroup("HEADING STRUCTURE");
     const { h1Texts, allHeadings, headingHierarchy } = scan;
 
     // Phải có đúng 1 thẻ H1
@@ -163,6 +166,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực cấu trúc URL */
   async verifyUrlStructure(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
+    sc.startGroup("URL STRUCTURE");
     const maxLen = data.urlMaxLength ?? DEFAULT_SEO_CONFIG.urlMaxLength;
     const { urlPath } = scan;
 
@@ -207,6 +211,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực nội dung */
   async verifyContent(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
+    sc.startGroup("CONTENT");
     const minWords = data.minWordCount ?? DEFAULT_SEO_CONFIG.minWordCount;
     const densityMin = data.keywordDensityMin ?? DEFAULT_SEO_CONFIG.keywordDensityMin;
     const densityMax = data.keywordDensityMax ?? DEFAULT_SEO_CONFIG.keywordDensityMax;
@@ -280,6 +285,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực hình ảnh */
   async verifyImages(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
+    sc.startGroup("IMAGES");
     const { images, missingAltCount, imagesWithBadNames, imagesWithDimensions } = scan;
 
     // Tất cả ảnh phải có thuộc tính alt
@@ -340,6 +346,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực liên kết */
   async verifyLinks(scan: SeoScanResult, sc: SeoScorecard) {
+    sc.startGroup("LINKS");
     const { internalLinks, externalLinks } = scan;
 
     // Có ít nhất 1 internal link
@@ -433,6 +440,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực Technical SEO */
   async verifyTechnicalSeo(scan: SeoScanResult, data: SeoPageTestData, sc: SeoScorecard) {
+    sc.startGroup("TECHNICAL SEO");
     // Canonical URL
     const isCanonicalOk = !!scan.canonical && /^https?:\/\//.test(scan.canonical);
     await sc.check(
@@ -533,6 +541,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực Mobile */
   async verifyMobile(scan: SeoScanResult, sc: SeoScorecard) {
+    sc.startGroup("MOBILE");
     await sc.check(
       `Viewport meta tag: ${scan.hasViewport ? "✔" : "✘"}`,
       scan.hasViewport,
@@ -554,6 +563,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực Tối ưu hoá (Compression, Cache, Minify) */
   async verifyPageOptimization(scan: SeoScanResult, sc: SeoScorecard) {
+    sc.startGroup("PAGE OPTIMIZATION");
     const headers = scan.pageHeaders || {};
 
     // Gzip / Brotli
@@ -583,6 +593,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực Core Web Vitals (Tốc độ tải trang) */
   async verifyPerformance(vitals: any, sc: SeoScorecard) {
+    sc.startGroup("PERFORMANCE");
     if (!vitals) {
       await sc.check(`Core Web Vitals & Tốc độ tải trang`, true, "Bỏ qua — Không có dữ liệu (API Key lỗi hoặc timeout)");
       return;
@@ -615,6 +626,7 @@ export class SeoPage extends BasePage {
 
   /** Xác thực Bảo mật */
   async verifySecurity(scan: SeoScanResult, sc: SeoScorecard) {
+    sc.startGroup("SECURITY");
     // HTTPS
     await sc.check(
       `HTTPS: ${scan.isHttps ? "Đã bật" : "Chưa bật"}`,
