@@ -1,0 +1,1 @@
+2 link có anchor text không tốt: "" → #menu, "Xem thêm" → gioi-thieu 
