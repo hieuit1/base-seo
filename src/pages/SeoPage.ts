@@ -359,12 +359,15 @@ export class SeoPage extends BasePage {
     // External links (khuyến nghị, không bắt buộc)
     await sc.check(
       `External links: ${externalLinks.length} link`,
-      true, // Luôn PASS — chỉ là khuyến nghị
+      externalLinks.length > 0,
       "Trang không có external links — không bắt buộc nhưng nên có"
     );
 
     // Anchor text chất lượng
-    const genericAnchors = ["click here", "here", "read more", "xem thêm", "nhấn vào đây", "tại đây"];
+    const genericAnchors = [
+      "click here", "here", "read more", "xem thêm", "nhấn vào đây", "tại đây", 
+      "chi tiết", "xem chi tiết", "tìm hiểu thêm"
+    ];
     const badAnchors = internalLinks.filter((link) => {
       const text = link.text.trim().toLowerCase();
       return text === "" || genericAnchors.includes(text);
@@ -376,57 +379,68 @@ export class SeoPage extends BasePage {
       `${badAnchors.length} link có anchor text không tốt: ${badAnchors.slice(0, 5).map((l) => `"${l.text}" → ${l.href}`).join(", ")} ${extraBadAnchors}`
     );
 
-    // Kiểm tra broken internal links & redirect chain (tối đa 10)
+    // Kiểm tra broken links & redirect chain (tối đa 100 links kết hợp, batch 20)
     const origin = new URL(scan.currentUrl).origin;
     const brokenLinks: string[] = [];
     const redirectChains: { from: string; to: string; count: number }[] = [];
 
-    const linksToCheck = internalLinks
-      .filter((l) => l.href && !l.href.startsWith("#") && !l.href.startsWith("javascript:") && !l.href.startsWith("mailto:") && !l.href.startsWith("tel:"))
-      .slice(0, 10);
+    const isCheckable = (href: string) => href && !href.startsWith("#") && !href.startsWith("javascript:") && !href.startsWith("mailto:") && !href.startsWith("tel:");
+    
+    // Gộp cả internal và external, lọc các link hợp lệ
+    const allLinks = [...internalLinks, ...externalLinks]
+      .filter((l) => isCheckable(l.href))
+      .map(l => l.href);
+      
+    // Lấy danh sách link unique để không check trùng
+    const uniqueLinks = Array.from(new Set(allLinks)).slice(0, 100);
 
-    await Promise.all(
-      linksToCheck.map(async (link) => {
-        const fullUrl = link.href.startsWith("http") ? link.href : `${origin}${link.href}`;
+    const CHUNK_SIZE = 20;
+    for (let i = 0; i < uniqueLinks.length; i += CHUNK_SIZE) {
+      const chunk = uniqueLinks.slice(i, i + CHUNK_SIZE);
+      
+      await Promise.all(
+        chunk.map(async (href) => {
+          const fullUrl = href.startsWith("http") ? href : `${origin}${href}`;
 
-        let current = fullUrl;
-        let count = 0;
-        const visited = new Set<string>();
+          let current = fullUrl;
+          let count = 0;
+          const visited = new Set<string>();
 
-        while (count < 10) {
-          if (visited.has(current)) break;
-          visited.add(current);
+          while (count < 10) {
+            if (visited.has(current)) break;
+            visited.add(current);
 
-          try {
-            const resp = await this.page.request.head(current, { timeout: 3000 });
-            if ([301, 302, 307, 308].includes(resp.status())) {
-              const location = resp.headers()["location"];
-              if (location) {
-                current = new URL(location, current).href;
-                count++;
+            try {
+              const resp = await this.page.request.head(current, { timeout: 3000 });
+              if ([301, 302, 307, 308].includes(resp.status())) {
+                const location = resp.headers()["location"];
+                if (location) {
+                  current = new URL(location, current).href;
+                  count++;
+                } else {
+                  break;
+                }
               } else {
+                if (count === 0 && (resp.status() >= 400 || resp.status() === 0)) {
+                  brokenLinks.push(`${href} (status: ${resp.status()})`);
+                }
                 break;
               }
-            } else {
-              if (count === 0 && (resp.status() >= 400 || resp.status() === 0)) {
-                brokenLinks.push(`${link.href} (status: ${resp.status()})`);
-              }
+            } catch (e) {
+              if (count === 0) brokenLinks.push(`${href} (error)`);
               break;
             }
-          } catch (e) {
-            if (count === 0) brokenLinks.push(`${link.href} (error)`);
-            break;
           }
-        }
 
-        if (count > 1) {
-          redirectChains.push({ from: fullUrl, to: current, count });
-        }
-      })
-    );
+          if (count > 1) {
+            redirectChains.push({ from: fullUrl, to: current, count });
+          }
+        })
+      );
+    }
 
     await sc.check(
-      `Không có broken links (lỗi: ${brokenLinks.length}/${linksToCheck.length})`,
+      `Không có broken links (lỗi: ${brokenLinks.length}/${uniqueLinks.length})`,
       brokenLinks.length === 0,
       `Broken links: ${brokenLinks.join(", ")}`
     );
