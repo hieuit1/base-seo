@@ -8,6 +8,7 @@ import { SeoPageTestData } from "../test-data/seoData";
 import { SeoScorecard } from "../utils/reportHelper";
 import { DEFAULT_ADVANCED_SEO_CONFIG } from "../constants/advancedSeoDefaults";
 import { injectAdvancedVisualSEOReport } from "../utils/AdvancedSeoReportHelper";
+import { injectVisualSEOReport } from "../utils/SeoReportHelper";
 import { AdvancedDomExtractor } from "./extractors/AdvancedDomExtractor";
 import { AdvancedSeoScanner } from "./scanners/AdvancedSeoScanner";
 
@@ -26,6 +27,19 @@ export class AdvancedSeoPage extends SeoPage {
     config: SeoPageTestData
   ) {
     await injectAdvancedVisualSEOReport(this.page, pageName, data, config);
+  }
+
+  /**
+   * Inject 1 panel duy nhất hiển thị đầy đủ A+B (54 tiêu chí).
+   * Dùng thay thế cho injectVisualSEOReport + injectAdvancedVisualSEOReport riêng lẻ.
+   */
+  async injectCombinedVisualSEOReport(
+    pageName: string,
+    baseScan: SeoScanResult,
+    advancedScan: AdvancedSeoScanResult,
+    config: SeoPageTestData
+  ) {
+    await injectVisualSEOReport(this.page, pageName, baseScan, config, advancedScan);
   }
 
   // ==================== VERIFY METHODS ====================
