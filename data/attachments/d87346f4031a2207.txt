@@ -1,0 +1,48 @@
+══════════════════════════════════════
+   🔴 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     47/100
+   Đánh giá:    KÉM
+   Ngưỡng đạt:  60%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  32
+   ✅ Đạt:          15
+   ❌ Không đạt:    17
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI:
+   1. [B2.2 — Ngày đăng bài (datePublished): Thiếu]
+      → Thiếu datePublished — Google dùng để đánh giá tính mới của nội dung.
+   2. [B2.3 — Ngày cập nhật (dateModified): Thiếu]
+      → Thiếu dateModified — Bài viết nên hiển thị ngày cập nhật gần nhất.
+   3. [B2.4 — Trust Pages: 0/8 trang tồn tại]
+      → Chỉ 0 trust pages tồn tại. Cần ≥ 2 trong: About, Contact, Privacy Policy.
+   4. [B3.1 — Schema types: [Article, Organization, FAQPage] (kỳ vọng: [Organization, BreadcrumbList])]
+      → Thiếu Schema types: BreadcrumbList
+   5. [B3.2 — Schema có đủ required fields]
+      → Schema thiếu required fields: Article: thiếu fields [datePublished]
+   6. [B3.3 — Schema không có lỗi cú pháp (1 lỗi)]
+      → Lỗi Schema: Article: thiếu fields [datePublished]
+   7. [B3.4 — BreadcrumbList Schema: Thiếu]
+      → Thiếu BreadcrumbList Schema — giúp Google hiểu cấu trúc site tốt hơn.
+   8. [B5.1 — Breadcrumb navigation: Thiếu]
+      → Trang thiếu breadcrumb navigation. Giúp Google hiểu cấu trúc site và cải thiện UX.
+   9. [B5.2 — Breadcrumb Schema (JSON-LD): Thiếu]
+      → Có breadcrumb nhưng thiếu BreadcrumbList Schema. Thêm JSON-LD để hiển thị trên SERP.
+   10. [B6.4 — Resource Hints: preload=0, preconnect=0]
+      → Trang không sử dụng resource hints (preload/preconnect). Thêm để tối ưu tải tài nguyên.
+   11. [B6.5 — Lazy Loading: 4/20 ảnh below-fold (20%)]
+      → Chỉ 20% ảnh below-fold có loading="lazy", cần ≥ 80%.
+   12. [B6.6 — Font Optimization: font-display:swap=✘, preload=0]
+      → Font chưa được tối ưu. Thêm font-display: swap và/hoặc preload font files.
+   13. [B6.7 — Responsive Images: 0/24 ảnh có srcset]
+      → Chỉ 0% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
+   14. [B7.3 — ARIA Labels thiếu: 9 phần tử]
+      → 9 phần tử interactive thiếu ARIA label. Ảnh hưởng accessibility.
+   15. [B8.1 — WWW Redirect: Lỗi]
+      → www ↔ non-www không redirect đúng. Có thể gây duplicate content.
+   16. [B8.2 — HTTPS Redirect: Lỗi]
+      → HTTP không redirect sang HTTPS. Ảnh hưởng bảo mật và SEO.
+   17. [B8.4 — HSTS (Strict-Transport-Security): Thiếu]
+      → Thiếu HSTS header. Browser không bắt buộc dùng HTTPS, có thể bị downgrade attack.
