@@ -418,28 +418,63 @@ export class SeoPage extends BasePage {
             visited.add(current);
 
             try {
-              let resp = await this.page.request.head(current, { timeout: 3000 });
-              
-              // Fallback to GET if HEAD request is blocked or returns an error (404, 403, 405)
-              if (resp.status() >= 400) {
+              let status = 0;
+
+              // Bước 1: Thử HEAD request
+              try {
+                const headResp = await this.page.request.head(current, { timeout: 5000 });
+                status = headResp.status();
+              } catch {
+                // HEAD request failed (timeout/network error), sẽ fallback GET
+                status = 0;
+              }
+
+              // Bước 2: Fallback GET nếu HEAD trả về lỗi hoặc thất bại
+              // Nhiều server không hỗ trợ HEAD hoặc trả status khác GET
+              if (status === 0 || status >= 400) {
                 try {
-                  resp = await this.page.request.get(current, { timeout: 5000 });
-                } catch (fallbackError) {
-                  // Fallback GET also failed
+                  const getResp = await this.page.request.get(current, { timeout: 8000 });
+                  status = getResp.status();
+                } catch {
+                  // GET cũng thất bại, giữ nguyên status từ HEAD (hoặc 0)
                 }
               }
 
-              if ([301, 302, 307, 308].includes(resp.status())) {
-                const location = resp.headers()["location"];
-                if (location) {
-                  current = new URL(location, current).href;
-                  count++;
-                } else {
+              // Bước 3: Nếu vẫn lỗi 404, thử toggle trailing slash
+              // Một số server nghiêm ngặt: /path → 200 nhưng /path/ → 404 (hoặc ngược lại)
+              if (status === 404) {
+                const altUrl = current.endsWith("/")
+                  ? current.slice(0, -1)   // Bỏ trailing slash
+                  : current + "/";          // Thêm trailing slash
+                
+                try {
+                  const altResp = await this.page.request.get(altUrl, { timeout: 8000 });
+                  if (altResp.status() >= 200 && altResp.status() < 400) {
+                    // URL thay thế hoạt động → link không broken, chỉ là trailing slash issue
+                    status = altResp.status();
+                  }
+                } catch {
+                  // Alt URL cũng lỗi → giữ nguyên status 404
+                }
+              }
+
+              if ([301, 302, 307, 308].includes(status)) {
+                // Cần lấy location header → thực hiện lại request để đọc header
+                try {
+                  const redirectResp = await this.page.request.head(current, { timeout: 5000 });
+                  const location = redirectResp.headers()["location"];
+                  if (location) {
+                    current = new URL(location, current).href;
+                    count++;
+                  } else {
+                    break;
+                  }
+                } catch {
                   break;
                 }
               } else {
-                if (count === 0 && (resp.status() >= 400 || resp.status() === 0)) {
-                  brokenLinks.push(`${href} (status: ${resp.status()})`);
+                if (count === 0 && (status >= 400 || status === 0)) {
+                  brokenLinks.push(`${href} (status: ${status})`);
                 }
                 break;
               }
