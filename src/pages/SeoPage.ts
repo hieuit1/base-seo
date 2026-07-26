@@ -454,8 +454,8 @@ export class SeoPage extends BasePage {
                 status = 0;
               }
 
-              // Bước 2: Fallback GET nếu HEAD thất bại hoặc server không hỗ trợ HEAD
-              if (status === 0 || status === 405) {
+              // Bước 2: Fallback GET nếu HEAD trả về lỗi (nhiều server trả về 404, 403 thay vì 405 cho HEAD)
+              if (status === 0 || status >= 400) {
                 try {
                   const resp = await fetch(current, {
                     method: "GET",
@@ -465,7 +465,7 @@ export class SeoPage extends BasePage {
                   status = resp.status;
                   locationHeader = resp.headers.get("location");
                 } catch {
-                  // Giữ nguyên status = 0
+                  // Giữ nguyên status
                 }
               }
 
