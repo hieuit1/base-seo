@@ -1,0 +1,1 @@
+LCP quá cao: 3968ms (chuẩn: < 2.5s)
