@@ -1,0 +1,1 @@
+Anchor text không đa dạng: chỉ 51% unique (cần ≥ 70%). Tránh dùng cùng anchor text cho nhiều link khác nhau.

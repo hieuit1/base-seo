@@ -1,0 +1,1 @@
+www ↔ non-www không redirect đúng. Có thể gây duplicate content.
