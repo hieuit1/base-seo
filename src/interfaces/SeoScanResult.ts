@@ -43,6 +43,9 @@ export interface SeoScanResult {
   hreflangs: { rel: string; href: string; lang: string }[];
   pageHeaders: Record<string, string>;
   cssFiles: string[];
+  jsFiles: string[];
+  totalPageSizeBytes: number;
+  hasHtml5Doctype: boolean;
   minFontSize: number;
   badTouchTargets: number;
 }

@@ -232,9 +232,8 @@ export async function injectVisualSEOReport(
         isPass: lsiKeywords.length === 0 || foundLsi.length > 0,
         err: `Nội dung không chứa từ khóa LSI nào trong: ${lsiKeywords.join(", ")}`,
       });
-      // 5.5 — Readability (Flesch)
+      // 5.5 — Readability (phân biệt tiếng Việt và tiếng Anh)
       const sentences = data.bodyText.split(/[.?!]+/).filter((s: string) => s.trim().length > 0).length || 1;
-      const syllables = (data.bodyText.match(/[aeiouyàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹ]+/gi) || []).length || data.wordCount;
       const readabilityScore = 206.835 - 1.015 * (data.wordCount / sentences) - 84.6 * (syllables / data.wordCount);
       const minReadability = (config as any).minReadabilityScore ?? 50;
       itemsList.push({
@@ -318,7 +317,10 @@ export async function injectVisualSEOReport(
         isPass: true, // Khuyến nghị
         err: "Trang không có external links — không bắt buộc nhưng nên có",
       });
-      const genericAnchors = ["click here", "here", "read more", "xem thêm", "nhấn vào đây", "tại đây"];
+      const genericAnchors = [
+        "click here", "here", "read more", "xem thêm", "nhấn vào đây", "tại đây",
+        "chi tiết", "xem chi tiết", "tìm hiểu thêm"
+      ];
       const badAnchors = data.internalLinks.filter((link: any) => {
         const text = link.text.trim().toLowerCase();
         return text === "" || genericAnchors.includes(text);
@@ -383,9 +385,13 @@ export async function injectVisualSEOReport(
       if ((config as any).checkSocialOg !== false) {
         itemsList.push({
           id: "8.6", group: "Technical",
-          name: `Open Graph: og:title=${data.ogTitle ? "✔" : "✘"}, og:description=${data.ogDesc ? "✔" : "✘"}`,
-          isPass: !!data.ogTitle && !!data.ogDesc,
-          err: `Thiếu ${!data.ogTitle ? "og:title" : ""}${!data.ogTitle && !data.ogDesc ? " và " : ""}${!data.ogDesc ? "og:description" : ""}`,
+          name: `Open Graph: og:title=${data.ogTitle ? "✔" : "✘"}, og:description=${data.ogDesc ? "✔" : "✘"}, og:image=${data.ogImage ? "✔" : "✘"}`,
+          isPass: !!data.ogTitle && !!data.ogDesc && !!data.ogImage,
+          err: [
+            !data.ogTitle ? "og:title" : null,
+            !data.ogDesc ? "og:description" : null,
+            !data.ogImage ? "og:image" : null,
+          ].filter(Boolean).join(", ") + " — Link không có thumbnail khi share trên social media",
         });
         const twitterCount = Object.keys(data.twitterTags).length;
         itemsList.push({
@@ -407,12 +413,13 @@ export async function injectVisualSEOReport(
       const charsetOk = !!data.charset && data.charset.toLowerCase() === "utf-8";
       itemsList.push({
         id: "8.9", group: "Technical",
-        name: `Charset: ${data.charset || "Thiếu"} | Favicon: ${data.hasFavicon ? "✔" : "✘"}`,
-        isPass: charsetOk && data.hasFavicon,
+        name: `Charset: ${data.charset || "Thiếu"} | Favicon: ${data.hasFavicon ? "✔" : "✘"} | Doctype: ${(data as any).hasHtml5Doctype ? "HTML5" : "✘"}`,
+        isPass: charsetOk && data.hasFavicon && (data as any).hasHtml5Doctype,
         err: [
           !data.charset ? "Thiếu khai báo charset" : null,
           data.charset && data.charset.toLowerCase() !== "utf-8" ? `Charset nên là UTF-8, hiện tại: ${data.charset}` : null,
           !data.hasFavicon ? "Trang thiếu favicon" : null,
+          !(data as any).hasHtml5Doctype ? "Trang thiếu khai báo <!DOCTYPE html> (HTML5)" : null,
         ].filter(Boolean).join(". "),
       });
 
@@ -452,13 +459,37 @@ export async function injectVisualSEOReport(
         isPass: cacheControl.includes("max-age") && !cacheControl.includes("no-store"),
         err: `Cache header chưa tối ưu hoặc bị disable: ${cacheControl}`,
       });
-      const nonMinifiedCss = (data.cssFiles || []).filter((href: string) => !href.includes(".min.css") && !href.includes("?"));
+      const assetHashPattern = /[.-][a-f0-9]{6,}\./;
+      const nonMinifiedCss = (data.cssFiles || []).filter((href: string) =>
+        !href.includes(".min.css") && !href.includes("?") && !assetHashPattern.test(href)
+      );
       itemsList.push({
         id: "10.3", group: "Performance",
-        name: `CSS Minified: ${nonMinifiedCss.length === 0 ? "✔" : nonMinifiedCss.length + " file chưa minify"}`,
+        name: `CSS Minified: ${nonMinifiedCss.length === 0 ? "✔" : nonMinifiedCss.length + " chưa minify"}`,
         isPass: nonMinifiedCss.length === 0,
         err: `Phát hiện ${nonMinifiedCss.length} file CSS chưa được minify`,
       });
+      // 10.4 — JS Minify
+      const nonMinifiedJs = ((data as any).jsFiles || []).filter((src: string) =>
+        !src.includes(".min.js") && !src.includes("?") && !assetHashPattern.test(src) && !src.includes("chunk")
+      );
+      itemsList.push({
+        id: "10.4", group: "Performance",
+        name: `JS Minified: ${nonMinifiedJs.length === 0 ? "✔" : nonMinifiedJs.length + " chưa minify"}`,
+        isPass: nonMinifiedJs.length === 0,
+        err: `Phát hiện ${nonMinifiedJs.length} file JS chưa được minify`,
+      });
+      // 10.5 — Tổng dung lượng trang
+      const totalPageSizeBytes = (data as any).totalPageSizeBytes || 0;
+      if (totalPageSizeBytes > 0) {
+        const pageSizeKB = Math.round(totalPageSizeBytes / 1024);
+        itemsList.push({
+          id: "10.5", group: "Performance",
+          name: `Dung lượng trang: ${pageSizeKB}KB (tối đa: 3000KB)`,
+          isPass: pageSizeKB <= 3000,
+          err: `Dung lượng trang quá lớn: ${pageSizeKB}KB, cần ≤ 3000KB`,
+        });
+      }
 
       // ── 11. Security (2 tiêu chí) ────────────────────────
       itemsList.push({

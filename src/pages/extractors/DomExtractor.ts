@@ -223,23 +223,40 @@ export class DomExtractor extends BasePage {
     });
   }
 
+  async hasHtml5Doctype(): Promise<boolean> {
+    return await this.page.evaluate(() => {
+      const doctype = document.doctype;
+      return doctype !== null && doctype.name === 'html';
+    });
+  }
+
   async getMobileMetrics(): Promise<{ minFontSize: number; badTouchTargets: number }> {
     return await this.page.evaluate(() => {
-      let minSize = 16;
-      document.querySelectorAll("body, p, span, a").forEach((el) => {
+      let minSize = Infinity;
+      const textSelectors = "body, p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, input, textarea, select, div";
+      document.querySelectorAll(textSelectors).forEach((el) => {
         const style = window.getComputedStyle(el);
+        // Bỏ qua element ẩn
+        if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') return;
         const size = parseFloat(style.fontSize);
         if (size > 0 && size < minSize) minSize = size;
       });
 
       let badTargets = 0;
-      document.querySelectorAll("button, a, input").forEach((el) => {
+      document.querySelectorAll("button, a, input, select, textarea, [role='button']").forEach((el) => {
+        const style = window.getComputedStyle(el);
+        // Bỏ qua element ẩn
+        if (style.display === 'none' || style.visibility === 'hidden') return;
         const rect = el.getBoundingClientRect();
-        if (rect.width > 0 && rect.height > 0) {
+        // Chỉ check element visible và trong viewport
+        if (rect.width > 0 && rect.height > 0 && rect.top < window.innerHeight) {
           if (rect.width < 48 || rect.height < 48) badTargets++;
         }
       });
-      return { minFontSize: Math.round(minSize), badTouchTargets: badTargets };
+      return {
+        minFontSize: Math.round(minSize === Infinity ? 16 : minSize),
+        badTouchTargets: badTargets,
+      };
     });
   }
 }

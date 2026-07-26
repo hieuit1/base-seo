@@ -51,6 +51,8 @@ export class SeoScanner {
       mixedContent,
       hreflangs,
       cssFiles,
+      jsFiles,
+      hasHtml5Doctype,
       mobileMetrics,
     ] = await Promise.all([
       this.extractor.getTitle(),
@@ -73,6 +75,8 @@ export class SeoScanner {
       this.extractor.getMixedContent(),
       this.extractor.getHreflangs(),
       this.extractor.getCssFiles(),
+      this.extractor.getJsFiles(),
+      this.extractor.hasHtml5Doctype(),
       this.extractor.getMobileMetrics(),
     ]);
 
@@ -126,6 +130,9 @@ export class SeoScanner {
       }
     }));
 
+    // Tổng dung lượng trang từ Content-Length header (nếu có)
+    const totalPageSizeBytes = parseInt(pageHeaders['content-length'] || '0', 10);
+
     return {
       titleVal, metaVal, h1Texts, allHeadings, headingHierarchy,
       currentUrl, urlPath, wordCount, first100Words, keywordDensity, staticData,
@@ -137,7 +144,8 @@ export class SeoScanner {
       ogImage: ogTags["og:image"] || null,
       twitterTags, lang, charset, hasFavicon, hasViewport,
       isHttps, mixedContent, bodyText,
-      hreflangs, pageHeaders, cssFiles, minFontSize: mobileMetrics.minFontSize, badTouchTargets: mobileMetrics.badTouchTargets,
+      hreflangs, pageHeaders, cssFiles, jsFiles, totalPageSizeBytes, hasHtml5Doctype,
+      minFontSize: mobileMetrics.minFontSize, badTouchTargets: mobileMetrics.badTouchTargets,
     };
   }
 }

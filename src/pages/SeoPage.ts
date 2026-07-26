@@ -256,16 +256,34 @@ export class SeoPage extends BasePage {
       );
     }
 
-    // Điểm dễ đọc (readability – Flesch)
+    // Điểm dễ đọc (readability) — phân biệt tiếng Việt và tiếng Anh
     const sentences = scan.bodyText.split(/[.?!]+/).filter(s => s.trim().length > 0).length || 1;
-    const syllables = scan.bodyText.match(/[aeiouyàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹ]+/gi)?.length || scan.wordCount;
-    const readabilityScore = 206.835 - 1.015 * (scan.wordCount / sentences) - 84.6 * (syllables / scan.wordCount);
+    const avgWordsPerSentence = scan.wordCount / sentences;
+    const isVietnamese = scan.lang?.startsWith("vi") || /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(scan.bodyText.slice(0, 500));
+
+    let readabilityScore: number;
+    let readabilityLabel: string;
+    if (isVietnamese) {
+      // Tiếng Việt: đánh giá dựa trên trung bình số từ/câu (lý tưởng: 15–20 từ/câu)
+      // và tỷ lệ câu quá dài (> 40 từ)
+      const longSentences = scan.bodyText.split(/[.?!]+/).filter(s => s.trim().split(/\s+/).length > 40).length;
+      const longSentenceRatio = longSentences / sentences;
+      const idealAvg = 17;
+      const deviation = Math.abs(avgWordsPerSentence - idealAvg);
+      readabilityScore = Math.max(0, Math.min(100, 100 - deviation * 3 - longSentenceRatio * 30));
+      readabilityLabel = `Readability (VI): ${readabilityScore.toFixed(1)} (avg ${avgWordsPerSentence.toFixed(1)} từ/câu)`;
+    } else {
+      // Tiếng Anh: dùng Flesch Reading Ease formula gốc
+      const syllables = scan.bodyText.match(/[aeiouy]+/gi)?.length || scan.wordCount;
+      readabilityScore = 206.835 - 1.015 * avgWordsPerSentence - 84.6 * (syllables / scan.wordCount);
+      readabilityLabel = `Readability (Flesch): ${readabilityScore.toFixed(1)}`;
+    }
     const minReadability = data.minReadabilityScore ?? 50;
 
     await sc.check(
-      `Điểm dễ đọc (Flesch): ${readabilityScore.toFixed(1)} (khuyến nghị ≥ ${minReadability})`,
+      `${readabilityLabel} (khuyến nghị ≥ ${minReadability})`,
       readabilityScore >= minReadability,
-      `Nội dung khó đọc, điểm Flesch ${readabilityScore.toFixed(1)} < ${minReadability}`
+      `Nội dung khó đọc, điểm ${readabilityScore.toFixed(1)} < ${minReadability}${isVietnamese ? ` (trung bình ${avgWordsPerSentence.toFixed(1)} từ/câu, lý tưởng 15–20)` : ""}`
     );
 
     // Nội dung không trùng lặp (duplicate content)
@@ -380,7 +398,6 @@ export class SeoPage extends BasePage {
     );
 
     // Kiểm tra broken links & redirect chain (tối đa 100 links kết hợp, batch 20)
-    const origin = new URL(scan.currentUrl).origin;
     const brokenLinks: string[] = [];
     const redirectChains: { from: string; to: string; count: number }[] = [];
 
@@ -394,6 +411,7 @@ export class SeoPage extends BasePage {
     // Lấy danh sách link unique để không check trùng
     const uniqueLinks = Array.from(new Set(allLinks)).slice(0, 100);
 
+    const MAX_REDIRECTS = 10;
     const CHUNK_SIZE = 20;
     for (let i = 0; i < uniqueLinks.length; i += CHUNK_SIZE) {
       const chunk = uniqueLinks.slice(i, i + CHUNK_SIZE);
@@ -401,91 +419,102 @@ export class SeoPage extends BasePage {
       await Promise.all(
         chunk.map(async (href) => {
           // Xử lý chuẩn tất cả các loại link (tuyệt đối, tương đối, có/không có gạch chéo)
-          let current;
+          let current: string;
           try {
             current = new URL(href, scan.currentUrl).href;
           } catch (e) {
             brokenLinks.push(`${href} (Invalid URL format)`);
-            return; // Skip this one
+            return;
           }
 
           const fullUrl = current;
-          let count = 0;
+          let redirectCount = 0;
           const visited = new Set<string>();
 
-          while (count < 10) {
-            if (visited.has(current)) break;
+          // Dùng fetch() với redirect: "manual" để phát hiện redirect chain
+          // (Playwright page.request tự follow redirect → không bao giờ thấy 301/302)
+          while (redirectCount < MAX_REDIRECTS) {
+            if (visited.has(current)) break; // Redirect loop
             visited.add(current);
 
             try {
               let status = 0;
+              let locationHeader: string | null = null;
 
-              // Bước 1: Thử HEAD request
+              // Bước 1: Thử fetch với redirect: "manual" để giữ nguyên status code gốc
               try {
-                const headResp = await this.page.request.head(current, { timeout: 5000 });
-                status = headResp.status();
+                const resp = await fetch(current, {
+                  method: "HEAD",
+                  redirect: "manual",
+                  signal: AbortSignal.timeout(5000),
+                });
+                status = resp.status;
+                locationHeader = resp.headers.get("location");
               } catch {
-                // HEAD request failed (timeout/network error), sẽ fallback GET
                 status = 0;
               }
 
-              // Bước 2: Fallback GET nếu HEAD trả về lỗi hoặc thất bại
-              // Nhiều server không hỗ trợ HEAD hoặc trả status khác GET
-              if (status === 0 || status >= 400) {
+              // Bước 2: Fallback GET nếu HEAD thất bại hoặc server không hỗ trợ HEAD
+              if (status === 0 || status === 405) {
                 try {
-                  const getResp = await this.page.request.get(current, { timeout: 8000 });
-                  status = getResp.status();
+                  const resp = await fetch(current, {
+                    method: "GET",
+                    redirect: "manual",
+                    signal: AbortSignal.timeout(8000),
+                  });
+                  status = resp.status;
+                  locationHeader = resp.headers.get("location");
                 } catch {
-                  // GET cũng thất bại, giữ nguyên status từ HEAD (hoặc 0)
+                  // Giữ nguyên status = 0
                 }
               }
 
-              // Bước 3: Nếu vẫn lỗi 404, thử toggle trailing slash
-              // Một số server nghiêm ngặt: /path → 200 nhưng /path/ → 404 (hoặc ngược lại)
-              if (status === 404) {
+              // Bước 3: Xử lý redirect → follow thủ công để đếm hop
+              if ([301, 302, 303, 307, 308].includes(status) && locationHeader) {
+                try {
+                  current = new URL(locationHeader, current).href;
+                } catch {
+                  break; // Location header không hợp lệ
+                }
+                redirectCount++;
+                continue; // Tiếp tục vòng lặp để follow redirect tiếp
+              }
+
+              // Bước 4: Không phải redirect → kiểm tra broken
+              if (status >= 400 || status === 0) {
+                // Thử toggle trailing slash trước khi kết luận broken
                 const altUrl = current.endsWith("/")
-                  ? current.slice(0, -1)   // Bỏ trailing slash
-                  : current + "/";          // Thêm trailing slash
-                
-                try {
-                  const altResp = await this.page.request.get(altUrl, { timeout: 8000 });
-                  if (altResp.status() >= 200 && altResp.status() < 400) {
-                    // URL thay thế hoạt động → link không broken, chỉ là trailing slash issue
-                    status = altResp.status();
-                  }
-                } catch {
-                  // Alt URL cũng lỗi → giữ nguyên status 404
-                }
-              }
+                  ? current.slice(0, -1)
+                  : current + "/";
 
-              if ([301, 302, 307, 308].includes(status)) {
-                // Cần lấy location header → thực hiện lại request để đọc header
                 try {
-                  const redirectResp = await this.page.request.head(current, { timeout: 5000 });
-                  const location = redirectResp.headers()["location"];
-                  if (location) {
-                    current = new URL(location, current).href;
-                    count++;
-                  } else {
-                    break;
+                  const altResp = await fetch(altUrl, {
+                    method: "GET",
+                    redirect: "follow",
+                    signal: AbortSignal.timeout(8000),
+                  });
+                  if (altResp.status >= 200 && altResp.status < 400) {
+                    status = altResp.status; // Link OK, chỉ là trailing slash issue
                   }
                 } catch {
-                  break;
+                  // Alt URL cũng lỗi → giữ nguyên status
                 }
-              } else {
-                if (count === 0 && (status >= 400 || status === 0)) {
+
+                if (status >= 400 || status === 0) {
                   brokenLinks.push(`${href} (status: ${status})`);
                 }
-                break;
               }
+              break; // Đã xử lý xong (không phải redirect)
+
             } catch (e) {
-              if (count === 0) brokenLinks.push(`${href} (error)`);
+              brokenLinks.push(`${href} (error)`);
               break;
             }
           }
 
-          if (count > 1) {
-            redirectChains.push({ from: fullUrl, to: current, count });
+          // Redirect chain > 1 hop = cảnh báo
+          if (redirectCount > 1) {
+            redirectChains.push({ from: fullUrl, to: current, count: redirectCount });
           }
         })
       );
@@ -558,9 +587,13 @@ export class SeoPage extends BasePage {
     // Open Graph tags (tuỳ cấu hình)
     if (data.checkSocialOg !== false) {
       await sc.check(
-        `Open Graph: og:title=${scan.ogTitle ? "✔" : "✘"}, og:description=${scan.ogDesc ? "✔" : "✘"}`,
-        !!scan.ogTitle && !!scan.ogDesc,
-        `Thiếu ${!scan.ogTitle ? "og:title" : ""}${!scan.ogTitle && !scan.ogDesc ? " và " : ""}${!scan.ogDesc ? "og:description" : ""}`
+        `Open Graph: og:title=${scan.ogTitle ? "✔" : "✘"}, og:description=${scan.ogDesc ? "✔" : "✘"}, og:image=${scan.ogImage ? "✔" : "✘"}`,
+        !!scan.ogTitle && !!scan.ogDesc && !!scan.ogImage,
+        [
+          !scan.ogTitle ? "og:title" : null,
+          !scan.ogDesc ? "og:description" : null,
+          !scan.ogImage ? "og:image" : null,
+        ].filter(Boolean).join(", ") + " — Link không có thumbnail khi share trên social media"
       );
     }
 
@@ -592,15 +625,16 @@ export class SeoPage extends BasePage {
       await sc.check(`Hreflang tags (Bỏ qua vì đơn ngôn ngữ)`, true, "Bỏ qua");
     }
 
-    // Charset + Favicon
+    // Charset + Favicon + Doctype HTML5
     const charsetOk = !!scan.charset && scan.charset.toLowerCase() === "utf-8";
     await sc.check(
-      `Charset: ${scan.charset || "Thiếu"} | Favicon: ${scan.hasFavicon ? "✔" : "✘"}`,
-      charsetOk && scan.hasFavicon,
+      `Charset: ${scan.charset || "Thiếu"} | Favicon: ${scan.hasFavicon ? "✔" : "✘"} | Doctype: ${scan.hasHtml5Doctype ? "HTML5" : "✘"}`,
+      charsetOk && scan.hasFavicon && scan.hasHtml5Doctype,
       [
         !scan.charset ? "Thiếu khai báo charset" : null,
         scan.charset && scan.charset.toLowerCase() !== "utf-8" ? `Charset nên là UTF-8, hiện tại: ${scan.charset}` : null,
         !scan.hasFavicon ? "Trang thiếu favicon" : null,
+        !scan.hasHtml5Doctype ? "Trang thiếu khai báo <!DOCTYPE html> (HTML5)" : null,
       ].filter(Boolean).join(". ")
     );
   }
@@ -648,13 +682,37 @@ export class SeoPage extends BasePage {
       `Cache header chưa tối ưu hoặc bị disable: ${cacheControl}`
     );
 
-    // Minify CSS
-    const nonMinifiedCss = scan.cssFiles.filter(href => !href.includes(".min.css") && !href.includes("?"));
+    // Minify CSS (bỏ qua file có hash pattern — đã được bundler minify)
+    const hashPattern = /[.-][a-f0-9]{6,}\./;
+    const nonMinifiedCss = scan.cssFiles.filter(href =>
+      !href.includes(".min.css") && !href.includes("?") && !hashPattern.test(href)
+    );
     await sc.check(
-      `CSS Minified: ${nonMinifiedCss.length === 0 ? "✔" : "✘"}`,
+      `CSS Minified: ${nonMinifiedCss.length === 0 ? "✔" : nonMinifiedCss.length + " chưa minify"}`,
       nonMinifiedCss.length === 0,
       `Phát hiện ${nonMinifiedCss.length} file CSS chưa được minify (Ví dụ: ${nonMinifiedCss[0]})`
     );
+
+    // Minify JS
+    const nonMinifiedJs = scan.jsFiles.filter(src =>
+      !src.includes(".min.js") && !src.includes("?") && !hashPattern.test(src) && !src.includes("chunk")
+    );
+    await sc.check(
+      `JS Minified: ${nonMinifiedJs.length === 0 ? "✔" : nonMinifiedJs.length + " chưa minify"}`,
+      nonMinifiedJs.length === 0,
+      `Phát hiện ${nonMinifiedJs.length} file JS chưa được minify (Ví dụ: ${nonMinifiedJs[0]})`
+    );
+
+    // Tổng dung lượng trang
+    if (scan.totalPageSizeBytes > 0) {
+      const pageSizeKB = Math.round(scan.totalPageSizeBytes / 1024);
+      const maxPageSizeKB = 3000; // 3MB
+      await sc.check(
+        `Dung lượng trang: ${pageSizeKB}KB (tối đa: ${maxPageSizeKB}KB)`,
+        pageSizeKB <= maxPageSizeKB,
+        `Dung lượng trang quá lớn: ${pageSizeKB}KB, cần ≤ ${maxPageSizeKB}KB`
+      );
+    }
   }
 
   /** Xác thực Core Web Vitals (Tốc độ tải trang) */
