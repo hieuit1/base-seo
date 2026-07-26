@@ -715,37 +715,106 @@ export class SeoPage extends BasePage {
     }
   }
 
+  /** Lấy dữ liệu tốc độ cục bộ (Local Performance) từ Playwright */
+  async getLocalPerformanceMetrics() {
+    try {
+      const localMetrics = await this.page.evaluate(() => {
+        return new Promise((resolve) => {
+          let lcp: number | null = null;
+          let cls = 0;
+
+          try {
+            new PerformanceObserver((entryList) => {
+              const entries = entryList.getEntries();
+              const lastEntry = entries[entries.length - 1];
+              lcp = lastEntry.startTime;
+            }).observe({ type: 'largest-contentful-paint', buffered: true });
+          } catch (e) {}
+
+          try {
+            new PerformanceObserver((entryList) => {
+              for (const entry of entryList.getEntries()) {
+                if (!(entry as any).hadRecentInput) {
+                  cls += (entry as any).value;
+                }
+              }
+            }).observe({ type: 'layout-shift', buffered: true });
+          } catch (e) {}
+
+          // Đợi 1 giây để thu thập dữ liệu Paint
+          setTimeout(() => {
+            const navEntry = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming;
+            const loadTime = navEntry ? navEntry.loadEventEnd - navEntry.startTime : null;
+            
+            // Nếu không có LCP từ observer, dùng fallback là DOMContentLoaded hoặc Load
+            if (lcp === null && navEntry) {
+                lcp = navEntry.domContentLoadedEventEnd - navEntry.startTime;
+            }
+
+            resolve({
+              lcp: lcp ? Math.round(lcp) : null,
+              cls: Number(cls.toFixed(3)),
+              loadTime: loadTime ? Math.round(loadTime) : null
+            });
+          }, 1000);
+        });
+      });
+      return localMetrics;
+    } catch (e) {
+      return null;
+    }
+  }
+
   /** Xác thực Core Web Vitals (Tốc độ tải trang) */
-  async verifyPerformance(vitals: any, sc: SeoScorecard) {
+  async verifyPerformance(vitals: any, localMetrics: any, sc: SeoScorecard) {
     sc.startGroup("PERFORMANCE");
+    
     if (!vitals) {
-      await sc.check(`Core Web Vitals & Tốc độ tải trang`, true, "Bỏ qua — Không có dữ liệu (API Key lỗi hoặc timeout)");
+      // Cảnh báo nhưng không FAIL test (đúng như yêu cầu người dùng)
+      await sc.check(`Google PageSpeed API`, true, "Cảnh báo: Không lấy được dữ liệu từ API (Timeout). Sử dụng dữ liệu Local Performance để thay thế.");
+    } else {
+      await sc.check(`Google PageSpeed API`, true, "Lấy dữ liệu thành công");
+    }
+
+    const finalLcp = vitals?.lcp ?? localMetrics?.lcp ?? null;
+    const finalCls = vitals?.cls ?? localMetrics?.cls ?? null;
+    const finalInp = vitals?.inp ?? null; // Local khó đo INP nếu không tương tác
+    const score = vitals?.score ?? null;
+
+    if (finalLcp === null && finalCls === null) {
+      await sc.check(`Core Web Vitals & Tốc độ tải trang`, false, "LỖI — Không có dữ liệu Tốc độ từ API lẫn Local");
       return;
     }
 
     await sc.check(
-      `LCP (Largest Contentful Paint): ${vitals.lcp ? vitals.lcp + "ms" : "N/A"} (< 2500ms)`,
-      vitals.lcp !== null && vitals.lcp < 2500,
-      `LCP quá cao: ${vitals.lcp}ms (chuẩn: < 2.5s)`
+      `LCP (Largest Contentful Paint): ${finalLcp !== null ? finalLcp + "ms" : "N/A"} (< 2500ms)`,
+      finalLcp !== null && finalLcp < 2500,
+      `LCP quá cao: ${finalLcp}ms (chuẩn: < 2.5s)`
     );
 
-    await sc.check(
-      `INP (Interaction to Next Paint): ${vitals.inp ? vitals.inp + "ms" : "N/A"} (< 200ms)`,
-      vitals.inp !== null && vitals.inp < 200,
-      `INP quá cao: ${vitals.inp}ms (chuẩn: < 200ms)`
-    );
+    if (finalInp !== null) {
+      await sc.check(
+        `INP (Interaction to Next Paint): ${finalInp}ms (< 200ms)`,
+        finalInp < 200,
+        `INP quá cao: ${finalInp}ms (chuẩn: < 200ms)`
+      );
+    } else {
+      await sc.check(`INP (Interaction to Next Paint) — Bỏ qua (chưa có tương tác)`, true, "");
+    }
 
     await sc.check(
-      `CLS (Cumulative Layout Shift): ${vitals.cls ?? "N/A"} (< 0.1)`,
-      vitals.cls !== null && vitals.cls < 0.1,
-      `CLS quá cao: ${vitals.cls} (chuẩn: < 0.1)`
+      `CLS (Cumulative Layout Shift): ${finalCls !== null ? finalCls : "N/A"} (< 0.1)`,
+      finalCls !== null && finalCls < 0.1,
+      `CLS quá cao: ${finalCls} (chuẩn: < 0.1)`
     );
 
-    await sc.check(
-      `Performance Score (Lighthouse): ${vitals.score ?? "N/A"}/100`,
-      vitals.score !== null && vitals.score >= 80,
-      `Điểm tốc độ tải trang quá thấp: ${vitals.score}/100 (cần ≥ 80)`
-    );
+    if (score !== null) {
+      await sc.check(
+        `Performance Score (Lighthouse): ${score}/100`,
+        score >= 80,
+        `Điểm tốc độ tải trang quá thấp: ${score}/100 (cần ≥ 80)`
+      );
+    }
   }
 
   /** Xác thực Bảo mật */

@@ -507,6 +507,32 @@ export async function injectVisualSEOReport(
           err: `Dung lượng trang quá lớn: ${pageSizeKB}KB, cần ≤ 3000KB`,
         });
       }
+      
+      // 10.6, 10.7, 10.8 — Core Web Vitals
+      const finalLcp = data.vitals?.lcp ?? data.localMetrics?.lcp ?? null;
+      const finalCls = data.vitals?.cls ?? data.localMetrics?.cls ?? null;
+      const finalInp = data.vitals?.inp ?? null;
+
+      itemsList.push({
+        id: "10.6", group: "Performance",
+        name: `LCP: ${finalLcp !== null ? finalLcp + "ms" : "N/A"} (< 2500ms)`,
+        isPass: finalLcp !== null && finalLcp < 2500,
+        err: `LCP quá cao: ${finalLcp}ms (chuẩn: < 2.5s)`,
+      });
+
+      itemsList.push({
+        id: "10.7", group: "Performance",
+        name: `INP: ${finalInp !== null ? finalInp + "ms" : "N/A"} (< 200ms)`,
+        isPass: finalInp === null || finalInp < 200,
+        err: `INP quá cao: ${finalInp}ms (chuẩn: < 200ms)`,
+      });
+
+      itemsList.push({
+        id: "10.8", group: "Performance",
+        name: `CLS: ${finalCls !== null ? finalCls : "N/A"} (< 0.1)`,
+        isPass: finalCls !== null && finalCls < 0.1,
+        err: `CLS quá cao: ${finalCls} (chuẩn: < 0.1)`,
+      });
 
       // ── 11. Security (2 tiêu chí) ────────────────────────
       itemsList.push({

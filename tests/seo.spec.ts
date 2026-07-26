@@ -47,18 +47,30 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
           navigationResponse = await page.goto(config.path, { waitUntil: "domcontentloaded" });
         });
 
-        // ── STEP 2: Quét toàn bộ dữ liệu SEO ──
+        // ── STEP 2: Quét toàn bộ dữ liệu SEO & Tốc độ ──
         let scan: SeoScanResult;
         let vitals: any = null;
+        let localMetrics: any = null;
 
         await customStep(page, "2. Quét toàn bộ dữ liệu Technical SEO & Performance", async () => {
           const rawHtml = navigationResponse ? await navigationResponse.text() : undefined;
           const passedHeaders = navigationResponse ? navigationResponse.headers() : undefined;
           
           const scanPromise = seoPage.scanSEOMetadata(config.keyword, rawHtml, passedHeaders);
-          const [scanResult, vitalsResult] = await Promise.all([scanPromise, vitalsPromise]);
+          const localMetricsPromise = seoPage.getLocalPerformanceMetrics();
+          
+          const [scanResult, vitalsResult, localMetricsResult] = await Promise.all([
+            scanPromise, 
+            vitalsPromise,
+            localMetricsPromise
+          ]);
+          
           scan = scanResult;
           vitals = vitalsResult;
+          localMetrics = localMetricsResult;
+
+          scan.vitals = vitals;
+          scan.localMetrics = localMetrics;
 
           await seoPage.injectVisualSEOReport(config.name, scan, config);
         });
@@ -104,7 +116,7 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
         });
 
         await customStep(page, "13. Xác thực Tốc độ tải trang & Core Web Vitals", async () => {
-          await seoPage.verifyPerformance(vitals, scorecard);
+          await seoPage.verifyPerformance(vitals, localMetrics, scorecard);
         });
 
         await customStep(page, "14. Xác thực Bảo mật (HTTPS + Mixed Content)", async () => {

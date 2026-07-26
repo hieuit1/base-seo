@@ -48,6 +48,8 @@ export interface SeoScanResult {
   hasHtml5Doctype: boolean;
   minFontSize: number;
   badTouchTargets: number;
+  vitals?: any;
+  localMetrics?: any;
 }
 
 export default SeoScanResult;
