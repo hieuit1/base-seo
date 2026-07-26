@@ -234,13 +234,30 @@ export async function injectVisualSEOReport(
       });
       // 5.5 — Readability (phân biệt tiếng Việt và tiếng Anh)
       const sentences = data.bodyText.split(/[.?!]+/).filter((s: string) => s.trim().length > 0).length || 1;
-      const readabilityScore = 206.835 - 1.015 * (data.wordCount / sentences) - 84.6 * (syllables / data.wordCount);
+      const avgWordsPerSentence = data.wordCount / sentences;
+      const isVietnamese = data.lang?.startsWith("vi") || /[àáạảãâầấẫẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(data.bodyText.slice(0, 500));
+      
+      let readabilityScore: number;
+      let readabilityLabel: string;
+      
+      if (isVietnamese) {
+        const longSentences = data.bodyText.split(/[.?!]+/).filter((s: string) => s.trim().split(/\s+/).length > 40).length;
+        const longSentenceRatio = longSentences / sentences;
+        const deviation = Math.abs(avgWordsPerSentence - 17);
+        readabilityScore = Math.max(0, Math.min(100, 100 - deviation * 3 - longSentenceRatio * 30));
+        readabilityLabel = `Readability (VI): ${readabilityScore.toFixed(1)} (avg ${avgWordsPerSentence.toFixed(1)} từ/câu)`;
+      } else {
+        const syllables = (data.bodyText.match(/[aeiouy]+/gi) || []).length || data.wordCount;
+        readabilityScore = 206.835 - 1.015 * avgWordsPerSentence - 84.6 * (syllables / data.wordCount);
+        readabilityLabel = `Readability (Flesch): ${readabilityScore.toFixed(1)}`;
+      }
+      
       const minReadability = (config as any).minReadabilityScore ?? 50;
       itemsList.push({
         id: "5.5", group: "Content",
-        name: `Điểm dễ đọc (Flesch): ${readabilityScore.toFixed(1)} (khuyến nghị ≥ ${minReadability})`,
+        name: `${readabilityLabel} (khuyến nghị ≥ ${minReadability})`,
         isPass: readabilityScore >= minReadability,
-        err: `Nội dung khó đọc, điểm Flesch ${readabilityScore.toFixed(1)} < ${minReadability}`,
+        err: `Nội dung khó đọc, điểm ${readabilityScore.toFixed(1)} < ${minReadability}`,
       });
       // 5.6 — Duplicate content risk
       const isNoindexContent = data.robots?.toLowerCase().includes("noindex");
