@@ -38,14 +38,14 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
         // ── KÍCH HOẠT API SONG SONG NGAY TỪ ĐẦU ──
         const fullUrl = new URL(config.path, process.env.BASE_URL as string).href;
         const vitalsPromise = config.checkCoreWebVitals !== false
-            ? (async () => {
-                const mobile = await pageSpeedService.getCoreWebVitals(fullUrl, "mobile");
-                // Delay nhỏ để tránh bị Google block (Rate Limit) do gửi 2 requests cùng lúc
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                const desktop = await pageSpeedService.getCoreWebVitals(fullUrl, "desktop");
-                return { mobile, desktop };
-              })()
-            : Promise.resolve({ mobile: null, desktop: null });
+          ? (async () => {
+            const mobile = await pageSpeedService.getCoreWebVitals(fullUrl, "mobile");
+            // Delay nhỏ để tránh bị Google block (Rate Limit) do gửi 2 requests cùng lúc
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            const desktop = await pageSpeedService.getCoreWebVitals(fullUrl, "desktop");
+            return { mobile, desktop };
+          })()
+          : Promise.resolve({ mobile: null, desktop: null });
 
         // ── STEP 1: Truy cập trang ──
         let navigationResponse: any;
@@ -61,16 +61,16 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
         await customStep(page, "2. Quét toàn bộ dữ liệu Technical SEO & Performance", async () => {
           const rawHtml = navigationResponse ? await navigationResponse.text() : undefined;
           const passedHeaders = navigationResponse ? navigationResponse.headers() : undefined;
-          
+
           const scanPromise = seoPage.scanSEOMetadata(config.keyword, rawHtml, passedHeaders);
           const localMetricsPromise = seoPage.getLocalPerformanceMetrics();
-          
+
           const [scanResult, vitalsResult, localMetricsResult] = await Promise.all([
-            scanPromise, 
+            scanPromise,
             vitalsPromise,
             localMetricsPromise
           ]);
-          
+
           scan = scanResult;
           vitals = vitalsResult;
           localMetrics = localMetricsResult;

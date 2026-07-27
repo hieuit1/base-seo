@@ -15,10 +15,11 @@ export async function injectVisualSEOReport(
   data: SeoScanResult,
   config: SeoPageTestData,
   advancedData?: AdvancedSeoScanResult,
+  threshold = 70,
 ): Promise<void> {
   const mergedConfig = { ...DEFAULT_SEO_CONFIG, ...config };
   await page.evaluate(
-    ({ pageName, data, config, advancedData }) => {
+    ({ pageName, data, config, advancedData, threshold }) => {
       const oldCard = document.getElementById("seo-report-card");
       if (oldCard) oldCard.remove();
 
@@ -883,13 +884,15 @@ export async function injectVisualSEOReport(
       const passedCount = itemsList.length - failedItems.length;
       const score = Math.round((passedCount / itemsList.length) * 100);
       const isFullReport = !!advancedData;
+      const isPass = score >= threshold;
 
       let scoreColor = "#ef4444";
       let scoreLabel = "KÉM";
-      if (score >= 93) { scoreColor = "#22c55e"; scoreLabel = "XUẤT SẮC"; }
-      else if (score >= 77) { scoreColor = "#3b82f6"; scoreLabel = "TỐT"; }
-      else if (score >= 65) { scoreColor = "#eab308"; scoreLabel = "KHÁ"; }
-      else if (score >= 50) { scoreColor = "#f97316"; scoreLabel = "TRUNG BÌNH"; }
+      let scoreIcon = "🔴";
+      if (score >= 93) { scoreColor = "#22c55e"; scoreLabel = "XUẤT SẮC"; scoreIcon = "💎"; }
+      else if (score >= 77) { scoreColor = "#3b82f6"; scoreLabel = "TỐT"; scoreIcon = "🟢"; }
+      else if (score >= 65) { scoreColor = "#eab308"; scoreLabel = "KHÁ"; scoreIcon = "🟡"; }
+      else if (score >= 50) { scoreColor = "#f97316"; scoreLabel = "TRUNG BÌNH"; scoreIcon = "🟠"; }
 
       // Nhóm theo group để hiển thị phân vùng
       const groups = [...new Set(itemsList.map(i => i.group))];
@@ -897,73 +900,155 @@ export async function injectVisualSEOReport(
       const container = document.createElement("div");
       container.id = "seo-report-card";
       container.style.cssText = `
-        position:fixed; top:10px; right:10px; width:650px;
+        position:fixed; top:10px; right:10px; width:520px;
         background:#0f172a; color:#f8fafc; border: 2px solid ${scoreColor};
-        border-radius:16px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+        border-radius:16px; box-shadow: 0 20px 60px -10px ${scoreColor}44, 0 20px 25px -5px rgb(0 0 0 / 0.6);
         font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        padding:20px; z-index:9999999; pointer-events:none;
-        max-height:92vh; overflow-y:auto; line-height:1.5;
+        padding:18px; z-index:9999999; pointer-events:none;
+        max-height:94vh; overflow-y:auto; line-height:1.5;
       `;
 
       const reportLabel = isFullReport ? "Full SEO (A+B)" : "Phần A: On-page cơ bản";
+      const passColor = isPass ? "#22c55e" : "#ef4444";
+      const passText = isPass ? "PASS" : "FAIL";
+      const passIcon = isPass ? "✅" : "❌";
+
       const headerHtml = `
-        <div style="font-weight:bold; font-size:15px; margin-bottom:15px; border-bottom:1px solid #334155; padding-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
+        <div style="font-weight:bold; font-size:15px; margin-bottom:12px; border-bottom:1px solid #334155; padding-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
           <span>🎯 BÁO CÁO SEO AUDIT CHUYÊN SÂU</span>
           <span style="color:#94a3b8; font-size:11px;">${reportLabel}</span>
         </div>
-        
-        <div style="display: grid; grid-template-columns: 200px 1fr; gap: 20px; align-items: start;">
-          <!-- CỘT TRÁI: ĐIỂM SỐ & THÔNG TIN -->
-          <div style="display: flex; flex-direction: column; gap: 12px;">
-            <div style="display:flex; justify-content:center; align-items:center; flex-direction:column; background: rgba(30, 41, 59, 0.5); padding: 15px; border-radius: 12px;">
-              <div style="position:relative; width:90px; height:90px; border-radius:50%; background:conic-gradient(${scoreColor} ${score * 3.6}deg, #334155 0deg); display:flex; justify-content:center; align-items:center; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2);">
-                <div style="position:absolute; width:76px; height:76px; border-radius:50%; background:#0f172a; display:flex; justify-content:center; align-items:center; flex-direction:column;">
-                  <span style="font-size:26px; font-weight:bold; color:${scoreColor};">${score}</span>
-                  <span style="font-size:9px; color:#94a3b8; text-transform:uppercase; font-weight:bold; letter-spacing:1px;">SEO</span>
+
+        <!-- ═══ BẢNG ĐIỂM TỔNG KẾT ═══ -->
+        <div style="
+          background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(30,41,59,0.6) 100%);
+          border: 2px solid ${scoreColor};
+          border-radius: 12px;
+          padding: 14px 16px;
+          margin-bottom: 14px;
+          position: relative;
+          overflow: hidden;
+        ">
+          <!-- Glow effect -->
+          <div style="position:absolute; top:-40px; left:-40px; width:120px; height:120px; border-radius:50%; background:${scoreColor}; opacity:0.06; pointer-events:none;"></div>
+
+          <!-- Header dòng tiêu đề -->
+          <div style="
+            text-align:center;
+            font-size:11px;
+            font-weight:bold;
+            color:#94a3b8;
+            letter-spacing:2px;
+            text-transform:uppercase;
+            margin-bottom:10px;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 8px;
+          ">══ KẾT QUẢ CHẤM ĐIỂM SEO ══</div>
+
+          <!-- Grid 2 cột: Vòng tròn điểm | Thông tin -->
+          <div style="display:grid; grid-template-columns: 100px 1fr; gap:14px; align-items:center; margin-bottom:12px;">
+            <!-- Vòng tròn điểm số -->
+            <div style="display:flex; justify-content:center;">
+              <div style="
+                position:relative; width:88px; height:88px;
+                border-radius:50%;
+                background: conic-gradient(${scoreColor} ${score * 3.6}deg, #1e293b 0deg);
+                display:flex; justify-content:center; align-items:center;
+                box-shadow: 0 0 20px ${scoreColor}33;
+              ">
+                <div style="
+                  position:absolute; width:72px; height:72px;
+                  border-radius:50%; background:#0f172a;
+                  display:flex; justify-content:center; align-items:center; flex-direction:column;
+                ">
+                  <span style="font-size:24px; font-weight:900; color:${scoreColor}; line-height:1;">${score}</span>
+                  <span style="font-size:8px; color:#64748b; text-transform:uppercase; font-weight:bold; letter-spacing:1px;">/ 100</span>
                 </div>
-              </div>
-              <div style="margin-top:12px; font-weight:bold; color:${scoreColor}; font-size:13px; text-transform:uppercase; letter-spacing:0.5px; text-align: center;">
-                ${scoreLabel}
               </div>
             </div>
 
-            <div style="font-size:11px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px dashed #334155; display: flex; flex-direction: column; gap: 6px;">
-              <div>
-                <div style="color:#94a3b8; margin-bottom: 2px;">Trang phân tích:</div>
-                <strong style="color:#60a5fa; word-break: break-all;">${pageName}</strong>
+            <!-- Thông tin điểm -->
+            <div style="display:flex; flex-direction:column; gap:5px; font-size:11px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#94a3b8;">Điểm số:</span>
+                <strong style="color:${scoreColor}; font-size:14px;">${score}/100</strong>
               </div>
-              <div>
-                <div style="color:#94a3b8; margin-bottom: 2px;">Từ khóa chính:</div>
-                <strong style="color:#fbbf24; word-break: break-all;">${config.keyword}</strong>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#94a3b8;">Đánh giá:</span>
+                <strong style="color:${scoreColor};">${scoreIcon} ${scoreLabel}</strong>
               </div>
-              <div style="border-top: 1px solid #334155; padding-top: 6px; display:flex; justify-content:space-between;">
-                <span style="color:#94a3b8;">Tiêu chí đạt:</span>
-                <strong style="color:${scoreColor};">${passedCount}/${itemsList.length}</strong>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="color:#94a3b8;">Ngưỡng đạt:</span>
+                <span style="color:#cbd5e1;">${threshold}%</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #1e293b; padding-top:5px; margin-top:2px;">
+                <span style="color:#94a3b8;">Kết quả:</span>
+                <span style="
+                  font-weight:bold; font-size:12px;
+                  color:${passColor};
+                  background: ${isPass ? 'rgba(34,197,94,0.12)' : 'rgba(239,68,68,0.12)'};
+                  border: 1px solid ${passColor};
+                  border-radius:4px; padding:1px 8px;
+                ">${passIcon} ${passText}</span>
               </div>
             </div>
-
-            <!-- Mini summary by section A/B -->
-            ${isFullReport ? (() => {
-              const aItems = itemsList.filter(i => !i.id.startsWith("B") && !i.id.startsWith("AI") && !i.id.startsWith("CrUX") && !i.id.startsWith("SERP"));
-              const bItems = itemsList.filter(i => i.id.startsWith("B") || i.id.startsWith("AI") || i.id.startsWith("CrUX") || i.id.startsWith("SERP"));
-              const aPass = aItems.filter(i => i.isPass).length;
-              const bPass = bItems.filter(i => i.isPass).length;
-              return `<div style="font-size:10px; padding: 8px; background: rgba(99, 102, 241, 0.08); border-radius: 6px; border: 1px solid rgba(99, 102, 241, 0.2);">
-                <div style="color:#a5b4fc; font-weight:bold; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.5px;">Chi tiết</div>
-                <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
-                  <span style="color:#94a3b8;">Phần A (On-page):</span>
-                  <strong style="color:${aPass === aItems.length ? '#4ade80' : '#f87171'};">${aPass}/${aItems.length}</strong>
-                </div>
-                <div style="display:flex; justify-content:space-between;">
-                  <span style="color:#94a3b8;">Phần B (Advanced):</span>
-                  <strong style="color:${bPass === bItems.length ? '#4ade80' : '#f87171'};">${bPass}/${bItems.length}</strong>
-                </div>
-              </div>`;
-            })() : ""}
           </div>
 
-          <!-- CỘT PHẢI: LỖI CẦN KHẮC PHỤC -->
-          <div style="max-height: 72vh; overflow-y: auto; padding-right: 4px; pointer-events: auto;">
+          <!-- Thống kê tiêu chí -->
+          <div style="
+            display:grid; grid-template-columns: 1fr 1fr 1fr;
+            gap:6px;
+            background: rgba(0,0,0,0.25);
+            border-radius: 8px;
+            padding: 8px 10px;
+            border: 1px solid #1e293b;
+          ">
+            <div style="text-align:center;">
+              <div style="font-size:16px; font-weight:bold; color:#60a5fa;">${itemsList.length}</div>
+              <div style="font-size:9px; color:#64748b; text-transform:uppercase; letter-spacing:0.5px;">Tổng tiêu chí</div>
+            </div>
+            <div style="text-align:center; border-left:1px solid #1e293b; border-right:1px solid #1e293b;">
+              <div style="font-size:16px; font-weight:bold; color:#4ade80;">✅ ${passedCount}</div>
+              <div style="font-size:9px; color:#64748b; text-transform:uppercase; letter-spacing:0.5px;">Đạt</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-size:16px; font-weight:bold; color:#f87171;">❌ ${failedItems.length}</div>
+              <div style="font-size:9px; color:#64748b; text-transform:uppercase; letter-spacing:0.5px;">Không đạt</div>
+            </div>
+          </div>
+
+          <!-- Thông tin trang & từ khóa -->
+          <div style="margin-top:10px; font-size:10px; display:flex; flex-direction:column; gap:4px; border-top:1px solid #1e293b; padding-top:8px;">
+            <div style="display:flex; gap:6px; align-items:flex-start;">
+              <span style="color:#64748b; white-space:nowrap;">🔗 Trang:</span>
+              <strong style="color:#60a5fa; word-break:break-all;">${pageName}</strong>
+            </div>
+            <div style="display:flex; gap:6px; align-items:flex-start;">
+              <span style="color:#64748b; white-space:nowrap;">🔑 Từ khóa:</span>
+              <strong style="color:#fbbf24; word-break:break-all;">${config.keyword}</strong>
+            </div>
+          </div>
+
+          ${isFullReport ? (() => {
+            const aItems = itemsList.filter(i => !i.id.startsWith("B") && !i.id.startsWith("AI") && !i.id.startsWith("CrUX") && !i.id.startsWith("SERP"));
+            const bItems = itemsList.filter(i => i.id.startsWith("B") || i.id.startsWith("AI") || i.id.startsWith("CrUX") || i.id.startsWith("SERP"));
+            const aPass = aItems.filter(i => i.isPass).length;
+            const bPass = bItems.filter(i => i.isPass).length;
+            return `<div style="margin-top:8px; display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:10px;">
+              <div style="background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.2); border-radius:6px; padding:6px 8px; display:flex; justify-content:space-between;">
+                <span style="color:#a5b4fc;">Phần A (On-page):</span>
+                <strong style="color:${aPass === aItems.length ? '#4ade80' : '#f87171'};">${aPass}/${aItems.length}</strong>
+              </div>
+              <div style="background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.2); border-radius:6px; padding:6px 8px; display:flex; justify-content:space-between;">
+                <span style="color:#a5b4fc;">Phần B (Advanced):</span>
+                <strong style="color:${bPass === bItems.length ? '#4ade80' : '#f87171'};">${bPass}/${bItems.length}</strong>
+              </div>
+            </div>`;
+          })() : ""}
+        </div>
+
+        <!-- CỘT LỖI CẦN KHẮC PHỤC -->
+        <div style="pointer-events: auto;">
       `;
 
       let bodyHtml = "";
@@ -976,7 +1061,6 @@ export async function injectVisualSEOReport(
               <span style="color:#94a3b8; font-size:11px;">Trang đã đáp ứng đầy đủ ${itemsList.length} tiêu chuẩn SEO.</span>
             </div>
           </div>
-        </div>
         `;
       } else {
         // Nhóm lỗi theo group label gọn
@@ -1040,13 +1124,12 @@ export async function injectVisualSEOReport(
             </div>
             ${groupedHtml}
           </div>
-        </div>
         `;
       }
 
       container.innerHTML = headerHtml + bodyHtml;
       document.body.appendChild(container);
     },
-    { pageName, data, config: mergedConfig, advancedData: advancedData ?? null },
+    { pageName, data, config: mergedConfig, advancedData: advancedData ?? null, threshold },
   );
 }

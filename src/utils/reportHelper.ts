@@ -136,7 +136,7 @@ export class SeoScorecard {
 
         if (failures.length > 0) {
             summaryLines.push(``, `📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (${failed}/${total}):`);
-            
+
             // Group errors by their assigned group
             const groupedFailures = failures.reduce((acc, f) => {
                 if (!acc[f.group]) acc[f.group] = [];
