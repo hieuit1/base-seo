@@ -1,0 +1,11 @@
+[LLMService] Error evaluating content: GoogleGenerativeAIFetchError: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.
+    at handleResponseNotOk (/home/runner/work/base-seo/base-seo/node_modules/@google/generative-ai/dist/index.js:434:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at makeRequest (/home/runner/work/base-seo/base-seo/node_modules/@google/generative-ai/dist/index.js:403:9)
+    at generateContent (/home/runner/work/base-seo/base-seo/node_modules/@google/generative-ai/dist/index.js:867:22)
+    at LLMService.evaluateContentQuality (/home/runner/work/base-seo/base-seo/src/services/LLMService.ts:83:22) {
+  status: 404,
+  statusText: 'Not Found',
+  errorDetails: undefined
+}
+[PageSpeedService] Error fetching data: 500 Internal Server Error

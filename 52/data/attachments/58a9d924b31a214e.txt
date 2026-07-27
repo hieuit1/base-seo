@@ -1,0 +1,69 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     65/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  62
+   ✅ Đạt:          40
+   ❌ Không đạt:    22
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (22/62):
+--- TITLE ---
+   1. [Độ dài Title: 9 ký tự (chuẩn: 50–60)]
+      → Title quá ngắn: 9 ký tự, cần 50–60
+   2. [Title chứa keyword "Hoạt động sự kiện văn phòng"]
+      → Title không chứa keyword "Hoạt động sự kiện văn phòng"
+   3. [Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "Hoạt động sự kiện văn phòng" không có trong Title
+--- META DESCRIPTION ---
+   4. [Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   5. [Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   6. [Meta description chứa keyword "Hoạt động sự kiện văn phòng"]
+      → Không thể kiểm tra — Meta description không tồn tại
+--- HEADING STRUCTURE ---
+   7. [H1 chứa keyword "Hoạt động sự kiện văn phòng"]
+      → H1 "Hoạt động" không chứa keyword "Hoạt động sự kiện văn phòng"
+--- URL STRUCTURE ---
+   8. [URL chứa keyword slug "hoat-dong-su-kien-van-phong" ]
+      → URL "/hoat-dong" không chứa keyword "hoat-dong-su-kien-van-phong"
+--- CONTENT ---
+   9. [Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   10. [Keyword "Hoạt động sự kiện văn phòng" xuất hiện trong 100 từ đầu]
+      → Keyword "Hoạt động sự kiện văn phòng" không xuất hiện trong 100 từ đầu
+   11. [Readability (VI): 3.7 (avg 44.1 từ/câu) (khuyến nghị ≥ 50)]
+      → Nội dung khó đọc, điểm 3.7 < 50 (trung bình 44.1 từ/câu, lý tưởng 15–20)
+--- IMAGES ---
+   12. [Có ảnh chứa keyword "Hoạt động sự kiện văn phòng" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Hoạt động sự kiện văn phòng"
+   13. [Ảnh có width/height: 3/7 (cần ≥ 80%)]
+      → Chỉ 3/7 ảnh có width/height, cần ≥ 6
+   14. [Định dạng ảnh tối ưu (WebP/AVIF): 57% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 4/7 ảnh (57%)
+--- LINKS ---
+   15. [Anchor text chất lượng (lỗi: 1)]
+      → 1 link có anchor text không tốt: "" → #menu 
+--- TECHNICAL SEO ---
+   16. [Open Graph: og:title=✔, og:description=✘, og:image=✘]
+      → og:description, og:image — Link không có thumbnail khi share trên social media
+--- MOBILE ---
+   17. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 20 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   18. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate
+--- PERFORMANCE ---
+   19. [[Mobile] LCP (Largest Contentful Paint): 3776ms (< 2500ms)]
+      → [Mobile] LCP quá cao: 3776ms (chuẩn: < 2.5s)
+   20. [[Mobile] CLS (Cumulative Layout Shift): 0.173 (< 0.1)]
+      → [Mobile] CLS quá cao: 0.173 (chuẩn: < 0.1)
+   21. [[Mobile] Performance Score (Lighthouse): 69/100]
+      → [Mobile] Điểm tốc độ tải trang quá thấp: 69/100 (cần ≥ 80)
+   22. [[Desktop] CLS (Cumulative Layout Shift): 0.12 (< 0.1)]
+      → [Desktop] CLS quá cao: 0.12 (chuẩn: < 0.1)

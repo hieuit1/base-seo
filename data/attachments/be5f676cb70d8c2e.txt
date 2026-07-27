@@ -1,0 +1,38 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     77/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  60%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  44
+   ✅ Đạt:          34
+   ❌ Không đạt:    10
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (10/44):
+--- ANCHOR DIVERSITY ---
+   1. [B5.4 — Anchor Text Diversity: 22/56 unique (39%) — cần ≥ 70%]
+      → Anchor text không đa dạng: chỉ 39% unique (cần ≥ 70%). Tránh dùng cùng anchor text cho nhiều link khác nhau.
+   2. [B5.4 — Anchor Text chung chung: 3 link]
+      → Có 3 link dùng anchor text chung chung (click here, xem thêm...). Cần anchor text mô tả nội dung đích.
+--- PERFORMANCE (ADV) ---
+   3. [B6.4 — Resource Hints: preload=0, preconnect=0]
+      → Trang không sử dụng resource hints (preload/preconnect). Thêm để tối ưu tải tài nguyên.
+   4. [B6.5 — Lazy Loading: 0/2 ảnh below-fold (0%)]
+      → Chỉ 0% ảnh below-fold có loading="lazy", cần ≥ 80%.
+   5. [B6.6 — Font Optimization: font-display:swap=✘, preload=0]
+      → Font chưa được tối ưu. Thêm font-display: swap và/hoặc preload font files.
+   6. [B6.7 — Responsive Images: 0/6 ảnh có srcset]
+      → Chỉ 0% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
+--- URL CONSISTENCY ---
+   7. [B8.1 — WWW Redirect: Lỗi]
+      → www ↔ non-www không redirect đúng. Có thể gây duplicate content.
+   8. [B8.2 — HTTPS Redirect: Lỗi]
+      → HTTP không redirect sang HTTPS. Ảnh hưởng bảo mật và SEO.
+   9. [B8.4 — HSTS (Strict-Transport-Security): Thiếu]
+      → Thiếu HSTS header. Browser không bắt buộc dùng HTTPS, có thể bị downgrade attack.
+--- CORE WEB VITALS ---
+   10. [[Mobile] CrUX — LCP (Largest Contentful Paint): 4843ms]
+      → [Mobile] LCP quá chậm (4843ms). Cần ≤ 2500ms.

@@ -1,0 +1,57 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     72/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  60
+   ✅ Đạt:          43
+   ❌ Không đạt:    17
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (17/60):
+--- TITLE ---
+   1. [Độ dài Title: 44 ký tự (chuẩn: 50–60)]
+      → Title quá ngắn: 44 ký tự, cần 50–60
+   2. [Title chứa keyword "Chương trình huấn luyện BM Tower"]
+      → Title không chứa keyword "Chương trình huấn luyện BM Tower"
+   3. [Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "Chương trình huấn luyện BM Tower" không có trong Title
+--- META DESCRIPTION ---
+   4. [Độ dài Meta: 102 ký tự (chuẩn: 120–160)]
+      → Meta description quá ngắn: 102 ký tự, cần 120–160
+   5. [Meta description chứa keyword "Chương trình huấn luyện BM Tower"]
+      → Meta description không chứa keyword "Chương trình huấn luyện BM Tower"
+--- HEADING STRUCTURE ---
+   6. [H1 chứa keyword "Chương trình huấn luyện BM Tower"]
+      → H1 "Chương trình huấn luyện tại tòa nhà BM Tower" không chứa keyword "Chương trình huấn luyện BM Tower"
+--- URL STRUCTURE ---
+   7. [URL chứa keyword slug "chuong-trinh-huan-luyen-bm-tower" ]
+      → URL "/cuoc-hop-chien-luoc" không chứa keyword "chuong-trinh-huan-luyen-bm-tower"
+--- CONTENT ---
+   8. [Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   9. [Keyword "Chương trình huấn luyện BM Tower" xuất hiện trong 100 từ đầu]
+      → Keyword "Chương trình huấn luyện BM Tower" không xuất hiện trong 100 từ đầu
+   10. [Readability (VI): 28.0 (avg 37.7 từ/câu) (khuyến nghị ≥ 50)]
+      → Nội dung khó đọc, điểm 28.0 < 50 (trung bình 37.7 từ/câu, lý tưởng 15–20)
+--- IMAGES ---
+   11. [Có ảnh chứa keyword "Chương trình huấn luyện BM Tower" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Chương trình huấn luyện BM Tower"
+   12. [Ảnh có width/height: 6/12 (cần ≥ 80%)]
+      → Chỉ 6/12 ảnh có width/height, cần ≥ 10
+   13. [Định dạng ảnh tối ưu (WebP/AVIF): 25% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 3/12 ảnh (25%)
+   14. [Dung lượng ảnh tối ưu (≤ 250KB)]
+      → 3/9 ảnh vượt quá 250KB (Ví dụ: https://code5.mimadigi.vn/2026/june/bientandung_107626W/upload/elfinder/thue-van-phong-tai-Binh-Duong/chuong-trinh-huan-luyen-tai-bm-tower-1.jpg)
+--- LINKS ---
+   15. [Anchor text chất lượng (lỗi: 1)]
+      → 1 link có anchor text không tốt: "" → #menu 
+--- MOBILE ---
+   16. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 18 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   17. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate

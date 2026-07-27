@@ -1,0 +1,48 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     77/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  57
+   ✅ Đạt:          44
+   ❌ Không đạt:    13
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (13/57):
+--- TITLE ---
+   1. [Độ dài Title: 17 ký tự (chuẩn: 50–60)]
+      → Title quá ngắn: 17 ký tự, cần 50–60
+--- META DESCRIPTION ---
+   2. [Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   3. [Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   4. [Meta description chứa keyword "Chính sách tư vấn"]
+      → Không thể kiểm tra — Meta description không tồn tại
+--- CONTENT ---
+   5. [Keyword "Chính sách tư vấn" xuất hiện trong 100 từ đầu]
+      → Keyword "Chính sách tư vấn" không xuất hiện trong 100 từ đầu
+--- IMAGES ---
+   6. [Có ảnh chứa keyword "Chính sách tư vấn" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Chính sách tư vấn"
+   7. [Ảnh có width/height: 3/6 (cần ≥ 80%)]
+      → Chỉ 3/6 ảnh có width/height, cần ≥ 5
+   8. [Định dạng ảnh tối ưu (WebP/AVIF): 50% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 3/6 ảnh (50%)
+--- LINKS ---
+   9. [Anchor text chất lượng (lỗi: 1)]
+      → 1 link có anchor text không tốt: "" → #menu 
+--- TECHNICAL SEO ---
+   10. [robots.txt trả về status 0]
+      → robots.txt trả về status 0, cần 200
+   11. [sitemap.xml trả về status 0]
+      → sitemap.xml trả về status 0, cần 200
+--- MOBILE ---
+   12. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 18 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   13. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate

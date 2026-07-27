@@ -1,0 +1,54 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     64/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  60%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  44
+   ✅ Đạt:          28
+   ❌ Không đạt:    16
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (16/44):
+--- SEMANTIC SEO (ADVANCED) ---
+   1. [B1.5 — People Also Ask (PAA): Không xuất hiện]
+      → Từ khóa này không có People Also Ask trên SERP. Có thể nội dung chưa đủ độ rộng chủ đề.
+--- E-E-A-T ---
+   2. [B2.2 — Ngày đăng bài (datePublished): Thiếu]
+      → Thiếu datePublished — Google dùng để đánh giá tính mới của nội dung.
+   3. [B2.3 — Ngày cập nhật (dateModified): Thiếu]
+      → Thiếu dateModified — Bài viết nên hiển thị ngày cập nhật gần nhất.
+   4. [B2.4 — Trust Pages: 1/8 trang tồn tại]
+      → Chỉ 1 trust pages tồn tại. Cần ≥ 2 trong: About, Contact, Privacy Policy.
+--- SCHEMA MARKUP ---
+   5. [B3.2 — Schema có đủ required fields]
+      → Schema thiếu required fields: Article: thiếu fields [datePublished]
+   6. [B3.3 — Schema không có lỗi cú pháp (1 lỗi)]
+      → Lỗi Schema: Article: thiếu fields [datePublished]
+--- ANCHOR DIVERSITY ---
+   7. [B5.4 — Anchor Text Diversity: 21/47 unique (45%) — cần ≥ 70%]
+      → Anchor text không đa dạng: chỉ 45% unique (cần ≥ 70%). Tránh dùng cùng anchor text cho nhiều link khác nhau.
+--- PERFORMANCE (ADV) ---
+   8. [B6.1 — TTFB: 1453ms (tối đa: 800ms)]
+      → TTFB quá cao: 1453ms, cần ≤ 800ms. Kiểm tra server/hosting/CDN.
+   9. [B6.4 — Resource Hints: preload=0, preconnect=0]
+      → Trang không sử dụng resource hints (preload/preconnect). Thêm để tối ưu tải tài nguyên.
+   10. [B6.5 — Lazy Loading: 0/1 ảnh below-fold (0%)]
+      → Chỉ 0% ảnh below-fold có loading="lazy", cần ≥ 80%.
+   11. [B6.6 — Font Optimization: font-display:swap=✘, preload=0]
+      → Font chưa được tối ưu. Thêm font-display: swap và/hoặc preload font files.
+   12. [B6.7 — Responsive Images: 0/3 ảnh có srcset]
+      → Chỉ 0% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
+--- UX SIGNALS ---
+   13. [B7.3 — ARIA Labels thiếu: 7 phần tử]
+      → 7 phần tử interactive thiếu ARIA label. Ảnh hưởng accessibility.
+--- URL CONSISTENCY ---
+   14. [B8.1 — WWW Redirect: Lỗi]
+      → www ↔ non-www không redirect đúng. Có thể gây duplicate content.
+   15. [B8.4 — HSTS (Strict-Transport-Security): Thiếu]
+      → Thiếu HSTS header. Browser không bắt buộc dùng HTTPS, có thể bị downgrade attack.
+--- CORE WEB VITALS ---
+   16. [[Mobile] CrUX — LCP (Largest Contentful Paint): 3628ms]
+      → [Mobile] LCP quá chậm (3628ms). Cần ≤ 2500ms.

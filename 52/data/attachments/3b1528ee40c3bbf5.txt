@@ -1,0 +1,49 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  62
+   ✅ Đạt:          49
+   ❌ Không đạt:    13
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (13/62):
+--- TITLE ---
+   1. [Độ dài Title: 27 ký tự (chuẩn: 50–60)]
+      → Title quá ngắn: 27 ký tự, cần 50–60
+--- META DESCRIPTION ---
+   2. [Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   3. [Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   4. [Meta description chứa keyword "Phòng họp cho thuê theo giờ"]
+      → Không thể kiểm tra — Meta description không tồn tại
+--- CONTENT ---
+   5. [Keyword "Phòng họp cho thuê theo giờ" xuất hiện trong 100 từ đầu]
+      → Keyword "Phòng họp cho thuê theo giờ" không xuất hiện trong 100 từ đầu
+--- IMAGES ---
+   6. [Ảnh có width/height: 3/15 (cần ≥ 80%)]
+      → Chỉ 3/15 ảnh có width/height, cần ≥ 12
+   7. [Định dạng ảnh tối ưu (WebP/AVIF): 0% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 0/15 ảnh (0%)
+--- LINKS ---
+   8. [Anchor text chất lượng (lỗi: 1)]
+      → 1 link có anchor text không tốt: "" → #menu 
+--- TECHNICAL SEO ---
+   9. [Open Graph: og:title=✔, og:description=✘, og:image=✔]
+      → og:description — Link không có thumbnail khi share trên social media
+--- MOBILE ---
+   10. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 10 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   11. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate
+--- PERFORMANCE ---
+   12. [[Mobile] LCP (Largest Contentful Paint): 7758ms (< 2500ms)]
+      → [Mobile] LCP quá cao: 7758ms (chuẩn: < 2.5s)
+   13. [[Mobile] Performance Score (Lighthouse): 61/100]
+      → [Mobile] Điểm tốc độ tải trang quá thấp: 61/100 (cần ≥ 80)

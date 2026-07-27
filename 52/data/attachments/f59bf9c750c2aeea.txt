@@ -1,0 +1,1 @@
+Phát hiện 20 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)

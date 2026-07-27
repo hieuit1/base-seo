@@ -1,0 +1,57 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     59/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  60%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  44
+   ✅ Đạt:          26
+   ❌ Không đạt:    18
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (18/44):
+--- SEMANTIC SEO (ADVANCED) ---
+   1. [B1.5 — People Also Ask (PAA): Không xuất hiện]
+      → Từ khóa này không có People Also Ask trên SERP. Có thể nội dung chưa đủ độ rộng chủ đề.
+--- E-E-A-T ---
+   2. [B2.2 — Ngày đăng bài (datePublished): Thiếu]
+      → Thiếu datePublished — Google dùng để đánh giá tính mới của nội dung.
+   3. [B2.3 — Ngày cập nhật (dateModified): Thiếu]
+      → Thiếu dateModified — Bài viết nên hiển thị ngày cập nhật gần nhất.
+--- SCHEMA MARKUP ---
+   4. [B3.2 — Schema có đủ required fields]
+      → Schema thiếu required fields: Article: thiếu fields [datePublished]
+   5. [B3.3 — Schema không có lỗi cú pháp (1 lỗi)]
+      → Lỗi Schema: Article: thiếu fields [datePublished]
+--- ANCHOR DIVERSITY ---
+   6. [B5.4 — Anchor Text Diversity: 23/52 unique (44%) — cần ≥ 70%]
+      → Anchor text không đa dạng: chỉ 44% unique (cần ≥ 70%). Tránh dùng cùng anchor text cho nhiều link khác nhau.
+--- PERFORMANCE (ADV) ---
+   7. [B6.1 — TTFB: 1460ms (tối đa: 800ms)]
+      → TTFB quá cao: 1460ms, cần ≤ 800ms. Kiểm tra server/hosting/CDN.
+   8. [B6.4 — Resource Hints: preload=0, preconnect=0]
+      → Trang không sử dụng resource hints (preload/preconnect). Thêm để tối ưu tải tài nguyên.
+   9. [B6.5 — Lazy Loading: 0/2 ảnh below-fold (0%)]
+      → Chỉ 0% ảnh below-fold có loading="lazy", cần ≥ 80%.
+   10. [B6.6 — Font Optimization: font-display:swap=✘, preload=0]
+      → Font chưa được tối ưu. Thêm font-display: swap và/hoặc preload font files.
+   11. [B6.7 — Responsive Images: 0/6 ảnh có srcset]
+      → Chỉ 0% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
+--- URL CONSISTENCY ---
+   12. [B8.1 — WWW Redirect: Lỗi]
+      → www ↔ non-www không redirect đúng. Có thể gây duplicate content.
+   13. [B8.2 — HTTPS Redirect: Lỗi]
+      → HTTP không redirect sang HTTPS. Ảnh hưởng bảo mật và SEO.
+   14. [B8.4 — HSTS (Strict-Transport-Security): Thiếu]
+      → Thiếu HSTS header. Browser không bắt buộc dùng HTTPS, có thể bị downgrade attack.
+--- CORE WEB VITALS ---
+   15. [[Mobile] CrUX — LCP (Largest Contentful Paint): 5826ms]
+      → [Mobile] LCP quá chậm (5826ms). Cần ≤ 2500ms.
+   16. [[Mobile] CrUX — CLS (Cumulative Layout Shift): 0.106]
+      → [Mobile] CLS quá cao (0.106). Cần ≤ 0.1.
+   17. [[Mobile] PageSpeed Score (Lighthouse): 60/100]
+      → [Mobile] Điểm PageSpeed thấp (60/100). Cần ≥ 70.
+   18. [[Desktop] CrUX — CLS (Cumulative Layout Shift): 0.153]
+      → [Desktop] CLS quá cao (0.153). Cần ≤ 0.1.

@@ -1,0 +1,1 @@
+Có 4 link dùng anchor text chung chung (click here, xem thêm...). Cần anchor text mô tả nội dung đích.
