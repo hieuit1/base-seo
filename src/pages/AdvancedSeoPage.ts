@@ -515,37 +515,46 @@ export class AdvancedSeoPage extends SeoPage {
     sc: SeoScorecard
   ): Promise<void> {
     sc.startGroup("CORE WEB VITALS");
-    const cw = scan.coreWebVitals;
-    if (!cw) return;
+    const cwAll = scan.coreWebVitals;
+    if (!cwAll) return;
 
-    if (cw.lcp !== null) {
-      await sc.check(
-        `CrUX — LCP (Largest Contentful Paint): ${cw.lcp}ms`,
-        cw.lcp <= 2500,
-        `LCP quá chậm (${cw.lcp}ms). Cần ≤ 2500ms.`
-      );
-    }
-    if (cw.cls !== null) {
-      await sc.check(
-        `CrUX — CLS (Cumulative Layout Shift): ${cw.cls}`,
-        cw.cls <= 0.1,
-        `CLS quá cao (${cw.cls}). Cần ≤ 0.1.`
-      );
-    }
-    if (cw.inp !== null) {
-      await sc.check(
-        `CrUX — INP (Interaction to Next Paint): ${cw.inp}ms`,
-        cw.inp <= 200,
-        `INP quá cao (${cw.inp}ms). Cần ≤ 200ms.`
-      );
-    }
-    if (cw.score !== null) {
-      await sc.check(
-        `PageSpeed Score (Lighthouse): ${cw.score}/100`,
-        cw.score >= 70,
-        `Điểm PageSpeed thấp (${cw.score}/100). Cần ≥ 70.`
-      );
-    }
+    const checkPlatformVitals = async (platform: string, cw: any) => {
+      if (!cw) {
+        await sc.check(`[${platform}] Core Web Vitals`, true, `Cảnh báo: Không có dữ liệu CrUX cho ${platform}.`);
+        return;
+      }
+      if (cw.lcp !== null) {
+        await sc.check(
+          `[${platform}] CrUX — LCP (Largest Contentful Paint): ${cw.lcp}ms`,
+          cw.lcp <= 2500,
+          `[${platform}] LCP quá chậm (${cw.lcp}ms). Cần ≤ 2500ms.`
+        );
+      }
+      if (cw.cls !== null) {
+        await sc.check(
+          `[${platform}] CrUX — CLS (Cumulative Layout Shift): ${cw.cls}`,
+          cw.cls <= 0.1,
+          `[${platform}] CLS quá cao (${cw.cls}). Cần ≤ 0.1.`
+        );
+      }
+      if (cw.inp !== null) {
+        await sc.check(
+          `[${platform}] CrUX — INP (Interaction to Next Paint): ${cw.inp}ms`,
+          cw.inp <= 200,
+          `[${platform}] INP quá cao (${cw.inp}ms). Cần ≤ 200ms.`
+        );
+      }
+      if (cw.score !== null) {
+        await sc.check(
+          `[${platform}] PageSpeed Score (Lighthouse): ${cw.score}/100`,
+          cw.score >= 70,
+          `[${platform}] Điểm PageSpeed thấp (${cw.score}/100). Cần ≥ 70.`
+        );
+      }
+    };
+
+    await checkPlatformVitals('Mobile', cwAll.mobile);
+    await checkPlatformVitals('Desktop', cwAll.desktop);
   }
 
   async verifySerpData(

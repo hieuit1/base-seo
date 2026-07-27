@@ -38,8 +38,14 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
         // ── KÍCH HOẠT API SONG SONG NGAY TỪ ĐẦU ──
         const fullUrl = new URL(config.path, process.env.BASE_URL as string).href;
         const vitalsPromise = config.checkCoreWebVitals !== false
-            ? pageSpeedService.getCoreWebVitals(fullUrl)
-            : Promise.resolve(null);
+            ? (async () => {
+                const mobile = await pageSpeedService.getCoreWebVitals(fullUrl, "mobile");
+                // Delay nhỏ để tránh bị Google block (Rate Limit) do gửi 2 requests cùng lúc
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                const desktop = await pageSpeedService.getCoreWebVitals(fullUrl, "desktop");
+                return { mobile, desktop };
+              })()
+            : Promise.resolve({ mobile: null, desktop: null });
 
         // ── STEP 1: Truy cập trang ──
         let navigationResponse: any;

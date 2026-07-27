@@ -11,7 +11,7 @@ export interface CoreWebVitals {
 
 export class PageSpeedService {
   private apiKey: string | undefined;
-  private readonly timeoutMs = 20000;
+  private readonly timeoutMs = 40000;
 
   constructor() {
     this.apiKey = process.env.PAGESPEED_API_KEY;

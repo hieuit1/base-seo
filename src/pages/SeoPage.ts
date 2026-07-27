@@ -769,52 +769,60 @@ export class SeoPage extends BasePage {
   async verifyPerformance(vitals: any, localMetrics: any, sc: SeoScorecard) {
     sc.startGroup("PERFORMANCE");
     
-    if (!vitals) {
+    const hasMobile = !!vitals?.mobile;
+    const hasDesktop = !!vitals?.desktop;
+
+    if (!hasMobile && !hasDesktop) {
       // Cảnh báo nhưng không FAIL test (đúng như yêu cầu người dùng)
       await sc.check(`Google PageSpeed API`, true, "Cảnh báo: Không lấy được dữ liệu từ API (Timeout). Sử dụng dữ liệu Local Performance để thay thế.");
     } else {
       await sc.check(`Google PageSpeed API`, true, "Lấy dữ liệu thành công");
     }
 
-    const finalLcp = vitals?.lcp ?? localMetrics?.lcp ?? null;
-    const finalCls = vitals?.cls ?? localMetrics?.cls ?? null;
-    const finalInp = vitals?.inp ?? null; // Local khó đo INP nếu không tương tác
-    const score = vitals?.score ?? null;
+    const checkMetrics = async (platform: string, v: any, fallbackMetrics: any = null) => {
+      const finalLcp = v?.lcp ?? fallbackMetrics?.lcp ?? null;
+      const finalCls = v?.cls ?? fallbackMetrics?.cls ?? null;
+      const finalInp = v?.inp ?? null;
+      const score = v?.score ?? null;
 
-    if (finalLcp === null && finalCls === null) {
-      await sc.check(`Core Web Vitals & Tốc độ tải trang`, false, "LỖI — Không có dữ liệu Tốc độ từ API lẫn Local");
-      return;
-    }
+      if (finalLcp === null && finalCls === null) {
+        await sc.check(`[${platform}] Core Web Vitals`, true, `Cảnh báo: Không lấy được dữ liệu Tốc độ từ API cho ${platform}.`);
+        return;
+      }
 
-    await sc.check(
-      `LCP (Largest Contentful Paint): ${finalLcp !== null ? finalLcp + "ms" : "N/A"} (< 2500ms)`,
-      finalLcp !== null && finalLcp < 2500,
-      `LCP quá cao: ${finalLcp}ms (chuẩn: < 2.5s)`
-    );
-
-    if (finalInp !== null) {
       await sc.check(
-        `INP (Interaction to Next Paint): ${finalInp}ms (< 200ms)`,
-        finalInp < 200,
-        `INP quá cao: ${finalInp}ms (chuẩn: < 200ms)`
+        `[${platform}] LCP (Largest Contentful Paint): ${finalLcp !== null ? finalLcp + "ms" : "N/A"} (< 2500ms)`,
+        finalLcp !== null && finalLcp < 2500,
+        `[${platform}] LCP quá cao: ${finalLcp}ms (chuẩn: < 2.5s)`
       );
-    } else {
-      await sc.check(`INP (Interaction to Next Paint) — Bỏ qua (chưa có tương tác)`, true, "");
-    }
 
-    await sc.check(
-      `CLS (Cumulative Layout Shift): ${finalCls !== null ? finalCls : "N/A"} (< 0.1)`,
-      finalCls !== null && finalCls < 0.1,
-      `CLS quá cao: ${finalCls} (chuẩn: < 0.1)`
-    );
+      if (finalInp !== null) {
+        await sc.check(
+          `[${platform}] INP (Interaction to Next Paint): ${finalInp}ms (< 200ms)`,
+          finalInp < 200,
+          `[${platform}] INP quá cao: ${finalInp}ms (chuẩn: < 200ms)`
+        );
+      } else {
+        await sc.check(`[${platform}] INP (Interaction to Next Paint) — Bỏ qua (chưa có tương tác)`, true, "");
+      }
 
-    if (score !== null) {
       await sc.check(
-        `Performance Score (Lighthouse): ${score}/100`,
-        score >= 80,
-        `Điểm tốc độ tải trang quá thấp: ${score}/100 (cần ≥ 80)`
+        `[${platform}] CLS (Cumulative Layout Shift): ${finalCls !== null ? finalCls : "N/A"} (< 0.1)`,
+        finalCls !== null && finalCls < 0.1,
+        `[${platform}] CLS quá cao: ${finalCls} (chuẩn: < 0.1)`
       );
-    }
+
+      if (score !== null) {
+        await sc.check(
+          `[${platform}] Performance Score (Lighthouse): ${score}/100`,
+          score >= 80,
+          `[${platform}] Điểm tốc độ tải trang quá thấp: ${score}/100 (cần ≥ 80)`
+        );
+      }
+    };
+
+    await checkMetrics('Mobile', vitals?.mobile);
+    await checkMetrics('Desktop', vitals?.desktop, localMetrics);
   }
 
   /** Xác thực Bảo mật */

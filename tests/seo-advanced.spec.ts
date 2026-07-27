@@ -43,8 +43,13 @@ test.describe("SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B", () => {
         const llmService = new LLMService();
 
         const vitalsPromise = config.checkCoreWebVitals !== false && pageSpeedService.isAvailable()
-            ? pageSpeedService.getCoreWebVitals(fullUrl)
-            : Promise.resolve(null);
+            ? (async () => {
+                const mobile = await pageSpeedService.getCoreWebVitals(fullUrl, "mobile");
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                const desktop = await pageSpeedService.getCoreWebVitals(fullUrl, "desktop");
+                return { mobile, desktop };
+              })()
+            : Promise.resolve({ mobile: null, desktop: null });
             
         const serpPromise = serpService.isAvailable()
             ? serpService.analyzeSerp(new URL(fullUrl).hostname, config.keyword)

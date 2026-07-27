@@ -43,7 +43,7 @@ export const seoTestData: SeoPageTestData[] = [
     keyword: "Thuê văn phòng Bình Dương", // ← Thay bằng keyword thực tế
     expectIndexable: true,
     checkSocialOg: true,
-    checkCoreWebVitals: false,
+    checkCoreWebVitals: true,
     priority: "critical",
     severity: "blocker",
   },

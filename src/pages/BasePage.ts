@@ -56,10 +56,17 @@ export class BasePage {
         try {
             // Thử bằng HEAD request trước để tiết kiệm băng thông và tăng tốc độ
             const response = await this.page.request.head(url, { timeout: 10000 });
-            return response.status();
+            let status = response.status();
+            
+            // Fallback sang GET nếu HEAD trả về lỗi (nhiều server/WAF chặn HEAD request hoặc trả về 404/405)
+            if (status >= 400) {
+                const getResponse = await this.page.request.get(url, { timeout: 10000 });
+                status = getResponse.status();
+            }
+            return status;
         } catch {
             try {
-                // Fallback sang GET request nếu HEAD không được server đích hỗ trợ
+                // Fallback sang GET request nếu HEAD throw error (như timeout hoặc lỗi mạng)
                 const response = await this.page.request.get(url, { timeout: 10000 });
                 return response.status();
             } catch {

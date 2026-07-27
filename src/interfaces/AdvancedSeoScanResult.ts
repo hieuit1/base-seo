@@ -100,6 +100,6 @@ export interface AdvancedSeoScanResult {
 
   // ── Phase 2 APIs ──
   contentEvaluation: ContentEvaluationResult | null; // LLM (B1.1-B1.4, entity, TF-IDF)
-  coreWebVitals: CoreWebVitals | null;               // PageSpeed API (B6)
+  coreWebVitals: any;                                // PageSpeed API (B6)
   serpData: SerpResult | null;                       // SerpAPI (B1.5, B1.6)
 }
