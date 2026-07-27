@@ -1,0 +1,1 @@
+[Mobile] CLS quá cao (0.212). Cần ≤ 0.1.

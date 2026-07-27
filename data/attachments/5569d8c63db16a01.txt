@@ -1,0 +1,1 @@
+[Mobile] LCP quá cao: 4131ms (chuẩn: < 2.5s)

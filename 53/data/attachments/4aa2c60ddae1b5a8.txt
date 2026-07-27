@@ -1,0 +1,51 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     64/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  60%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  42
+   ✅ Đạt:          27
+   ❌ Không đạt:    15
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (15/42):
+--- SEMANTIC SEO (ADVANCED) ---
+   1. [B1.5 — People Also Ask (PAA): Không xuất hiện]
+      → Từ khóa này không có People Also Ask trên SERP. Có thể nội dung chưa đủ độ rộng chủ đề.
+--- E-E-A-T ---
+   2. [B2.2 — Ngày đăng bài (datePublished): Thiếu]
+      → Thiếu datePublished — Google dùng để đánh giá tính mới của nội dung.
+   3. [B2.3 — Ngày cập nhật (dateModified): Thiếu]
+      → Thiếu dateModified — Bài viết nên hiển thị ngày cập nhật gần nhất.
+   4. [B2.4 — Trust Pages: 0/8 trang tồn tại]
+      → Chỉ 0 trust pages tồn tại. Cần ≥ 2 trong: About, Contact, Privacy Policy.
+--- SCHEMA MARKUP ---
+   5. [B3.2 — Schema có đủ required fields]
+      → Schema thiếu required fields: Article: thiếu fields [datePublished]
+   6. [B3.3 — Schema không có lỗi cú pháp (1 lỗi)]
+      → Lỗi Schema: Article: thiếu fields [datePublished]
+--- ANCHOR DIVERSITY ---
+   7. [B5.4 — Anchor Text Diversity: 27/59 unique (46%) — cần ≥ 70%]
+      → Anchor text không đa dạng: chỉ 46% unique (cần ≥ 70%). Tránh dùng cùng anchor text cho nhiều link khác nhau.
+--- PERFORMANCE (ADV) ---
+   8. [B6.1 — TTFB: 1399ms (tối đa: 800ms)]
+      → TTFB quá cao: 1399ms, cần ≤ 800ms. Kiểm tra server/hosting/CDN.
+   9. [B6.4 — Resource Hints: preload=0, preconnect=0]
+      → Trang không sử dụng resource hints (preload/preconnect). Thêm để tối ưu tải tài nguyên.
+   10. [B6.5 — Lazy Loading: 0/1 ảnh below-fold (0%)]
+      → Chỉ 0% ảnh below-fold có loading="lazy", cần ≥ 80%.
+   11. [B6.6 — Font Optimization: font-display:swap=✘, preload=0]
+      → Font chưa được tối ưu. Thêm font-display: swap và/hoặc preload font files.
+   12. [B6.7 — Responsive Images: 0/9 ảnh có srcset]
+      → Chỉ 0% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
+--- URL CONSISTENCY ---
+   13. [B8.4 — HSTS (Strict-Transport-Security): Thiếu]
+      → Thiếu HSTS header. Browser không bắt buộc dùng HTTPS, có thể bị downgrade attack.
+--- CORE WEB VITALS ---
+   14. [[Desktop] CrUX — CLS (Cumulative Layout Shift): 0.297]
+      → [Desktop] CLS quá cao (0.297). Cần ≤ 0.1.
+   15. [[Desktop] PageSpeed Score (Lighthouse): 69/100]
+      → [Desktop] Điểm PageSpeed thấp (69/100). Cần ≥ 70.

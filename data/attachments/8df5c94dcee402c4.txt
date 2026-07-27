@@ -1,0 +1,1 @@
+[Mobile] LCP quá chậm (4921ms). Cần ≤ 2500ms.

@@ -1,0 +1,1 @@
+[Mobile] Điểm tốc độ tải trang quá thấp: 70/100 (cần ≥ 80)

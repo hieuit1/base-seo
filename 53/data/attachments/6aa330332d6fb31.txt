@@ -1,0 +1,1 @@
+[Desktop] CLS quá cao (0.153). Cần ≤ 0.1.

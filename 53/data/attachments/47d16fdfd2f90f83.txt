@@ -1,0 +1,55 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  62
+   ✅ Đạt:          46
+   ❌ Không đạt:    16
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (16/62):
+--- TITLE ---
+   1. [Độ dài Title: 22 ký tự (chuẩn: 50–60)]
+      → Title quá ngắn: 22 ký tự, cần 50–60
+--- META DESCRIPTION ---
+   2. [Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   3. [Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   4. [Meta description chứa keyword "Văn phòng truyền thống"]
+      → Không thể kiểm tra — Meta description không tồn tại
+--- CONTENT ---
+   5. [Mật độ keyword: 5.67% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 5.67%, cần ≤ 2.5%
+   6. [Readability (VI): 7.4 (avg 44.1 từ/câu) (khuyến nghị ≥ 50)]
+      → Nội dung khó đọc, điểm 7.4 < 50 (trung bình 44.1 từ/câu, lý tưởng 15–20)
+--- IMAGES ---
+   7. [Có ảnh chứa keyword "Văn phòng truyền thống" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Văn phòng truyền thống"
+   8. [Ảnh có width/height: 3/4 (cần ≥ 80%)]
+      → Chỉ 3/4 ảnh có width/height, cần ≥ 4
+   9. [Định dạng ảnh tối ưu (WebP/AVIF): 25% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 1/4 ảnh (25%)
+--- LINKS ---
+   10. [Anchor text chất lượng (lỗi: 1)]
+      → 1 link có anchor text không tốt: "" → #menu 
+--- TECHNICAL SEO ---
+   11. [Open Graph: og:title=✔, og:description=✘, og:image=✔]
+      → og:description — Link không có thumbnail khi share trên social media
+--- MOBILE ---
+   12. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 20 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   13. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate
+--- PERFORMANCE ---
+   14. [[Mobile] LCP (Largest Contentful Paint): 4131ms (< 2500ms)]
+      → [Mobile] LCP quá cao: 4131ms (chuẩn: < 2.5s)
+   15. [[Mobile] Performance Score (Lighthouse): 71/100]
+      → [Mobile] Điểm tốc độ tải trang quá thấp: 71/100 (cần ≥ 80)
+   16. [[Desktop] CLS (Cumulative Layout Shift): 0.106 (< 0.1)]
+      → [Desktop] CLS quá cao: 0.106 (chuẩn: < 0.1)

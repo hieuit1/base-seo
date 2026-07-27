@@ -1,0 +1,48 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     79/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  63
+   ✅ Đạt:          50
+   ❌ Không đạt:    13
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (13/63):
+--- META DESCRIPTION ---
+   1. [Độ dài Meta: 189 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 189 ký tự, cần 120–160
+   2. [Meta description chứa keyword "Thuê văn phòng Bình Dương"]
+      → Meta description không chứa keyword "Thuê văn phòng Bình Dương"
+--- CONTENT ---
+   3. [Mật độ keyword: 0.20% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.20%, cần ≥ 0.5%
+   4. [Keyword "Thuê văn phòng Bình Dương" xuất hiện trong 100 từ đầu]
+      → Keyword "Thuê văn phòng Bình Dương" không xuất hiện trong 100 từ đầu
+--- IMAGES ---
+   5. [Có ảnh chứa keyword "Thuê văn phòng Bình Dương" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Thuê văn phòng Bình Dương"
+   6. [Ảnh có width/height: 10/24 (cần ≥ 80%)]
+      → Chỉ 10/24 ảnh có width/height, cần ≥ 20
+   7. [Định dạng ảnh tối ưu (WebP/AVIF): 13% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 3/24 ảnh (13%)
+--- LINKS ---
+   8. [Anchor text chất lượng (lỗi: 2)]
+      → 2 link có anchor text không tốt: "" → #menu, "Xem thêm" → gioi-thieu 
+--- TECHNICAL SEO ---
+   9. [Open Graph: og:title=✔, og:description=✔, og:image=✘]
+      → og:image — Link không có thumbnail khi share trên social media
+--- MOBILE ---
+   10. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 7 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   11. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate
+--- PERFORMANCE ---
+   12. [[Mobile] LCP (Largest Contentful Paint): 7169ms (< 2500ms)]
+      → [Mobile] LCP quá cao: 7169ms (chuẩn: < 2.5s)
+   13. [[Mobile] Performance Score (Lighthouse): 61/100]
+      → [Mobile] Điểm tốc độ tải trang quá thấp: 61/100 (cần ≥ 80)

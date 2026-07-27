@@ -1,0 +1,43 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     71/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  60%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  42
+   ✅ Đạt:          30
+   ❌ Không đạt:    12
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (12/42):
+--- SEMANTIC SEO (ADVANCED) ---
+   1. [B1.5 — People Also Ask (PAA): Không xuất hiện]
+      → Từ khóa này không có People Also Ask trên SERP. Có thể nội dung chưa đủ độ rộng chủ đề.
+--- ANCHOR DIVERSITY ---
+   2. [B5.4 — Anchor Text Diversity: 26/66 unique (39%) — cần ≥ 70%]
+      → Anchor text không đa dạng: chỉ 39% unique (cần ≥ 70%). Tránh dùng cùng anchor text cho nhiều link khác nhau.
+   3. [B5.4 — Anchor Text chung chung: 6 link]
+      → Có 6 link dùng anchor text chung chung (click here, xem thêm...). Cần anchor text mô tả nội dung đích.
+--- PERFORMANCE (ADV) ---
+   4. [B6.1 — TTFB: 1390ms (tối đa: 800ms)]
+      → TTFB quá cao: 1390ms, cần ≤ 800ms. Kiểm tra server/hosting/CDN.
+   5. [B6.4 — Resource Hints: preload=0, preconnect=0]
+      → Trang không sử dụng resource hints (preload/preconnect). Thêm để tối ưu tải tài nguyên.
+   6. [B6.5 — Lazy Loading: 0/2 ảnh below-fold (0%)]
+      → Chỉ 0% ảnh below-fold có loading="lazy", cần ≥ 80%.
+   7. [B6.6 — Font Optimization: font-display:swap=✘, preload=0]
+      → Font chưa được tối ưu. Thêm font-display: swap và/hoặc preload font files.
+   8. [B6.7 — Responsive Images: 0/9 ảnh có srcset]
+      → Chỉ 0% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
+--- URL CONSISTENCY ---
+   9. [B8.1 — WWW Redirect: Lỗi]
+      → www ↔ non-www không redirect đúng. Có thể gây duplicate content.
+   10. [B8.2 — HTTPS Redirect: Lỗi]
+      → HTTP không redirect sang HTTPS. Ảnh hưởng bảo mật và SEO.
+   11. [B8.4 — HSTS (Strict-Transport-Security): Thiếu]
+      → Thiếu HSTS header. Browser không bắt buộc dùng HTTPS, có thể bị downgrade attack.
+--- CORE WEB VITALS ---
+   12. [[Mobile] CrUX — LCP (Largest Contentful Paint): 5414ms]
+      → [Mobile] LCP quá chậm (5414ms). Cần ≤ 2500ms.

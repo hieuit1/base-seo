@@ -1,0 +1,1 @@
+Chỉ 3/7 ảnh có width/height, cần ≥ 6

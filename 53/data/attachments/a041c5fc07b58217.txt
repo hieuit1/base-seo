@@ -1,0 +1,56 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     74/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  62
+   ✅ Đạt:          46
+   ❌ Không đạt:    16
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (16/62):
+--- TITLE ---
+   1. [Độ dài Title: 27 ký tự (chuẩn: 50–60)]
+      → Title quá ngắn: 27 ký tự, cần 50–60
+--- META DESCRIPTION ---
+   2. [Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   3. [Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   4. [Meta description chứa keyword "Cho thuê văn phòng sáng tạo"]
+      → Không thể kiểm tra — Meta description không tồn tại
+--- URL STRUCTURE ---
+   5. [URL chứa keyword slug "cho-thue-van-phong-sang-tao" ]
+      → URL "/van-phong-sang-tao" không chứa keyword "cho-thue-van-phong-sang-tao"
+--- CONTENT ---
+   6. [Mật độ keyword: 3.19% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá cao (stuffing): 3.19%, cần ≤ 2.5%
+   7. [Keyword "Cho thuê văn phòng sáng tạo" xuất hiện trong 100 từ đầu]
+      → Keyword "Cho thuê văn phòng sáng tạo" không xuất hiện trong 100 từ đầu
+   8. [Readability (VI): 48.7 (avg 31.4 từ/câu) (khuyến nghị ≥ 50)]
+      → Nội dung khó đọc, điểm 48.7 < 50 (trung bình 31.4 từ/câu, lý tưởng 15–20)
+--- IMAGES ---
+   9. [Ảnh có width/height: 3/15 (cần ≥ 80%)]
+      → Chỉ 3/15 ảnh có width/height, cần ≥ 12
+   10. [Định dạng ảnh tối ưu (WebP/AVIF): 0% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 0/15 ảnh (0%)
+--- LINKS ---
+   11. [Anchor text chất lượng (lỗi: 2)]
+      → 2 link có anchor text không tốt: "" → #menu, "" →  upload/product/2aoboqgqqleeuklokxusf77jejw7yfsgzvtypkpu313-6627.jpg 
+--- TECHNICAL SEO ---
+   12. [Open Graph: og:title=✔, og:description=✘, og:image=✔]
+      → og:description — Link không có thumbnail khi share trên social media
+--- MOBILE ---
+   13. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 10 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   14. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate
+--- PERFORMANCE ---
+   15. [[Mobile] LCP (Largest Contentful Paint): 8528ms (< 2500ms)]
+      → [Mobile] LCP quá cao: 8528ms (chuẩn: < 2.5s)
+   16. [[Mobile] Performance Score (Lighthouse): 58/100]
+      → [Mobile] Điểm tốc độ tải trang quá thấp: 58/100 (cần ≥ 80)
