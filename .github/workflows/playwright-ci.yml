@@ -81,6 +81,14 @@ jobs:
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
+          ENV_FILE="src/config/.env.$ENV"
+          if [ -f "$ENV_FILE" ]; then
+            export BASE_URL=$(grep -i '^BASE_URL=' "$ENV_FILE" | cut -d '=' -f2 | tr -d '\r' | tr -d ' ')
+          fi
+          
+          echo "Bắt đầu cào dữ liệu sitemap và sinh file seoGeneratedData..."
+          npm run generate-seo
+          
           if [ "${{ github.event_name }}" == "pull_request" ]; then
             echo "🔥 Chạy Smoke Test cho Pull Request..."
             npx playwright test --grep "@smoke" --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
