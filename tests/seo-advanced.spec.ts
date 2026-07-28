@@ -20,7 +20,7 @@ test.describe("SEO TIÊU CHUẨN CHUYÊN SÂU (ADVANCED) — PHẦN B", () => {
   // Data-driven: tạo test case cho mỗi trang trong advancedSeoTestData
   advancedSeoTestData.forEach((data) => {
     test(
-      `[Advanced] Kiểm tra SEO chuyên sâu: ${data.name}`,
+      `[Advanced] Kiểm tra SEO chuyên sâu: ${data.name} (${data.path})`,
       {
         tag: [
           "@seo-advanced",

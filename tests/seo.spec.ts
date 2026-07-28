@@ -17,7 +17,7 @@ test.describe("SEO TIÊU CHUẨN CƠ BẢN CHO WEB", () => {
   // Duyệt qua mảng dữ liệu để tạo ra các test cases tự động (Data-driven)
   seoTestData.forEach((data) => {
     test(
-      `Kiểm tra SEO Onpage: ${data.name}`,
+      `Kiểm tra SEO Onpage: ${data.name} (${data.path})`,
       {
         tag: [
           "@seo",
