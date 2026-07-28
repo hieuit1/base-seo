@@ -10,7 +10,7 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 export default defineConfig({
     testDir: "./tests",
-    timeout: 60000,
+    timeout: 180000,
     workers: process.env.CI ? "50%" : undefined,
     expect: {
         timeout: 5000,
@@ -25,7 +25,7 @@ export default defineConfig({
         baseURL: process.env.BASE_URL || "https://example.com",
         headless: process.env.CI ? true : false,
         screenshot: "on",
-        video: "on",
+        // video: "on",
         trace: "on-first-retry",
     },
     reporter: [

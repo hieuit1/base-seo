@@ -35,7 +35,7 @@ export async function injectVisualSEOReport(
           .replace(/\s+/g, "-");
 
       // ─────────────────────────────────────────────────────────
-      // PHẦN A — 38 tiêu chí On-page cơ bản
+      // PHẦN A —  tiêu chí On-page cơ bản
       // ─────────────────────────────────────────────────────────
       const minTitle = config.titleMinLength;
       const maxTitle = config.titleMaxLength;
@@ -237,10 +237,10 @@ export async function injectVisualSEOReport(
       const sentences = data.bodyText.split(/[.?!]+/).filter((s: string) => s.trim().length > 0).length || 1;
       const avgWordsPerSentence = data.wordCount / sentences;
       const isVietnamese = data.lang?.startsWith("vi") || /[àáạảãâầấẫẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(data.bodyText.slice(0, 500));
-      
+
       let readabilityScore: number;
       let readabilityLabel: string;
-      
+
       if (isVietnamese) {
         const longSentences = data.bodyText.split(/[.?!]+/).filter((s: string) => s.trim().split(/\s+/).length > 40).length;
         const longSentenceRatio = longSentences / sentences;
@@ -252,7 +252,7 @@ export async function injectVisualSEOReport(
         readabilityScore = 206.835 - 1.015 * avgWordsPerSentence - 84.6 * (syllables / data.wordCount);
         readabilityLabel = `Readability (Flesch): ${readabilityScore.toFixed(1)}`;
       }
-      
+
       const minReadability = (config as any).minReadabilityScore ?? 50;
       itemsList.push({
         id: "5.5", group: "Content",
@@ -508,7 +508,7 @@ export async function injectVisualSEOReport(
           err: `Dung lượng trang quá lớn: ${pageSizeKB}KB, cần ≤ 3000KB`,
         });
       }
-      
+
       // 10.6, 10.7, 10.8 — Core Web Vitals
       const finalLcp = data.vitals?.lcp ?? data.localMetrics?.lcp ?? null;
       const finalCls = data.vitals?.cls ?? data.localMetrics?.cls ?? null;
@@ -1030,11 +1030,11 @@ export async function injectVisualSEOReport(
           </div>
 
           ${isFullReport ? (() => {
-            const aItems = itemsList.filter(i => !i.id.startsWith("B") && !i.id.startsWith("AI") && !i.id.startsWith("CrUX") && !i.id.startsWith("SERP"));
-            const bItems = itemsList.filter(i => i.id.startsWith("B") || i.id.startsWith("AI") || i.id.startsWith("CrUX") || i.id.startsWith("SERP"));
-            const aPass = aItems.filter(i => i.isPass).length;
-            const bPass = bItems.filter(i => i.isPass).length;
-            return `<div style="margin-top:8px; display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:10px;">
+          const aItems = itemsList.filter(i => !i.id.startsWith("B") && !i.id.startsWith("AI") && !i.id.startsWith("CrUX") && !i.id.startsWith("SERP"));
+          const bItems = itemsList.filter(i => i.id.startsWith("B") || i.id.startsWith("AI") || i.id.startsWith("CrUX") || i.id.startsWith("SERP"));
+          const aPass = aItems.filter(i => i.isPass).length;
+          const bPass = bItems.filter(i => i.isPass).length;
+          return `<div style="margin-top:8px; display:grid; grid-template-columns:1fr 1fr; gap:6px; font-size:10px;">
               <div style="background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.2); border-radius:6px; padding:6px 8px; display:flex; justify-content:space-between;">
                 <span style="color:#a5b4fc;">Phần A (On-page):</span>
                 <strong style="color:${aPass === aItems.length ? '#4ade80' : '#f87171'};">${aPass}/${aItems.length}</strong>
@@ -1044,7 +1044,7 @@ export async function injectVisualSEOReport(
                 <strong style="color:${bPass === bItems.length ? '#4ade80' : '#f87171'};">${bPass}/${bItems.length}</strong>
               </div>
             </div>`;
-          })() : ""}
+        })() : ""}
         </div>
 
         <!-- CỘT LỖI CẦN KHẮC PHỤC -->

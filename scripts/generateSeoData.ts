@@ -10,7 +10,7 @@ dotenv.config();
 
 const BASE_URL = process.env.BASE_URL;
 
-async function fetchSitemapUrls(sitemapUrl: string): Promise<string[]> {
+async function fetchSitemapUrls(sitemapUrl: string, maxLimit?: number): Promise<string[]> {
   try {
     const response = await fetch(sitemapUrl);
     if (!response.ok) {
@@ -19,11 +19,42 @@ async function fetchSitemapUrls(sitemapUrl: string): Promise<string[]> {
     }
     const xml = await response.text();
     const $ = cheerio.load(xml, { xmlMode: true });
-    const urls: string[] = [];
-    $('loc').each((_, el) => {
-      urls.push($(el).text());
-    });
-    return urls;
+
+    const isSitemapIndex = $('sitemapindex').length > 0;
+
+    if (isSitemapIndex) {
+      console.log(`Found sitemap index at ${sitemapUrl}. Fetching sub-sitemaps...`);
+      const sitemapPromises: Promise<string[]>[] = [];
+      $('sitemap > loc, sitemap loc').each((_, el) => {
+        const subSitemapUrl = $(el).text().trim();
+        if (subSitemapUrl) {
+          let limit = undefined;
+          if (subSitemapUrl.includes('sitemap_product')) limit = 5;
+          else if (subSitemapUrl.includes('sitemap_blog')) limit = 5;
+          sitemapPromises.push(fetchSitemapUrls(subSitemapUrl, limit));
+        }
+      });
+
+      const results = await Promise.all(sitemapPromises);
+      return results.flat();
+    } else {
+      const urls: string[] = [];
+      $('url > loc, loc').each((_, el) => {
+        const url = $(el).text().trim();
+        // Bỏ qua các URL sitemap nếu vô tình lọt vào
+        if (url && !url.endsWith('.xml')) {
+          urls.push(url);
+        }
+      });
+      // Lọc các kết quả trùng lặp nếu query selector lấy dư
+      let uniqueUrls = Array.from(new Set(urls));
+      if (maxLimit && uniqueUrls.length > maxLimit) {
+        // Shuffle array
+        uniqueUrls = uniqueUrls.sort(() => 0.5 - Math.random());
+        uniqueUrls = uniqueUrls.slice(0, maxLimit);
+      }
+      return uniqueUrls;
+    }
   } catch (error) {
     console.error('Error fetching sitemap:', error);
     return [];
