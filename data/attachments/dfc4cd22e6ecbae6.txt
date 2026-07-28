@@ -1,0 +1,61 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     69/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     FAIL
+──────────────────────────────────────
+   Tổng tiêu chí:  58
+   ✅ Đạt:          40
+   ❌ Không đạt:    18
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (18/58):
+--- TITLE ---
+   1. [Độ dài Title: 29 ký tự (chuẩn: 50–60)]
+      → Title quá ngắn: 29 ký tự, cần 50–60
+   2. [Title chứa keyword "Keyword chưa xác định"]
+      → Title không chứa keyword "Keyword chưa xác định"
+   3. [Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "Keyword chưa xác định" không có trong Title
+--- META DESCRIPTION ---
+   4. [Meta description tồn tại (Không tìm thấy)]
+      → Thẻ <meta name="description"> không tồn tại hoặc rỗng!
+   5. [Độ dài Meta: 0 ký tự (chuẩn: 120–160)]
+      → Không thể đo — Meta description không tồn tại
+   6. [Meta description chứa keyword "Keyword chưa xác định"]
+      → Không thể kiểm tra — Meta description không tồn tại
+--- HEADING STRUCTURE ---
+   7. [H1 chứa keyword "Keyword chưa xác định"]
+      → H1 "Phòng họp theo giờ Bình Dương" không chứa keyword "Keyword chưa xác định"
+--- URL STRUCTURE ---
+   8. [URL chứa keyword slug "keyword-chua-xac-dinh" ]
+      → URL "/phong-hop-theo-gio-binh-duong" không chứa keyword "keyword-chua-xac-dinh"
+--- CONTENT ---
+   9. [Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   10. [Keyword "Keyword chưa xác định" xuất hiện trong 100 từ đầu]
+      → Keyword "Keyword chưa xác định" không xuất hiện trong 100 từ đầu
+--- IMAGES ---
+   11. [Có ảnh chứa keyword "Keyword chưa xác định" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Keyword chưa xác định"
+   12. [Ảnh có width/height: 3/15 (cần ≥ 80%)]
+      → Chỉ 3/15 ảnh có width/height, cần ≥ 12
+   13. [Định dạng ảnh tối ưu (WebP/AVIF): 20% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 3/15 ảnh (20%)
+--- LINKS ---
+   14. [Anchor text chất lượng (lỗi: 1)]
+      → 1 link có anchor text không tốt: "" → #menu 
+--- TECHNICAL SEO ---
+   15. [Open Graph: og:title=✔, og:description=✘, og:image=✔]
+      → og:description — Link không có thumbnail khi share trên social media
+--- MOBILE ---
+   16. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 15 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   17. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate
+--- PERFORMANCE ---
+   18. [[Desktop] LCP (Largest Contentful Paint): 3428ms (< 2500ms)]
+      → [Desktop] LCP quá cao: 3428ms (chuẩn: < 2.5s)

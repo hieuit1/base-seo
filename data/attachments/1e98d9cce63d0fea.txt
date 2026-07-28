@@ -1,0 +1,1 @@
+[Desktop] CLS quá cao: 0.121 (chuẩn: < 0.1)

@@ -1,0 +1,50 @@
+══════════════════════════════════════
+   🟠 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     63/100
+   Đánh giá:    TRUNG BÌNH
+   Ngưỡng đạt:  60%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  40
+   ✅ Đạt:          25
+   ❌ Không đạt:    15
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (15/40):
+--- SEMANTIC SEO (ADVANCED) ---
+   1. [B1.5 — People Also Ask (PAA): Không xuất hiện]
+      → Từ khóa này không có People Also Ask trên SERP. Có thể nội dung chưa đủ độ rộng chủ đề.
+--- E-E-A-T ---
+   2. [B2.2 — Ngày đăng bài (datePublished): Thiếu]
+      → Thiếu datePublished — Google dùng để đánh giá tính mới của nội dung.
+   3. [B2.3 — Ngày cập nhật (dateModified): Thiếu]
+      → Thiếu dateModified — Bài viết nên hiển thị ngày cập nhật gần nhất.
+--- SCHEMA MARKUP ---
+   4. [B3.2 — Schema có đủ required fields]
+      → Schema thiếu required fields: Article: thiếu fields [datePublished]
+   5. [B3.3 — Schema không có lỗi cú pháp (1 lỗi)]
+      → Lỗi Schema: Article: thiếu fields [datePublished]
+--- ANCHOR DIVERSITY ---
+   6. [B5.4 — Anchor Text Diversity: 29/84 unique (35%) — cần ≥ 70%]
+      → Anchor text không đa dạng: chỉ 35% unique (cần ≥ 70%). Tránh dùng cùng anchor text cho nhiều link khác nhau.
+   7. [B5.4 — Anchor Text chung chung: 12 link]
+      → Có 12 link dùng anchor text chung chung (click here, xem thêm...). Cần anchor text mô tả nội dung đích.
+--- PERFORMANCE (ADV) ---
+   8. [B6.1 — TTFB: 1471ms (tối đa: 800ms)]
+      → TTFB quá cao: 1471ms, cần ≤ 800ms. Kiểm tra server/hosting/CDN.
+   9. [B6.4 — Resource Hints: preload=0, preconnect=0]
+      → Trang không sử dụng resource hints (preload/preconnect). Thêm để tối ưu tải tài nguyên.
+   10. [B6.5 — Lazy Loading: 0/5 ảnh below-fold (0%)]
+      → Chỉ 0% ảnh below-fold có loading="lazy", cần ≥ 80%.
+   11. [B6.6 — Font Optimization: font-display:swap=✘, preload=0]
+      → Font chưa được tối ưu. Thêm font-display: swap và/hoặc preload font files.
+   12. [B6.7 — Responsive Images: 0/15 ảnh có srcset]
+      → Chỉ 0% ảnh có srcset/sizes. Nên ≥ 50% để tối ưu cho nhiều device.
+--- URL CONSISTENCY ---
+   13. [B8.1 — WWW Redirect: Lỗi]
+      → www ↔ non-www không redirect đúng. Có thể gây duplicate content.
+   14. [B8.2 — HTTPS Redirect: Lỗi]
+      → HTTP không redirect sang HTTPS. Ảnh hưởng bảo mật và SEO.
+   15. [B8.4 — HSTS (Strict-Transport-Security): Thiếu]
+      → Thiếu HSTS header. Browser không bắt buộc dùng HTTPS, có thể bị downgrade attack.

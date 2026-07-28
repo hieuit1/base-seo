@@ -1,0 +1,51 @@
+══════════════════════════════════════
+   🟢 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     77/100
+   Đánh giá:    TỐT
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  60
+   ✅ Đạt:          46
+   ❌ Không đạt:    14
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (14/60):
+--- TITLE ---
+   1. [Độ dài Title: 44 ký tự (chuẩn: 50–60)]
+      → Title quá ngắn: 44 ký tự, cần 50–60
+--- META DESCRIPTION ---
+   2. [Độ dài Meta: 102 ký tự (chuẩn: 120–160)]
+      → Meta description quá ngắn: 102 ký tự, cần 120–160
+   3. [Meta description chứa keyword "Chương trình huấn luyện tại tòa nhà BM Tower"]
+      → Meta description không chứa keyword "Chương trình huấn luyện tại tòa nhà BM Tower"
+--- URL STRUCTURE ---
+   4. [URL chứa keyword slug "chuong-trinh-huan-luyen-tai-toa-nha-bm-tower" ]
+      → URL "/cuoc-hop-chien-luoc" không chứa keyword "chuong-trinh-huan-luyen-tai-toa-nha-bm-tower"
+--- CONTENT ---
+   5. [Keyword "Chương trình huấn luyện tại tòa nhà BM Tower" xuất hiện trong 100 từ đầu]
+      → Keyword "Chương trình huấn luyện tại tòa nhà BM Tower" không xuất hiện trong 100 từ đầu
+   6. [Readability (VI): 28.0 (avg 37.7 từ/câu) (khuyến nghị ≥ 50)]
+      → Nội dung khó đọc, điểm 28.0 < 50 (trung bình 37.7 từ/câu, lý tưởng 15–20)
+--- IMAGES ---
+   7. [Có ảnh chứa keyword "Chương trình huấn luyện tại tòa nhà BM Tower" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Chương trình huấn luyện tại tòa nhà BM Tower"
+   8. [Ảnh có width/height: 6/12 (cần ≥ 80%)]
+      → Chỉ 6/12 ảnh có width/height, cần ≥ 10
+   9. [Định dạng ảnh tối ưu (WebP/AVIF): 25% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 3/12 ảnh (25%)
+   10. [Dung lượng ảnh tối ưu (≤ 250KB)]
+      → 3/9 ảnh vượt quá 250KB (Ví dụ: https://code5.mimadigi.vn/2026/june/bientandung_107626W/upload/elfinder/thue-van-phong-tai-Binh-Duong/chuong-trinh-huan-luyen-tai-bm-tower-1.jpg)
+--- LINKS ---
+   11. [Anchor text chất lượng (lỗi: 1)]
+      → 1 link có anchor text không tốt: "" → #menu 
+--- MOBILE ---
+   12. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 18 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   13. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate
+--- PERFORMANCE ---
+   14. [[Desktop] LCP (Largest Contentful Paint): 3348ms (< 2500ms)]
+      → [Desktop] LCP quá cao: 3348ms (chuẩn: < 2.5s)

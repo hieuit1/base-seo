@@ -1,0 +1,1 @@
+Schema thiếu required fields: Article: thiếu fields [datePublished]

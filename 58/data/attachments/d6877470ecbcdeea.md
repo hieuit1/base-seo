@@ -1,0 +1,757 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: seo.spec.ts >> SEO TIÊU CHUẨN CƠ BẢN CHO WEB >> Kiểm tra SEO Onpage: Văn phòng làm việc Bình Dương cho thuê (/van-phong-lam-viec-binh-duong-cho-thue)
+- Location: tests/seo.spec.ts:19:9
+
+# Error details
+
+```
+Error: ❌ FAIL — Điểm SEO 67/100 dưới ngưỡng 70%. Có 19/58 tiêu chí không đạt.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e7]:
+      - link "Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương" [ref=e9] [cursor=pointer]:
+        - /url: https://thuevanphongbinhduong.com/
+        - img "Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương" [ref=e10]
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Trang chủ" [ref=e13] [cursor=pointer]:
+            - /url: ""
+        - listitem [ref=e14]:
+          - link "Giới thiệu" [ref=e15] [cursor=pointer]:
+            - /url: gioi-thieu
+        - listitem [ref=e16]:
+          - link "Văn phòng cho thuê" [ref=e17] [cursor=pointer]:
+            - /url: dich-vu
+        - listitem [ref=e18]:
+          - link "Tiện ích" [ref=e19] [cursor=pointer]:
+            - /url: tien-ich
+        - listitem [ref=e20]:
+          - link "Hoạt động" [ref=e21] [cursor=pointer]:
+            - /url: hoat-dong
+        - listitem [ref=e22]:
+          - link "Liên hệ" [ref=e23] [cursor=pointer]:
+            - /url: lien-he
+      - link "phone 0949616161" [ref=e25] [cursor=pointer]:
+        - /url: tel:0949616161
+        - img "phone" [ref=e26]
+        - generic [ref=e27]: "0949616161"
+    - list [ref=e30]:
+      - listitem [ref=e31]:
+        - link "Trang chủ" [ref=e32] [cursor=pointer]:
+          - /url: https://thuevanphongbinhduong.com/
+          - img [ref=e33]
+          - generic [ref=e35]: Trang chủ
+      - listitem [ref=e36]:
+        - text: /
+        - link "Tiện ích" [ref=e37] [cursor=pointer]:
+          - /url: https://thuevanphongbinhduong.com/tien-ich
+      - listitem [ref=e38]:
+        - text: /
+        - link "Văn phòng làm việc Bình Dương cho thuê" [ref=e39] [cursor=pointer]:
+          - /url: https://thuevanphongbinhduong.com/van-phong-lam-viec-binh-duong-cho-thue
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - heading "Chi tiết Văn phòng làm việc Bình Dương cho thuê" [level=2] [ref=e45]
+          - generic [ref=e46]:
+            - img [ref=e47]
+            - generic [ref=e50]: 37 Lượt xem
+          - generic [ref=e52]:
+            - generic [ref=e53] [cursor=pointer]:
+              - img [ref=e54]
+              - text: Mục lục
+              - img [ref=e57]
+            - text: ▾ ▾ ▾ ▾
+          - text: ▾ ▾ ▾ ▾
+          - generic [ref=e59]:
+            - paragraph [ref=e60]:
+              - text: Tìm kiếm
+              - strong [ref=e61]: văn phòng làm việc Bình Dương
+              - text: không chỉ là việc tìm một không gian để đặt bảng hiệu công ty. Đó là hành trình kiến tạo môi trường làm việc lý tưởng, thúc đẩy sự sáng tạo và tối ưu hiệu suất cho đội ngũ. Trong bối cảnh Bình Dương đang chuyển mình mạnh mẽ, trở thành trung tâm kinh tế năng động bậc nhất cả nước, nhu cầu về những văn phòng hiện đại, tiện nghi và thuận tiện ngày càng tăng cao. Bài viết này sẽ dẫn bạn khám phá những lựa chọn
+              - strong [ref=e62]: văn phòng cho thuê tại Bình Dương
+              - text: đáng cân nhắc, đặc biệt là giải pháp toàn diện tại BM Tower, một địa chỉ nổi bật tọa lạc tại 330 Nguyễn Văn Tri, thành phố Thủ Dầu Một.
+            - 'heading "Văn phòng làm việc Bình Dương: Lựa chọn chiến lược cho doanh nghiệp" [level=2] [ref=e63]'
+            - paragraph [ref=e64]:
+              - text: Bình Dương ngày nay không chỉ là thiên đường của các khu công nghiệp mà còn đang định hình mình như một trung tâm dịch vụ, thương mại và công nghệ mới. Sự phát triển này kéo theo sự gia tăng đáng kể của các loại hình doanh nghiệp, từ startup công nghệ, công ty dịch vụ đến các tập đoàn đa quốc gia mở rộng chi nhánh. Chính vì vậy, việc lựa chọn một
+              - strong [ref=e65]: văn phòng làm việc Bình Dương
+              - text: phù hợp trở thành yếu tố then chốt, ảnh hưởng trực tiếp đến hình ảnh thương hiệu, khả năng thu hút nhân tài và hiệu quả hoạt động kinh doanh.
+            - heading "Lợi thế khi đặt văn phòng tại Bình Dương" [level=3] [ref=e66]
+            - paragraph [ref=e67]:
+              - text: Việc đặt
+              - strong [ref=e68]: văn phòng cho thuê Bình Dương
+              - text: "mang lại nhiều lợi ích chiến lược:"
+            - list [ref=e69]:
+              - listitem [ref=e70]:
+                - strong [ref=e71]: "Tiềm năng kinh tế vượt trội:"
+                - text: Bình Dương liên tục dẫn đầu cả nước về thu hút vốn đầu tư FDI, với sự hiện diện của hàng loạt tập đoàn lớn trong và ngoài nước. Điều này tạo ra một hệ sinh thái kinh doanh sôi động, cơ hội hợp tác và phát triển không ngừng.
+              - listitem [ref=e72]:
+                - strong [ref=e73]: "Hạ tầng giao thông kết nối:"
+                - text: Tỉnh có hệ thống giao thông được đầu tư bài bản, dễ dàng kết nối với TP. Hồ Chí Minh và các tỉnh lân cận qua các tuyến quốc lộ, cao tốc. Điều này rút ngắn thời gian di chuyển, logistics hàng hóa và thuận tiện cho việc giao thương.
+              - listitem [ref=e74]:
+                - strong [ref=e75]: "Chi phí hợp lý:"
+                - text: So với các khu vực trung tâm của TP. Hồ Chí Minh, chi phí thuê
+                - strong [ref=e76]: mặt bằng kinh doanh tại Bình Dương
+                - text: nói chung và văn phòng nói riêng thường có tính cạnh tranh cao hơn, giúp doanh nghiệp tối ưu hóa ngân sách.
+              - listitem [ref=e77]:
+                - strong [ref=e78]: "Nguồn nhân lực dồi dào:"
+                - text: Với dân số trẻ và lực lượng lao động đông đảo, Bình Dương là nguồn cung cấp nhân sự chất lượng cho nhiều ngành nghề, từ lao động phổ thông đến chuyên gia.
+              - listitem [ref=e79]:
+                - strong [ref=e80]: "Chính sách thu hút đầu tư hấp dẫn:"
+                - text: Tỉnh luôn có những chính sách cởi mở, tạo điều kiện thuận lợi cho doanh nghiệp phát triển sản xuất kinh doanh.
+            - heading "Những yếu tố cần cân nhắc khi thuê văn phòng tại Bình Dương" [level=3] [ref=e81]
+            - paragraph [ref=e82]:
+              - text: Để tìm được
+              - strong [ref=e83]: văn phòng làm việc Bình Dương
+              - text: "ưng ý, doanh nghiệp cần xem xét kỹ lưỡng các yếu tố sau:"
+            - list [ref=e84]:
+              - listitem [ref=e85]:
+                - strong [ref=e86]: "Vị trí:"
+                - text: Ưu tiên các khu vực giao thông thuận tiện, dễ tiếp cận, gần các tiện ích công cộng như ngân hàng, nhà hàng, trung tâm thương mại. Vị trí cũng nên thuận lợi cho việc di chuyển của nhân viên và khách hàng.
+              - listitem [ref=e87]:
+                - strong [ref=e88]: "Diện tích và thiết kế:"
+                - text: Lựa chọn diện tích phù hợp với quy mô hiện tại và kế hoạch phát triển tương lai của công ty. Thiết kế văn phòng cần tối ưu hóa không gian, đảm bảo đủ ánh sáng tự nhiên và tạo cảm giác thông thoáng, chuyên nghiệp.
+              - listitem [ref=e89]:
+                - strong [ref=e90]: "Tiện ích và hạ tầng tòa nhà:"
+                - text: Các tiện ích như chỗ đậu xe, thang máy tốc độ cao, hệ thống điều hòa, máy phát điện dự phòng, an ninh 24/7 là những yếu tố quan trọng.
+                - strong [ref=e91]: Dịch vụ cho thuê văn phòng
+                - text: tại các tòa nhà chuyên nghiệp thường cung cấp đầy đủ các tiện ích này.
+              - listitem [ref=e92]:
+                - strong [ref=e93]: "Chi phí thuê và các phụ phí đi kèm:"
+                - text: Ngoài tiền thuê mặt bằng, cần tìm hiểu rõ các khoản phí khác như phí quản lý, điện, nước, gửi xe, internet để có dự trù ngân sách chính xác.
+              - listitem [ref=e94]:
+                - strong [ref=e95]: "Uy tín của chủ đầu tư/đơn vị quản lý:"
+                - text: Một chủ đầu tư uy tín sẽ đảm bảo chất lượng tòa nhà, dịch vụ vận hành chuyên nghiệp và giải quyết các vấn đề phát sinh nhanh chóng.
+            - 'heading "BM Tower: Lựa chọn hàng đầu cho văn phòng làm việc Bình Dương" [level=2] [ref=e96]'
+            - paragraph [ref=e97]:
+              - text: Trong bức tranh đa dạng của thị trường
+              - strong [ref=e98]: cho thuê văn phòng tại Bình Dương
+              - text: ", BM Tower nổi lên như một điểm sáng, đáp ứng đầy đủ và vượt trội các tiêu chí khắt khe của doanh nghiệp hiện đại. Tọa lạc tại vị trí đắc địa của thành phố Thủ Dầu Một, BM Tower không chỉ mang đến không gian làm việc chuyên nghiệp mà còn là biểu tượng của sự phát triển và thịnh vượng."
+            - heading "Vị trí đắc địa – Cửa ngõ giao thương huyết mạch" [level=3] [ref=e99]
+            - paragraph [ref=e100]: "BM Tower sở hữu một lợi thế vị trí hiếm có: 330 Nguyễn Văn Trỗi, Phường Phú Lợi, thành phố Thủ Dầu Một. Đây được xem là \"cửa ngõ\" quan trọng, kết nối trực tiếp với các khu công nghiệp sầm uất của Bình Dương, đồng thời nằm ngay trên tuyến đường huyết mạch của thành phố."
+            - list [ref=e101]:
+              - listitem [ref=e102]:
+                - strong [ref=e103]: "Kết nối giao thông thuận tiện:"
+                - text: Tòa nhà dễ dàng tiếp cận các trục đường chính như Đại lộ Bình Dương và Ngô Gia Tự. Sự kết nối này giúp việc di chuyển đến các khu vực lân cận, các khu công nghiệp và các tỉnh thành khác trở nên nhanh chóng và hiệu quả.
+              - listitem [ref=e104]:
+                - strong [ref=e105]: "Đối diện trung tâm thương mại lớn:"
+                - text: Vị trí đối diện trung tâm thương mại Becamex mang lại lợi ích kép. Thứ nhất, nó tạo điều kiện thuận lợi cho nhân viên tiếp cận các dịch vụ ăn uống, mua sắm, giải trí trong giờ nghỉ hoặc sau giờ làm. Thứ hai, sự hiện diện của một trung tâm thương mại lớn cũng góp phần nâng cao uy tín và hình ảnh của các doanh nghiệp đặt trụ sở tại BM Tower.
+              - listitem [ref=e106]:
+                - strong [ref=e107]: "Gần các tiện ích thiết yếu:"
+                - text: Xung quanh tòa nhà tập trung nhiều ngân hàng, cơ quan hành chính, nhà hàng, khách sạn, tạo nên một môi trường kinh doanh năng động và đầy đủ tiện nghi.
+            - paragraph [ref=e108]:
+              - text: Vị trí này không chỉ thuận lợi cho hoạt động nội bộ của doanh nghiệp mà còn giúp đối tác, khách hàng dễ dàng tìm đến, tạo ấn tượng tốt đẹp và chuyên nghiệp ngay từ lần đầu tiếp xúc. Đây chính là một trong những yếu tố quan trọng khi nói về
+              - strong [ref=e109]: văn phòng làm việc Bình Dương
+              - text: chất lượng cao.
+            - heading "Thiết kế hiện đại và đa dạng diện tích cho thuê" [level=3] [ref=e110]
+            - paragraph [ref=e111]: BM Tower được thiết kế với tiêu chí tối ưu hóa không gian, mang lại sự thoải mái và hiệu quả cho người sử dụng. Tòa nhà cao 07 tầng nổi, cùng với 1 tầng hầm để xe và sân thượng, cung cấp một môi trường làm việc chuyên nghiệp và đầy đủ tiện nghi.
+            - list [ref=e112]:
+              - listitem [ref=e113]:
+                - strong [ref=e114]: "Diện tích sử dụng linh hoạt:"
+                - text: Mỗi tầng của BM Tower có diện tích sử dụng từ 120m2 đến 280m2. Sự đa dạng này cho phép BM Tower phục vụ được nhiều loại hình doanh nghiệp, từ các công ty khởi nghiệp nhỏ, các văn phòng đại diện cần diện tích vừa phải, cho đến các tập đoàn lớn muốn đặt chi nhánh hoặc trụ sở chính. Khách hàng có thể lựa chọn thuê trọn sàn hoặc chia nhỏ diện tích tùy theo nhu cầu và quy mô hoạt động.
+              - listitem [ref=e115]:
+                - strong [ref=e116]: "Thiết kế tối ưu:"
+                - text: Kiến trúc tòa nhà chú trọng đến việc đón ánh sáng tự nhiên, tạo không gian thông thoáng. Các vách ngăn được bố trí hợp lý, cho phép doanh nghiệp dễ dàng tùy chỉnh layout văn phòng theo ý muốn, từ không gian mở năng động đến các phòng ban chức năng riêng biệt.
+              - listitem [ref=e117]:
+                - strong [ref=e118]: "Hạng văn phòng C:"
+                - text: Với tiêu chuẩn Hạng C, BM Tower vẫn đảm bảo cung cấp đầy đủ các dịch vụ và tiện ích cần thiết, phù hợp với ngân sách của đa số doanh nghiệp, đặc biệt là các doanh nghiệp vừa và nhỏ đang tìm kiếm một
+                - strong [ref=e119]: văn phòng cho thuê tại Bình Dương
+                - text: có vị trí đẹp và chất lượng tốt.
+            - heading "Hệ thống tiện ích và dịch vụ chuyên nghiệp" [level=3] [ref=e120]
+            - paragraph [ref=e121]: "Để mang đến trải nghiệm làm việc tốt nhất, BM Tower đầu tư mạnh vào hệ thống hạ tầng và dịch vụ:"
+            - list [ref=e122]:
+              - listitem [ref=e123]:
+                - strong [ref=e124]: "Chỗ để xe thuận tiện:"
+                - text: Tòa nhà có 1 tầng hầm rộng rãi, đảm bảo đủ chỗ đậu xe cho nhân viên và khách hàng. Đặc biệt, phí gửi xe máy được miễn phí hoàn toàn, giúp giảm bớt gánh nặng chi phí cho doanh nghiệp.
+              - listitem [ref=e125]:
+                - strong [ref=e126]: "Thang máy tốc độ cao:"
+                - text: Hệ thống thang máy hiện đại, tốc độ cao giúp việc di chuyển giữa các tầng nhanh chóng, tránh ùn tắc, đặc biệt vào giờ cao điểm.
+              - listitem [ref=e127]:
+                - strong [ref=e128]: "Hệ thống điều hòa trung tâm:"
+                - text: Mang lại không khí mát mẻ, dễ chịu trong suốt quá trình làm việc, hoạt động ổn định và hiệu quả.
+              - listitem [ref=e129]:
+                - strong [ref=e130]: "Máy phát điện dự phòng:"
+                - text: Đảm bảo 100% công suất, giúp hoạt động của doanh nghiệp không bị gián đoạn ngay cả khi xảy ra sự cố mất điện.
+              - listitem [ref=e131]:
+                - strong [ref=e132]: "Hỗ trợ tối đa giờ làm việc:"
+                - text: BM Tower cho phép giờ làm việc linh hoạt từ 8h00 – 22h00 các ngày trong tuần, đáp ứng nhu cầu làm việc ngoài giờ hoặc theo ca của nhiều loại hình doanh nghiệp.
+              - listitem [ref=e133]:
+                - strong [ref=e134]: "Điều kiện bàn giao tiêu chuẩn:"
+                - text: Khi bàn giao, văn phòng đã được trang bị đầy đủ trần, sàn, tường, hệ thống chiếu sáng và hệ thống điều hòa, giúp doanh nghiệp tiết kiệm thời gian và chi phí thi công, sửa chữa ban đầu.
+              - listitem [ref=e135]:
+                - strong [ref=e136]: "Tiền điện theo giá nhà nước:"
+                - text: Doanh nghiệp chỉ cần thanh toán tiền điện theo biểu giá quy định của nhà nước, đảm bảo tính minh bạch và công bằng.
+            - paragraph [ref=e137]:
+              - text: Với những tiện ích và dịch vụ này, BM Tower khẳng định là một địa chỉ
+              - strong [ref=e138]: cho thuê văn phòng Bình Dương
+              - text: mang lại giá trị vượt trội, hỗ trợ tối đa cho sự phát triển của các doanh nghiệp.
+            - heading "Dịch vụ cho thuê phòng họp tại BM Tower" [level=2] [ref=e139]
+            - paragraph [ref=e140]:
+              - text: Bên cạnh nhu cầu về
+              - strong [ref=e141]: văn phòng làm việc Bình Dương
+              - text: ", các doanh nghiệp còn thường xuyên cần không gian để tổ chức các cuộc họp, hội thảo, đào tạo hay tiếp khách quan trọng. Hiểu được điều này, BM Tower cung cấp dịch vụ"
+              - strong [ref=e142]: cho thuê phòng họp
+              - text: chuyên nghiệp, hiện đại và đầy đủ tiện nghi, đáp ứng mọi yêu cầu của khách hàng.
+            - heading "Tiện ích và không gian phòng họp" [level=3] [ref=e143]
+            - list [ref=e144]:
+              - listitem [ref=e145]:
+                - strong [ref=e146]: "Phòng họp đa dạng sức chứa:"
+                - text: BM Tower có các loại phòng họp với sức chứa khác nhau, phù hợp với quy mô của từng cuộc họp, từ các cuộc họp nhóm nhỏ chỉ vài người đến các buổi hội thảo quy mô lớn hơn.
+              - listitem [ref=e147]:
+                - strong [ref=e148]: "Trang thiết bị hiện đại:"
+                - text: Mỗi phòng họp đều được trang bị đầy đủ các thiết bị cần thiết như màn hình chiếu lớn (projector/màn hình LED), hệ thống âm thanh, micro, bảng trắng, flipchart, máy chiếu đa phương tiện. Wifi tốc độ cao cũng được cung cấp miễn phí.
+              - listitem [ref=e149]:
+                - strong [ref=e150]: "Không gian chuyên nghiệp:"
+                - text: Thiết kế phòng họp chú trọng sự sang trọng, lịch sự, tạo không khí tập trung và nghiêm túc cho các buổi làm việc quan trọng. Bàn ghế được bố trí khoa học, đảm bảo sự thoải mái cho người tham dự trong suốt thời gian diễn ra cuộc họp.
+              - listitem [ref=e151]:
+                - strong [ref=e152]: "Dịch vụ hỗ trợ:"
+                - text: Đội ngũ nhân viên BM Tower sẵn sàng hỗ trợ khách hàng trong việc setup phòng họp, chuẩn bị nước uống, teabreak (nếu có yêu cầu), và xử lý các vấn đề kỹ thuật phát sinh.
+            - heading "Lợi ích khi thuê phòng họp tại BM Tower" [level=3] [ref=e153]
+            - paragraph [ref=e154]: "Việc lựa chọn BM Tower để thuê phòng họp mang lại nhiều lợi ích thiết thực:"
+            - list [ref=e155]:
+              - listitem [ref=e156]:
+                - strong [ref=e157]: "Tiết kiệm chi phí đầu tư:"
+                - text: Thay vì phải xây dựng hoặc trang bị phòng họp riêng tốn kém, doanh nghiệp có thể thuê phòng họp theo nhu cầu sử dụng thực tế, chỉ trả phí cho những gì mình dùng.
+              - listitem [ref=e158]:
+                - strong [ref=e159]: "Tăng tính chuyên nghiệp:"
+                - text: Một không gian họp hiện đại, đầy đủ tiện nghi sẽ tạo ấn tượng tốt đẹp với đối tác, khách hàng, thể hiện sự chuyên nghiệp và uy tín của doanh nghiệp.
+              - listitem [ref=e160]:
+                - strong [ref=e161]: "Linh hoạt và tiện lợi:"
+                - text: Doanh nghiệp có thể dễ dàng đặt phòng họp theo khung giờ mong muốn, không bị phụ thuộc vào lịch trình cố định. Vị trí thuận tiện của BM Tower cũng giúp khách mời dễ dàng di chuyển đến địa điểm họp.
+              - listitem [ref=e162]:
+                - strong [ref=e163]: "Tập trung vào công việc chính:"
+                - text: Khi sử dụng dịch vụ cho thuê phòng họp chuyên nghiệp, doanh nghiệp không cần bận tâm đến việc chuẩn bị hậu cần, setup thiết bị, mà có thể hoàn toàn tập trung vào nội dung và mục tiêu của cuộc họp.
+            - paragraph [ref=e164]:
+              - text: Dịch vụ
+              - strong [ref=e165]: cho thuê phòng họp
+              - text: tại BM Tower là giải pháp tối ưu cho các doanh nghiệp tại Bình Dương, giúp nâng cao hiệu quả giao tiếp và tối đa hóa cơ hội kinh doanh.
+            - heading "Mặt bằng kinh doanh tại BM Tower – Cơ hội phát triển vượt trội" [level=2] [ref=e166]
+            - paragraph [ref=e167]:
+              - text: Ngoài các lựa chọn
+              - strong [ref=e168]: văn phòng làm việc Bình Dương
+              - text: ", BM Tower còn cung cấp các"
+              - strong [ref=e169]: mặt bằng kinh doanh
+              - text: tại tầng trệt, mở ra cơ hội vàng cho các nhà đầu tư và doanh nghiệp muốn khai thác thị trường năng động của thành phố Thủ Dầu Một.
+            - heading "Vị trí kinh doanh đắc địa" [level=3] [ref=e170]
+            - paragraph [ref=e171]: Các mặt bằng kinh doanh tại BM Tower tọa lạc ngay tại tầng trệt, tiếp giáp với mặt tiền đường Nguyễn Văn Trỗi. Đây là khu vực có lưu lượng giao thông cao, tập trung nhiều dân cư, văn phòng và các cơ sở kinh doanh khác, tạo điều kiện lý tưởng để phát triển các loại hình dịch vụ và bán lẻ.
+            - list [ref=e172]:
+              - listitem [ref=e173]:
+                - strong [ref=e174]: "Tiếp cận khách hàng mục tiêu:"
+                - text: Vị trí gần các tòa nhà văn phòng, trung tâm thương mại giúp doanh nghiệp dễ dàng tiếp cận lượng lớn khách hàng tiềm năng là nhân viên văn phòng, cư dân địa phương và du khách.
+              - listitem [ref=e175]:
+                - strong [ref=e176]: "Tăng cường nhận diện thương hiệu:"
+                - text: Mặt tiền thoáng, dễ nhìn thấy từ xa giúp các cửa hàng, dịch vụ tại đây nhanh chóng thu hút sự chú ý và xây dựng nhận diện thương hiệu hiệu quả.
+              - listitem [ref=e177]:
+                - strong [ref=e178]: "Kết nối kinh doanh đa dạng:"
+                - text: Sự hiện diện của nhiều loại hình doanh nghiệp khác nhau trong cùng một khu vực sẽ tạo nên một hệ sinh thái kinh doanh sôi động, thúc đẩy cơ hội hợp tác và phát triển chung.
+            - heading "Phù hợp với nhiều loại hình kinh doanh" [level=3] [ref=e179]
+            - paragraph [ref=e180]:
+              - text: Các
+              - strong [ref=e181]: mặt bằng kinh doanh
+              - text: "tại BM Tower có thể khai thác cho nhiều mục đích khác nhau như:"
+            - list [ref=e182]:
+              - listitem [ref=e183]: Nhà hàng, quán cà phê
+              - listitem [ref=e184]: Cửa hàng thời trang, mỹ phẩm
+              - listitem [ref=e185]: Showroom trưng bày sản phẩm
+              - listitem [ref=e186]: Phòng giao dịch ngân hàng
+              - listitem [ref=e187]: Các dịch vụ tiện ích khác (spa, phòng khám nhỏ, v.v.)
+            - paragraph [ref=e188]: Với sự hỗ trợ từ hạ tầng hiện đại của BM Tower và vị trí đắc địa, việc kinh doanh tại đây hứa hẹn sẽ mang lại hiệu quả cao và tiềm năng sinh lời hấp dẫn.
+            - heading "Lưu ý quan trọng khi thuê văn phòng làm việc Bình Dương" [level=2] [ref=e189]
+            - paragraph [ref=e190]:
+              - text: Khi quyết định lựa chọn
+              - strong [ref=e191]: văn phòng làm việc Bình Dương
+              - text: ", doanh nghiệp nên lưu ý một số điểm sau để đảm bảo quyền lợi và tối ưu hóa quá trình thuê:"
+            - list [ref=e192]:
+              - listitem [ref=e193]:
+                - strong [ref=e194]: "Hợp đồng thuê chi tiết:"
+                - text: Đọc kỹ và hiểu rõ các điều khoản trong hợp đồng, đặc biệt là các mục về thời hạn thuê, giá thuê, điều khoản tăng giá, phí dịch vụ, trách nhiệm sửa chữa, điều kiện chấm dứt hợp đồng.
+              - listitem [ref=e195]:
+                - strong [ref=e196]: "Kiểm tra kỹ tình trạng văn phòng:"
+                - text: Trước khi ký hợp đồng, hãy cùng đơn vị cho thuê kiểm tra kỹ lưỡng tình trạng thực tế của văn phòng, bao gồm hệ thống điện, nước, điều hòa, tường, sàn, trần. Ghi nhận lại các hư hỏng (nếu có) và yêu cầu sửa chữa hoặc ghi rõ trong hợp đồng.
+              - listitem [ref=e197]:
+                - strong [ref=e198]: "Xác định rõ chi phí phát sinh:"
+                - text: Ngoài tiền thuê, hãy yêu cầu bảng chi tiết về các khoản phí quản lý, phí gửi xe, tiền điện, nước, internet, vệ sinh… để tính toán chi phí tổng thể một cách chính xác.
+              - listitem [ref=e199]:
+                - strong [ref=e200]: "Thương lượng các điều khoản:"
+                - text: Đừng ngần ngại thương lượng với chủ tòa nhà về giá thuê, thời gian thuê, các điều kiện sửa chữa, hoặc các ưu đãi đi kèm (nếu có).
+              - listitem [ref=e201]:
+                - strong [ref=e202]: "Tìm hiểu về chủ đầu tư/đơn vị quản lý:"
+                - text: Một chủ đầu tư uy tín với kinh nghiệm quản lý tòa nhà sẽ mang lại sự an tâm và dịch vụ chuyên nghiệp hơn.
+            - paragraph [ref=e203]:
+              - text: Việc chuẩn bị kỹ lưỡng sẽ giúp quá trình tìm kiếm và thuê
+              - strong [ref=e204]: văn phòng cho thuê tại Bình Dương
+              - text: diễn ra suôn sẻ và hiệu quả, tránh những rắc rối không đáng có về sau.
+            - heading "Kết luận" [level=2] [ref=e205]
+            - paragraph [ref=e206]:
+              - text: Bình Dương đang là một điểm đến hấp dẫn cho các doanh nghiệp nhờ tiềm năng kinh tế lớn, hạ tầng phát triển và môi trường đầu tư thuận lợi. Việc lựa chọn một
+              - strong [ref=e207]: văn phòng làm việc Bình Dương
+              - text: phù hợp, có vị trí tốt, tiện ích đầy đủ và dịch vụ chuyên nghiệp là bước đi chiến lược, góp phần quan trọng vào sự thành công và phát triển bền vững của công ty.
+            - paragraph [ref=e208]:
+              - text: BM Tower, với lợi thế về vị trí đắc địa tại 330 Nguyễn Văn Trỗi, thành phố Thủ Dầu Một, cùng hệ thống tiện ích hiện đại và đa dạng các loại hình
+              - strong [ref=e209]: văn phòng cho thuê
+              - text: ","
+              - strong [ref=e210]: phòng họp
+              - text: và
+              - strong [ref=e211]: mặt bằng kinh doanh
+              - text: ", chính là sự lựa chọn lý tưởng, đáp ứng mọi nhu cầu của doanh nghiệp trong giai đoạn phát triển mạnh mẽ này."
+            - paragraph [ref=e212]:
+              - strong [ref=e213]: THÔNG TIN LIÊN HỆ
+            - paragraph [ref=e214]: Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương
+            - paragraph [ref=e215]: "Địa chỉ: 330 Nguyễn Văn Trỗi, Phường Phú Lợi, Thủ Dầu Một, Bình Dương, TPHCM"
+            - paragraph [ref=e216]: "Hotline: 0949616161"
+            - paragraph [ref=e217]: "Điện thoại: 0949616161"
+            - paragraph [ref=e218]: "Email: bmtower@gmail.com"
+            - paragraph [ref=e219]: "Website: thuevanphongbinhduong.com"
+        - generic [ref=e222]:
+          - generic [ref=e224]:
+            - paragraph [ref=e225]:
+              - link "Cho thuê văn phòng tại Thủ Dầu Một" [ref=e226] [cursor=pointer]:
+                - /url: cho-thue-van-phong-tai-thu-dau-mot
+                - img "Cho thuê văn phòng tại Thủ Dầu Một" [ref=e227]
+            - generic [ref=e228]:
+              - heading "Cho thuê văn phòng tại Thủ Dầu Một" [level=3] [ref=e230]:
+                - link "Cho thuê văn phòng tại Thủ Dầu Một" [ref=e231] [cursor=pointer]:
+                  - /url: cho-thue-van-phong-tai-thu-dau-mot
+              - paragraph [ref=e232]: Ngoài nhu cầu về văn phòng cố định, các doanh nghiệp thường xuyên có nhu cầu thuê phòng họp cho các cuộc họp nội bộ, họp với đối tác, hội thảo, đào tạo. Thủ Dầu Một cũng cung cấp nhiều lựa chọn cho thuê phòng họp với các quy mô và trang thiết bị khác nhau.
+              - link "Xem thêm bài viết " [ref=e233] [cursor=pointer]:
+                - /url: cho-thue-van-phong-tai-thu-dau-mot
+                - text: Xem thêm bài viết
+                - generic [ref=e234]: 
+          - generic [ref=e236]:
+            - paragraph [ref=e237]:
+              - link "Phòng họp theo giờ Bình Dương" [ref=e238] [cursor=pointer]:
+                - /url: phong-hop-theo-gio-binh-duong
+                - img "Phòng họp theo giờ Bình Dương" [ref=e239]
+            - generic [ref=e240]:
+              - heading "Phòng họp theo giờ Bình Dương" [level=3] [ref=e242]:
+                - link "Phòng họp theo giờ Bình Dương" [ref=e243] [cursor=pointer]:
+                  - /url: phong-hop-theo-gio-binh-duong
+              - paragraph [ref=e244]: Các doanh nghiệp nhỏ, startup, hay các công ty có văn phòng chính ở xa thường xuyên cần thuê phòng họp theo giờ để tiết kiệm chi phí, tối ưu hóa lịch trình và đảm bảo tính chuyên nghiệp khi làm việc với khách hàng, đối tác.
+              - link "Xem thêm bài viết " [ref=e245] [cursor=pointer]:
+                - /url: phong-hop-theo-gio-binh-duong
+                - text: Xem thêm bài viết
+                - generic [ref=e246]: 
+          - generic [ref=e247]:
+            - generic:
+              - paragraph:
+                - link "Coworking Space Bình Dương":
+                  - /url: coworking-space-binh-duong
+                  - img "Coworking Space Bình Dương"
+              - generic:
+                - generic:
+                  - heading "Coworking Space Bình Dương" [level=3]:
+                    - link "Coworking Space Bình Dương":
+                      - /url: coworking-space-binh-duong
+                - paragraph: Mô hình coworking space, với ưu điểm về chi phí thấp, môi trường kết nối cộng đồng và tiện ích dùng chung, đã và đang thu hút sự quan tâm. Tuy nhiên, khi một doanh nghiệp phát triển đến một quy mô nhất định, hoặc yêu cầu tính riêng tư, bảo mật cao hơn, một văn phòng riêng biệt trong một tòa nhà chuyên nghiệp lại trở thành ưu tiên hàng đầu.
+                - link "Xem thêm bài viết ":
+                  - /url: coworking-space-binh-duong
+                  - text: Xem thêm bài viết
+                  - generic: 
+          - generic [ref=e248]:
+            - generic:
+              - paragraph:
+                - link "Phòng họp hội thảo Bình Dương":
+                  - /url: phong-hop-hoi-thao-binh-duong
+              - generic:
+                - generic:
+                  - heading "Phòng họp hội thảo Bình Dương" [level=3]:
+                    - link "Phòng họp hội thảo Bình Dương":
+                      - /url: phong-hop-hoi-thao-binh-duong
+                - paragraph: Một phòng họp đạt chuẩn không chỉ là nơi diễn ra các cuộc thảo luận, đàm phán, mà còn là bộ mặt đại diện cho sự chuyên nghiệp và uy tín của doanh nghiệp.
+                - link "Xem thêm bài viết ":
+                  - /url: phong-hop-hoi-thao-binh-duong
+                  - text: Xem thêm bài viết
+                  - generic: 
+          - generic [ref=e249]:
+            - generic:
+              - paragraph:
+                - link "Cho thuê phòng họp Bình Dương":
+                  - /url: cho-thue-phong-hop-binh-duong
+              - generic:
+                - generic:
+                  - heading "Cho thuê phòng họp Bình Dương" [level=3]:
+                    - link "Cho thuê phòng họp Bình Dương":
+                      - /url: cho-thue-phong-hop-binh-duong
+                - paragraph: "Việc tự đầu tư xây dựng hoặc trang bị một phòng họp tiêu chuẩn đòi hỏi chi phí ban đầu lớn, thời gian thiết lập và quản lý. Thuê phòng họp mang lại nhiều lợi ích thiết thực, đặc biệt với các doanh nghiệp vừa và nhỏ, startup hoặc các công ty có nhu cầu sử dụng không thường xuyên:"
+                - link "Xem thêm bài viết ":
+                  - /url: cho-thue-phong-hop-binh-duong
+                  - text: Xem thêm bài viết
+                  - generic: 
+          - generic [ref=e250]:
+            - generic:
+              - paragraph:
+                - link "Thuê văn phòng Bình Dương":
+                  - /url: thue-van-phong-binh-duong
+              - generic:
+                - generic:
+                  - heading "Thuê văn phòng Bình Dương" [level=3]:
+                    - link "Thuê văn phòng Bình Dương":
+                      - /url: thue-van-phong-binh-duong
+                - paragraph: Không phải ngẫu nhiên mà Bình Dương trở thành điểm đến hấp dẫn cho các doanh nghiệp, đặc biệt là startup trong những năm gần đây. Tỉnh này sở hữu nhiều yếu tố thuận lợi mà các địa phương khác khó có được.
+                - link "Xem thêm bài viết ":
+                  - /url: thue-van-phong-binh-duong
+                  - text: Xem thêm bài viết
+                  - generic: 
+      - text:      
+    - generic [ref=e251]:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - link "Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương":
+                - /url: https://thuevanphongbinhduong.com/
+                - img "Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương"
+              - generic:
+                - paragraph: Vị trí chiến lược của BM Tower không chỉ mang lại lợi thế về giao thông mà còn nâng tầm hình ảnh thương hiệu, tạo ấn tượng tốt với khách hàng và đối tác.
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Về BM TOWER
+                  - list:
+                    - listitem:
+                      - link "Giới thiệu":
+                        - /url: gioi-thieu
+                    - listitem:
+                      - link "Văn phòng cho thuê":
+                        - /url: dich-vu
+                    - listitem:
+                      - link "Hoạt động":
+                        - /url: hoat-dong
+                    - listitem:
+                      - link "Tiện ích":
+                        - /url: tien-ich
+                    - listitem:
+                      - link "Liên hệ":
+                        - /url: lien-he
+                - generic:
+                  - paragraph: Chính sách khách hàng
+                  - list:
+                    - listitem:
+                      - link "Chính sách bảo mật":
+                        - /url: chinh-sach-bao-mat
+                    - listitem:
+                      - link "Chính sách tư vấn":
+                        - /url: chinh-sach-tu-van
+                    - listitem:
+                      - link "Chính sách hỗ trợ":
+                        - /url: chinh-sach-ho-tro
+                    - listitem:
+                      - link "Chính sác chăm sóc":
+                        - /url: chinh-sac-cham-soc
+      - generic [ref=e255]: Copyright ©2026 BM TOWER. All Right Reserved. Thiết kế web MIMA
+    - generic [ref=e256]:
+      - 'link "Call me: 0949616161" [ref=e257] [cursor=pointer]':
+        - /url: tel:0949616161
+        - img [ref=e261]
+        - generic [ref=e264]: "Call me: 0949616161"
+      - 'link "Zalo: 0949616161" [ref=e265] [cursor=pointer]':
+        - /url: https://zalo.me/0949616161
+        - img [ref=e269]
+        - generic [ref=e270]: "Zalo: 0949616161"
+  - generic:
+    - generic:
+      - generic: 🎯 BÁO CÁO SEO AUDIT CHUYÊN SÂU
+      - generic: "Phần A: On-page cơ bản"
+    - generic:
+      - generic: ══ KẾT QUẢ CHẤM ĐIỂM SEO ══
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: "66"
+              - generic: / 100
+        - generic:
+          - generic:
+            - generic: "Điểm số:"
+            - strong: 66/100
+          - generic:
+            - generic: "Đánh giá:"
+            - strong: 🟡 KHÁ
+          - generic:
+            - generic: "Ngưỡng đạt:"
+            - generic: 70%
+          - generic:
+            - generic: "Kết quả:"
+            - generic: ❌ FAIL
+      - generic:
+        - generic:
+          - generic: "56"
+          - generic: Tổng tiêu chí
+        - generic:
+          - generic: ✅ 37
+          - generic: Đạt
+        - generic:
+          - generic: ❌ 19
+          - generic: Không đạt
+      - generic:
+        - generic:
+          - generic: "🔗 Trang:"
+          - strong: Văn phòng làm việc Bình Dương cho thuê
+        - generic:
+          - generic: "🔑 Từ khóa:"
+          - strong: Keyword chưa xác định
+    - generic [ref=e271]:
+      - generic [ref=e272]: "❌ Chi tiết lỗi cần khắc phục (19/56):"
+      - generic [ref=e273]:
+        - generic [ref=e274]:
+          - generic [ref=e275]: Title
+          - generic [ref=e276]: 2/5
+        - generic [ref=e277]:
+          - generic [ref=e278]:
+            - strong [ref=e279]: "Độ dài Title: 38 ký tự (chuẩn: 50–60)"
+            - generic [ref=e280]: "1.2"
+          - generic [ref=e281]: ⚠️ Title quá ngắn hoặc quá dài (38 ký tự), cần 50–60
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - strong [ref=e284]: Title chứa keyword "Keyword chưa xác định"
+            - generic [ref=e285]: "1.3"
+          - generic [ref=e286]: ⚠️ Title không chứa keyword "Keyword chưa xác định"
+        - generic [ref=e287]:
+          - generic [ref=e288]:
+            - strong [ref=e289]: "Keyword nằm ở nửa đầu Title (vị trí: N/A)"
+            - generic [ref=e290]: "1.4"
+          - generic [ref=e291]: ⚠️ Keyword "Keyword chưa xác định" không có trong Title
+      - generic [ref=e292]:
+        - generic [ref=e293]:
+          - generic [ref=e294]: Meta Description
+          - generic [ref=e295]: 1/4
+        - generic [ref=e296]:
+          - generic [ref=e297]:
+            - strong [ref=e298]: Meta description tồn tại (Không tìm thấy)
+            - generic [ref=e299]: "2.1"
+          - generic [ref=e300]: ⚠️ Thẻ không tồn tại hoặc rỗng!
+        - generic [ref=e301]:
+          - generic [ref=e302]:
+            - strong [ref=e303]: "Độ dài Meta: 0 ký tự (chuẩn: 120–160)"
+            - generic [ref=e304]: "2.2"
+          - generic [ref=e305]: ⚠️ Không thể đo — Meta description không tồn tại
+        - generic [ref=e306]:
+          - generic [ref=e307]:
+            - strong [ref=e308]: Meta description chứa keyword "Keyword chưa xác định"
+            - generic [ref=e309]: "2.3"
+          - generic [ref=e310]: ⚠️ Không thể kiểm tra — Meta description không tồn tại
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - generic [ref=e313]: Heading Structure
+          - generic [ref=e314]: 3/4
+        - generic [ref=e315]:
+          - generic [ref=e316]:
+            - strong [ref=e317]: H1 chứa keyword "Keyword chưa xác định"
+            - generic [ref=e318]: "3.2"
+          - generic [ref=e319]: ⚠️ H1 "Văn phòng làm việc Bình Dương cho thuê" không chứa keyword "Keyword chưa xác định"
+      - generic [ref=e320]:
+        - generic [ref=e321]:
+          - generic [ref=e322]: URL Structure
+          - generic [ref=e323]: 4/5
+        - generic [ref=e324]:
+          - generic [ref=e325]:
+            - strong [ref=e326]: URL chứa keyword slug "keyword-chua-xac-dinh"
+            - generic [ref=e327]: "4.2"
+          - generic [ref=e328]: ⚠️ URL "/van-phong-lam-viec-binh-duong-cho-thue" không chứa keyword "keyword-chua-xac-dinh"
+      - generic [ref=e329]:
+        - generic [ref=e330]:
+          - generic [ref=e331]: Content
+          - generic [ref=e332]: 3/6
+        - generic [ref=e333]:
+          - generic [ref=e334]:
+            - strong [ref=e335]: "Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)"
+            - generic [ref=e336]: "5.2"
+          - generic [ref=e337]: "⚠️ Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%"
+        - generic [ref=e338]:
+          - generic [ref=e339]:
+            - strong [ref=e340]: Keyword "Keyword chưa xác định" xuất hiện trong 100 từ đầu
+            - generic [ref=e341]: "5.3"
+          - generic [ref=e342]: ⚠️ Keyword "Keyword chưa xác định" không xuất hiện trong 100 từ đầu
+        - generic [ref=e343]:
+          - generic [ref=e344]:
+            - strong [ref=e345]: "Readability (VI): 23.3 (avg 39.4 từ/câu) (khuyến nghị ≥ 50)"
+            - generic [ref=e346]: "5.5"
+          - generic [ref=e347]: ⚠️ Nội dung khó đọc, điểm 23.3 < 50
+      - generic [ref=e348]:
+        - generic [ref=e349]:
+          - generic [ref=e350]: Images
+          - generic [ref=e351]: 3/6
+        - generic [ref=e352]:
+          - generic [ref=e353]:
+            - strong [ref=e354]: Có ảnh chứa keyword "Keyword chưa xác định" trong alt
+            - generic [ref=e355]: "6.2"
+          - generic [ref=e356]: ⚠️ Không có ảnh nào có alt chứa keyword "Keyword chưa xác định"
+        - generic [ref=e357]:
+          - generic [ref=e358]:
+            - strong [ref=e359]: "Ảnh có width/height: 3/15 (cần ≥ 80%)"
+            - generic [ref=e360]: "6.3"
+          - generic [ref=e361]: ⚠️ Chỉ 3/15 ảnh có width/height, cần ≥ 12
+        - generic [ref=e362]:
+          - generic [ref=e363]:
+            - strong [ref=e364]: "Định dạng ảnh tối ưu (WebP/AVIF): 20% (cần ≥ 80%)"
+            - generic [ref=e365]: "6.5"
+          - generic [ref=e366]: "⚠️ Tỷ lệ ảnh WebP/AVIF quá thấp: 3/15 ảnh (20%)"
+      - generic [ref=e367]:
+        - generic [ref=e368]:
+          - generic [ref=e369]: Links
+          - generic [ref=e370]: 4/5
+        - generic [ref=e371]:
+          - generic [ref=e372]:
+            - strong [ref=e373]: "Anchor text chất lượng (lỗi: 1)"
+            - generic [ref=e374]: "7.3"
+          - generic [ref=e375]: ⚠️ 1 link có anchor text không tốt
+      - generic [ref=e376]:
+        - generic [ref=e377]:
+          - generic [ref=e378]: Technical SEO
+          - generic [ref=e379]: 8/9
+        - generic [ref=e380]:
+          - generic [ref=e381]:
+            - strong [ref=e382]: "Open Graph: og:title=✔, og:description=✘, og:image=✔"
+            - generic [ref=e383]: "8.6"
+          - generic [ref=e384]: ⚠️ og:description — Link không có thumbnail khi share trên social media
+      - generic [ref=e385]:
+        - generic [ref=e386]:
+          - generic [ref=e387]: Mobile
+          - generic [ref=e388]: 2/3
+        - generic [ref=e389]:
+          - generic [ref=e390]:
+            - strong [ref=e391]: "Touch targets đủ lớn (≥ 48x48px): 15 lỗi"
+            - generic [ref=e392]: "9.3"
+          - generic [ref=e393]: ⚠️ Phát hiện 15 nút/link có kích thước quá nhỏ (< 48x48px)
+      - generic [ref=e394]:
+        - generic [ref=e395]:
+          - generic [ref=e396]: Page Optimization
+          - generic [ref=e397]: 5/7
+        - generic [ref=e398]:
+          - generic [ref=e399]:
+            - strong [ref=e400]: "Browser caching (Cache-Control): ✘"
+            - generic [ref=e401]: "10.2"
+          - generic [ref=e402]: "⚠️ Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate"
+        - generic [ref=e403]:
+          - generic [ref=e404]:
+            - strong [ref=e405]: "LCP: 2696ms (< 2500ms)"
+            - generic [ref=e406]: "10.6"
+          - generic [ref=e407]: "⚠️ LCP quá cao: 2696ms (chuẩn: < 2.5s)"
+```
+
+# Test source
+
+```ts
+  80  |         return Math.round((this.passedChecks / this.totalChecks) * 100);
+  81  |     }
+  82  | 
+  83  |     /** Lấy thống kê chi tiết */
+  84  |     get stats() {
+  85  |         return {
+  86  |             total: this.totalChecks,
+  87  |             passed: this.passedChecks,
+  88  |             failed: this.totalChecks - this.passedChecks,
+  89  |             score: this.score,
+  90  |             failures: [...this.failures],
+  91  |         };
+  92  |     }
+  93  | 
+  94  |     async finalizeScore(page: Page, threshold = 70): Promise<void> {
+  95  |         const { total, passed, failed, score, failures } = this.stats;
+  96  | 
+  97  |         // Xác định trạng thái
+  98  |         const isPass = score >= threshold;
+  99  |         const statusText = isPass ? "PASS" : "FAIL";
+  100 | 
+  101 |         // Thang điểm SEO mới
+  102 |         let scoreLabel: string;
+  103 |         let statusIcon: string;
+  104 |         if (score >= 93) {
+  105 |             scoreLabel = "XUẤT SẮC";
+  106 |             statusIcon = "💎";
+  107 |         } else if (score >= 77) {
+  108 |             scoreLabel = "TỐT";
+  109 |             statusIcon = "🟢";
+  110 |         } else if (score >= 65) {
+  111 |             scoreLabel = "KHÁ";
+  112 |             statusIcon = "🟡";
+  113 |         } else if (score >= 50) {
+  114 |             scoreLabel = "TRUNG BÌNH";
+  115 |             statusIcon = "🟠";
+  116 |         } else {
+  117 |             scoreLabel = "KÉM";
+  118 |             statusIcon = "🔴";
+  119 |         }
+  120 | 
+  121 |         // Tạo báo cáo tổng kết dạng text
+  122 |         const summaryLines = [
+  123 |             `══════════════════════════════════════`,
+  124 |             `   ${statusIcon} KẾT QUẢ CHẤM ĐIỂM SEO`,
+  125 |             `══════════════════════════════════════`,
+  126 |             `   Điểm số:     ${score}/100`,
+  127 |             `   Đánh giá:    ${scoreLabel}`,
+  128 |             `   Ngưỡng đạt:  ${threshold}%`,
+  129 |             `   Kết quả:     ${statusText}`,
+  130 |             `──────────────────────────────────────`,
+  131 |             `   Tổng tiêu chí:  ${total}`,
+  132 |             `   ✅ Đạt:          ${passed}`,
+  133 |             `   ❌ Không đạt:    ${failed}`,
+  134 |             `══════════════════════════════════════`,
+  135 |         ];
+  136 | 
+  137 |         if (failures.length > 0) {
+  138 |             summaryLines.push(``, `📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (${failed}/${total}):`);
+  139 | 
+  140 |             // Group errors by their assigned group
+  141 |             const groupedFailures = failures.reduce((acc, f) => {
+  142 |                 if (!acc[f.group]) acc[f.group] = [];
+  143 |                 acc[f.group].push(f);
+  144 |                 return acc;
+  145 |             }, {} as Record<string, ScorecardFailure[]>);
+  146 | 
+  147 |             let globalIndex = 1;
+  148 |             for (const [group, items] of Object.entries(groupedFailures)) {
+  149 |                 summaryLines.push(`--- ${group.toUpperCase()} ---`);
+  150 |                 items.forEach((f) => {
+  151 |                     summaryLines.push(`   ${globalIndex}. [${f.step}]`);
+  152 |                     summaryLines.push(`      → ${f.message}`);
+  153 |                     globalIndex++;
+  154 |                 });
+  155 |             }
+  156 |         }
+  157 | 
+  158 |         const summaryText = summaryLines.join("\n");
+  159 | 
+  160 |         // Step cuối cùng — hiển thị bảng điểm + quyết định PASS/FAIL
+  161 |         await customStep(
+  162 |             page,
+  163 |             `13. 🏆 Kết quả chấm điểm SEO: ${score}/100 — ${statusText} (${scoreLabel})`,
+  164 |             async () => {
+  165 |                 // Đính kèm bảng điểm text
+  166 |                 await allure.attachment(
+  167 |                     "Bảng điểm SEO",
+  168 |                     Buffer.from(summaryText, "utf-8"),
+  169 |                     "text/plain"
+  170 |                 );
+  171 | 
+  172 |                 // Gắn description vào Test Case trên Allure
+  173 |                 await allure.description(
+  174 |                     `[${statusText}] Điểm SEO: ${score}/100 | Đạt: ${passed}/${total} tiêu chí | Ngưỡng: ${threshold}%\n\n` +
+  175 |                     `${scoreLabel}`
+  176 |                 );
+  177 | 
+  178 |                 // 🚀 ĐÂY LÀ DÒNG DUY NHẤT quyết định Test PASS hay FAIL
+  179 |                 if (!isPass) {
+> 180 |                     throw new Error(
+      |                           ^ Error: ❌ FAIL — Điểm SEO 67/100 dưới ngưỡng 70%. Có 19/58 tiêu chí không đạt.
+  181 |                         `❌ FAIL — Điểm SEO ${score}/100 dưới ngưỡng ${threshold}%. ` +
+  182 |                         `Có ${failed}/${total} tiêu chí không đạt.`
+  183 |                     );
+  184 |                 }
+  185 |             },
+  186 |             { screenshot: true }
+  187 |         );
+  188 |     }
+  189 | }
+```

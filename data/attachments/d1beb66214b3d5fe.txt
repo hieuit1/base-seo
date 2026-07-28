@@ -1,0 +1,1 @@
+[Desktop] LCP quá cao: 3032ms (chuẩn: < 2.5s)

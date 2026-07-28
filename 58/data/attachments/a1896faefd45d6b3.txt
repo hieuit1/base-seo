@@ -1,0 +1,1 @@
+Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate

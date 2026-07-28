@@ -1,0 +1,54 @@
+══════════════════════════════════════
+   🟡 KẾT QUẢ CHẤM ĐIỂM SEO
+══════════════════════════════════════
+   Điểm số:     75/100
+   Đánh giá:    KHÁ
+   Ngưỡng đạt:  70%
+   Kết quả:     PASS
+──────────────────────────────────────
+   Tổng tiêu chí:  59
+   ✅ Đạt:          44
+   ❌ Không đạt:    15
+══════════════════════════════════════
+
+📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (15/59):
+--- TITLE ---
+   1. [Title chứa keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ"]
+      → Title không chứa keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ"
+   2. [Keyword nằm ở nửa đầu Title (vị trí: N/A)]
+      → Bỏ qua — keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ" không có trong Title
+--- META DESCRIPTION ---
+   3. [Độ dài Meta: 189 ký tự (chuẩn: 120–160)]
+      → Meta description quá dài: 189 ký tự, cần 120–160
+   4. [Meta description chứa keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ"]
+      → Meta description không chứa keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ"
+--- HEADING STRUCTURE ---
+   5. [H1 chứa keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ"]
+      → H1 "Thuê văn phòng Bình Dương | Tòa nhà cho thuê BM Tower" không chứa keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ"
+--- CONTENT ---
+   6. [Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)]
+      → Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%
+   7. [Keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ" xuất hiện trong 100 từ đầu]
+      → Keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ" không xuất hiện trong 100 từ đầu
+--- IMAGES ---
+   8. [Có ảnh chứa keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ" trong alt]
+      → Không có ảnh nào có alt chứa keyword "Thuê văn phòng Bình Dương, Tòa nhà cho thuê BM Tower, Thuê văn phòng theo giờ"
+   9. [Ảnh có width/height: 10/24 (cần ≥ 80%)]
+      → Chỉ 10/24 ảnh có width/height, cần ≥ 20
+   10. [Định dạng ảnh tối ưu (WebP/AVIF): 13% (cần ≥ 80%)]
+      → Tỷ lệ ảnh WebP/AVIF quá thấp: 3/24 ảnh (13%)
+--- LINKS ---
+   11. [Anchor text chất lượng (lỗi: 2)]
+      → 2 link có anchor text không tốt: "" → #menu, "Xem thêm" → gioi-thieu 
+--- TECHNICAL SEO ---
+   12. [Open Graph: og:title=✔, og:description=✔, og:image=✘]
+      → og:image — Link không có thumbnail khi share trên social media
+--- MOBILE ---
+   13. [Touch targets (nút/link) đủ lớn (≥ 48x48px): ✘]
+      → Phát hiện 7 nút/link có kích thước quá nhỏ (nhỏ hơn 48x48px)
+--- PAGE OPTIMIZATION ---
+   14. [Browser caching (Cache-Control): ✔]
+      → Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate
+--- PERFORMANCE ---
+   15. [[Desktop] LCP (Largest Contentful Paint): 3944ms (< 2500ms)]
+      → [Desktop] LCP quá cao: 3944ms (chuẩn: < 2.5s)

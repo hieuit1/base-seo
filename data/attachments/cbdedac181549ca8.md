@@ -1,0 +1,678 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: seo.spec.ts >> SEO TIÊU CHUẨN CƠ BẢN CHO WEB >> Kiểm tra SEO Onpage: Văn phòng tiêu chuẩn 2 (/van-phong-tieu-chuan-2)
+- Location: tests/seo.spec.ts:19:9
+
+# Error details
+
+```
+Error: ❌ FAIL — Điểm SEO 69/100 dưới ngưỡng 70%. Có 18/58 tiêu chí không đạt.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e7]:
+      - link "Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương" [ref=e9] [cursor=pointer]:
+        - /url: https://thuevanphongbinhduong.com/
+        - img "Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương" [ref=e10]
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Trang chủ" [ref=e13] [cursor=pointer]:
+            - /url: ""
+        - listitem [ref=e14]:
+          - link "Giới thiệu" [ref=e15] [cursor=pointer]:
+            - /url: gioi-thieu
+        - listitem [ref=e16]:
+          - link "Văn phòng cho thuê" [ref=e17] [cursor=pointer]:
+            - /url: dich-vu
+        - listitem [ref=e18]:
+          - link "Tiện ích" [ref=e19] [cursor=pointer]:
+            - /url: tien-ich
+        - listitem [ref=e20]:
+          - link "Hoạt động" [ref=e21] [cursor=pointer]:
+            - /url: hoat-dong
+        - listitem [ref=e22]:
+          - link "Liên hệ" [ref=e23] [cursor=pointer]:
+            - /url: lien-he
+      - link "phone 0949616161" [ref=e25] [cursor=pointer]:
+        - /url: tel:0949616161
+        - img "phone" [ref=e26]
+        - generic [ref=e27]: "0949616161"
+    - list [ref=e30]:
+      - listitem [ref=e31]:
+        - link "Trang chủ" [ref=e32] [cursor=pointer]:
+          - /url: https://thuevanphongbinhduong.com/
+          - img [ref=e33]
+          - generic [ref=e35]: Trang chủ
+      - listitem [ref=e36]:
+        - text: /
+        - link "Văn phòng cho thuê" [ref=e37] [cursor=pointer]:
+          - /url: https://thuevanphongbinhduong.com/dich-vu
+      - listitem [ref=e38]:
+        - text: /
+        - link "Văn phòng tiêu chuẩn 2" [ref=e39] [cursor=pointer]:
+          - /url: https://thuevanphongbinhduong.com/van-phong-tieu-chuan-2
+    - generic [ref=e40]:
+      - generic [ref=e42]:
+        - generic [ref=e44]:
+          - link "Văn phòng tiêu chuẩn 2" [ref=e46] [cursor=pointer]:
+            - /url: thumbs/590x363x1/upload/product/van-phong-lam-viec-binh-duong-cho-thue-9759.jpg
+            - img "Văn phòng tiêu chuẩn 2" [ref=e47]
+          - img "No image" [ref=e49]
+          - img "No image" [ref=e51]
+          - img "No image" [ref=e53]
+          - img "No image" [ref=e55]
+          - img "No image" [ref=e57]
+        - generic [ref=e58]:
+          - heading "Chi tiết Văn phòng tiêu chuẩn 2" [level=2] [ref=e60]
+          - generic [ref=e61]:
+            - img [ref=e62]
+            - strong [ref=e66]: "Vị trí:"
+            - text: Tầng 7, BM Towe, 330, khu 7 hiệp thành, thành phố thủ dầu một, tỉnh bình dươngr
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - img [ref=e69]
+              - generic [ref=e71]:
+                - strong [ref=e72]: "Diện tích:"
+                - text: 2000m²
+            - generic [ref=e73]:
+              - img [ref=e74]
+              - generic [ref=e76]:
+                - strong [ref=e77]: "Giá thuê:"
+                - text: Từ 10.000.000VNĐ/m²
+            - generic [ref=e78]:
+              - img [ref=e79]
+              - generic [ref=e81]:
+                - strong [ref=e82]: "Phí quản lí:"
+                - text: 8.000.000VNĐ
+            - generic [ref=e83]:
+              - img [ref=e84]
+              - generic [ref=e86]:
+                - strong [ref=e87]: "Phí điện sử dụng:"
+                - text: Tính thực tế tiêu thụ theo đồng hồ
+          - generic [ref=e90]:
+            - heading "Chi tiết thông tin tòa nhà" [level=3] [ref=e93]
+            - generic [ref=e96] [cursor=pointer]:
+              - img [ref=e97]
+              - text: Mục lục
+              - img [ref=e100]
+            - generic [ref=e103]:
+              - 'heading "BM Tower: Điểm Tựa Vững Chắc Cho Sự Phát Triển Doanh Nghiệp Tại Phú Lợi" [level=2] [ref=e104]'
+              - paragraph [ref=e105]:
+                - text: Bạn đang ấp ủ giấc mơ khởi nghiệp, hay mong muốn mở rộng quy mô hoạt động của doanh nghiệp mình tại khu vực sầm uất của Phường Phú Lợi, Thành phố Hồ Chí Minh? Tìm kiếm một không gian làm việc chuyên nghiệp, đầy đủ tiện nghi mà không tốn quá nhiều chi phí đầu tư ban đầu, lại còn thuận tiện giao dịch với khách hàng và đối tác? Hãy để
+                - strong [ref=e106]: Văn phòng trọn gói tại BM Tower
+                - text: trở thành điểm tựa vững chắc cho sự phát triển của bạn. Chúng tôi mang đến giải pháp
+                - strong [ref=e107]: cho thuê văn phòng
+                - text: và
+                - strong [ref=e108]: cho thuê phòng họp
+                - text: được thiết kế tối ưu, giúp bạn "vào làm việc ngay" với đầy đủ tiện ích, hệ thống phòng cháy chữa cháy đạt chuẩn, pháp lý minh bạch, đồng thời tiết kiệm chi phí hiệu quả. Đây chính là lựa chọn lý tưởng cho các doanh nghiệp trong và ngoài nước, các trung tâm, hệ thống ngoại ngữ muốn thiết lập trụ sở làm việc uy tín.
+              - heading "BM Tower – Giải Pháp Văn Phòng Chuyên Nghiệp Tại Trung Tâm Phú Lợi" [level=2] [ref=e109]
+              - paragraph [ref=e110]: Trong nhịp sống hối hả của Thành phố Hồ Chí Minh, việc tìm kiếm một địa điểm đặt trụ sở không chỉ là tìm một không gian vật lý, mà còn là tìm một môi trường làm việc lý tưởng, phản ánh sự chuyên nghiệp và tầm nhìn của doanh nghiệp. BM Tower hiểu rõ điều đó, tọa lạc ngay tại trung tâm sầm uất của Phường Phú Lợi, chúng tôi mang đến một giải pháp toàn diện cho nhu cầu thuê văn phòng và phòng họp, đáp ứng đa dạng các loại hình kinh doanh, từ các startup năng động đến các tập đoàn lớn đang tìm kiếm văn phòng đại diện hay chi nhánh.
+              - heading "Vị Trí Đắc Địa – Thuận Tiện Giao Thương" [level=2] [ref=e111]
+              - paragraph [ref=e112]: "Tọa lạc tại vị trí đắc địa trên trục đường chính, BM Tower – tòa nhà văn phòng tại 330 Nguyễn Văn Trỗi, Phường Phú Lợi, Thủ Dầu Một, Bình Dương, TPHCM dễ dàng kết nối với các khu vực trọng điểm khác. Vị trí này không chỉ giúp nhân viên di chuyển thuận tiện mà còn tạo điều kiện lý tưởng để đón tiếp khách hàng, đối tác, giúp việc giao dịch và ký kết hợp đồng trở nên dễ dàng hơn bao giờ hết. Google Map chỉ dẫn chi tiết: https://share.google/bLtP9kFolLR3qSkF6, giúp bạn dễ dàng định vị và di chuyển đến văn phòng."
+              - paragraph [ref=e113]: Sự thuận lợi về giao thông này là một lợi thế cạnh tranh không nhỏ, đặc biệt đối với các doanh nghiệp coi trọng việc xây dựng mối quan hệ đối tác và tiếp đón khách hàng thường xuyên. Một văn phòng dễ tìm, dễ tiếp cận thể hiện sự chuyên nghiệp và tôn trọng thời gian của người khác.
+              - heading "Diện Tích Linh Hoạt – Đáp Ứng Mọi Nhu Cầu" [level=2] [ref=e114]
+              - paragraph [ref=e115]:
+                - text: Chúng tôi thấu hiểu rằng mỗi doanh nghiệp có quy mô và nhu cầu khác nhau. Vì vậy, BM Tower cung cấp các lựa chọn diện tích linh hoạt từ 50m² – 500m², phù hợp với mọi loại hình kinh doanh, từ các công ty mới thành lập cần một không gian khởi đầu gọn gàng đến các doanh nghiệp đã phát triển cần mở rộng văn phòng đại diện hoặc chi nhánh. Dù bạn cần một
+                - strong [ref=e116]: văn phòng
+                - text: nhỏ nhắn, ấm cúng hay một
+                - strong [ref=e117]: mặt bằng kinh doanh
+                - text: rộng rãi, chúng tôi đều có giải pháp tối ưu.
+              - paragraph [ref=e118]: Việc có nhiều lựa chọn về diện tích giúp doanh nghiệp chủ động hơn trong việc quản lý chi phí và tối ưu hóa không gian làm việc. Bạn có thể bắt đầu với một diện tích vừa phải, khi công ty phát triển có thể dễ dàng nâng cấp hoặc mở rộng mà không cần phải thay đổi địa điểm.
+              - heading "Tiện Ích Đầy Đủ – Nâng Tầm Trải Nghiệm Làm Việc" [level=2] [ref=e119]
+              - paragraph [ref=e120]: "Tại BM Tower, chúng tôi không chỉ cung cấp không gian mà còn kiến tạo một môi trường làm việc chuyên nghiệp và hiệu quả. Toàn bộ tòa nhà được trang bị hệ thống cơ sở vật chất hiện đại, đảm bảo mọi hoạt động diễn ra suôn sẻ:"
+              - list [ref=e121]:
+                - listitem [ref=e122]:
+                  - strong [ref=e123]: Hệ thống điều hòa không khí
+                  - text: tiên tiến, duy trì nhiệt độ lý tưởng cho mọi khu vực.
+                - listitem [ref=e124]:
+                  - strong [ref=e125]: Hệ thống chiếu sáng
+                  - text: tiêu chuẩn, đảm bảo đủ ánh sáng cho công việc.
+                - listitem [ref=e126]:
+                  - strong [ref=e127]: Internet cáp quang tốc độ cao
+                  - text: ", đáp ứng nhu cầu làm việc, họp trực tuyến và truy cập dữ liệu liên tục."
+                - listitem [ref=e128]:
+                  - strong [ref=e129]: Hệ thống thang máy
+                  - text: hiện đại, tốc độ cao, giảm thiểu thời gian chờ đợi.
+                - listitem [ref=e130]:
+                  - strong [ref=e131]: Hệ thống phòng cháy chữa cháy (PCCC)
+                  - text: đạt chuẩn, bao gồm báo cháy tự động, hệ thống phun nước sprinkler, bình chữa cháy xách tay và lối thoát hiểm rõ ràng, đảm bảo an toàn tuyệt đối cho người sử dụng.
+                - listitem [ref=e132]:
+                  - strong [ref=e133]: Bãi đậu xe
+                  - text: rộng rãi, đáp ứng nhu cầu của nhân viên và khách hàng.
+                - listitem [ref=e134]:
+                  - strong [ref=e135]: Đội ngũ bảo vệ chuyên nghiệp
+                  - text: ", hoạt động 24/7, đảm bảo an ninh cho tòa nhà."
+                - listitem [ref=e136]:
+                  - strong [ref=e137]: Hệ thống camera giám sát
+                  - text: an ninh được lắp đặt khắp nơi.
+              - paragraph [ref=e138]: Chúng tôi tin rằng một không gian làm việc tiện nghi, an toàn sẽ góp phần nâng cao năng suất và sự hài lòng của nhân viên, từ đó thúc đẩy sự phát triển chung của doanh nghiệp.
+              - heading "Dịch Vụ Cho Thuê Phòng Họp Chuyên Nghiệp" [level=2] [ref=e139]
+              - paragraph [ref=e140]:
+                - text: Bên cạnh các lựa chọn văn phòng cho thuê, BM Tower còn cung cấp dịch vụ
+                - strong [ref=e141]: cho thuê phòng họp
+                - text: ", đáp ứng nhu cầu tổ chức các cuộc họp, hội thảo, buổi đào tạo hay phỏng vấn khách hàng. Các phòng họp tại đây được trang bị đầy đủ:"
+              - list [ref=e142]:
+                - listitem [ref=e143]:
+                  - strong [ref=e144]: Bàn ghế sang trọng
+                  - text: ", được sắp xếp khoa học."
+                - listitem [ref=e145]:
+                  - strong [ref=e146]: Máy chiếu
+                  - text: ", màn hình hiển thị sắc nét."
+                - listitem [ref=e147]:
+                  - strong [ref=e148]: Hệ thống âm thanh
+                  - text: chất lượng cao.
+                - listitem [ref=e149]:
+                  - strong [ref=e150]: Bảng trắng
+                  - text: ", bút viết."
+                - listitem [ref=e151]:
+                  - strong [ref=e152]: Internet Wi-Fi tốc độ cao
+                  - text: ", ổn định."
+                - listitem [ref=e153]:
+                  - strong [ref=e154]: Nước uống
+                  - text: và các dịch vụ hỗ trợ khác theo yêu cầu.
+              - paragraph [ref=e155]: Với sự đa dạng về sức chứa (từ 10 đến 50 người), các phòng họp tại BM Tower phù hợp với mọi quy mô sự kiện, mang đến một không gian chuyên nghiệp, trang trọng và hiệu quả cho các cuộc thảo luận quan trọng của doanh nghiệp bạn.
+              - heading "Lợi Thế Của Văn Phòng Trọn Gói" [level=2] [ref=e156]
+              - paragraph [ref=e157]:
+                - text: Lựa chọn
+                - strong [ref=e158]: văn phòng trọn gói
+                - text: "tại BM Tower mang lại nhiều lợi ích thiết thực, đặc biệt cho các doanh nghiệp khởi nghiệp hoặc có quy mô vừa và nhỏ:"
+              - list [ref=e159]:
+                - listitem [ref=e160]:
+                  - strong [ref=e161]: "Giảm thiểu chi phí đầu tư ban đầu:"
+                  - text: Bạn không cần lo lắng về việc thiết kế, thi công nội thất, mua sắm trang thiết bị văn phòng đắt đỏ.
+                - listitem [ref=e162]:
+                  - strong [ref=e163]: "Tiết kiệm thời gian và công sức:"
+                  - text: Mọi thứ đã sẵn sàng, bạn chỉ cần mang máy tính và bắt tay vào làm việc.
+                - listitem [ref=e164]:
+                  - strong [ref=e165]: "Chi phí cố định, dễ dàng dự trù ngân sách:"
+                  - text: Chi phí thuê bao gồm nhiều dịch vụ, giúp bạn dễ dàng quản lý tài chính.
+                - listitem [ref=e166]:
+                  - strong [ref=e167]: "Dịch vụ lễ tân chuyên nghiệp:"
+                  - text: Hỗ trợ tiếp nhận thư từ, bưu phẩm, hướng dẫn khách đến liên hệ.
+                - listitem [ref=e168]:
+                  - strong [ref=e169]: "Sử dụng phòng họp miễn phí hoặc ưu đãi:"
+                  - text: Tận dụng tối đa các tiện ích có sẵn.
+                - listitem [ref=e170]:
+                  - strong [ref=e171]: "Môi trường làm việc chuyên nghiệp:"
+                  - text: Tòa nhà uy tín, tạo dựng hình ảnh tốt đẹp trong mắt đối tác và khách hàng.
+                - listitem [ref=e172]:
+                  - strong [ref=e173]: "Pháp lý minh bạch:"
+                  - text: Hợp đồng rõ ràng, tuân thủ quy định pháp luật.
+              - paragraph [ref=e174]: Đây là giải pháp thông minh giúp doanh nghiệp tập trung tối đa vào hoạt động kinh doanh cốt lõi, thay vì bận tâm đến các vấn đề vận hành văn phòng.
+              - heading "BM Tower – Lựa Chọn Lý Tưởng Cho Các Hệ Thống Giáo Dục" [level=2] [ref=e175]
+              - paragraph [ref=e176]: Với vị trí thuận lợi, không gian chuyên nghiệp và các tiện ích đầy đủ, BM Tower là điểm đến lý tưởng cho các trung tâm, hệ thống ngoại ngữ hoặc các tổ chức giáo dục muốn thiết lập trụ sở làm việc uy tín tại khu vực Phú Lợi. Một văn phòng khang trang, dễ dàng tiếp cận sẽ giúp thu hút học viên, đối tác và tạo dựng niềm tin vững chắc.
+              - heading "Cam Kết Minh Bạch và Hỗ Trợ Tối Đa" [level=2] [ref=e177]
+              - paragraph [ref=e178]: BM Tower cam kết mang đến sự minh bạch trong mọi giao dịch, từ hợp đồng thuê cho đến các dịch vụ đi kèm. Đội ngũ quản lý và nhân viên luôn sẵn sàng hỗ trợ bạn giải quyết mọi vấn đề phát sinh, đảm bảo hoạt động kinh doanh của bạn diễn ra thuận lợi nhất. Chúng tôi tin rằng sự thành công của khách hàng chính là thước đo cho sự phát triển của chính mình.
+              - heading "Thông Tin Liên Hệ" [level=2] [ref=e179]
+              - paragraph [ref=e180]:
+                - strong [ref=e181]: Tòa nhà văn phòng BM Tower
+                - text: "| Cho thuê văn phòng tại Bình Dương"
+              - paragraph [ref=e182]: "Địa chỉ: 330 Nguyễn Văn Trỗi, Phường Phú Lợi, Thủ Dầu Một, Bình Dương, TPHCM"
+              - paragraph [ref=e183]: "Hotline: 0949616161"
+              - paragraph [ref=e184]: "Điện thoại: 0949616161"
+              - paragraph [ref=e185]: "Email: bmtower@gmail.com"
+              - paragraph [ref=e186]: "Website: thuevanphongbinhduong.com"
+              - link "Xem thêm xem thêm" [ref=e189] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=e190]:
+                  - text: Xem thêm
+                  - img "xem thêm" [ref=e191]
+      - generic [ref=e199]:
+        - heading "Dịch vụ tương tự" [level=2] [ref=e201]
+        - generic [ref=e204]:
+          - generic [ref=e207]:
+            - link "Văn phòng tiêu chuẩn" [ref=e209] [cursor=pointer]:
+              - /url: van-phong-tieu-chuan
+            - generic [ref=e211]:
+              - heading "Văn phòng tiêu chuẩn" [level=3] [ref=e213]:
+                - link "Văn phòng tiêu chuẩn" [ref=e214] [cursor=pointer]:
+                  - /url: van-phong-tieu-chuan
+              - paragraph [ref=e216]: Không gian sáng thoáng, bố cục dễ tùy biến, phù hợp cho doanh nghiệp cần sự linh hoạt và hiệu quả vận hành.
+              - generic [ref=e217]:
+                - generic [ref=e218]:
+                  - img [ref=e219]
+                  - generic [ref=e221]:
+                    - strong [ref=e222]: "Diện tích:"
+                    - text: 2000m²
+                - generic [ref=e223]:
+                  - img [ref=e224]
+                  - generic [ref=e226]:
+                    - strong [ref=e227]: "Giá thuê:"
+                    - text: Từ 1.000.000VNĐ/m²
+          - generic [ref=e230]:
+            - link "Cho thuê văn phòng sáng tạo" [ref=e232] [cursor=pointer]:
+              - /url: van-phong-sang-tao
+            - generic [ref=e234]:
+              - heading "Cho thuê văn phòng sáng tạo" [level=3] [ref=e236]:
+                - link "Cho thuê văn phòng sáng tạo" [ref=e237] [cursor=pointer]:
+                  - /url: van-phong-sang-tao
+              - paragraph [ref=e239]: Trong kỷ nguyên kinh tế số, môi trường làm việc không chỉ là nơi đặt những chiếc bàn ghế, mà còn là bệ phóng cho sự sáng tạo và đổi mới. Việc lựa chọn một không gian làm việc lý tưởng đóng vai trò then chốt trong việc định hình văn hóa doanh nghiệp và thúc đẩy hiệu suất làm việc của đội ngũ nhân sự. Cho thuê văn phòng sáng tạo tại BM Tower chính là giải pháp tối ưu, mang đến không gian làm việc hiện đại, linh hoạt và tràn đầy cảm hứng cho mọi doanh nghiệp.
+              - generic [ref=e240]:
+                - generic [ref=e241]:
+                  - img [ref=e242]
+                  - generic [ref=e244]:
+                    - strong [ref=e245]: "Diện tích:"
+                    - text: 2000m²
+                - generic [ref=e246]:
+                  - img [ref=e247]
+                  - generic [ref=e249]:
+                    - strong [ref=e250]: "Giá thuê:"
+                    - text: Từ 1.000.000VNĐ/m²
+          - generic [ref=e253]:
+            - link "Cho thuê văn phòng cao cấp" [ref=e255] [cursor=pointer]:
+              - /url: van-phong-cao-cap
+            - generic [ref=e257]:
+              - heading "Cho thuê văn phòng cao cấp" [level=3] [ref=e259]:
+                - link "Cho thuê văn phòng cao cấp" [ref=e260] [cursor=pointer]:
+                  - /url: van-phong-cao-cap
+              - paragraph [ref=e262]: Không gian sáng thoáng, bố cục dễ tùy biến, phù hợp cho doanh nghiệp cần sự linh hoạt và hiệu quả vận hành.
+              - generic [ref=e263]:
+                - generic [ref=e264]:
+                  - img [ref=e265]
+                  - generic [ref=e267]:
+                    - strong [ref=e268]: "Diện tích:"
+                    - text: 2000m²
+                - generic [ref=e269]:
+                  - img [ref=e270]
+                  - generic [ref=e272]:
+                    - strong [ref=e273]: "Giá thuê:"
+                    - text: Từ 180.000VNĐ/m²
+          - generic [ref=e276]:
+            - link "Văn phòng tiêu chuẩn 1" [ref=e278] [cursor=pointer]:
+              - /url: van-phong-tieu-chuan-1
+            - generic [ref=e280]:
+              - heading "Văn phòng tiêu chuẩn 1" [level=3] [ref=e282]:
+                - link "Văn phòng tiêu chuẩn 1" [ref=e283] [cursor=pointer]:
+                  - /url: van-phong-tieu-chuan-1
+              - paragraph [ref=e285]: Tọa lạc tại vị trí trung tâm, tòa nhà cung cấp đa dạng các loại hình văn phòng và phòng họp, đáp ứng nhu cầu của mọi loại hình doanh nghiệp, từ startup non trẻ đến các công ty đã có chỗ đứng trên thị trường.
+              - generic [ref=e286]:
+                - generic [ref=e287]:
+                  - img [ref=e288]
+                  - generic [ref=e290]:
+                    - strong [ref=e291]: "Diện tích:"
+                    - text: 2000m²
+                - generic [ref=e292]:
+                  - img [ref=e293]
+                  - generic [ref=e295]:
+                    - strong [ref=e296]: "Giá thuê:"
+                    - text: Từ 10.000.000VNĐ/m²
+          - generic [ref=e299]:
+            - link "Phòng họp cho thuê theo giờ" [ref=e301] [cursor=pointer]:
+              - /url: phong-hop-cho-thue-theo-gio
+            - generic [ref=e303]:
+              - heading "Phòng họp cho thuê theo giờ" [level=3] [ref=e305]:
+                - link "Phòng họp cho thuê theo giờ" [ref=e306] [cursor=pointer]:
+                  - /url: phong-hop-cho-thue-theo-gio
+              - paragraph [ref=e308]: Việc thuê phòng họp theo giờ giải quyết nhiều vấn đề mà các hình thức thuê truyền thống khó lòng đáp ứng.
+              - generic [ref=e309]:
+                - generic [ref=e310]:
+                  - img [ref=e311]
+                  - generic [ref=e313]:
+                    - strong [ref=e314]: "Diện tích:"
+                    - text: 2000m2
+                - generic [ref=e315]:
+                  - img [ref=e316]
+                  - generic [ref=e318]:
+                    - strong [ref=e319]: "Giá thuê:"
+                    - text: Từ 10.000.000VNĐ/m²
+        - generic:
+          - button [ref=e320] [cursor=pointer]:
+            - img [ref=e321]
+          - button [ref=e324] [cursor=pointer]:
+            - img [ref=e325]
+    - generic [ref=e328]:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - link "Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương":
+                - /url: https://thuevanphongbinhduong.com/
+                - img "Tòa nhà văn phòng BM Tower | Cho thuê văn phòng tại Bình Dương"
+              - generic:
+                - paragraph: Vị trí chiến lược của BM Tower không chỉ mang lại lợi thế về giao thông mà còn nâng tầm hình ảnh thương hiệu, tạo ấn tượng tốt với khách hàng và đối tác.
+            - generic:
+              - generic:
+                - generic:
+                  - paragraph: Về BM TOWER
+                  - list:
+                    - listitem:
+                      - link "Giới thiệu":
+                        - /url: gioi-thieu
+                    - listitem:
+                      - link "Văn phòng cho thuê":
+                        - /url: dich-vu
+                    - listitem:
+                      - link "Hoạt động":
+                        - /url: hoat-dong
+                    - listitem:
+                      - link "Tiện ích":
+                        - /url: tien-ich
+                    - listitem:
+                      - link "Liên hệ":
+                        - /url: lien-he
+                - generic:
+                  - paragraph: Chính sách khách hàng
+                  - list:
+                    - listitem:
+                      - link "Chính sách bảo mật":
+                        - /url: chinh-sach-bao-mat
+                    - listitem:
+                      - link "Chính sách tư vấn":
+                        - /url: chinh-sach-tu-van
+                    - listitem:
+                      - link "Chính sách hỗ trợ":
+                        - /url: chinh-sach-ho-tro
+                    - listitem:
+                      - link "Chính sác chăm sóc":
+                        - /url: chinh-sac-cham-soc
+      - generic [ref=e332]: Copyright ©2026 BM TOWER. All Right Reserved. Thiết kế web MIMA
+    - generic [ref=e333]:
+      - 'link "Call me: 0949616161" [ref=e334] [cursor=pointer]':
+        - /url: tel:0949616161
+        - img [ref=e338]
+        - generic [ref=e341]: "Call me: 0949616161"
+      - 'link "Zalo: 0949616161" [ref=e342] [cursor=pointer]':
+        - /url: https://zalo.me/0949616161
+        - img [ref=e346]
+        - generic [ref=e347]: "Zalo: 0949616161"
+  - generic:
+    - generic:
+      - generic: 🎯 BÁO CÁO SEO AUDIT CHUYÊN SÂU
+      - generic: "Phần A: On-page cơ bản"
+    - generic:
+      - generic: ══ KẾT QUẢ CHẤM ĐIỂM SEO ══
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: "68"
+              - generic: / 100
+        - generic:
+          - generic:
+            - generic: "Điểm số:"
+            - strong: 68/100
+          - generic:
+            - generic: "Đánh giá:"
+            - strong: 🟡 KHÁ
+          - generic:
+            - generic: "Ngưỡng đạt:"
+            - generic: 70%
+          - generic:
+            - generic: "Kết quả:"
+            - generic: ❌ FAIL
+      - generic:
+        - generic:
+          - generic: "56"
+          - generic: Tổng tiêu chí
+        - generic:
+          - generic: ✅ 38
+          - generic: Đạt
+        - generic:
+          - generic: ❌ 18
+          - generic: Không đạt
+      - generic:
+        - generic:
+          - generic: "🔗 Trang:"
+          - strong: Văn phòng tiêu chuẩn 2
+        - generic:
+          - generic: "🔑 Từ khóa:"
+          - strong: Keyword chưa xác định
+    - generic [ref=e348]:
+      - generic [ref=e349]: "❌ Chi tiết lỗi cần khắc phục (18/56):"
+      - generic [ref=e350]:
+        - generic [ref=e351]:
+          - generic [ref=e352]: Title
+          - generic [ref=e353]: 2/5
+        - generic [ref=e354]:
+          - generic [ref=e355]:
+            - strong [ref=e356]: "Độ dài Title: 22 ký tự (chuẩn: 50–60)"
+            - generic [ref=e357]: "1.2"
+          - generic [ref=e358]: ⚠️ Title quá ngắn hoặc quá dài (22 ký tự), cần 50–60
+        - generic [ref=e359]:
+          - generic [ref=e360]:
+            - strong [ref=e361]: Title chứa keyword "Keyword chưa xác định"
+            - generic [ref=e362]: "1.3"
+          - generic [ref=e363]: ⚠️ Title không chứa keyword "Keyword chưa xác định"
+        - generic [ref=e364]:
+          - generic [ref=e365]:
+            - strong [ref=e366]: "Keyword nằm ở nửa đầu Title (vị trí: N/A)"
+            - generic [ref=e367]: "1.4"
+          - generic [ref=e368]: ⚠️ Keyword "Keyword chưa xác định" không có trong Title
+      - generic [ref=e369]:
+        - generic [ref=e370]:
+          - generic [ref=e371]: Meta Description
+          - generic [ref=e372]: 1/4
+        - generic [ref=e373]:
+          - generic [ref=e374]:
+            - strong [ref=e375]: Meta description tồn tại (Không tìm thấy)
+            - generic [ref=e376]: "2.1"
+          - generic [ref=e377]: ⚠️ Thẻ không tồn tại hoặc rỗng!
+        - generic [ref=e378]:
+          - generic [ref=e379]:
+            - strong [ref=e380]: "Độ dài Meta: 0 ký tự (chuẩn: 120–160)"
+            - generic [ref=e381]: "2.2"
+          - generic [ref=e382]: ⚠️ Không thể đo — Meta description không tồn tại
+        - generic [ref=e383]:
+          - generic [ref=e384]:
+            - strong [ref=e385]: Meta description chứa keyword "Keyword chưa xác định"
+            - generic [ref=e386]: "2.3"
+          - generic [ref=e387]: ⚠️ Không thể kiểm tra — Meta description không tồn tại
+      - generic [ref=e388]:
+        - generic [ref=e389]:
+          - generic [ref=e390]: Heading Structure
+          - generic [ref=e391]: 3/4
+        - generic [ref=e392]:
+          - generic [ref=e393]:
+            - strong [ref=e394]: H1 chứa keyword "Keyword chưa xác định"
+            - generic [ref=e395]: "3.2"
+          - generic [ref=e396]: ⚠️ H1 "Văn phòng tiêu chuẩn 2" không chứa keyword "Keyword chưa xác định"
+      - generic [ref=e397]:
+        - generic [ref=e398]:
+          - generic [ref=e399]: URL Structure
+          - generic [ref=e400]: 4/5
+        - generic [ref=e401]:
+          - generic [ref=e402]:
+            - strong [ref=e403]: URL chứa keyword slug "keyword-chua-xac-dinh"
+            - generic [ref=e404]: "4.2"
+          - generic [ref=e405]: ⚠️ URL "/van-phong-tieu-chuan-2" không chứa keyword "keyword-chua-xac-dinh"
+      - generic [ref=e406]:
+        - generic [ref=e407]:
+          - generic [ref=e408]: Content
+          - generic [ref=e409]: 4/6
+        - generic [ref=e410]:
+          - generic [ref=e411]:
+            - strong [ref=e412]: "Mật độ keyword: 0.00% (chuẩn: 0.5%–2.5%)"
+            - generic [ref=e413]: "5.2"
+          - generic [ref=e414]: "⚠️ Mật độ keyword quá thấp: 0.00%, cần ≥ 0.5%"
+        - generic [ref=e415]:
+          - generic [ref=e416]:
+            - strong [ref=e417]: Keyword "Keyword chưa xác định" xuất hiện trong 100 từ đầu
+            - generic [ref=e418]: "5.3"
+          - generic [ref=e419]: ⚠️ Keyword "Keyword chưa xác định" không xuất hiện trong 100 từ đầu
+      - generic [ref=e420]:
+        - generic [ref=e421]:
+          - generic [ref=e422]: Images
+          - generic [ref=e423]: 3/6
+        - generic [ref=e424]:
+          - generic [ref=e425]:
+            - strong [ref=e426]: Có ảnh chứa keyword "Keyword chưa xác định" trong alt
+            - generic [ref=e427]: "6.2"
+          - generic [ref=e428]: ⚠️ Không có ảnh nào có alt chứa keyword "Keyword chưa xác định"
+        - generic [ref=e429]:
+          - generic [ref=e430]:
+            - strong [ref=e431]: "Ảnh có width/height: 3/15 (cần ≥ 80%)"
+            - generic [ref=e432]: "6.3"
+          - generic [ref=e433]: ⚠️ Chỉ 3/15 ảnh có width/height, cần ≥ 12
+        - generic [ref=e434]:
+          - generic [ref=e435]:
+            - strong [ref=e436]: "Định dạng ảnh tối ưu (WebP/AVIF): 0% (cần ≥ 80%)"
+            - generic [ref=e437]: "6.5"
+          - generic [ref=e438]: "⚠️ Tỷ lệ ảnh WebP/AVIF quá thấp: 0/15 ảnh (0%)"
+      - generic [ref=e439]:
+        - generic [ref=e440]:
+          - generic [ref=e441]: Links
+          - generic [ref=e442]: 4/5
+        - generic [ref=e443]:
+          - generic [ref=e444]:
+            - strong [ref=e445]: "Anchor text chất lượng (lỗi: 1)"
+            - generic [ref=e446]: "7.3"
+          - generic [ref=e447]: ⚠️ 1 link có anchor text không tốt
+      - generic [ref=e448]:
+        - generic [ref=e449]:
+          - generic [ref=e450]: Technical SEO
+          - generic [ref=e451]: 8/9
+        - generic [ref=e452]:
+          - generic [ref=e453]:
+            - strong [ref=e454]: "Open Graph: og:title=✔, og:description=✘, og:image=✔"
+            - generic [ref=e455]: "8.6"
+          - generic [ref=e456]: ⚠️ og:description — Link không có thumbnail khi share trên social media
+      - generic [ref=e457]:
+        - generic [ref=e458]:
+          - generic [ref=e459]: Mobile
+          - generic [ref=e460]: 2/3
+        - generic [ref=e461]:
+          - generic [ref=e462]:
+            - strong [ref=e463]: "Touch targets đủ lớn (≥ 48x48px): 10 lỗi"
+            - generic [ref=e464]: "9.3"
+          - generic [ref=e465]: ⚠️ Phát hiện 10 nút/link có kích thước quá nhỏ (< 48x48px)
+      - generic [ref=e466]:
+        - generic [ref=e467]:
+          - generic [ref=e468]: Page Optimization
+          - generic [ref=e469]: 5/7
+        - generic [ref=e470]:
+          - generic [ref=e471]:
+            - strong [ref=e472]: "Browser caching (Cache-Control): ✘"
+            - generic [ref=e473]: "10.2"
+          - generic [ref=e474]: "⚠️ Cache header chưa tối ưu hoặc bị disable: no-store, no-cache, must-revalidate"
+        - generic [ref=e475]:
+          - generic [ref=e476]:
+            - strong [ref=e477]: "LCP: 3448ms (< 2500ms)"
+            - generic [ref=e478]: "10.6"
+          - generic [ref=e479]: "⚠️ LCP quá cao: 3448ms (chuẩn: < 2.5s)"
+```
+
+# Test source
+
+```ts
+  80  |         return Math.round((this.passedChecks / this.totalChecks) * 100);
+  81  |     }
+  82  | 
+  83  |     /** Lấy thống kê chi tiết */
+  84  |     get stats() {
+  85  |         return {
+  86  |             total: this.totalChecks,
+  87  |             passed: this.passedChecks,
+  88  |             failed: this.totalChecks - this.passedChecks,
+  89  |             score: this.score,
+  90  |             failures: [...this.failures],
+  91  |         };
+  92  |     }
+  93  | 
+  94  |     async finalizeScore(page: Page, threshold = 70): Promise<void> {
+  95  |         const { total, passed, failed, score, failures } = this.stats;
+  96  | 
+  97  |         // Xác định trạng thái
+  98  |         const isPass = score >= threshold;
+  99  |         const statusText = isPass ? "PASS" : "FAIL";
+  100 | 
+  101 |         // Thang điểm SEO mới
+  102 |         let scoreLabel: string;
+  103 |         let statusIcon: string;
+  104 |         if (score >= 93) {
+  105 |             scoreLabel = "XUẤT SẮC";
+  106 |             statusIcon = "💎";
+  107 |         } else if (score >= 77) {
+  108 |             scoreLabel = "TỐT";
+  109 |             statusIcon = "🟢";
+  110 |         } else if (score >= 65) {
+  111 |             scoreLabel = "KHÁ";
+  112 |             statusIcon = "🟡";
+  113 |         } else if (score >= 50) {
+  114 |             scoreLabel = "TRUNG BÌNH";
+  115 |             statusIcon = "🟠";
+  116 |         } else {
+  117 |             scoreLabel = "KÉM";
+  118 |             statusIcon = "🔴";
+  119 |         }
+  120 | 
+  121 |         // Tạo báo cáo tổng kết dạng text
+  122 |         const summaryLines = [
+  123 |             `══════════════════════════════════════`,
+  124 |             `   ${statusIcon} KẾT QUẢ CHẤM ĐIỂM SEO`,
+  125 |             `══════════════════════════════════════`,
+  126 |             `   Điểm số:     ${score}/100`,
+  127 |             `   Đánh giá:    ${scoreLabel}`,
+  128 |             `   Ngưỡng đạt:  ${threshold}%`,
+  129 |             `   Kết quả:     ${statusText}`,
+  130 |             `──────────────────────────────────────`,
+  131 |             `   Tổng tiêu chí:  ${total}`,
+  132 |             `   ✅ Đạt:          ${passed}`,
+  133 |             `   ❌ Không đạt:    ${failed}`,
+  134 |             `══════════════════════════════════════`,
+  135 |         ];
+  136 | 
+  137 |         if (failures.length > 0) {
+  138 |             summaryLines.push(``, `📋 CHI TIẾT LỖI CẦN KHẮC PHỤC (${failed}/${total}):`);
+  139 | 
+  140 |             // Group errors by their assigned group
+  141 |             const groupedFailures = failures.reduce((acc, f) => {
+  142 |                 if (!acc[f.group]) acc[f.group] = [];
+  143 |                 acc[f.group].push(f);
+  144 |                 return acc;
+  145 |             }, {} as Record<string, ScorecardFailure[]>);
+  146 | 
+  147 |             let globalIndex = 1;
+  148 |             for (const [group, items] of Object.entries(groupedFailures)) {
+  149 |                 summaryLines.push(`--- ${group.toUpperCase()} ---`);
+  150 |                 items.forEach((f) => {
+  151 |                     summaryLines.push(`   ${globalIndex}. [${f.step}]`);
+  152 |                     summaryLines.push(`      → ${f.message}`);
+  153 |                     globalIndex++;
+  154 |                 });
+  155 |             }
+  156 |         }
+  157 | 
+  158 |         const summaryText = summaryLines.join("\n");
+  159 | 
+  160 |         // Step cuối cùng — hiển thị bảng điểm + quyết định PASS/FAIL
+  161 |         await customStep(
+  162 |             page,
+  163 |             `13. 🏆 Kết quả chấm điểm SEO: ${score}/100 — ${statusText} (${scoreLabel})`,
+  164 |             async () => {
+  165 |                 // Đính kèm bảng điểm text
+  166 |                 await allure.attachment(
+  167 |                     "Bảng điểm SEO",
+  168 |                     Buffer.from(summaryText, "utf-8"),
+  169 |                     "text/plain"
+  170 |                 );
+  171 | 
+  172 |                 // Gắn description vào Test Case trên Allure
+  173 |                 await allure.description(
+  174 |                     `[${statusText}] Điểm SEO: ${score}/100 | Đạt: ${passed}/${total} tiêu chí | Ngưỡng: ${threshold}%\n\n` +
+  175 |                     `${scoreLabel}`
+  176 |                 );
+  177 | 
+  178 |                 // 🚀 ĐÂY LÀ DÒNG DUY NHẤT quyết định Test PASS hay FAIL
+  179 |                 if (!isPass) {
+> 180 |                     throw new Error(
+      |                           ^ Error: ❌ FAIL — Điểm SEO 69/100 dưới ngưỡng 70%. Có 18/58 tiêu chí không đạt.
+  181 |                         `❌ FAIL — Điểm SEO ${score}/100 dưới ngưỡng ${threshold}%. ` +
+  182 |                         `Có ${failed}/${total} tiêu chí không đạt.`
+  183 |                     );
+  184 |                 }
+  185 |             },
+  186 |             { screenshot: true }
+  187 |         );
+  188 |     }
+  189 | }
+```
