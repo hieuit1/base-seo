@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "generate-seo": "tsx scripts/generateSeoData.ts",
+    "test": "npm run generate-seo && playwright test"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,10 @@
     "@types/node": "^26.1.1",
     "allure-commandline": "^2.43.0",
     "allure-playwright": "^3.10.2",
-    "dotenv": "^17.4.2"
+    "dotenv": "^17.4.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
