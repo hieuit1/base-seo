@@ -12,7 +12,12 @@ const BASE_URL = process.env.BASE_URL;
 
 async function fetchSitemapUrls(sitemapUrl: string, maxLimit?: number): Promise<string[]> {
   try {
-    const response = await fetch(sitemapUrl);
+    const response = await fetch(sitemapUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'
+      }
+    });
     if (!response.ok) {
       console.warn(`Sitemap not found at ${sitemapUrl} (${response.status})`);
       return [];
@@ -63,17 +68,29 @@ async function fetchSitemapUrls(sitemapUrl: string, maxLimit?: number): Promise<
 
 async function extractMetaKeyword(url: string): Promise<{ keyword: string, name: string }> {
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Cache-Control': 'no-cache'
+      }
+    });
+    
     if (!response.ok) {
+      console.warn(`Failed to fetch ${url} - Status: ${response.status}`);
       return { keyword: '', name: '' };
     }
     const html = await response.text();
+    
+    // Check if Cloudflare blocked the request
+    if (html.includes('Just a moment...') || html.includes('cf-browser-verification')) {
+      console.warn(`[WARNING] Request to ${url} was blocked by Cloudflare/WAF!`);
+      return { keyword: '', name: '' };
+    }
+
     const $ = cheerio.load(html);
     let keyword = $('meta[name="keywords"]').attr('content') || '';
-    if (!keyword) {
-      // Fallback to primary keyword from title or H1 if needed, or leave empty
-      // For now, we leave it empty to force manual definition or accept no keyword
-    }
 
     let name = $('title').text().trim() || $('h1').first().text().trim() || url;
     // Extract a cleaner name
@@ -115,8 +132,9 @@ async function run() {
     let name = manualEntry?.name;
 
     if (!keyword || !name) {
-      console.log(`Fetching metadata for ${fullUrl}...`);
-      const meta = await extractMetaKeyword(fullUrl);
+      const fetchUrl = new URL(relativePath, BASE_URL).href;
+      console.log(`Fetching metadata for ${fetchUrl}...`);
+      const meta = await extractMetaKeyword(fetchUrl);
       keyword = keyword || meta.keyword || 'Keyword chưa xác định';
       name = name || meta.name;
     }
